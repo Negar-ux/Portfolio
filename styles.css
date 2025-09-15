@@ -60,20 +60,28 @@ p {
 
 /* Header and Navigation */
 header {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 nav a {
@@ -81,11 +89,28 @@ nav a {
     color: #000000;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 400;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 nav a:hover {
     color: #67e0ff;
+    background-color: rgba(103, 224, 255, 0.1);
+}
+
+/* External link styling */
+nav a[target="_blank"] {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+nav a[target="_blank"]:hover {
+    background-color: #67e0ff;
+    color: #000000;
 }
 
 /* Main content */
@@ -609,18 +634,38 @@ footer {
         max-width: none;
     }
     
-    nav ul {
-        gap: 1rem;
+    nav {
+        padding: 0 1.5rem;
     }
-    
+
+    nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
     nav a {
-        font-size: 0.9rem;
+        font-size: 14px;
+        padding: 0.4rem 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 0 1rem;
+    }
+
+    nav {
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+        justify-content: space-around;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 0.3rem 0.6rem;
     }
 
     h1 {
