@@ -12,7 +12,13 @@
       "Read(C:\\Users\\negar\\Downloads/**)",
       "Read(C:\\Users\\negar\\Downloads/**)",
       "Read(C:\\Users\\negar\\Downloads/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Read(//c/Users/negar/Downloads/**)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Negar Deilami - Product Designer</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -25,58 +26,73 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="profile-image">
-                    <img src="https://via.placeholder.com/150x150/67e0ff/ffffff?text=ND" alt="Negar Deilami Profile" />
+                    <img src="assets/images/profile-image.png" alt="Negar Deilami Profile" />
                 </div>
-                <h1>Hi, I'm Negar, a Product Designer</h1>
-                <p>With a background in engineering and a passion for inclusive design, I create digital experiences that work for everyone. Based in Toronto, I specialize in healthcare technology and accessibility-focused design solutions.</p>
-                <a href="#about" class="cta-button">Learn More</a>
+                <div class="hero-text">
+                    <div class="accent-line"></div>
+                    <h1>Hi, I'm Negar,<br>a <strong>Product Designer</strong>.</h1>
+                    <p>Based in Toronto with three years of experience in the healthcare & fitness industries and academic research.</p>
+                    <a href="#about" class="cta-button">Learn More About Me</a>
+                </div>
             </div>
         </section>
 
+        <div class="separator"></div>
+
         <section id="featured-work" class="featured-work">
-            <h2>Featured Work</h2>
+            <h2>Featured Design Thinking & UX Work</h2>
+            <p class="section-description">I have included my work with early-stage startups and the workshops I have co-designed and co-facilitated at McMaster University.</p>
             <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/300x200/67e0ff/000000?text=Fitness+App" alt="Fitness App Project" />
-                    </div>
+                <article class="project-card fitness-app">
                     <div class="project-content">
+                        <div class="project-accent"></div>
                         <h3>Fitness App for People with Different Abilities</h3>
-                        <p>Designing an inclusive fitness application that accommodates users with various physical capabilities and accessibility needs.</p>
+                        <p>How might we bring a space for people with and without disability to exercise together?</p>
+                        <p class="project-type">Mobile - MVP Design - UI</p>
                         <a href="fitness-app.html" class="project-link">View Case Study</a>
                     </div>
+                    <div class="project-image">
+                        <img src="assets/images/fitness-app.webp" alt="Fitness App Project" />
+                    </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/300x200/67e0ff/000000?text=Hospital+Tool" alt="Hospital Discharge Tool" />
-                    </div>
+                <article class="project-card hospital-tool">
                     <div class="project-content">
+                        <div class="project-accent"></div>
                         <h3>Hospital Discharge Journey Tool</h3>
-                        <p>Streamlining the hospital discharge process through user-centered design to improve patient experience and outcomes.</p>
+                        <p>Bridging the communication gap between patients, family members and healthcare providers.</p>
+                        <p class="project-type">Tablet - Conceptual Design - UX Research</p>
                         <a href="hospital-discharge.html" class="project-link">View Case Study</a>
                     </div>
+                    <div class="project-image">
+                        <img src="assets/images/hospital-discharge.webp" alt="Hospital Discharge Tool" />
+                    </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/300x200/67e0ff/000000?text=Design+Workshops" alt="Design Workshops" />
-                    </div>
+                <article class="project-card workshops">
                     <div class="project-content">
-                        <h3>Inclusive Innovation Design Workshops</h3>
-                        <p>Facilitating workshops that bring inclusive design principles to product development teams and organizations.</p>
+                        <div class="project-accent"></div>
+                        <h3>Inclusive Innovation Design Challenge Workshops</h3>
+                        <p>During my time at the School of Engineering Practice and Technology (SEPT), I co-designed and co-facilitated three inclusive design thinking workshops for engineering students.</p>
+                        <p class="project-type">Workshop Design & Facilitation</p>
                         <a href="design-workshops.html" class="project-link">View Case Study</a>
                     </div>
+                    <div class="project-image">
+                        <img src="assets/images/workshop-photo.jpg" alt="Design Workshops" />
+                        <figcaption>While I was co-facilitating the second workshop at the IDEA conference</figcaption>
+                    </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/300x200/67e0ff/000000?text=Surgical+Dashboard" alt="Surgical Scheduling Dashboard" />
-                    </div>
+                <article class="project-card surgical-dashboard">
                     <div class="project-content">
+                        <div class="project-accent"></div>
                         <h3>Surgical Scheduling Dashboard</h3>
-                        <p>Creating an efficient dashboard system for surgical scheduling that improves workflow and resource management.</p>
-                        <a href="surgical-dashboard.html" class="project-link">View Case Study</a>
+                        <p>How might we create a user-friendly dashboard for decision-makers in the surgical department?</p>
+                        <p class="project-type">Web App - MVP Design - GUI</p>
+                        <a href="#" class="project-link coming-soon">Coming Soon</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/418x300/67e0ff/000000?text=Surgical+Dashboard" alt="Surgical Scheduling Dashboard" />
                     </div>
                 </article>
             </div>
@@ -85,23 +101,41 @@
         <section id="research" class="research">
             <h2>Research</h2>
             <div class="research-content">
-                <p>My research focuses on inclusive design and accessibility in digital products. I've presented at conferences and published work on creating more inclusive digital experiences.</p>
-                <div class="publications">
-                    <h3>Recent Publications & Presentations</h3>
-                    <ul>
-                        <li>Conference presentation on inclusive design methodologies</li>
-                        <li>Research on accessibility in healthcare technology</li>
-                        <li>Workshop facilitation on design thinking for inclusion</li>
-                    </ul>
+                <p>During my time at McMaster University, as a research assistant at the W Booth School of Engineering Practice and Technology, I worked on inclusive learning through equity-based design approaches in engineering education research. I was also a graduate TA in Design Thinking courses for four terms.</p>
+
+                <div class="research-project">
+                    <div class="project-accent research-accent"></div>
+                    <h3>Research: Inclusive learning through equity-driven approaches to design</h3>
+
+                    <div class="research-grid">
+                        <div class="research-description">
+                            <p>The research aimed to explore ways in which Design Thinking (DT) can provide students with a more inclusive environment in the Faculty of Engineering by supporting them in learning equity-driven approaches to design.</p>
+                        </div>
+                        <div class="research-image">
+                            <img src="https://negardeilami.com/wp-content/uploads/2024/06/CEEA-Inclusive-Innovation-Design-Challenge-1.png" alt="Research Presentation" />
+                        </div>
+                    </div>
+
+                    <div class="publications">
+                        <h4>Publications</h4>
+                        <div class="publication">
+                            <h6>Deilami, N., Ngo, T.-A., Fleisig, R., Park, S., & Hemmerich, A. (2023). <em>Inclusive Learning Through Equity-Driven Approaches to Design in Engineering Education</em>. Proceedings of the Canadian Engineering Education Association (CEEA). <a href="https://journals.scholarsportal.info/details?uri=/23715243/v2023inone/nfp_ilteatdiee.xml" target="_blank">Link</a></h6>
+                        </div>
+                        <div class="publication">
+                            <h6>Hemmerich, A , Deilami, N., Ngo, T.-A., Park, S., & Fleisig, R. (2024). <em>Fostering Inclusive Learning in Engineering Through Equity-Based Design Education</em>. Paper presented at the Canadian Engineering Education Association (CEEA). <a href="https://drive.google.com/file/d/1ZeCKDgafJkZHg4tKPBou5ln_mkBdEsI3/view?pli=1" target="_blank">Link</a></h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <div class="separator"></div>
     </main>
 
     <footer>
         <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+            <a href="https://linkedin.com/in/negardeilami" target="_blank">LinkedIn</a>
         </div>
     </footer>
 </body>
