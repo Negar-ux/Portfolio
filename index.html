@@ -23,85 +23,120 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="profile-image">
-                    <img src="assets/images/profile-image.png" alt="Negar Deilami Profile" />
-                </div>
-                <div class="hero-text">
-                    <div class="accent-line"></div>
-                    <h1>Hi, I'm Negar,<br>a <strong>Product Designer</strong>.</h1>
-                    <p>Based in Toronto with three years of experience in the healthcare & fitness industries and academic research.</p>
-                    <a href="#about" class="cta-button">Learn More About Me</a>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="profile-image">
+                        <img src="assets/images/profile-image.png" alt="Negar Deilami Profile" />
+                    </div>
+                    <div class="hero-text">
+                        <div class="accent-line"></div>
+                        <h1>Hi, I'm Negar,<br>a <strong>Product Designer</strong>.</h1>
+                        <p>Based in Toronto with three years of experience in the healthcare & fitness industries and academic research.</p>
+                        <a href="#featured-work" class="cta-button">View My Work</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div class="separator"></div>
+        <!-- Section Divider -->
+        <div class="section-divider">
+            <div class="separator"></div>
+        </div>
 
+        <!-- Featured Work Section -->
         <section id="featured-work" class="featured-work">
-            <h2>Featured Design Thinking & UX Work</h2>
-            <p class="section-description">I have included my work with early-stage startups and the workshops I have co-designed and co-facilitated at McMaster University.</p>
-            <div class="projects-grid">
-                <article class="project-card fitness-app">
-                    <div class="project-content">
-                        <div class="project-accent"></div>
-                        <h3>Fitness App for People with Different Abilities</h3>
-                        <p>How might we bring a space for people with and without disability to exercise together?</p>
-                        <p class="project-type">Mobile - MVP Design - UI</p>
-                        <a href="fitness-app.html" class="project-link">View Case Study</a>
-                    </div>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Design Thinking & UX Work</h2>
+                    <p class="section-description">I have included my work with early-stage startups and the workshops I have co-designed and co-facilitated at McMaster University.</p>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1: Fitness App -->
+                    <article class="project-card fitness-app">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <div class="project-accent"></div>
+                                <span class="project-number">01</span>
+                            </div>
+                            <h3>Fitness App for People with Different Abilities</h3>
+                            <p class="project-description">How might we bring a space for people with and without disability to exercise together?</p>
+                            <p class="project-type">Mobile • MVP Design • UI</p>
+                            <a href="fitness-app.html" class="project-link">View Case Study</a>
+                        </div>
                     <div class="project-image">
                         <img src="assets/images/fitness-app.webp" alt="Fitness App Project" />
                     </div>
                 </article>
 
-                <article class="project-card hospital-tool">
-                    <div class="project-content">
-                        <div class="project-accent"></div>
-                        <h3>Hospital Discharge Journey Tool</h3>
-                        <p>Bridging the communication gap between patients, family members and healthcare providers.</p>
-                        <p class="project-type">Tablet - Conceptual Design - UX Research</p>
-                        <a href="hospital-discharge.html" class="project-link">View Case Study</a>
-                    </div>
+                    <!-- Project 2: Hospital Tool -->
+                    <article class="project-card hospital-tool">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <div class="project-accent"></div>
+                                <span class="project-number">02</span>
+                            </div>
+                            <h3>Hospital Discharge Journey Tool</h3>
+                            <p class="project-description">Bridging the communication gap between patients, family members and healthcare providers.</p>
+                            <p class="project-type">Tablet • Conceptual Design • UX Research</p>
+                            <a href="hospital-discharge.html" class="project-link">View Case Study</a>
+                        </div>
                     <div class="project-image">
                         <img src="assets/images/hospital-discharge.webp" alt="Hospital Discharge Tool" />
                     </div>
                 </article>
 
-                <article class="project-card workshops">
-                    <div class="project-content">
-                        <div class="project-accent"></div>
-                        <h3>Inclusive Innovation Design Challenge Workshops</h3>
-                        <p>During my time at the School of Engineering Practice and Technology (SEPT), I co-designed and co-facilitated three inclusive design thinking workshops for engineering students.</p>
-                        <p class="project-type">Workshop Design & Facilitation</p>
-                        <a href="design-workshops.html" class="project-link">View Case Study</a>
-                    </div>
+                    <!-- Project 3: Workshops -->
+                    <article class="project-card workshops">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <div class="project-accent"></div>
+                                <span class="project-number">03</span>
+                            </div>
+                            <h3>Inclusive Innovation Design Challenge Workshops</h3>
+                            <p class="project-description">During my time at the School of Engineering Practice and Technology (SEPT), I co-designed and co-facilitated three inclusive design thinking workshops for engineering students.</p>
+                            <p class="project-type">Workshop Design • Facilitation</p>
+                            <a href="design-workshops.html" class="project-link">View Case Study</a>
+                        </div>
                     <div class="project-image">
                         <img src="assets/images/workshop-photo.jpg" alt="Design Workshops" />
                         <figcaption>While I was co-facilitating the second workshop at the IDEA conference</figcaption>
                     </div>
                 </article>
 
-                <article class="project-card surgical-dashboard">
-                    <div class="project-content">
-                        <div class="project-accent"></div>
-                        <h3>Surgical Scheduling Dashboard</h3>
-                        <p>How might we create a user-friendly dashboard for decision-makers in the surgical department?</p>
-                        <p class="project-type">Web App - MVP Design - GUI</p>
-                        <a href="#" class="project-link coming-soon">Coming Soon</a>
-                    </div>
+                    <!-- Project 4: Surgical Dashboard -->
+                    <article class="project-card surgical-dashboard">
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <div class="project-accent"></div>
+                                <span class="project-number">04</span>
+                            </div>
+                            <h3>Surgical Scheduling Dashboard</h3>
+                            <p class="project-description">How might we create a user-friendly dashboard for decision-makers in the surgical department?</p>
+                            <p class="project-type">Web App • MVP Design • GUI</p>
+                            <a href="#" class="project-link coming-soon">Coming Soon</a>
+                        </div>
                     <div class="project-image">
                         <img src="https://via.placeholder.com/418x300/67e0ff/000000?text=Surgical+Dashboard" alt="Surgical Scheduling Dashboard" />
                     </div>
                 </article>
+                </div>
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider">
+            <div class="separator"></div>
+        </div>
+
+        <!-- Research Section -->
         <section id="research" class="research">
-            <h2>Research</h2>
-            <div class="research-content">
-                <p>During my time at McMaster University, as a research assistant at the W Booth School of Engineering Practice and Technology, I worked on inclusive learning through equity-based design approaches in engineering education research. I was also a graduate TA in Design Thinking courses for four terms.</p>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Research</h2>
+                    <p class="section-description">During my time at McMaster University, as a research assistant at the W Booth School of Engineering Practice and Technology, I worked on inclusive learning through equity-based design approaches in engineering education research. I was also a graduate TA in Design Thinking courses for four terms.</p>
+                </div>
 
                 <div class="research-project">
                     <div class="project-accent research-accent"></div>
@@ -128,8 +163,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="separator"></div>
     </main>
 
     <footer>

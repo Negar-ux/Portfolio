@@ -11,8 +11,13 @@ body {
     line-height: 1.6;
     color: #000000;
     background-color: #ffffff;
+}
+
+/* Container for consistent max-width and centering */
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Typography */
@@ -156,46 +161,77 @@ main {
     margin-bottom: 1rem;
 }
 
-.section-description {
+.section-header {
     text-align: center;
-    font-size: 18px;
-    color: #565656;
     margin-bottom: 4rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #565656;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.section-divider {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
 .projects-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .project-card {
     background-color: #ffffff;
     border: 1px solid #E7E7E9;
-    padding: 1.5rem;
+    padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
+    border-radius: 8px;
 }
 
 .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #67e0ff;
 }
 
 .project-content {
     flex: 1;
-    max-width: 400px;
+    max-width: 500px;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-accent {
     width: 35px;
     height: 10px;
-    margin-bottom: 1rem;
+}
+
+.project-number {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 1px;
 }
 
 .fitness-app .project-accent {
@@ -215,24 +251,27 @@ main {
 }
 
 .project-card h3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #000000;
     font-size: 28px;
-    line-height: 1.2;
+    line-height: 1.3;
+    font-weight: 400;
 }
 
-.project-card p {
+.project-description {
     margin-bottom: 1rem;
     color: #565656;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .project-type {
-    font-size: 14px !important;
+    font-size: 14px;
     color: #888;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 2rem;
     font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .project-link {
@@ -297,24 +336,13 @@ main {
 
 /* Research section */
 .research {
-    background-color: #ffffff;
-    padding: 6rem 2rem;
+    background-color: #f8f9fa;
+    padding: 6rem 0;
 }
 
 .research-content {
     max-width: 1000px;
     margin: 0 auto;
-    text-align: center;
-}
-
-.research h2 {
-    margin-bottom: 2rem;
-}
-
-.research-content > p {
-    margin-bottom: 4rem;
-    font-size: 18px;
-    line-height: 1.6;
 }
 
 .research-project {
@@ -423,7 +451,8 @@ footer {
     height: 32px;
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4 0H16L9.6 16H0L6.4 0Z' fill='%23e7e7e9'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
-    margin: 4rem 0;
+    width: 200px;
+    margin: 0 auto;
 }
 
 /* Responsive design */
@@ -458,8 +487,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 0 1rem;
+    .container {
+        padding: 0 1.5rem;
     }
     
     h1 {
@@ -475,7 +504,7 @@ footer {
     }
     
     .hero {
-        padding: 3rem 1rem;
+        padding: 4rem 0;
         min-height: 60vh;
     }
     
@@ -525,16 +554,28 @@ footer {
     
     .featured-work,
     .research {
-        padding: 2rem 1rem;
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-divider {
+        padding: 2rem 0;
     }
     
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
     }
     
     .project-card {
         padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .project-content {
+        max-width: none;
     }
     
     nav ul {
@@ -547,6 +588,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
     h1 {
         font-size: 28px;
     }
@@ -559,17 +604,35 @@ footer {
         width: 150px;
         height: 150px;
     }
+
+    .featured-work,
+    .research {
+        padding: 3rem 0;
+    }
     
     .hero {
         padding: 1.5rem 1rem;
     }
     
     .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 12px 24px;
+        font-size: 16px;
     }
     
     .project-card {
         padding: 1rem;
+        gap: 1rem;
+    }
+
+    .project-meta {
+        margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 24px;
+    }
+
+    .project-type {
+        margin-bottom: 1.5rem;
     }
 }
