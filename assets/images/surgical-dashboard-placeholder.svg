@@ -1,0 +1,22 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#f8f9fa"/>
+  <rect x="20" y="20" width="260" height="160" fill="white" stroke="#e0e0e0" stroke-width="1" rx="8"/>
+
+  <!-- Header -->
+  <rect x="30" y="30" width="240" height="30" fill="#67e0ff" rx="4"/>
+  <text x="150" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Surgical Dashboard</text>
+
+  <!-- Chart placeholder -->
+  <rect x="40" y="80" width="100" height="80" fill="#f0f0f0" stroke="#d0d0d0" rx="4"/>
+  <text x="90" y="125" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="10">Chart</text>
+
+  <!-- Data list -->
+  <rect x="160" y="80" width="110" height="15" fill="#e8e8e8" rx="2"/>
+  <rect x="160" y="100" width="110" height="15" fill="#e8e8e8" rx="2"/>
+  <rect x="160" y="120" width="110" height="15" fill="#e8e8e8" rx="2"/>
+  <rect x="160" y="140" width="110" height="15" fill="#e8e8e8" rx="2"/>
+
+  <!-- Coming Soon overlay -->
+  <rect x="0" y="0" width="300" height="200" fill="rgba(255,255,255,0.7)"/>
+  <text x="150" y="100" text-anchor="middle" fill="#a883bd" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Coming Soon</text>
+</svg>
