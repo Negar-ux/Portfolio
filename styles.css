@@ -91,14 +91,17 @@ nav a {
     font-weight: 400;
     font-size: 16px;
     padding: 0.5rem 1rem;
+    border: 1.5px solid transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
+    background-color: #ffffff;
 }
 
 nav a:hover {
-    color: #67e0ff;
-    background-color: rgba(103, 224, 255, 0.1);
+    border-color: #000000;
+    box-shadow: 4px 4px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
 /* External link styling */
@@ -106,11 +109,13 @@ nav a[target="_blank"] {
     background-color: #000000;
     color: #ffffff;
     font-weight: 500;
+    border: 1.5px solid #000000;
+    box-shadow: 4px 4px 0px #fff845;
 }
 
 nav a[target="_blank"]:hover {
-    background-color: #67e0ff;
-    color: #000000;
+    box-shadow: 4px 4px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
 /* Main content */
