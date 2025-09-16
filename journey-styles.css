@@ -419,6 +419,69 @@
     border: 1px solid #e9ecef;
 }
 
+/* Resume Section */
+.resume-section {
+    padding: 6rem 0;
+    background: #f8f9fa;
+}
+
+.resume-section h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.resume-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #E7E7E9;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #67e0ff;
+}
+
+.resume-preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.resume-icon {
+    font-size: 3rem;
+}
+
+.resume-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.resume-info p {
+    color: #565656;
+    margin-bottom: 0.25rem;
+    font-size: 16px;
+}
+
+.file-info {
+    font-size: 0.9rem;
+    color: #888;
+}
+
 /* Journey CTA */
 .journey-cta {
     padding: 80px 0;
@@ -522,10 +585,25 @@
 
     .timeline-item {
         padding-left: 60px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-section {
+        margin-bottom: 60px;
     }
 
     .timeline-section-title {
         font-size: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .resume-download {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
     }
 
     .cta-content h2 {
