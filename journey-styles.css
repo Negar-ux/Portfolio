@@ -62,7 +62,7 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 400;
-    color: #67e0ff;
+    color: #1a1a1a;
     margin-bottom: 8px;
     font-family: 'Merriweather', serif;
 }
@@ -145,8 +145,8 @@
 }
 
 .skill-category:hover .skill-badge {
-    border-color: #67e0ff;
-    color: #67e0ff;
+    border-color: #1a1a1a;
+    color: #1a1a1a;
 }
 
 /* Timeline Section */
@@ -341,7 +341,7 @@
 
 .skills-used span {
     background: #e9ecef;
-    color: #555;
+    color: #565656;
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -387,13 +387,14 @@
 }
 
 .pub-venue {
-    color: #67e0ff;
+    color: #565656;
     font-weight: 600;
     margin-bottom: 12px;
 }
 
 .pub-description {
-    color: #555;
+    color: #565656;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -406,7 +407,7 @@
 
 .impact-badge {
     background: #f8f9fa;
-    color: #555;
+    color: #565656;
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -431,7 +432,7 @@
 .cta-content p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    opacity: 0.9;
+    opacity: 0.95;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
