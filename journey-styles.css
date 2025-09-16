@@ -1,0 +1,530 @@
+/* Journey Page Specific Styles */
+
+/* Journey Hero Section */
+.journey-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 100px 0 80px;
+    margin-top: 80px;
+}
+
+.journey-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    align-items: center;
+}
+
+.journey-hero .accent-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #67e0ff, #a883bd);
+    margin-bottom: 20px;
+}
+
+.journey-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.journey-hero p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Journey Stats */
+.journey-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #67e0ff;
+    margin-bottom: 8px;
+    font-family: 'Merriweather', serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+}
+
+.skill-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.skill-category {
+    text-align: center;
+    padding: 40px 30px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-category:hover {
+    transform: translateY(-8px);
+    background: #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-badge {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover .skill-badge {
+    border-color: #67e0ff;
+    color: #67e0ff;
+}
+
+/* Timeline Section */
+.journey-timeline-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.journey-timeline-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+}
+
+.timeline-section {
+    margin-bottom: 80px;
+}
+
+.timeline-section:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    padding-left: 20px;
+    border-left: 4px solid #67e0ff;
+}
+
+.timeline-track {
+    position: relative;
+    margin-left: 40px;
+}
+
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #67e0ff, #a883bd);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 40px;
+    padding-left: 80px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+.timeline-accent {
+    width: 16px;
+    height: 16px;
+    background: #67e0ff;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #67e0ff;
+    margin-bottom: 12px;
+}
+
+.timeline-accent.current-accent {
+    background: #a883bd;
+    box-shadow: 0 0 0 2px #a883bd;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 2px #a883bd, 0 0 0 4px rgba(168, 131, 189, 0.3); }
+    50% { box-shadow: 0 0 0 2px #a883bd, 0 0 0 8px rgba(168, 131, 189, 0.1); }
+    100% { box-shadow: 0 0 0 2px #a883bd, 0 0 0 4px rgba(168, 131, 189, 0.3); }
+}
+
+.timeline-year {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.timeline-location {
+    color: #67e0ff;
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.timeline-details p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.project-highlight {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid #67e0ff;
+}
+
+.achievement-counter,
+.achievement-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #67e0ff, #a883bd);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-right: 8px;
+}
+
+.mvp-badge {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.achievement-stats {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.key-achievements {
+    margin: 16px 0;
+}
+
+.achievement-item {
+    color: #28a745;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.skills-used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.skills-used span {
+    background: #e9ecef;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Publications Grid */
+.publications-grid {
+    display: grid;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.publication-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pub-year {
+    display: inline-block;
+    background: linear-gradient(135deg, #67e0ff, #a883bd);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.pub-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.pub-venue {
+    color: #67e0ff;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.pub-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.pub-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.impact-badge {
+    background: #f8f9fa;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+}
+
+/* Journey CTA */
+.journey-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #67e0ff 0%, #a883bd 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:not(.secondary) {
+    background: white;
+    color: #67e0ff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:not(.secondary):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .journey-hero {
+        padding: 80px 0 60px;
+        margin-top: 60px;
+    }
+
+    .journey-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .journey-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .journey-stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skills-section,
+    .journey-timeline-section,
+    .journey-cta {
+        padding: 60px 0;
+    }
+
+    .skill-categories {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-section-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .journey-hero h1 {
+        font-size: 2rem;
+    }
+
+    .journey-hero p {
+        font-size: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .skills-section h2,
+    .journey-timeline-section h2 {
+        font-size: 2rem;
+    }
+}

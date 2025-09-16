@@ -732,6 +732,62 @@ footer {
     margin: 0 auto;
 }
 
+/* Journey preview styles for homepage */
+.journey-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.journey-highlights {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-number {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #67e0ff;
+    margin-bottom: 8px;
+    font-family: 'Merriweather', serif;
+}
+
+.highlight-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.journey-cta {
+    text-align: center;
+}
+
+.journey-cta p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
 .journey-timeline {
     display: flex;
     flex-direction: column;
@@ -764,10 +820,51 @@ footer {
     margin-bottom: 0;
 }
 
+/* Research link styling */
+.research-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background: #f8f9fa;
+    color: #67e0ff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.research-link:hover {
+    background: #67e0ff;
+    color: white;
+    border-color: #67e0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(103, 224, 255, 0.3);
+}
+
 /* Journey responsive styles */
 @media (max-width: 768px) {
     .journey {
         padding: 4rem 0;
+    }
+
+    .journey-preview {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .journey-highlights {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .highlight-item {
+        padding: 20px;
+    }
+
+    .highlight-number {
+        font-size: 2rem;
     }
 
     .journey-timeline {
@@ -786,5 +883,17 @@ footer {
 @media (max-width: 480px) {
     .journey {
         padding: 3rem 0;
+    }
+
+    .journey-highlights {
+        gap: 16px;
+    }
+
+    .highlight-item {
+        padding: 16px;
+    }
+
+    .highlight-number {
+        font-size: 1.8rem;
     }
 }
