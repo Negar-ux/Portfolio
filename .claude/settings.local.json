@@ -18,7 +18,8 @@
       "Bash(gh repo view:*)",
       "Bash(gh api:*)",
       "Read(//c/Users/negar/Downloads/**)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

@@ -2,7 +2,7 @@
 
 /* Journey Hero Section */
 .journey-hero {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background-color: #ffffff;
     padding: 100px 0 80px;
     margin-top: 80px;
 }
@@ -16,22 +16,23 @@
 
 .journey-hero .accent-line {
     width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #67e0ff, #a883bd);
+    height: 10px;
+    background-color: #67e0ff;
     margin-bottom: 20px;
 }
 
 .journey-hero h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: #1a1a1a;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000000;
     margin-bottom: 24px;
     line-height: 1.1;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .journey-hero p {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 18px;
+    color: #565656;
     line-height: 1.6;
     max-width: 600px;
 }
@@ -46,15 +47,16 @@
 .stat-item {
     text-align: center;
     padding: 24px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border: 1px solid #E7E7E9;
+    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #67e0ff;
 }
 
 .stat-number {
@@ -75,15 +77,18 @@
 
 /* Skills Section */
 .skills-section {
-    padding: 80px 0;
-    background: white;
+    padding: 6rem 0;
+    background: #f8f9fa;
 }
 
 .skills-section h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    color: #1a1a1a;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .skill-categories {
@@ -94,17 +99,18 @@
 
 .skill-category {
     text-align: center;
-    padding: 40px 30px;
-    background: #f8f9fa;
-    border-radius: 16px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #E7E7E9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .skill-category:hover {
-    transform: translateY(-8px);
-    background: #fff;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #67e0ff;
 }
 
 .skill-icon {
@@ -113,9 +119,11 @@
 }
 
 .skill-category h3 {
-    font-size: 1.5rem;
-    margin-bottom: 24px;
-    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .skill-items {
@@ -143,15 +151,18 @@
 
 /* Timeline Section */
 .journey-timeline-section {
-    padding: 80px 0;
-    background: #f8f9fa;
+    padding: 6rem 0;
+    background: #ffffff;
 }
 
 .journey-timeline-section h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    color: #1a1a1a;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .timeline-section {
@@ -163,11 +174,21 @@
 }
 
 .timeline-section-title {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #1a1a1a;
-    padding-left: 20px;
-    border-left: 4px solid #67e0ff;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timeline-section-title::before {
+    content: '';
+    width: 60px;
+    height: 10px;
+    background-color: #67e0ff;
 }
 
 .timeline-track {
@@ -233,34 +254,38 @@
 }
 
 .timeline-content {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border: 1px solid #E7E7E9;
+    padding: 2rem;
+    border-radius: 8px;
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #67e0ff;
 }
 
 .timeline-content h4 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .timeline-location {
-    color: #67e0ff;
+    color: #565656;
     font-weight: 500;
     margin-bottom: 16px;
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 .timeline-details p {
-    color: #555;
+    color: #565656;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -420,24 +445,30 @@
 }
 
 .cta-button {
-    padding: 16px 32px;
-    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     transition: all 0.3s ease;
-    display: inline-block;
+    box-shadow: 8px 8px 0px #fff845;
+    gap: 8px;
 }
 
-.cta-button:not(.secondary) {
-    background: white;
-    color: #67e0ff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.cta-button:hover {
+    box-shadow: 8px 8px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
-.cta-button:not(.secondary):hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.cta-button::after {
+    content: '→';
+    font-size: 16px;
 }
 
 .cta-button.secondary {
