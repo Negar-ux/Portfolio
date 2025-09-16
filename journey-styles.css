@@ -1,5 +1,15 @@
 /* Journey Page Specific Styles */
 
+/* Smooth scrolling and performance optimizations */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 /* Journey Hero Section */
 .journey-hero {
     background-color: #ffffff;
@@ -65,7 +75,6 @@
 }
 
 .stat-item:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     border-color: #67e0ff;
 }
@@ -159,7 +168,6 @@
 }
 
 .skill-category:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     border-color: #67e0ff;
 }
@@ -336,7 +344,6 @@
 }
 
 .timeline-content:hover {
-    transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     border-color: #67e0ff;
 }

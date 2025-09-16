@@ -60,23 +60,20 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Scroll Animations
+// Scroll Animations - Optimized for performance
 function addScrollAnimations() {
     const animatedElements = document.querySelectorAll('.timeline-item, .skill-category, .publication-card, .stat-item');
 
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.2,
+        rootMargin: '0px 0px -30px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Stagger animation delay
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target);
             }
         });
@@ -84,8 +81,8 @@ function addScrollAnimations() {
 
     animatedElements.forEach(element => {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         observer.observe(element);
     });
 }
@@ -177,12 +174,4 @@ function throttle(func, limit) {
     }
 }
 
-// Add parallax effect to hero section (subtle)
-window.addEventListener('scroll', throttle(function() {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelector('.journey-hero');
-    if (parallax) {
-        const speed = scrolled * 0.5;
-        parallax.style.transform = `translateY(${speed}px)`;
-    }
-}, 16));
+// Removed parallax effect for better scroll performance
