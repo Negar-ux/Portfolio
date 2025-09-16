@@ -352,15 +352,18 @@
 .timeline-location {
     color: #565656;
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .timeline-details p {
     color: #565656;
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    margin-top: 12px;
 }
 
 .project-highlight {
