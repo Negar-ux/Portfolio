@@ -10,11 +10,151 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="case-study.css">
+    <style>
+        /* Project details styling */
+        .project-details {
+            background-color: #E7E7E9;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-details .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .project-image-large {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .project-meta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .meta-item {
+            font-size: 14px;
+        }
+
+        .meta-label {
+            color: #a33468;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .meta-value {
+            color: #565656;
+            line-height: 1.4;
+        }
+
+        /* Before/After comparison styling */
+        .comparison-section {
+            margin: 3rem 0;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-item h4 {
+            color: #000000;
+            font-size: 20px;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .comparison-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .feedback-section h5 {
+            color: #a33468;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .opportunities-section h5 {
+            color: #0693e3;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .changes-section h5 {
+            color: #067bc2;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .accessibility-note {
+            color: #067bc2;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+
+        /* Research findings grid */
+        .research-findings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        /* Survey visuals */
+        .survey-visual {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .survey-visual img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .project-details .details-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .research-findings {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-meta-list {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#product-design">Product Design</a></li>
                 <li><a href="index.html#research">Design Thinking Research</a></li>
@@ -24,109 +164,299 @@
     </header>
 
     <main class="case-study">
-        <section class="case-study-hero">
-            <div class="hero-content">
+        <section class="case-study-hero-simple">
+            <div class="container">
                 <h1>Surgical Scheduling Dashboard</h1>
-                <p class="subtitle">How might we create a user-friendly dashboard for decision-makers in the surgical department?</p>
-                <div class="project-meta">
-                    <span class="meta-item"><strong>Role:</strong> Product Designer</span>
-                    <span class="meta-item"><strong>Duration:</strong> July 2021 - Present</span>
-                    <span class="meta-item"><strong>Team:</strong> Methodology (2), Development (2), Product (me)</span>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400/67e0ff/000000?text=Surgical+Dashboard" alt="Surgical Dashboard Interface" />
+                <p class="subtitle">A dashboard for optimizing surgery schedules and enhancing the process of information processing for surgical booking</p>
             </div>
         </section>
 
-        <section class="case-study-section">
-            <h2>The Challenge</h2>
-            <p>"There is a lack of communication and automation in the process of surgical scheduling among the main stakeholders" in the surgical department. The team wanted to create a graphical user interface for surgical scheduling planning tool for surgical team for one of the largest hospitals in North America.</p>
-            
-            <h2>Project Goals</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>Decision-Making Information</h3>
-                    <p>Provide decision-making information for hospital administrators and leadership.</p>
+        <!-- Project Details Section -->
+        <section class="project-details case-study-section">
+            <div class="details-grid">
+                <div class="project-image-container">
+                    <img src="https://negardeilami.com/wp-content/uploads/2022/11/people-sitting-resting-1394377-1024x682.jpg" alt="Healthcare professionals in meeting" class="project-image-large">
                 </div>
-                <div class="research-item">
-                    <h3>Easier Access</h3>
-                    <p>Enable easier access to critical information for all stakeholders.</p>
-                </div>
-                <div class="research-item">
-                    <h3>User-Friendly Interface</h3>
-                    <p>Create a user-friendly interface for users with varying data experience levels.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="case-study-section">
-            <h2>My Design Responsibilities</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>User Research & Ideation</h3>
-                    <p>Conducted user research and solution ideation to understand scheduling challenges and stakeholder needs.</p>
-                </div>
-                <div class="research-item">
-                    <h3>High-Fidelity Prototyping</h3>
-                    <p>Developed high-fidelity Figma prototype with accessibility guidelines and user-centered design principles.</p>
-                </div>
-                <div class="research-item">
-                    <h3>Web Implementation</h3>
-                    <p>Created web page for Orchid Analytics to showcase the dashboard solution.</p>
+                <div class="project-meta-list">
+                    <div class="meta-item">
+                        <span class="meta-label">Client</span>
+                        <span class="meta-value">ORCHID Analytics</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeframe</span>
+                        <span class="meta-value">17 months</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">My Role</span>
+                        <span class="meta-value">Sole UX Researcher (Contract)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Contribution</span>
+                        <span class="meta-value">Survey Design, Ideation, Lo-Fid Prototype and Usability Testing</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tools</span>
+                        <span class="meta-value">Figma, Miro, Notion, Pen & Paper</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Background Section -->
         <section class="case-study-section">
-            <h2>Key Deliverables</h2>
-            <div class="features-list">
-                <div class="feature">
-                    <h3>User Research Materials</h3>
-                    <p>User interview questions and surveys designed to understand stakeholder needs and pain points.</p>
-                </div>
-                <div class="feature">
-                    <h3>User Flow Design</h3>
-                    <p>User flows for both direct and indirect surgical planning stakeholders to map the entire process.</p>
-                </div>
-                <div class="feature">
-                    <h3>Design System</h3>
-                    <p>Basic design system with low-fidelity sketches progressing to high-fidelity prototypes.</p>
-                </div>
-                <div class="feature">
-                    <h3>Accessibility Focus</h3>
-                    <p>High-fidelity Figma prototype with accessibility guidelines for diverse user experience levels.</p>
-                </div>
-            </div>
-            
-            <h2>Project Scope</h2>
-            <p>The dashboard was focused on two key medical services: <strong>Urology</strong> and <strong>Orthopedics</strong>, allowing for targeted design solutions for these specific surgical departments.</p>
-            
-            <p><em>Note: Due to the confidential nature of this healthcare project, only an overview of the design process can be shared publicly.</em></p>
+            <h3>Background</h3>
+            <p>A client wanted to develop a demo of a graphical user interface (GUI) for a children's hospital in North America to enhance the process of information processing for surgical booking.</p>
+
+            <h3>Goals</h3>
+            <p>How to create an interface that translates the input and output of an existing optimization algorithm in a way that is easy to understand, analyze, and make decisions for optimized surgery cases.</p>
+
+            <h3>Outcome</h3>
+            <p>I created an interactive prototype of a Graphical User Interface (GUI) for surgical scheduling for one of the focus groups (Division Managers) for two services (Urology and Orthopaedic).</p>
         </section>
 
+        <!-- Research Section -->
         <section class="case-study-section">
-            <h2>Project Impact</h2>
-            <p>The project resulted in a comprehensive design solution for surgical scheduling, addressing critical communication and automation challenges in one of North America's largest hospitals.</p>
-            
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-number">2</span>
-                    <span class="metric-label">Medical services (Urology & Orthopedics)</span>
+            <h2>Research</h2>
+
+            <h4>Research Plan</h4>
+            <ul>
+                <li>Who are the primary users?</li>
+                <li>User Research</li>
+                <li>Survey Design</li>
+                <li>Design Recommendations</li>
+                <li>MockUps</li>
+                <li>Feedback</li>
+            </ul>
+
+            <h4>User Research</h4>
+            <p>The project started with surveying two user groups to get initial data from a GUI dashboard to determine needs/expectations.</p>
+
+            <div class="survey-visual">
+                <img src="https://negardeilami.com/wp-content/uploads/2024/02/image-1-882x1024.png" alt="Survey methodology diagram">
+            </div>
+
+            <div class="case-study-image">
+                <img src="https://negardeilami.com/wp-content/uploads/2024/02/image-3-1024x312.png" alt="Survey results visualization">
+            </div>
+
+            <div class="research-findings">
+                <div>
+                    <h5>Survey Objectives</h5>
+                    <ul>
+                        <li>Planning decisions</li>
+                        <li>What data information</li>
+                        <li>Tracking Metrics</li>
+                        <li>Thresholds and What data require immediate attention?</li>
+                    </ul>
                 </div>
-                <div class="metric">
-                    <span class="metric-number">5</span>
-                    <span class="metric-label">Team members across methodology, development, and design</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-number">Ongoing</span>
-                    <span class="metric-label">Project timeline (July 2021 - Present)</span>
+                <div>
+                    <h5>Key Findings</h5>
+                    <!-- Key findings content would go here -->
                 </div>
             </div>
+
+            <h5>User Flow</h5>
+            <p>Main Responsibilities:</p>
+            <ol>
+                <li>Allocating blocks for the division responsible.</li>
+                <li>Communicate with relevant members within and outside their department to plan and escalate processes.</li>
+                <li>When block assigning, consider multiple factors:
+                    <ul>
+                        <li>Examine external resources, equipment, and HR resources for planning.</li>
+                        <li>Check the status of post-op destinations to ensure the planning does not have a negative impact.</li>
+                        <li>Take into account the surgeon's availability.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Solution Concept Section -->
+        <section class="case-study-section">
+            <h2>Solution Concept</h2>
+            <ul>
+                <li>How might we make the dashboard accessible for most of the users?</li>
+                <li>How might we give users the option to select which metric points they want to track?</li>
+            </ul>
+
+            <h4>Task Models</h4>
+            <p>Identified two goals for the Division Managers to achieve on the platform:</p>
+            <ol>
+                <li>Monitor the next two weeks' schedule.</li>
+                <li>Play with the parameters for obtaining an optimized schedule for surgery cases.</li>
+            </ol>
+
+            <h4>Key Features of MVP</h4>
+            <p>However, due to limited time. Priority was given to features for higher-level decision planning because more data is needed for some of the features. Depending on the users but common features:</p>
+            <ul>
+                <li>Interactive views for advanced schedules for services and blocks</li>
+                <li>KPIs</li>
+                <li>Scenario Running</li>
+                <li>Share with others</li>
+            </ul>
+
+            <h4>Architecture</h4>
+            <ul>
+                <li>Home Page</li>
+                <li>Overview</li>
+                <li>Division Schedule</li>
+                <li>Surgeon Schedule</li>
+            </ul>
+        </section>
+
+        <!-- Initial Usability Testing Section -->
+        <section class="case-study-section">
+            <h2>Initial Usability Testing</h2>
+            <p>The following designs were already designed when I joined the team. Hence, I contributed to user testing on these designs. I also have added feedback through the accessibility lens.</p>
+
+            <h3>MVP Design</h3>
+
+            <!-- Home Page Comparison -->
+            <div class="comparison-section">
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Before</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-1-3-1024x578.png" alt="Home Page - Before">
+                        <p><strong>Home Page</strong></p>
+
+                        <div class="feedback-section">
+                            <h5>Feedback</h5>
+                            <p>Interface was not intuitive for first-time users and lacked clear navigation patterns.</p>
+                        </div>
+
+                        <div class="opportunities-section">
+                            <h5>Opportunities</h5>
+                            <p>Have most of the components on one page to have all the information on one page</p>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>After</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-8-1-1024x623.png" alt="Home Page - After">
+                        <p><strong>Home Page</strong></p>
+
+                        <div class="changes-section">
+                            <h5>Changes Made</h5>
+                            <p>Have most of the components on one page to have all the information on one page</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overview Comparison -->
+            <div class="comparison-section">
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Old - Overview</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-8-1024x623.png" alt="Overview - Before">
+
+                        <div class="feedback-section">
+                            <h5>Feedback</h5>
+                            <ul>
+                                <li>Not comprehensible in terms of the overwhelming amount of information</li>
+                            </ul>
+                        </div>
+
+                        <p class="accessibility-note">Accessibility</p>
+
+                        <div class="opportunities-section">
+                            <h5>Opportunities</h5>
+                            <p>Have most of the components on one page to have all the information on one page</p>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>New</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-8-1-1024x623.png" alt="Overview - After">
+                        <p><strong>New Version</strong></p>
+
+                        <div class="changes-section">
+                            <h5>Changes Made</h5>
+                            <p>Have most of the components on one page to have all the information on one page</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division Schedule Comparison -->
+            <div class="comparison-section">
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Old - Division Schedule</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-9-1024x576.png" alt="Division Schedule - Before">
+                        <p><strong>Overview</strong></p>
+
+                        <div class="feedback-section">
+                            <h4>Feedback</h4>
+                            <ul>
+                                <li>Schedules are usually set</li>
+                            </ul>
+                        </div>
+
+                        <div class="opportunities-section">
+                            <h4>Opportunities</h4>
+                            <ul>
+                                <li>Have the option to upload existing files into this software instead of inputting the information again</li>
+                                <li>Show surgeon waitlist</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>New</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-8-1-1024x623.png" alt="Division Schedule - After">
+                        <p><strong>New Version</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Surgeon Schedule Comparison -->
+            <div class="comparison-section">
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Old - Surgeon Schedule</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-10-2-1024x576.png" alt="Surgeon Schedule - Before">
+                        <p><strong>Overview</strong></p>
+
+                        <div class="opportunities-section">
+                            <h5>Opportunities</h5>
+                            <ul>
+                                <li>The button cannot overlap the content</li>
+                                <li>There is no text next to it, not very clear what the intention of the button is</li>
+                            </ul>
+                        </div>
+
+                        <p class="accessibility-note">Accessibility</p>
+                        <p>Change the design in a way that the changes to schedules can be visibly seen on the same page.</p>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h4>New</h4>
+                        <img src="https://negardeilami.com/wp-content/uploads/2023/08/mockup-8-1-1024x623.png" alt="Surgeon Schedule - After">
+                        <p><strong>New Version</strong></p>
+
+                        <div class="changes-section">
+                            <h5>Changes Made</h5>
+                            <p>Have most of the components on one page to have all the information on one page</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Impact Section -->
+        <section class="case-study-section">
+            <h3>Work Impact</h3>
+            <p>Our work allowed:</p>
+            <ul>
+                <li>The surgical team leaders understand the needs and challenges of the booking admins from our interactive meetings.</li>
+                <li>The key features of GUI that could be useful for the users and what they need to see.</li>
+                <li>It is easier for the development team to implement the prototypes into an MVP.</li>
+                <li>More confidence in decisions is needed for MVP.</li>
+            </ul>
         </section>
 
         <section class="case-study-nav">
-            <a href="design-workshops.html" class="nav-button">← Previous Project</a>
+            <a href="hospital-discharge.html" class="nav-button">← Previous Project</a>
             <a href="index.html" class="nav-button">Back to Portfolio</a>
         </section>
     </main>
@@ -137,5 +467,37 @@
             <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        // Mobile hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                const navLinks = document.querySelectorAll('#nav-menu a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
