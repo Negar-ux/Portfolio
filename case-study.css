@@ -667,7 +667,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -702,6 +702,6 @@
         right: 20px;
         width: 45px;
         height: 45px;
-        font-size: 16px;
+        font-size: 20px;
     }
 }
