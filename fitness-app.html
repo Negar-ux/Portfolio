@@ -53,6 +53,25 @@
             font-size: 18px;
         }
 
+        /* App store badges mobile responsiveness */
+        @media (max-width: 480px) {
+            .target-groups li {
+                font-size: 16px;
+            }
+
+            /* Stack app store badges vertically on very small screens */
+            div[style*="display: flex; justify-content: center; gap: 1rem"] {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+            }
+
+            div[style*="display: flex; justify-content: center; gap: 1rem"] img {
+                width: 120px !important;
+                height: auto !important;
+            }
+        }
+
         mark {
             background-color: #e6f9ff;
             padding: 0.2rem 0.4rem;

@@ -1115,6 +1115,17 @@ body {
         font-size: 2.5rem;
     }
 
+    .journey-hero .hero-image::before {
+        width: 300px;
+        height: 340px;
+    }
+
+    .journey-hero .hero-image img {
+        width: 250px;
+        height: 300px;
+        border-radius: 125px 125px 25px 25px;
+    }
+
     .journey-stats {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -1232,6 +1243,17 @@ body {
 
     .journey-hero p {
         font-size: 1rem;
+    }
+
+    .journey-hero .hero-image::before {
+        width: 220px;
+        height: 260px;
+    }
+
+    .journey-hero .hero-image img {
+        width: 180px;
+        height: 220px;
+        border-radius: 90px 90px 20px 20px;
     }
 
     .timeline-item {
