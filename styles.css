@@ -583,6 +583,7 @@ footer {
     width: 280px;
     height: 320px;
     border-radius: 140px 140px 25px 25px;
+    content-visibility: auto;
     object-fit: cover;
     object-position: center top;
     border: 6px solid #ffffff;

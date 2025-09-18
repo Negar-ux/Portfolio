@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="preload" href="assets/images/profile-hero.jpg" as="image">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -35,7 +37,10 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="profile-image">
-                        <img src="assets/images/profile-hero.jpg" alt="Negar Deilami Profile" />
+                        <picture>
+                            <source srcset="assets/images/profile-hero.webp" type="image/webp">
+                            <img src="assets/images/profile-hero.jpg" alt="Negar Deilami Profile" />
+                        </picture>
                     </div>
                     <div class="hero-text">
                         <div class="accent-line"></div>
