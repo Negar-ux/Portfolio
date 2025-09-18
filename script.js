@@ -1,5 +1,23 @@
-// Smooth scrolling for navigation links
+// Force image loading
 document.addEventListener('DOMContentLoaded', function() {
+    // Force immediate loading of critical images
+    const criticalImages = document.querySelectorAll('img[loading="eager"]');
+    criticalImages.forEach(img => {
+        if (!img.complete) {
+            img.loading = 'eager';
+            img.setAttribute('loading', 'eager');
+        }
+    });
+
+    // Ensure profile image loads immediately
+    const profileImg = document.querySelector('.profile-image img');
+    if (profileImg && !profileImg.complete) {
+        const newImg = new Image();
+        newImg.onload = function() {
+            profileImg.src = this.src;
+        };
+        newImg.src = profileImg.src;
+    }
     // Mobile hamburger menu functionality
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
