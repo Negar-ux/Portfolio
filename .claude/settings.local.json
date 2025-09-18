@@ -19,7 +19,18 @@
       "Bash(gh api:*)",
       "Read(//c/Users/negar/Downloads/**)",
       "Bash(mkdir:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(dir:*)",
+      "Bash(powershell:*)",
+      "Bash(where magick)",
+      "Bash(where:*)",
+      "Bash(winget search:*)",
+      "Bash(winget install:*)",
+      "Bash(cwebp:*)",
+      "WebFetch(domain:convertio.co)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "WebFetch(domain:negar-ux.github.io)"
     ],
     "deny": [],
     "ask": []
