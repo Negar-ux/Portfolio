@@ -4,102 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness App for People with Different Abilities - Negar Deilami</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="case-study.css">
+    <style>
+        /* Responsive styles for grids */
+        @media (max-width: 768px) {
+            .exercise-grid,
+            .prototype-grid,
+            .dashboard-iterations,
+            .class-detail-iterations,
+            .split-screen-iterations,
+            div[style*="grid-template-columns: repeat(4, 1fr)"],
+            div[style*="grid-template-columns: repeat(3, 1fr)"],
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+
+        .case-study-quote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #67e0ff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .case-study-quote p {
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .case-study-quote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .target-groups {
+            list-style: none;
+            padding: 0;
+        }
+
+        .target-groups li {
+            padding: 0.5rem 0;
+            font-size: 18px;
+        }
+
+        mark {
+            background-color: #e6f9ff;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Consistent gray section backgrounds */
+        .prototype-sections,
+        .dashboard-iterations,
+        .class-detail-iterations,
+        .split-screen-iterations {
+            background-color: #E7E7E9 !important;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Remove shadows from screenshots inside gray sections */
+        .prototype-sections .case-study-image img,
+        .dashboard-iterations .case-study-image img,
+        .class-detail-iterations .case-study-image img,
+        .split-screen-iterations .case-study-image img {
+            box-shadow: none;
+        }
+
+        /* Improved spacing for headers and sections */
+        h3 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h4 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Spacing for sections after gray backgrounds */
+        .prototype-sections + h4,
+        .dashboard-iterations + h3,
+        .dashboard-iterations + h4,
+        .class-detail-iterations + h4,
+        .split-screen-iterations + p,
+        .split-screen-iterations + h4 {
+            margin-top: 3rem;
+        }
+
+        /* Consistent spacing for figures and captions */
+        .case-study-image {
+            margin: 1.5rem 0;
+        }
+
+        figcaption {
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Remove background from laptop mockup image */
+        img[src*="macbook-pro-16-inch-front-view-mockup"] {
+            background: transparent !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="assets/resume/Negar_Deilami_Resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="index.html#product-design">Product Design</a></li>
+                <li><a href="index.html#research">Design Thinking Research</a></li>
+                <li><a href="my-journey.html">My Journey</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="case-study">
-        <section class="case-study-hero">
-            <div class="hero-content">
+        <section class="case-study-hero-simple">
+            <div class="container">
                 <h1>Fitness App for People with Different Abilities</h1>
-                <p class="subtitle">How might we bring a space for people with and without disability to exercise together?</p>
-                <div class="project-meta">
-                    <span class="meta-item"><strong>Role:</strong> UX Designer & Researcher</span>
-                    <span class="meta-item"><strong>Duration:</strong> Academic Project</span>
-                    <span class="meta-item"><strong>Focus:</strong> Inclusive Design & Accessibility</span>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400/67e0ff/000000?text=Fitness+App+Mockup" alt="Fitness App Interface" />
+                <p class="subtitle">An inclusive fitness app for individuals with different disabilities and creating a space for content creators to create and share accessible exercise classes.</p>
             </div>
         </section>
 
+        <!-- Main content image -->
         <section class="case-study-section">
-            <h2>The Challenge</h2>
-            <p>How might we bring a space for people with and without disability to exercise together? This project explores creating an inclusive fitness application that accommodates users with various physical capabilities and accessibility needs, fostering a community where everyone can participate in fitness activities regardless of their abilities.</p>
+            <figure class="case-study-image">
+                <img src="https://negardeilami.com/wp-content/uploads/2024/06/artboard-12-66710ba4cd449e4817c81b5d-@2x.webp" alt="Fitness App Overview" />
+            </figure>
         </section>
 
         <section class="case-study-section">
-            <h2>Design Approach</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>Inclusive Design Principles</h3>
-                    <p>Applied inclusive design methodologies to ensure the app works for users with diverse abilities and needs.</p>
-                </div>
-                <div class="research-item">
-                    <h3>Accessibility Research</h3>
-                    <p>Researched accessibility barriers in existing fitness applications and identified opportunities for inclusive design.</p>
-                </div>
-                <div class="research-item">
-                    <h3>Community Focus</h3>
-                    <p>Designed features that bring people with and without disabilities together in shared fitness experiences.</p>
-                </div>
-            </div>
-        </section>
+            <h2>Overview</h2>
+            <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society (SSS)</a> is an early-stage startup that creates an inclusive fitness app for individuals with different disabilities and creating a space for content creators to create and share accessible exercise classes. I joined SSS in Fall 2023 after I got introduced to their CEO through the CEO of a former startup I worked with, Orchid Analytics!</p>
 
-        <section class="case-study-section">
-            <h2>Key Features</h2>
-            <div class="features-list">
-                <div class="feature">
-                    <h3>Adaptive Workout Plans</h3>
-                    <p>Customizable exercises that adjust based on user's physical capabilities and equipment availability.</p>
-                </div>
-                <div class="feature">
-                    <h3>Voice-Guided Instructions</h3>
-                    <p>Audio descriptions of exercises for users with visual impairments or those who prefer auditory guidance.</p>
-                </div>
-                <div class="feature">
-                    <h3>Flexible Interface</h3>
-                    <p>High contrast modes, large touch targets, and alternative navigation methods for diverse interaction needs.</p>
-                </div>
-                <div class="feature">
-                    <h3>Progress Tracking</h3>
-                    <p>Inclusive metrics that focus on personal improvement rather than standardized benchmarks.</p>
+            <p>As the lead designer, I worked with the CTO, the content generation team, and the development team to design and deliver the Minimum Viable Product (MVP) for the app, which <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched in Summer 2025</a>. 🚀</p>
+
+            <p>At SSS, I am in charge of creating the high-fidelity designs, and user research and testing. I also created the component library forming the SSS design system, which we use as a guideline for prototyping and app development.</p>
+
+            <div class="prototype-sections" style="padding: 1.5rem 2rem;">
+                <h3 style="margin: 0 0 1rem 0; text-align: center;">🎯 The Challenge</h3>
+                <p style="font-size: 18px; text-align: center; margin: 0 0 2rem 0;">Transform an early-stage startup idea into a comprehensive, implementable mobile app design that enables people with disabilities to workout together accessibly.</p>
+
+                <h3 style="text-align: center; margin: 1.5rem 0 1rem 0;">🚀 The Result</h3>
+                <p style="font-size: 18px; text-align: center; font-weight: 500; margin: 0 0 1.5rem 0;">An <mark>accessible fitness app</mark> that allows people with different disabilities to exercise together, with features designed for <mark>developer implementation</mark> and WCAG compliance</p>
+
+                <div style="text-align: center;">
+                    <p style="font-size: 14px; color: #666; margin: 0 0 0.5rem 0;">✅ <strong>Successfully launched on both platforms</strong></p>
+                    <div style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
+                        <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank" style="display: block;">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px; width: auto;">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.sekondskin&hl=en" target="_blank" style="display: block;">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height: 58px; width: auto;">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="case-study-section">
-            <h2>Solution & Impact</h2>
-            <p>The final design resulted in a 40% increase in user engagement among individuals with disabilities compared to traditional fitness apps. The inclusive design principles also improved usability for all users, demonstrating the universal benefits of accessible design.</p>
-            
-            <div class="impact-metrics">
-                <div class="metric">
-                    <span class="metric-number">40%</span>
-                    <span class="metric-label">Increase in engagement</span>
+        <!-- Project details section -->
+        <section class="case-study-section project-details">
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4><strong>My Role:</strong></h4>
+                    <p>Lead Product Designer</p>
                 </div>
-                <div class="metric">
-                    <span class="metric-number">95%</span>
-                    <span class="metric-label">User satisfaction rate</span>
+                <div class="detail-item">
+                    <h4><strong>Teammates:</strong></h4>
+                    <p>Product Owner<br>4 Developers<br>Content team<br>CTO</p>
                 </div>
-                <div class="metric">
-                    <span class="metric-number">25</span>
-                    <span class="metric-label">User interviews conducted</span>
+                <div class="detail-item">
+                    <h4><strong>Duration:</strong></h4>
+                    <p>Ongoing<br>Since Fall 2023</p>
                 </div>
             </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>1. Initial Research</h2>
+            <p>When I joined the team, I asked to review the research that had been done before me. The team's research analyst had previously conducted an initial survey and market research, including competitive analysis.</p>
+
+            <p>Here are a few quotes that stood out to me from their initial survey:</p>
+
+            <blockquote class="case-study-quote">
+                <p>"I need to see options for modifications of some movements that I can't do due to joint pain."</p>
+                <p>"Need to use an app with my husband who uses a wheelchair"</p>
+                <p>"Being able to control the volume of the background music without dimming/increasing the instructor's voice."</p>
+            </blockquote>
+
+            <h3>1.1. Target Groups</h3>
+            <p>Based on the team's research, we decided that at the very least, the app should meet the needs of these three target groups:</p>
+
+            <ul class="target-groups">
+                <li>🦻 Deaf/Hard of Hearing</li>
+                <li>👁️ Low Vision/Blind</li>
+                <li>♿ Low Mobility</li>
+            </ul>
+
+            <h3>1.2. Impact Features</h3>
+            <p>We set out to design a fitness app with these impactful features:</p>
+
+            <ul>
+                <li>🏃 Accommodating the various needs of the target groups by providing adaptive exercise class—with all classes provided in both English and American Sign Language (ASL).</li>
+                <li>👥 Including a "split screen" feature—for when two people with different abilities want to exercise together.</li>
+                <li>🔊 Customizable audio settings for the music and instructor audio tracks.</li>
+            </ul>
+
+            <h3>Key User Insights</h3>
+            <div class="prototype-sections">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+                    <div>
+                        <h4>🎯 Instructor Preference</h4>
+                        <blockquote class="case-study-quote" style="margin: 0; background: #fff; border: 2px solid #67e0ff;">
+                            <p style="font-size: 14px;">"I prefer instructors who share my experiences or needs"</p>
+                        </blockquote>
+                        <p style="font-size: 14px; margin-top: 0.5rem;"><strong>Impact:</strong> Integrated instructor profiles into dashboard</p>
+                    </div>
+                    <div>
+                        <h4>⚡ Class Planning</h4>
+                        <blockquote class="case-study-quote" style="margin: 0; background: #fff; border: 2px solid #67e0ff;">
+                            <p style="font-size: 14px;">"I need breakdown of warm-up, workout, and cool-down times"</p>
+                        </blockquote>
+                        <p style="font-size: 14px; margin-top: 0.5rem;"><strong>Impact:</strong> Added detailed class structure breakdown</p>
+                    </div>
+                    <div>
+                        <h4>🔊 Audio Control</h4>
+                        <blockquote class="case-study-quote" style="margin: 0; background: #fff; border: 2px solid #67e0ff;">
+                            <p style="font-size: 14px;">"Control music volume without affecting instructor's voice"</p>
+                        </blockquote>
+                        <p style="font-size: 14px; margin-top: 0.5rem;"><strong>Impact:</strong> Separate audio track controls</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>2. Conceptualization</h2>
+            <h3>Fast Prototyping & user interviews</h3>
+            <p>In the beginning of the process, I started creating the information architecture and low-fidelity concepts for the primary use cases. I also conducted usability tests with the lo-fi mockups. Once we had confidence in the designs, I began digitalizing them.</p>
+
+            <h3>Key Accessibility Features</h3>
+            <div class="prototype-sections">
+                <div class="prototype-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/3.-class_details.webp" alt="Audio Setting" />
+                        <figcaption><strong>Customizable Audio Controls</strong><br>Separate volume controls for instructor voice and background music</figcaption>
+                    </figure>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/5.-class_details.webp" alt="Split screen feature" />
+                        <figcaption><strong>Split Screen</strong><br>Two people with different abilities can exercise together</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>3. Design</h2>
+
+            <h3>3.1. Accessibility</h3>
+            <p>Throughout the iterations, I ensured that the MVP designs met stringent accessibility guidelines, including certain color contrast criteria, font sizes, and actionable components such as buttons, tabs, and fields, through continuous feedback from accessibility experts.</p>
+
+            <h3>3.2. Iterations of Dashboard</h3>
+            <p>The dashboard's purpose was to organize a list of available classes into categories. I tested it with several users to ensure that the browsing and filtering classes experience was easy to understand and follow.</p>
+
+            <p>User testing revealed that people prefer to select exercise classes led by instructors who share their experiences or needs (e.g., wheelchair accessibility). To cater to this, a list of instructors has been integrated into the dashboard, allowing users to explore classes and instructors in one place.</p>
+
+            <div class="dashboard-iterations" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0; padding: 2rem; background-color: #E7E7E9; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h4>Before</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/1.-homepage.webp" alt="Dashboard" />
+                        <figcaption>Dashboard</figcaption>
+                    </figure>
+                </div>
+                <div style="text-align: center;">
+                    <h4>After - P1</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/image-layer-3.webp" alt="Dashboard - Classes" />
+                        <figcaption>Dashboard - Classes</figcaption>
+                    </figure>
+                </div>
+                <div style="text-align: center;">
+                    <h4>After - P2</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/image-layer-2.webp" alt="Dashboard - Instructors" />
+                        <figcaption>Dashboard - Instructors</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <h3>3.3. Iterations of Class Detail</h3>
+            <p>A large portion of the time spent in this project was focused on designing and iterating the class details. I have included here a number of the iterations along the way.</p>
+
+            <div class="class-detail-iterations" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; padding: 2rem; background-color: #E7E7E9; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h4>Before</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/07/3_1_class_detail.webp" alt="Class detail before" />
+                    </figure>
+                </div>
+                <div style="text-align: center;">
+                    <h4>After</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/06/Class-Details-1-screen-Member.png" alt="Class detail after" />
+                    </figure>
+                </div>
+            </div>
+
+            <h4>3.3.a. Change: Class Description</h4>
+            <p>Users indicated that they needed more information for class descriptions. For instance, they liked to know the intensity of the classes and a breakdown of the class content. The breakdown would help them plan their warm-up and cool-down and equipment preprations accordingly.</p>
+
+            <blockquote class="case-study-quote">
+                <p>"I would like to see clear details in the class description about how much time I need to spend on warm-up, the main workout, and cool-down."</p>
+            </blockquote>
+
+            <div class="prototype-sections">
+                <figure class="case-study-image">
+                    <img src="https://negardeilami.com/wp-content/uploads/2024/07/frame_387_2x.webp" alt="Class description iterations" />
+                    <figcaption>The new design (on the right) includes added components for intensity level, category, and class breakdown.</figcaption>
+                </figure>
+            </div>
+
+            <h4>3.3.b. Change: Terminology</h4>
+            <p>Based on feedback from the content team, the terminology for intensity levels—previously labelled as <em>beginner</em>, <em>intermediate</em>, and <em>difficult</em>—has been replaced with icons and the designations <em>level 1</em>, <em>level 2</em>, and <em>level 3</em> to make the vocabulary less imposing.</p>
+
+            <p>The class version terminology was updated and standardized. A separate section for <em>languages</em> was also introduced. Previously, American Sign Language (ASL) classes were grouped under class versions as well which had given rise to potentially conflicting options.</p>
+
+            <div class="prototype-sections">
+                <figure class="case-study-image">
+                    <img src="https://negardeilami.com/wp-content/uploads/2024/07/frame_388.webp" alt="Terminology updates" />
+                    <figcaption>The new design shown on the right demonstrates the revised terminology for class versions and introduces a new category for language classifications.</figcaption>
+                </figure>
+            </div>
+
+            <h3>3.4. Iterations of Split Screens</h3>
+            <p>A key feature of the app is its ability to display various adaptations of the same class. For instance, it enables a person with low vision to simultaneously participate in the same exercise as someone with limited lower body mobility.</p>
+
+            <div class="split-screen-iterations" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; padding: 2rem; background-color: #E7E7E9; border-radius: 8px;">
+                <div style="text-align: center;">
+                    <h4>Before</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/07/frame_386-1.webp" alt="Split screen before" />
+                    </figure>
+                </div>
+                <div style="text-align: center;">
+                    <h4>After</h4>
+                    <figure class="case-study-image">
+                        <img src="https://negardeilami.com/wp-content/uploads/2024/07/frame_392.webp" alt="Split screen after" />
+                    </figure>
+                </div>
+            </div>
+            <p style="text-align: center; font-style: italic;">The image shows the initial iteration and MVP version showing class details on split screens, showcasing two versions.</p>
+
+            <h4>3.4.a. Change: Audio Setting</h4>
+            <p>The design outlined below is for the audio settings that enables users to select their preferred audio track and customize the volume of both the instructor and the music. Previously, I had opted for sliders to control the audio. However, in the following iterations, in order to ensure ease of use for individuals with limited motor skills and low vision, I instead incorporated plus (+) and minus (-) tab buttons in the UI.</p>
+
+            <div class="prototype-sections">
+                <figure class="case-study-image">
+                    <img src="https://negardeilami.com/wp-content/uploads/2024/07/frame_389.webp" alt="Audio settings iterations" />
+                    <figcaption>These are the iterations of the audio settings, with the most recent version displayed on the right.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>4. Web Tool for Admins</h2>
+            <p>I have also led the design of web administration panels. This involved extensive discussions with the content team, developers, and technology leaders to achieve alignment. Further details on the work I have accomplished will be provided soon.</p>
+
+            <ul>
+                <li>Use Cases/Workflow</li>
+                <li>User Testing</li>
+                <li>Wireframes</li>
+            </ul>
+
+            <p>The image represents a snapshot of the admin panel, which enables the administrator to manage class and instructor information, media files, users, and content tags.</p>
+
+            <figure class="case-study-image">
+                <img src="https://negardeilami.com/wp-content/uploads/2024/07/macbook-pro-16-inch-front-view-mockup-668c348f4ec3a71f6cc7bea7.webp" alt="Admin panel interface" />
+                <figcaption>List of classes and their class versions</figcaption>
+            </figure>
+        </section>
+
+        <section class="case-study-section">
+            <h2>5. Learning Experience</h2>
+            <p>Through the process of this project, I have gained valuable experience in designing properly with Agile development teams. I learned how to effectively include the developers in the design process from the beginning and robustly share the Figma designs with them along the way, and incorporating their input regarding the fast and light implementations of the design.</p>
+
+            <p>In one instance for example, I had designed a page that would have been computationally taxing to run. And based on their feedback, I went back and re-made some portions to make it lighter. This further demonstrated to me the importance of seeking feedback from the developers multiple sprints before the implementation time.</p>
         </section>
 
         <section class="case-study-nav">
