@@ -102,6 +102,35 @@ nav a:hover {
     background-color: rgba(103, 224, 255, 0.1);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* External link styling */
 nav a[target="_blank"] {
     background-color: #000000;
@@ -276,6 +305,14 @@ main {
 
 .surgical-dashboard .project-accent {
     background-color: #a883bd;
+}
+
+.workshop-project .project-accent {
+    background-color: #0693e3;
+}
+
+.research-project .project-accent {
+    background-color: #a33468;
 }
 
 .project-card h3 {
@@ -584,22 +621,60 @@ footer {
     .container {
         padding: 0 1.5rem;
     }
-    
+
     h1 {
         font-size: 32px;
     }
-    
+
     h2 {
         font-size: 28px;
     }
-    
+
     p {
         font-size: 18px;
     }
-    
+
     .hero {
         padding: 4rem 0;
         min-height: 60vh;
+    }
+
+    /* Mobile Navigation */
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        padding: 1rem;
+        display: block;
+        width: 100%;
     }
     
     .hero p {
@@ -627,12 +702,14 @@ footer {
     .profile-image::before {
         width: 240px;
         height: 260px;
+        z-index: -1;
     }
 
     .profile-image img {
         width: 200px;
         height: 220px;
         border-radius: 100px 100px 20px 20px;
+        z-index: 0;
     }
 
     .project-card {

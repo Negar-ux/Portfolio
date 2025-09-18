@@ -199,10 +199,12 @@
 
 .case-study-section ul {
     margin-bottom: 1rem;
+    padding-left: 2rem;
 }
 
 .case-study-section ol {
     margin-bottom: 1rem;
+    padding-left: 2rem;
 }
 
 /* Override any inherited styles */
