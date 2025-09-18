@@ -1,7 +1,7 @@
 /* Case Study Specific Styles */
 
 .case-study {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .case-study-section {
@@ -60,7 +60,7 @@
 
 .case-study-hero-simple {
     background-color: #ffffff;
-    padding: 3rem 0 0.5rem;
+    padding: 2rem 0 0.5rem;
     text-align: center;
 }
 
@@ -651,6 +651,57 @@
     
     .research-item p,
     .feature p {
+        font-size: 16px;
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: #67e0ff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.scroll-to-top::before {
+    content: '↑';
+    font-weight: bold;
+}
+
+/* Mobile specific styling for scroll-to-top */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
         font-size: 16px;
     }
 }

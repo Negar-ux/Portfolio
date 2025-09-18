@@ -461,6 +461,9 @@
         </section>
     </main>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
+
     <footer>
         <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
         <div class="social-links">
@@ -495,6 +498,28 @@
                         hamburger.classList.remove('active');
                         navMenu.classList.remove('active');
                     }
+                });
+            }
+
+            // Scroll to top functionality
+            const scrollToTopButton = document.getElementById('scrollToTop');
+
+            if (scrollToTopButton) {
+                // Show/hide button based on scroll position
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        scrollToTopButton.classList.add('visible');
+                    } else {
+                        scrollToTopButton.classList.remove('visible');
+                    }
+                });
+
+                // Scroll to top when button is clicked
+                scrollToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             }
         });
