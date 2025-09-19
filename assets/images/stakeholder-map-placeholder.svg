@@ -1,0 +1,13 @@
+<svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="350" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="250" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">
+    Stakeholder Map
+  </text>
+  <text x="250" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Hospital discharge journey participants
+  </text>
+  <circle cx="250" cy="240" r="60" fill="#e9ecef" stroke="#adb5bd"/>
+  <text x="250" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    Stakeholders
+  </text>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="300" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">
+    Patient &amp; Family Quotes
+  </text>
+  <text x="300" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Communication gap insights from interviews
+  </text>
+  <rect x="50" y="190" width="500" height="80" fill="#e9ecef" stroke="#adb5bd"/>
+  <text x="300" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    [Patient and family member interview quotes]
+  </text>
+</svg>

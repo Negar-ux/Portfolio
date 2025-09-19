@@ -31,7 +31,9 @@
       "Bash(git pull:*)",
       "Bash(git stash:*)",
       "WebFetch(domain:negar-ux.github.io)",
-      "Bash(start index.html)"
+      "Bash(start index.html)",
+      "Bash(start hospital-discharge.html)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []
