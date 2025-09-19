@@ -95,11 +95,20 @@ nav a {
     transition: all 0.3s ease;
     position: relative;
     background-color: transparent;
+    border: 2px solid transparent;
 }
 
 nav a:hover {
     color: #67e0ff;
     background-color: rgba(103, 224, 255, 0.1);
+    border-color: rgba(103, 224, 255, 0.3);
+}
+
+nav a.active {
+    color: #67e0ff;
+    background-color: rgba(103, 224, 255, 0.1);
+    border-color: #67e0ff;
+    font-weight: 500;
 }
 
 /* Hamburger Menu */
@@ -572,6 +581,80 @@ footer {
     box-shadow: 0 0 0 2px #ffffff;
 }
 
+/* Contact Section */
+.contact-section {
+    background-color: #f8f9fa;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-text h2 {
+    font-size: 36px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.contact-text p {
+    font-size: 18px;
+    color: #565656;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    min-width: 120px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.linkedin-btn {
+    background-color: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.linkedin-btn:hover {
+    background-color: #005885;
+    border-color: #005885;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
+}
+
+.resume-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.resume-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsive design */
 .profile-image {
     flex-shrink: 0;
@@ -773,6 +856,30 @@ footer {
 
     .separator {
         width: 60px;
+    }
+
+    /* Contact Section Mobile */
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+
+    .contact-text h2 {
+        font-size: 28px;
+    }
+
+    .contact-text p {
+        font-size: 16px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-btn {
+        width: 100%;
+        max-width: 200px;
     }
     
     .projects-grid {

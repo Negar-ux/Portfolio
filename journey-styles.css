@@ -287,20 +287,30 @@ body {
 
 /* Section Divider - using global styles from styles.css */
 
-/* Page Navigation - Vertical Progress Design */
+/* Page Navigation - Fixed Sticky Progress Design */
 .page-navigation {
-    margin-top: 3rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 280px;
 }
 
 .nav-title {
-    font-size: 1.1rem;
+    font-size: 0.875rem;
     color: #565656;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .nav-items {
@@ -326,10 +336,12 @@ body {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    padding: 12px 0;
+    padding: 8px 0;
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
+    border-radius: 6px;
+    margin: 2px 0;
 }
 
 .nav-item:hover {
