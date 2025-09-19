@@ -111,6 +111,30 @@ nav a.active {
     font-weight: 500;
 }
 
+/* Contact Navigation Styling */
+nav a.contact-nav {
+    background-color: #000000;
+    color: #fff845;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid #333333;
+}
+
+nav a.contact-nav:hover {
+    background-color: #1a1a1a;
+    color: #ffff66;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 248, 69, 0.3);
+}
+
+nav a.contact-nav.active {
+    background-color: #000000;
+    color: #fff845;
+    border: 1px solid #fff845;
+    font-weight: 500;
+}
+
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -912,6 +936,20 @@ footer {
     nav ul li a.active {
         background-color: rgba(103, 224, 255, 0.1);
         color: #67e0ff;
+    }
+
+    /* Mobile Contact Navigation */
+    nav ul li a.contact-nav {
+        background-color: #000000;
+        color: #fff845;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        margin: 0.25rem 0;
+    }
+
+    nav ul li a.contact-nav:hover {
+        background-color: #1a1a1a;
+        color: #ffff66;
     }
     
     .hero p {
