@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add timeline hover effects
     addTimelineEffects();
+
+    // Initialize page navigation tracking
+    initPageNavigation();
 });
 
 // Counter Animation
@@ -175,3 +178,65 @@ function throttle(func, limit) {
 }
 
 // Removed parallax effect for better scroll performance
+
+// Page Navigation Progress Tracking
+function initPageNavigation() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section[id]');
+
+    if (!navItems.length || !sections.length) return;
+
+    // Smooth scrolling for navigation links
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Track scroll position and highlight current section
+    function updateActiveSection() {
+        const scrollPos = window.scrollY + 100; // Offset for header
+
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        // Update active navigation item
+        navItems.forEach(item => {
+            const itemSection = item.getAttribute('data-section');
+            if (itemSection === currentSection) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // Listen for scroll events with throttling
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(updateActiveSection, 10);
+    });
+
+    // Initial check
+    updateActiveSection();
+}
