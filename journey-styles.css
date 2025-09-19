@@ -291,7 +291,7 @@ body {
 .page-navigation {
     position: fixed;
     top: 50%;
-    right: 2rem;
+    left: 2rem;
     transform: translateY(-50%);
     z-index: 100;
     background: rgba(255, 255, 255, 0.95);
@@ -1256,34 +1256,6 @@ body {
         padding: 2rem 0;
     }
 
-    /* Page Navigation Mobile */
-    .page-navigation {
-        max-width: 100%;
-        margin-top: 2rem;
-    }
-
-    .nav-items::before {
-        left: 8px;
-    }
-
-    .nav-indicator {
-        width: 16px;
-        height: 16px;
-        margin-right: 12px;
-    }
-
-    .nav-content {
-        gap: 8px;
-    }
-
-    .nav-number {
-        font-size: 0.8rem;
-        min-width: 20px;
-    }
-
-    .nav-label {
-        font-size: 0.875rem;
-    }
 
     .journey-hero-content {
         grid-template-columns: 1fr;
