@@ -55,7 +55,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="overview" class="case-study-section">
             <h2>Overview</h2>
             <p>The Inclusive innovation workshops were inspired by my work as a research assistant working on inclusive learning through equity-based design approaches in engineering education research.</p>
 
@@ -91,7 +91,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="deliverables" class="case-study-section">
             <h2>1. Workshop Deliverables</h2>
 
             <h3>1.1. Workshop 1: Inclusive Design Workshop</h3>
@@ -132,7 +132,7 @@
 
         </section>
 
-        <section class="case-study-section">
+        <section id="follow-up" class="case-study-section">
             <h3>1.2. Virtual Follow-Up Workshop: Cultivating Trust and Creative Confidence</h3>
             <p>The workshop drew inspiration from Erin A. Cech's 2013 <a href="https://link.springer.com/chapter/10.1007/978-94-007-6350-0_4">research paper</a>, which explores the impact of engineering values on engineering culture and the diminishing engagement of students with social concepts throughout their engineering education.</p>
 
@@ -170,7 +170,7 @@
             <p>The workshop ended by asking students to think about value conflicts when they are in the space between students and instructors, such as in difficult/complex conversations related to ambiguity.</p>
         </section>
 
-        <section class="case-study-section">
+        <section id="feedback" class="case-study-section">
             <h2>2. Feedback & Outcome</h2>
             <ul>
                 <li>55 students participated</li>
@@ -178,7 +178,7 @@
             </ul>
         </section>
 
-        <section class="case-study-section">
+        <section id="next-steps" class="case-study-section">
             <h2>3. Next Steps</h2>
 
             <h3>3.1. Gather Feedback</h3>
@@ -194,6 +194,48 @@
         </section>
     </main>
 
+    <!-- Sticky Page Navigation -->
+    <div class="page-navigation">
+        <div class="nav-title">Case Study Sections</div>
+        <div class="nav-items">
+            <a href="#overview" class="nav-item" data-section="overview">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">01</span>
+                    <span class="nav-label">Overview</span>
+                </div>
+            </a>
+            <a href="#deliverables" class="nav-item" data-section="deliverables">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">02</span>
+                    <span class="nav-label">Deliverables</span>
+                </div>
+            </a>
+            <a href="#follow-up" class="nav-item" data-section="follow-up">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">03</span>
+                    <span class="nav-label">Follow-Up</span>
+                </div>
+            </a>
+            <a href="#feedback" class="nav-item" data-section="feedback">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">04</span>
+                    <span class="nav-label">Feedback</span>
+                </div>
+            </a>
+            <a href="#next-steps" class="nav-item" data-section="next-steps">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">05</span>
+                    <span class="nav-label">Next Steps</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
 
@@ -205,35 +247,7 @@
     </footer>
 
     <script>
-        // Mobile hamburger menu functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on a link
-                const navLinks = document.querySelectorAll('#nav-menu a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
             // Scroll to top functionality
             const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -256,6 +270,72 @@
                 });
             }
         });
+
+        // Initialize page navigation tracking
+        initPageNavigation();
+    });
+
+    // Page Navigation Progress Tracking
+    function initPageNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section[id]');
+
+        if (!navItems.length || !sections.length) return;
+
+        // Smooth scrolling for navigation links
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll position and highlight current section
+        function updateActiveSection() {
+            const scrollPos = window.scrollY + 100; // Offset for header
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update active navigation item
+            navItems.forEach(item => {
+                const itemSection = item.getAttribute('data-section');
+                if (itemSection === currentSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Listen for scroll events with throttling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveSection, 10);
+        });
+
+        // Initial check
+        updateActiveSection();
+    }
     </script>
 </body>
 </html>

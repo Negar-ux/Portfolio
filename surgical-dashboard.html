@@ -205,7 +205,7 @@
         </section>
 
         <!-- Overview Section -->
-        <section class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
+        <section id="overview" class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
             <h2>Overview</h2>
             <p>I joined this project when ORCHID Analytics was developing a GUI demo for a children's hospital in North America. The hospital was struggling with surgical scheduling - there was a lot of manual work, communication gaps between teams, and the existing optimization algorithm output was too complex for the people who actually needed to use it.</p>
 
@@ -215,7 +215,7 @@
         </section>
 
         <!-- Key User Insights Section -->
-        <section class="case-study-section">
+        <section id="insights" class="case-study-section">
             <h2>Key User Insights</h2>
             <div class="research-grid">
                 <div class="research-item">
@@ -238,7 +238,7 @@
         </section>
 
         <!-- Research Process Section -->
-        <section class="case-study-section">
+        <section id="research" class="case-study-section">
             <h2>How I Approached the Research</h2>
             <p>I started by surveying the two user groups to understand what they actually needed from a dashboard. I wanted to know: what decisions are you making, what information do you need, and what's currently frustrating about the process?</p>
 
@@ -274,7 +274,7 @@
         </section>
 
         <!-- Design Solution Section -->
-        <section class="case-study-section">
+        <section id="design" class="case-study-section">
             <h2>Design Solution</h2>
             <p>Based on user research, I designed a comprehensive dashboard that addresses the core challenges of surgical scheduling through intuitive interface design and smart information architecture.</p>
 
@@ -320,7 +320,7 @@
         </section>
 
         <!-- Design Evolution Section -->
-        <section class="case-study-section">
+        <section id="testing" class="case-study-section">
             <h2>Design Evolution Through Testing</h2>
             <p>I joined the project when initial designs existed and led comprehensive usability testing to refine the interface, focusing on accessibility and user workflow optimization.</p>
 
@@ -369,7 +369,7 @@
         </section>
 
         <!-- Design Impact Section -->
-        <section class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
+        <section id="impact" class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
             <h2>Design Impact</h2>
             <div class="features-list">
                 <div class="feature">
@@ -392,7 +392,7 @@
         </section>
 
         <!-- Project Outcomes Section -->
-        <section class="case-study-section">
+        <section id="outcomes" class="case-study-section">
             <h2>Project Outcomes</h2>
             <p>This 17-month research and design project resulted in significant improvements to surgical scheduling workflows and cross-team collaboration.</p>
 
@@ -438,6 +438,62 @@
         </section>
     </main>
 
+    <!-- Sticky Page Navigation -->
+    <div class="page-navigation">
+        <div class="nav-title">Case Study Sections</div>
+        <div class="nav-items">
+            <a href="#overview" class="nav-item" data-section="overview">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">01</span>
+                    <span class="nav-label">Overview</span>
+                </div>
+            </a>
+            <a href="#insights" class="nav-item" data-section="insights">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">02</span>
+                    <span class="nav-label">Insights</span>
+                </div>
+            </a>
+            <a href="#research" class="nav-item" data-section="research">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">03</span>
+                    <span class="nav-label">Research</span>
+                </div>
+            </a>
+            <a href="#design" class="nav-item" data-section="design">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">04</span>
+                    <span class="nav-label">Design</span>
+                </div>
+            </a>
+            <a href="#testing" class="nav-item" data-section="testing">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">05</span>
+                    <span class="nav-label">Testing</span>
+                </div>
+            </a>
+            <a href="#impact" class="nav-item" data-section="impact">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">06</span>
+                    <span class="nav-label">Impact</span>
+                </div>
+            </a>
+            <a href="#outcomes" class="nav-item" data-section="outcomes">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">07</span>
+                    <span class="nav-label">Outcomes</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
 
@@ -449,35 +505,7 @@
     </footer>
 
     <script>
-        // Mobile hamburger menu functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on a link
-                const navLinks = document.querySelectorAll('#nav-menu a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
             // Scroll to top functionality
             const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -500,6 +528,72 @@
                 });
             }
         });
+
+        // Initialize page navigation tracking
+        initPageNavigation();
+    });
+
+    // Page Navigation Progress Tracking
+    function initPageNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section[id]');
+
+        if (!navItems.length || !sections.length) return;
+
+        // Smooth scrolling for navigation links
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll position and highlight current section
+        function updateActiveSection() {
+            const scrollPos = window.scrollY + 100; // Offset for header
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update active navigation item
+            navItems.forEach(item => {
+                const itemSection = item.getAttribute('data-section');
+                if (itemSection === currentSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Listen for scroll events with throttling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveSection, 10);
+        });
+
+        // Initial check
+        updateActiveSection();
+    }
     </script>
 </body>
 </html>

@@ -496,35 +496,7 @@
     </footer>
 
     <script>
-        // Mobile hamburger menu functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on a link
-                const navLinks = document.querySelectorAll('#nav-menu a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
             // Scroll to top functionality
             const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -614,40 +586,5 @@
         updateActiveSection();
     }
     </script>
-
-    <!-- Sticky Page Navigation -->
-    <div class="page-navigation">
-        <div class="nav-title">Case Study</div>
-        <div class="nav-items">
-            <a href="#overview" class="nav-item" data-section="overview">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">01</span>
-                    <span class="nav-label">Overview</span>
-                </div>
-            </a>
-            <a href="#research" class="nav-item" data-section="research">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">02</span>
-                    <span class="nav-label">Research</span>
-                </div>
-            </a>
-            <a href="#design" class="nav-item" data-section="design">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">03</span>
-                    <span class="nav-label">Design</span>
-                </div>
-            </a>
-            <a href="#prototype" class="nav-item" data-section="prototype">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">04</span>
-                    <span class="nav-label">Prototype</span>
-                </div>
-            </a>
-        </div>
-    </div>
 </body>
 </html>

@@ -13,7 +13,22 @@
     <link rel="preload" href="assets/images/fitness-app.webp" as="image">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//negardeilami.com">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Critical CSS for immediate image containers */
+        .profile-image img, .project-image img {
+            opacity: 1 !important;
+            transition: none !important;
+        }
+        /* Ensure images have dimensions to prevent layout shift */
+        .profile-image {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -40,7 +55,10 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="profile-image">
-                        <img src="assets/images/profile-hero.jpg" alt="Negar Deilami Profile" loading="eager" decoding="sync" />
+                        <picture>
+                            <source srcset="assets/images/profile-hero.webp" type="image/webp">
+                            <img src="assets/images/profile-hero.jpg" alt="Negar Deilami Profile" loading="eager" decoding="sync" />
+                        </picture>
                     </div>
                     <div class="hero-text">
                         <div class="accent-line"></div>

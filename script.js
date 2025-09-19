@@ -12,11 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ensure profile image loads immediately
     const profileImg = document.querySelector('.profile-image img');
     if (profileImg && !profileImg.complete) {
-        const newImg = new Image();
-        newImg.onload = function() {
-            profileImg.src = this.src;
-        };
-        newImg.src = profileImg.src;
+        // Force reload if image hasn't loaded
+        profileImg.src = profileImg.src;
     }
     // Mobile hamburger menu functionality
     const hamburger = document.getElementById('hamburger');
@@ -127,16 +124,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add loading animation for images
+    // Improved image loading with error handling
     const images = document.querySelectorAll('img');
     images.forEach(img => {
+        // Skip if image is already loaded
+        if (img.complete && img.naturalHeight !== 0) {
+            img.style.opacity = '1';
+            return;
+        }
+
+        // Set initial state
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+
         img.addEventListener('load', function() {
             this.style.opacity = '1';
         });
-        
-        // Set initial opacity
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+
+        img.addEventListener('error', function() {
+            console.warn('Failed to load image:', this.src);
+            this.style.opacity = '1'; // Show broken image
+        });
+
+        // Force image to start loading if it hasn't already
+        if (!img.complete) {
+            const src = img.src;
+            img.src = '';
+            img.src = src;
+        }
     });
     
     // Add typing effect to hero text (optional)
