@@ -153,8 +153,8 @@ main {
 /* Hero section */
 .hero {
     background-color: #ffffff;
-    padding: 6rem 2rem;
-    min-height: 70vh;
+    padding: 4rem 2rem;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,9 +238,10 @@ main {
 }
 
 .section-divider {
-    padding: 3rem 0;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
+    background: #ffffff;
 }
 
 .projects-grid {
@@ -551,11 +552,24 @@ footer {
 
 /* Separator styles */
 .separator {
-    height: 32px;
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4 0H16L9.6 16H0L6.4 0Z' fill='%23e7e7e9'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    width: 200px;
+    width: 80px;
+    height: 1px;
+    background: #e9ecef;
+    position: relative;
     margin: 0 auto;
+}
+
+.separator::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #67e0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 /* Responsive design */
@@ -635,8 +649,8 @@ footer {
     }
 
     .hero {
-        padding: 4rem 0;
-        min-height: 60vh;
+        padding: 3rem 0;
+        min-height: 50vh;
     }
 
     /* Mobile Navigation */
@@ -756,6 +770,10 @@ footer {
     .section-divider {
         padding: 2rem 0;
     }
+
+    .separator {
+        width: 60px;
+    }
     
     .projects-grid {
         gap: 2rem;
@@ -829,7 +847,7 @@ footer {
     }
     
     .hero {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1rem;
     }
     
     .cta-button {

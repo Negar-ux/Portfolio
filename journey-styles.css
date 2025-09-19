@@ -285,33 +285,7 @@ body {
     }
 }
 
-/* Section Divider */
-.section-divider {
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-    background: #ffffff;
-}
-
-.separator {
-    width: 80px;
-    height: 1px;
-    background: #e9ecef;
-    position: relative;
-}
-
-.separator::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #67e0ff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ffffff;
-}
+/* Section Divider - using global styles from styles.css */
 
 /* Skills Section */
 .skills-section {
@@ -1178,9 +1152,6 @@ body {
         padding: 2rem 0;
     }
 
-    .separator {
-        width: 60px;
-    }
 
     .journey-hero-content {
         grid-template-columns: 1fr;
