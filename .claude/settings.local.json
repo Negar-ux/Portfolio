@@ -33,7 +33,8 @@
       "WebFetch(domain:negar-ux.github.io)",
       "Bash(start index.html)",
       "Bash(start hospital-discharge.html)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(copy:*)"
     ],
     "deny": [],
     "ask": []

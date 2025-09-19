@@ -12,19 +12,6 @@
     <link rel="stylesheet" href="case-study.css">
     <script src="script.js" defer></script>
     <style>
-        /* Project details styling */
-        .project-details {
-            background-color: #E7E7E9;
-            padding: 3rem 2rem;
-            margin: 2rem 0;
-        }
-
-        .project-details .details-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: flex-start;
-        }
 
         .project-image-large {
             width: 100%;
@@ -36,6 +23,7 @@
             flex-direction: column;
             gap: 1.5rem;
         }
+
 
         .meta-item {
             font-size: 14px;
@@ -113,6 +101,104 @@
             margin: 2rem 0;
         }
 
+        /* Research grid for insights and other sections */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .research-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .research-item h3 {
+            margin: 0 0 1rem 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .research-item p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Features list styling - Clean minimal text */
+        .features-list {
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e4e7;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .feature h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .feature p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Impact metrics styling */
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #a33468;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+
         /* Survey visuals */
         .survey-visual {
             text-align: center;
@@ -139,6 +225,21 @@
             .research-findings {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .impact-metrics {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .project-meta-list {
@@ -173,68 +274,52 @@
             </div>
         </section>
 
-        <!-- Project Details Section -->
-        <section class="project-details case-study-section">
-            <div class="details-grid">
-                <div class="project-image-container">
-                    <img src="assets/images/surgical-meeting.jpg" alt="Healthcare professionals in meeting" class="project-image-large">
-                </div>
-                <div class="project-meta-list">
-                    <div class="meta-item">
-                        <span class="meta-label">Client</span>
-                        <span class="meta-value">ORCHID Analytics</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Timeframe</span>
-                        <span class="meta-value">17 months</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">My Role</span>
-                        <span class="meta-value">Sole UX Researcher (Contract)</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Contribution</span>
-                        <span class="meta-value">Survey Design, Ideation, Lo-Fid Prototype and Usability Testing</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Tools</span>
-                        <span class="meta-value">Figma, Miro, Notion, Pen & Paper</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Overview Section -->
-        <section id="overview" class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
+        <section id="overview" class="case-study-section">
             <h2>Overview</h2>
             <p>I joined this project when ORCHID Analytics was developing a GUI demo for a children's hospital in North America. The hospital was struggling with surgical scheduling - there was a lot of manual work, communication gaps between teams, and the existing optimization algorithm output was too complex for the people who actually needed to use it.</p>
 
             <p>I came in as the sole UX researcher for 17 months. The team already had some initial designs, so my job was to understand the users, test what existed, and figure out how to make the interface actually work for the people using it day-to-day.</p>
+        </section>
 
-            <p>I focused on two main user groups: Division Managers in Urology and Orthopaedic departments. These are the people responsible for making scheduling decisions that affect patient care, resource allocation, and staff coordination.</p>
+        <!-- Project details section -->
+        <section class="case-study-section project-details">
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4><strong>My Role:</strong></h4>
+                    <p>Sole UX Researcher (Contract)</p>
+                </div>
+                <div class="detail-item">
+                    <h4><strong>Client:</strong></h4>
+                    <p>ORCHID Analytics</p>
+                </div>
+                <div class="detail-item">
+                    <h4><strong>Duration:</strong></h4>
+                    <p>17 Months</p>
+                </div>
+            </div>
         </section>
 
         <!-- Key User Insights Section -->
         <section id="insights" class="case-study-section">
             <h2>Key User Insights</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>🏥 Complex Decision Matrix</h3>
-                    <p>Division Managers juggle multiple factors: surgeon availability, equipment resources, post-op capacity, and HR constraints - all requiring real-time visibility.</p>
-                </div>
-                <div class="research-item">
-                    <h3>📊 Data Overwhelm</h3>
-                    <p>Existing systems presented too much information without prioritization, making it difficult to focus on critical decisions that impact patient care.</p>
-                </div>
-                <div class="research-item">
-                    <h3>🔄 Manual Processes</h3>
-                    <p>Teams wanted to upload existing scheduling files rather than re-inputting data, and needed clear visualization of schedule changes.</p>
-                </div>
-                <div class="research-item">
-                    <h3>⚡ Time-Sensitive Planning</h3>
-                    <p>Users needed to monitor and optimize schedules for the next two weeks while running scenario planning for better resource allocation.</p>
-                </div>
-            </div>
+
+            <blockquote class="case-study-quote">
+                <p><strong>🏥 Complex Decision Matrix:</strong> "Division Managers juggle multiple factors: surgeon availability, equipment resources, post-op capacity, and HR constraints - all requiring real-time visibility."</p>
+            </blockquote>
+
+            <blockquote class="case-study-quote">
+                <p><strong>📊 Data Overwhelm:</strong> "Existing systems presented too much information without prioritization, making it difficult to focus on critical decisions that impact patient care."</p>
+            </blockquote>
+
+            <blockquote class="case-study-quote">
+                <p><strong>🔄 Manual Processes:</strong> "Teams wanted to upload existing scheduling files rather than re-inputting data, and needed clear visualization of schedule changes."</p>
+            </blockquote>
+
+            <blockquote class="case-study-quote">
+                <p><strong>⚡ Time-Sensitive Planning:</strong> "Users needed to monitor and optimize schedules for the next two weeks while running scenario planning for better resource allocation."</p>
+            </blockquote>
         </section>
 
         <!-- Research Process Section -->
@@ -242,11 +327,8 @@
             <h2>How I Approached the Research</h2>
             <p>I started by surveying the two user groups to understand what they actually needed from a dashboard. I wanted to know: what decisions are you making, what information do you need, and what's currently frustrating about the process?</p>
 
-            <div class="case-study-image">
-                <img src="assets/images/surgical-survey-methodology.png" alt="Survey methodology diagram">
-                <figcaption>My research approach - understanding user needs before jumping into design</figcaption>
-            </div>
 
+            <h3>Research Questions & Findings</h3>
             <div class="research-findings">
                 <div>
                     <h4>What I Wanted to Learn</h4>
@@ -267,10 +349,6 @@
                 </div>
             </div>
 
-            <div class="case-study-image">
-                <img src="assets/images/surgical-survey-results.png" alt="Survey results visualization">
-                <figcaption>Results from my user surveys showing what mattered most to Division Managers</figcaption>
-            </div>
         </section>
 
         <!-- Design Solution Section -->
@@ -280,43 +358,35 @@
 
             <div class="features-list">
                 <div class="feature">
-                    <h3>📅 Real-Time Schedule Monitoring</h3>
-                    <p>Two-week schedule visibility with smart filtering and priority indicators to help Division Managers focus on critical decisions.</p>
+                    <div class="feature-icon">📅</div>
+                    <div class="feature-content">
+                        <h3>Real-Time Schedule Monitoring</h3>
+                        <p>Two-week schedule visibility with smart filtering and priority indicators to help Division Managers focus on critical decisions.</p>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>🎯 Scenario Planning Tools</h3>
-                    <p>Interactive parameter adjustment allowing users to test different scheduling scenarios and see immediate impact on resource allocation.</p>
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-content">
+                        <h3>Scenario Planning Tools</h3>
+                        <p>Interactive parameter adjustment allowing users to test different scheduling scenarios and see immediate impact on resource allocation.</p>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>📊 Customizable KPI Dashboard</h3>
-                    <p>User-selectable metrics with threshold alerts, ensuring teams can track what matters most to their department.</p>
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-content">
+                        <h3>Customizable KPI Dashboard</h3>
+                        <p>User-selectable metrics with threshold alerts, ensuring teams can track what matters most to their department.</p>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>📁 File Integration System</h3>
-                    <p>Upload existing scheduling files to eliminate manual data entry and reduce errors in the planning process.</p>
+                    <div class="feature-icon">📁</div>
+                    <div class="feature-content">
+                        <h3>File Integration System</h3>
+                        <p>Upload existing scheduling files to eliminate manual data entry and reduce errors in the planning process.</p>
+                    </div>
                 </div>
             </div>
 
-            <h4>Information Architecture</h4>
-            <p>Designed a four-tier navigation system prioritizing user workflows:</p>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>Home Dashboard</h3>
-                    <p>Quick overview & alerts</p>
-                </div>
-                <div class="research-item">
-                    <h3>Department View</h3>
-                    <p>Division-specific schedules</p>
-                </div>
-                <div class="research-item">
-                    <h3>Surgeon View</h3>
-                    <p>Individual practitioner focus</p>
-                </div>
-                <div class="research-item">
-                    <h3>Analytics</h3>
-                    <p>Performance insights</p>
-                </div>
-            </div>
         </section>
 
         <!-- Design Evolution Section -->
@@ -368,28 +438,6 @@
             <p>Throughout the design process, I ensured the interface would work for users with varying levels of technical expertise, from junior staff to experienced administrators, while meeting healthcare industry accessibility standards.</p>
         </section>
 
-        <!-- Design Impact Section -->
-        <section id="impact" class="case-study-section" style="background-color: #E7E7E9; padding: 3rem 2rem; margin: 2rem 0;">
-            <h2>Design Impact</h2>
-            <div class="features-list">
-                <div class="feature">
-                    <h3>🎯 Improved Decision Speed</h3>
-                    <p>Streamlined interface reduced time spent navigating between systems, allowing Division Managers to focus on patient care optimization rather than technical complexity.</p>
-                </div>
-                <div class="feature">
-                    <h3>👥 Enhanced Team Collaboration</h3>
-                    <p>Clear visualization of schedule changes and surgeon waitlists improved communication between booking admins and surgical team leaders.</p>
-                </div>
-                <div class="feature">
-                    <h3>📈 Scalable MVP Foundation</h3>
-                    <p>Created a development-ready prototype that reduced implementation complexity and gave the development team clear direction for MVP features.</p>
-                </div>
-                <div class="feature">
-                    <h3>♿ Inclusive Design</h3>
-                    <p>Implemented accessibility guidelines ensuring the system works for healthcare professionals with diverse technical backgrounds and abilities.</p>
-                </div>
-            </div>
-        </section>
 
         <!-- Project Outcomes Section -->
         <section id="outcomes" class="case-study-section">
