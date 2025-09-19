@@ -46,7 +46,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="overview" class="case-study-section">
             <h2>Overview</h2>
             <p>In Canada, a standardized definition of designated Alternate Level of Care (ALC) is given to patients who are medically stable but cannot be discharged. The <a href="https://secure.cihi.ca/free_products/cad_analysis_in_brief_e.pdf">Canadian Institute for Health Information</a> reports that ALC accounts for up to 14% of Canadian hospital days, utilizing up to 7,500 acute care beds annually.</p>
 
@@ -80,7 +80,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="research" class="case-study-section">
             <h2>1. Initial Research</h2>
             <p>We conducted initial research during the discovery phase to gain insights into the basic understanding of the process of the hospital discharge journey, its challenges, and the experience of the patients who are heavily involved in the process and what has been done about it in Canada and other countries around the world.</p>
 
@@ -91,7 +91,7 @@
             </ul>
         </section>
 
-        <section class="case-study-section">
+        <section id="interviews" class="case-study-section">
             <h2>2. User Interviews</h2>
             <p>After initial research, we dived into primary research, where we conducted <strong>25 in-depth interviews</strong> with social workers, hospital discharge coordinators, family members and Patient and Family advisors.</p>
 
@@ -113,6 +113,7 @@
         <section class="case-study-section">
             <p>In this stage, we synthesized the information from interviews and literature review to <strong>create order from chaos.</strong> Miro tool truly helped with documentation and collaboration.</p>
 
+        <section id="journey-map" class="case-study-section">
             <h2>3. Journey Map</h2>
             <p>After going through several iterations, I created a comprehensive journey map demonstrating the flow for the care team, patients, and family members. It helped us understand and visualize what steps the members take in the hospital discharge journey, as well as their feelings and thoughts. When we showed it to the senior hospital discharge coordinator, she was impressed with the comprehensive visual view of the complex hospital discharge, which could be useful for future people working on the project.</p>
 
@@ -124,7 +125,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="features" class="case-study-section">
             <h2>4. Impact Features</h2>
             <p>The chosen idea was a collaborative and interactive tool to help with the following:</p>
 
@@ -141,15 +142,15 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="style-guide" class="case-study-section">
             <h2>6. Style Guide for Older Adults</h2>
             <p>After our first usability test of the first prototype, we noticed that users had difficulty navigating and using the prototype. Therefore, we went back to the prototype phase and reviewed who our users were. Our users are <strong>older adults who have different cognitive abilities.</strong></p>
 
             <p>Therefore, it was necessary to change the prototype to introduce each feature and screen gradually instead of all at once. This would help us avoid overlaps of elements on interfaces to clarify their purpose.</p>
         </section>
 
-        <section class="case-study-section">
-            <h2 id="final-design">7. Final Designs</h2>
+        <section id="final-design" class="case-study-section">
+            <h2>7. Final Designs</h2>
 
             <figure class="case-study-image">
                 <img src="https://negardeilami.com/wp-content/uploads/2022/08/Animation.gif" alt="Final design animation" style="width:720px; max-width: 100%;" />
@@ -164,7 +165,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="reflection" class="case-study-section">
             <h2>8. Reflection</h2>
             <ul>
                 <li>Journaling and documenting observations and brainstorming sessions are important.</li>
@@ -178,6 +179,62 @@
             <a href="design-workshops.html" class="nav-button">Next Project →</a>
         </section>
     </main>
+
+    <!-- Sticky Page Navigation -->
+    <div class="page-navigation">
+        <div class="nav-title">Case Study Sections</div>
+        <div class="nav-items">
+            <a href="#overview" class="nav-item" data-section="overview">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">01</span>
+                    <span class="nav-label">Overview</span>
+                </div>
+            </a>
+            <a href="#research" class="nav-item" data-section="research">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">02</span>
+                    <span class="nav-label">Research</span>
+                </div>
+            </a>
+            <a href="#interviews" class="nav-item" data-section="interviews">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">03</span>
+                    <span class="nav-label">Interviews</span>
+                </div>
+            </a>
+            <a href="#journey-map" class="nav-item" data-section="journey-map">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">04</span>
+                    <span class="nav-label">Journey Map</span>
+                </div>
+            </a>
+            <a href="#features" class="nav-item" data-section="features">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">05</span>
+                    <span class="nav-label">Features</span>
+                </div>
+            </a>
+            <a href="#final-design" class="nav-item" data-section="final-design">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">06</span>
+                    <span class="nav-label">Final Design</span>
+                </div>
+            </a>
+            <a href="#reflection" class="nav-item" data-section="reflection">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">07</span>
+                    <span class="nav-label">Reflection</span>
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
@@ -241,6 +298,72 @@
                 });
             }
         });
+
+        // Initialize page navigation tracking
+        initPageNavigation();
+    });
+
+    // Page Navigation Progress Tracking
+    function initPageNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section[id]');
+
+        if (!navItems.length || !sections.length) return;
+
+        // Smooth scrolling for navigation links
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll position and highlight current section
+        function updateActiveSection() {
+            const scrollPos = window.scrollY + 100; // Offset for header
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update active navigation item
+            navItems.forEach(item => {
+                const itemSection = item.getAttribute('data-section');
+                if (itemSection === currentSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Listen for scroll events with throttling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveSection, 10);
+        });
+
+        // Initial check
+        updateActiveSection();
+    }
     </script>
 </body>
 </html>

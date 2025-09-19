@@ -171,7 +171,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="overview" class="case-study-section">
             <h2>Overview</h2>
             <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society (SSS)</a> is an early-stage startup that creates an inclusive fitness app for individuals with different disabilities and creating a space for content creators to create and share accessible exercise classes. I joined SSS in Fall 2023 after I got introduced to their CEO through the CEO of a former startup I worked with, Orchid Analytics!</p>
 
@@ -218,7 +218,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="research" class="case-study-section">
             <h2>1. Initial Research</h2>
             <p>When I joined the team, I asked to review the research that had been done before me. The team's research analyst had previously conducted an initial survey and market research, including competitive analysis.</p>
 
@@ -276,7 +276,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="conceptualization" class="case-study-section">
             <h2>2. Conceptualization</h2>
             <h3>Fast Prototyping & user interviews</h3>
             <p>In the beginning of the process, I started creating the information architecture and low-fidelity concepts for the primary use cases. I also conducted usability tests with the lo-fi mockups. Once we had confidence in the designs, I began digitalizing them.</p>
@@ -296,7 +296,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="design" class="case-study-section">
             <h2>3. Design</h2>
 
             <h3>3.1. Accessibility</h3>
@@ -405,7 +405,7 @@
             </div>
         </section>
 
-        <section class="case-study-section">
+        <section id="web-tool" class="case-study-section">
             <h2>4. Web Tool for Admins</h2>
             <p>I have also led the design of web administration panels. This involved extensive discussions with the content team, developers, and technology leaders to achieve alignment. Further details on the work I have accomplished will be provided soon.</p>
 
@@ -423,7 +423,7 @@
             </figure>
         </section>
 
-        <section class="case-study-section">
+        <section id="learning" class="case-study-section">
             <h2>5. Learning Experience</h2>
             <p>Through the process of this project, I have gained valuable experience in designing properly with Agile development teams. I learned how to effectively include the developers in the design process from the beginning and robustly share the Figma designs with them along the way, and incorporating their input regarding the fast and light implementations of the design.</p>
 
@@ -435,6 +435,55 @@
             <a href="hospital-discharge.html" class="nav-button">Next Project →</a>
         </section>
     </main>
+
+    <!-- Sticky Page Navigation -->
+    <div class="page-navigation">
+        <div class="nav-title">Case Study Sections</div>
+        <div class="nav-items">
+            <a href="#overview" class="nav-item" data-section="overview">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">01</span>
+                    <span class="nav-label">Overview</span>
+                </div>
+            </a>
+            <a href="#research" class="nav-item" data-section="research">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">02</span>
+                    <span class="nav-label">Research</span>
+                </div>
+            </a>
+            <a href="#conceptualization" class="nav-item" data-section="conceptualization">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">03</span>
+                    <span class="nav-label">Conceptualization</span>
+                </div>
+            </a>
+            <a href="#design" class="nav-item" data-section="design">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">04</span>
+                    <span class="nav-label">Design</span>
+                </div>
+            </a>
+            <a href="#web-tool" class="nav-item" data-section="web-tool">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">05</span>
+                    <span class="nav-label">Web Tool</span>
+                </div>
+            </a>
+            <a href="#learning" class="nav-item" data-section="learning">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">06</span>
+                    <span class="nav-label">Learning</span>
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
@@ -498,6 +547,72 @@
                 });
             }
         });
+
+        // Initialize page navigation tracking
+        initPageNavigation();
+    });
+
+    // Page Navigation Progress Tracking
+    function initPageNavigation() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section[id]');
+
+        if (!navItems.length || !sections.length) return;
+
+        // Smooth scrolling for navigation links
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll position and highlight current section
+        function updateActiveSection() {
+            const scrollPos = window.scrollY + 100; // Offset for header
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Update active navigation item
+            navItems.forEach(item => {
+                const itemSection = item.getAttribute('data-section');
+                if (itemSection === currentSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Listen for scroll events with throttling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveSection, 10);
+        });
+
+        // Initial check
+        updateActiveSection();
+    }
     </script>
 
     <!-- Sticky Page Navigation -->

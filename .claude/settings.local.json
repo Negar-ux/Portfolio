@@ -30,7 +30,8 @@
       "WebFetch(domain:convertio.co)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "WebFetch(domain:negar-ux.github.io)"
+      "WebFetch(domain:negar-ux.github.io)",
+      "Bash(start index.html)"
     ],
     "deny": [],
     "ask": []
