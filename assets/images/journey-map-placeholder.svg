@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333">
+    Hospital Discharge Journey Map
+  </text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    Comprehensive flow for care team, patients, and family members
+  </text>
+  <rect x="50" y="360" width="700" height="180" fill="#e9ecef" stroke="#adb5bd"/>
+  <text x="400" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    [Patient Journey Visualization - ALC Process Flow]
+  </text>
+</svg>

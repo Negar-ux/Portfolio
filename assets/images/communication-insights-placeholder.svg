@@ -1,0 +1,13 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="300" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#333">
+    Communication Gap Insights
+  </text>
+  <text x="300" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666">
+    Main insights and opportunities discovered
+  </text>
+  <rect x="50" y="250" width="500" height="120" fill="#e9ecef" stroke="#adb5bd"/>
+  <text x="300" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    [Communication barriers and solution opportunities]
+  </text>
+</svg>
