@@ -34,7 +34,10 @@
       "Bash(start index.html)",
       "Bash(start hospital-discharge.html)",
       "Bash(findstr:*)",
-      "Bash(copy:*)"
+      "Bash(copy:*)",
+      "Bash(nslookup:*)",
+      "Bash(del:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
