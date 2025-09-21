@@ -29,9 +29,22 @@
             }
 
             /* Fix key user insights spacing */
+            .prototype-sections {
+                margin: 1rem 0 !important;
+            }
+
             .prototype-sections div[style*="grid-template-columns: 1fr 1fr 1fr"] {
                 gap: 1rem !important;
-                margin: 1rem 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Fix individual insight cards spacing */
+            .prototype-sections div > div {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .prototype-sections div > div:last-child {
+                margin-bottom: 0 !important;
             }
 
             /* Fix accessibility feature cards */
