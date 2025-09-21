@@ -120,40 +120,49 @@ nav a {
 }
 
 nav a:hover {
-    color: #67e0ff;
-    background-color: rgba(103, 224, 255, 0.1);
-    border-color: rgba(103, 224, 255, 0.3);
+    color: #000000;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+    box-shadow: 4px 4px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
 nav a.active {
-    color: #67e0ff;
-    background-color: rgba(103, 224, 255, 0.1);
-    border-color: #67e0ff;
+    color: #000000;
+    background-color: transparent;
+    border: 1.5px solid #000000;
     font-weight: 500;
+    box-shadow: none;
+    transform: none;
 }
 
 /* Contact Navigation Styling */
 nav a.contact-nav {
-    background-color: #000000;
-    color: #fff845;
+    background-color: #fff845;
+    color: #000000;
     padding: 8px 16px;
     border-radius: 4px;
     transition: all 0.3s ease;
-    border: 1px solid #333333;
+    border: 1.5px solid #000000;
+    box-shadow: 4px 4px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
 nav a.contact-nav:hover {
-    background-color: #1a1a1a;
-    color: #ffff66;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1.5px solid #000000;
+    box-shadow: 4px 4px 0px #fff845;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 248, 69, 0.3);
 }
 
 nav a.contact-nav.active {
-    background-color: #000000;
-    color: #fff845;
-    border: 1px solid #fff845;
+    background-color: #fff845;
+    color: #000000;
+    border: 1.5px solid #000000;
     font-weight: 500;
+    box-shadow: 4px 4px 0px #67e0ff;
+    transform: translateY(-1px);
 }
 
 /* Hamburger Menu */
@@ -956,24 +965,44 @@ footer {
         transition: background-color 0.2s ease;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active {
+    nav ul li a:hover {
         background-color: rgba(103, 224, 255, 0.1);
         color: #67e0ff;
     }
 
+    nav ul li a.active {
+        background-color: transparent;
+        color: #000000;
+        border: 1.5px solid #000000;
+        box-shadow: none;
+        transform: none;
+    }
+
     /* Mobile Contact Navigation */
     nav ul li a.contact-nav {
-        background-color: #000000;
-        color: #fff845;
-        border: 1px solid #333333;
+        background-color: #fff845;
+        color: #000000;
+        border: 1.5px solid #000000;
         border-radius: 4px;
         margin: 0.25rem 0;
+        box-shadow: 4px 4px 0px #67e0ff;
+        transform: translateY(-1px);
     }
 
     nav ul li a.contact-nav:hover {
-        background-color: #1a1a1a;
-        color: #ffff66;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1.5px solid #000000;
+        box-shadow: 4px 4px 0px #fff845;
+        transform: translateY(-1px);
+    }
+
+    nav ul li a.contact-nav.active {
+        background-color: #fff845;
+        color: #000000;
+        border: 1.5px solid #000000;
+        box-shadow: 4px 4px 0px #67e0ff;
+        transform: translateY(-1px);
     }
     
     .hero p {

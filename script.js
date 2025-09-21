@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll effect to navigation
     const header = document.querySelector('header');
     let lastScrollTop = 0;
-    
+
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > 100) {
             header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
@@ -76,9 +76,50 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.backgroundColor = '#ffffff';
             header.style.backdropFilter = 'none';
         }
-        
+
+        // Update active navigation based on current section
+        updateActiveNavigation();
+
         lastScrollTop = scrollTop;
     });
+
+    // Function to update active navigation based on current section
+    function updateActiveNavigation() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+
+            // Check if this link matches the current section
+            const href = link.getAttribute('href');
+            if (href === `#${current}` || href === `index.html#${current}`) {
+                link.classList.add('active');
+            }
+            // Special case for home section
+            else if (current === 'home' && (href === '#home' || href === 'index.html' || href === '#')) {
+                link.classList.add('active');
+            }
+            // Special case for contact section (Get in touch button)
+            else if (current === 'contact' && link.classList.contains('contact-nav')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Call once on page load
+    updateActiveNavigation();
     
     // Add intersection observer for fade-in animations
     const observerOptions = {

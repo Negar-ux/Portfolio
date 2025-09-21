@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Challenges - Negar Deilami</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+    <script src="script.js" defer></script>
+
+    <!-- Password Protection Styles -->
+    <style>
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-form h2 {
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .password-form p {
+            margin-bottom: 2rem;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .password-input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 12px 45px 12px 16px;
+            border: 1.5px solid #000;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: #67e0ff;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+            padding: 4px;
+            line-height: 1;
+        }
+
+        .password-toggle:hover {
+            color: #67e0ff;
+        }
+
+        .password-submit {
+            background-color: #ffffff;
+            color: #000;
+            border: 1.5px solid #000;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Merriweather Sans', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .password-submit:hover {
+            background-color: #67e0ff;
+            border-color: #000;
+        }
+
+        .password-submit:active {
+            transform: translateY(1px);
+        }
+
+        .password-error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 0.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+
+    <style>
+        /* Design Challenges specific styles */
+        .challenges-hero {
+            background: linear-gradient(135deg, #67e0ff 0%, #fff845 100%);
+            padding: 6rem 0 4rem;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .challenges-hero h1 {
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        .challenges-hero p {
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .challenge-status {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .current-challenge {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .challenge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .challenge-week {
+            background: #67e0ff;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .challenge-timer {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .challenge-prompt {
+            background: #f8f9fa;
+            border-left: 4px solid #67e0ff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .challenge-prompt h3 {
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .my-solution {
+            margin: 2rem 0;
+        }
+
+        .solution-image {
+            background: #f0f0f0;
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 1rem 0;
+            border: 2px dashed #ccc;
+        }
+
+        .solution-placeholder {
+            color: #666;
+            font-style: italic;
+        }
+
+        .process-notes {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .challenge-archive {
+            margin: 4rem 0;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .archive-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .archive-week {
+            background: #e9ecef;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .archive-card h4 {
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .archive-preview {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .feedback-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ai-feedback {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .challenges-hero {
+                padding: 4rem 0 2rem;
+            }
+
+            .challenge-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Protection Overlay -->
+    <div id="passwordOverlay" class="password-overlay">
+        <div class="password-form">
+            <h2>🔐 Private Preview</h2>
+            <p>This page contains work-in-progress content.<br>Please enter the password to continue.</p>
+            <form id="passwordForm">
+                <div class="password-input-container">
+                    <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" autocomplete="off">
+                    <button type="button" id="passwordToggle" class="password-toggle" aria-label="Show password">👁️</button>
+                </div>
+                <button type="submit" class="password-submit">Access Preview</button>
+                <div id="passwordError" class="password-error hidden">Incorrect password. Please try again.</div>
+            </form>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#product-design">Product Design</a></li>
+                <li><a href="index.html#research">Design Thinking Research</a></li>
+                <li><a href="my-journey.html">My Journey</a></li>
+                <li><a href="design-challenges.html" class="active">Design Challenges</a></li>
+                <li><a href="index.html#contact" class="contact-nav">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="challenges-hero">
+            <div class="container">
+                <div class="challenge-status">✨ Active Challenge</div>
+                <h1>Weekly Design Challenges</h1>
+                <p>Pushing creative boundaries through focused design exercises. Each week brings a new challenge exploring UI design, AI interfaces, accessibility, and emerging interaction patterns.</p>
+            </div>
+        </section>
+
+        <!-- Current Challenge -->
+        <section class="case-study-section">
+            <div class="container">
+                <div class="current-challenge">
+                    <div class="challenge-header">
+                        <div class="challenge-week">Sept 21-27, 2025</div>
+                        <div class="challenge-timer">⏰ Starting today!</div>
+                    </div>
+
+                    <div class="challenge-prompt">
+                        <h3>⚡ EV Charging Station Finder App</h3>
+                        <p><strong>Challenge:</strong> Design a mobile app that helps electric vehicle drivers find, reserve, and pay for charging stations. The app must work seamlessly while driving and accommodate users with different abilities.</p>
+
+                        <p><strong>Key Requirements:</strong></p>
+                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem; font-size: 14px;">
+                            <li>Real-time station availability and pricing</li>
+                            <li>Route planning with range anxiety consideration</li>
+                            <li>Hands-free operation while driving</li>
+                            <li>Payment integration for multiple account types</li>
+                        </ul>
+
+                        <p><strong>Constraints:</strong> Accessible while driving, real-time data updates, offline capability, WCAG AAA compliance</p>
+
+                        <p><strong>Success Metrics:</strong> 60% faster charger discovery, supports 3 user types (individual, ride-share, fleet)</p>
+                    </div>
+
+                    <div class="my-solution">
+                        <h3>My Design Process</h3>
+
+                        <!-- Design Evolution -->
+                        <div class="design-evolution" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>📝 From Sketches to Digital</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                                <div style="text-align: center;">
+                                    <div style="background: #fff; border: 2px dashed #ccc; padding: 2rem; border-radius: 8px;">
+                                        <strong>Initial Sketches</strong><br>
+                                        <small>Hand-drawn wireframes exploring 3 different layouts</small>
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="background: #fff; border: 2px dashed #ccc; padding: 2rem; border-radius: 8px;">
+                                        <strong>Final Design</strong><br>
+                                        <small>High-fidelity mockup with accessibility testing</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Collaboration Section -->
+                        <div class="ai-collaboration" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>🤖 AI Collaboration (Transparent Process)</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div>
+                                    <h5>What AI Helped With:</h5>
+                                    <ul style="font-size: 14px;">
+                                        <li>Research on WCAG 2.1 AAA guidelines</li>
+                                        <li>Generated initial color palette options</li>
+                                        <li>Suggested button state variations</li>
+                                        <li>Accessibility checklist validation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>My Design Decisions:</h5>
+                                    <ul style="font-size: 14px;">
+                                        <li>Prioritized voice control based on driving safety research</li>
+                                        <li>Applied EV community insights from user interviews</li>
+                                        <li>Used high contrast colors for outdoor visibility</li>
+                                        <li>Created gesture-based navigation for one-handed use</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real User Testing -->
+                        <div class="user-testing" style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>👥 Real User Testing</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                                <div style="text-align: center;">
+                                    <div style="background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+                                        <strong>Marcus, 34</strong><br>
+                                        <small>Tesla Model 3 owner</small><br>
+                                        <em>"Voice control while driving was game-changing"</em>
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+                                        <strong>Elena, 45</strong><br>
+                                        <small>Uber driver</small><br>
+                                        <em>"Needs faster booking for quick turnarounds"</em>
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+                                        <strong>James, 52</strong><br>
+                                        <small>Limited mobility</small><br>
+                                        <em>"Large touch targets essential for one-handed use"</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Considerations -->
+                        <div class="process-notes">
+                            <h4>⚙️ Technical Implementation Thinking</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div>
+                                    <h5>Development Constraints:</h5>
+                                    <ul style="font-size: 14px;">
+                                        <li><strong>Performance:</strong> 60fps animations on iOS 12+</li>
+                                        <li><strong>Components:</strong> Reusable Button component with 4 states</li>
+                                        <li><strong>Accessibility:</strong> VoiceOver + Switch Control support</li>
+                                        <li><strong>Edge Cases:</strong> Division by zero, overflow handling</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>My Design System Decisions:</h5>
+                                    <ul style="font-size: 14px;">
+                                        <li><strong>Spacing:</strong> 8px grid system (thumb-optimized)</li>
+                                        <li><strong>Typography:</strong> 32px display, 18px buttons</li>
+                                        <li><strong>Colors:</strong> Extended my portfolio brand palette</li>
+                                        <li><strong>Animations:</strong> 200ms press feedback (iOS-native feel)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Design Philosophy -->
+                        <div class="design-philosophy" style="background: #e8f5e8; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>🎯 My Design Philosophy Applied</h4>
+                            <blockquote style="font-style: italic; margin: 0; padding: 0;">
+                                "Inclusive design isn't an afterthought - it's the foundation."
+                            </blockquote>
+                            <p style="margin: 0.5rem 0; font-size: 14px;"><strong>How I applied learnings from SSS and McMaster EDI research:</strong></p>
+                            <ul style="font-size: 14px;">
+                                <li>Started with accessibility requirements, not retrofitted them</li>
+                                <li>Prioritized motor accessibility based on my work with diverse users</li>
+                                <li>Applied equity-driven design thinking from my workshop facilitation experience</li>
+                                <li>Considered intersectional needs (vision + motor + cognitive simultaneously)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h4>Community & AI Feedback</h4>
+                        <div class="ai-feedback">
+                            <strong>🤖 AI Insight:</strong> Consider adding subtle button animations and ensuring the equals button has stronger visual weight to guide user flow.
+                        </div>
+                        <p><em>💬 Community feedback coming soon! Share your thoughts on this approach.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge Archive -->
+        <section class="case-study-section challenge-archive">
+            <div class="container">
+                <h2>Upcoming Complex Challenges</h2>
+                <p>Future design challenges focused on complex, real-world problems with accessible user testing opportunities.</p>
+
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <div class="archive-week">Sept 28 - Oct 4</div>
+                        <h4>🏥 Healthcare Check-in Kiosk</h4>
+                        <p>Multi-step user flow for hospital waiting room check-in with privacy and accessibility requirements</p>
+                        <div class="archive-preview">Challenge launching next week</div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-week">Oct 5-11</div>
+                        <h4>🎓 Student Course Registration</h4>
+                        <p>Complex information architecture with prerequisites, schedules, and real-time conflicts</p>
+                        <div class="archive-preview">Challenge launching Oct 5</div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-week">Oct 12-18</div>
+                        <h4>🍕 Kitchen Order Management</h4>
+                        <p>Real-time dashboard for restaurant staff with workflow optimization and multi-device sync</p>
+                        <div class="archive-preview">Challenge launching Oct 12</div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-week">Oct 19-25</div>
+                        <h4>📱 Senior-Friendly Banking App</h4>
+                        <p>High-accessibility financial app focusing on trust, security, and cognitive load reduction</p>
+                        <div class="archive-preview">Challenge launching Oct 19</div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-week">Oct 26 - Nov 1</div>
+                        <h4>🚗 Fleet Management Dashboard</h4>
+                        <p>Enterprise EV fleet tracking with real-time analytics and driver behavior insights</p>
+                        <div class="archive-preview">Challenge launching Oct 26</div>
+                    </div>
+
+                    <div class="archive-card">
+                        <div class="archive-week">Nov 2-8</div>
+                        <h4>🔊 Voice-First Smart Home Hub</h4>
+                        <p>Accessibility-focused interface for users with limited mobility to control IoT devices</p>
+                        <div class="archive-preview">Challenge launching Nov 2</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2>Let's Create Something Together</h2>
+                        <p>I'm always excited to collaborate on meaningful projects that make a positive impact. Whether you're looking for a product designer, UX researcher, or someone passionate about inclusive design, let's connect!</p>
+                        <div class="contact-buttons">
+                            <a href="mailto:negardeilami@gmail.com" class="contact-btn contact-primary-btn">
+                                Get In Touch
+                            </a>
+                            <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank" class="contact-btn linkedin-btn">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Password Protection Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordOverlay = document.getElementById('passwordOverlay');
+            const passwordForm = document.getElementById('passwordForm');
+            const passwordInput = document.getElementById('passwordInput');
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordError = document.getElementById('passwordError');
+            const correctPassword = 'view';
+
+            // Check if user has already entered password in this session
+            if (sessionStorage.getItem('designChallengesAccess') === 'granted') {
+                passwordOverlay.style.display = 'none';
+            }
+
+            // Focus on password input
+            passwordInput.focus();
+
+            // Show/Hide password functionality
+            passwordToggle.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    passwordToggle.textContent = '🙈';
+                    passwordToggle.setAttribute('aria-label', 'Hide password');
+                } else {
+                    passwordInput.type = 'password';
+                    passwordToggle.textContent = '👁️';
+                    passwordToggle.setAttribute('aria-label', 'Show password');
+                }
+            });
+
+            passwordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const enteredPassword = passwordInput.value;
+
+                if (enteredPassword === correctPassword) {
+                    // Correct password
+                    sessionStorage.setItem('designChallengesAccess', 'granted');
+                    passwordOverlay.style.display = 'none';
+                    passwordError.classList.add('hidden');
+                } else {
+                    // Incorrect password
+                    passwordError.classList.remove('hidden');
+                    passwordInput.value = '';
+                    passwordInput.focus();
+
+                    // Add shake animation
+                    passwordInput.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        passwordInput.style.animation = '';
+                    }, 500);
+                }
+            });
+
+            // Add shake animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-5px); }
+                    75% { transform: translateX(5px); }
+                }
+
+            `;
+            document.head.appendChild(style);
+
+        });
+    </script>
+</body>
+</html>
