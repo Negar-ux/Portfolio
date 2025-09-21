@@ -20,10 +20,17 @@ body {
     padding: 0 2rem;
 }
 
-/* Responsive layout for sticky nav - simpler approach */
-@media (min-width: 1200px) {
+/* Responsive layout for sticky nav - safer approach */
+@media (min-width: 1400px) {
     .page-navigation {
-        left: calc((100vw - 1200px) / 2 - 280px); /* Position outside max-width content */
+        left: max(1rem, calc((100vw - 1200px) / 2 - 280px)); /* Position outside content but never too far left */
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .page-navigation {
+        left: 2rem; /* Safe distance from edge */
+        max-width: 220px;
     }
 }
 
