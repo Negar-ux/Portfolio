@@ -1397,6 +1397,11 @@ body {
         width: 100%;
     }
 
+    .resume-button {
+        width: 100%;
+        max-width: 200px;
+    }
+
     .cta-content h2 {
         font-size: 2rem;
     }
