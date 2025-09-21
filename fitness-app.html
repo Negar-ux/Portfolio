@@ -105,12 +105,15 @@
                 width: auto !important;
             }
 
-            /* Ensure both app store badges have exactly the same dimensions */
-            img[alt="Download on the App Store"],
-            img[alt="Get it on Google Play"] {
+            /* Individual sizing for each badge to ensure visual consistency */
+            img[alt="Download on the App Store"] {
                 height: 45px !important;
                 width: auto !important;
-                max-width: 180px !important;
+            }
+
+            img[alt="Get it on Google Play"] {
+                height: 52px !important;
+                width: auto !important;
             }
         }
 
