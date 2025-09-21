@@ -1182,6 +1182,17 @@ body {
     transform: translateY(-1px);
 }
 
+/* Journey page content width - match case studies for consistency */
+@media (min-width: 1025px) {
+    .journey-hero .container,
+    .skills-section .container,
+    .journey-timeline-section .container,
+    .resume-section .container,
+    .journey-cta .container {
+        max-width: 1000px; /* Match case study pages */
+    }
+}
+
 /* Responsive layout for sticky nav - safer approach */
 @media (min-width: 1400px) {
     .page-navigation {
