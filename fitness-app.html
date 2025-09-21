@@ -101,7 +101,14 @@
             }
 
             div[style*="display: flex; justify-content: center; gap: 1rem"] img {
-                height: 40px !important;
+                height: 35px !important;
+                width: auto !important;
+            }
+
+            /* Ensure both app store badges have exactly the same dimensions */
+            img[alt="Download on the App Store"],
+            img[alt="Get it on Google Play"] {
+                height: 35px !important;
                 width: auto !important;
             }
         }
