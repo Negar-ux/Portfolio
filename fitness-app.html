@@ -22,9 +22,28 @@
             .split-screen-iterations,
             div[style*="grid-template-columns: repeat(4, 1fr)"],
             div[style*="grid-template-columns: repeat(3, 1fr)"],
-            div[style*="grid-template-columns: 1fr 1fr"] {
+            div[style*="grid-template-columns: 1fr 1fr"],
+            div[style*="grid-template-columns: 1fr 1fr 1fr"] {
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
+            }
+
+            /* Fix key user insights spacing */
+            .prototype-sections div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+                gap: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+
+            /* Fix accessibility feature cards */
+            div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            /* Reduce quote padding on mobile */
+            .case-study-quote {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
             }
         }
 
