@@ -37,7 +37,8 @@
       "Bash(copy:*)",
       "Bash(nslookup:*)",
       "Bash(del:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(ipconfig:*)"
     ],
     "deny": [],
     "ask": []
