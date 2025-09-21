@@ -20,14 +20,17 @@ body {
     padding: 0 2rem;
 }
 
-/* Responsive layout to prevent sticky nav overlap */
-@media (min-width: 1025px) {
-    body {
-        padding-left: 260px; /* Space for sticky nav (220px width + 40px margin) */
-    }
-
+/* Responsive layout for sticky nav - simpler approach */
+@media (min-width: 1200px) {
     .page-navigation {
-        left: 2rem;
+        left: calc((100vw - 1200px) / 2 - 280px); /* Position outside max-width content */
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+    .page-navigation {
+        left: 1rem; /* Closer to edge on smaller screens */
+        max-width: 200px; /* Slightly smaller */
     }
 }
 
