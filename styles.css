@@ -809,6 +809,10 @@ footer {
     box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
 }
 
+.nav-item.active {
+    color: inherit; /* Don't change header text color */
+}
+
 .nav-label {
     font-size: 0.95rem;
     font-weight: 500;
