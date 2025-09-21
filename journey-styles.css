@@ -1402,6 +1402,10 @@ body {
         max-width: 200px;
     }
 
+    .download-text {
+        display: none;
+    }
+
     .cta-content h2 {
         font-size: 2rem;
     }
