@@ -352,26 +352,15 @@ body {
     color: #67e0ff;
 }
 
-.nav-item.active .nav-indicator {
-    background: #67e0ff;
-    box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
-}
-
 .nav-indicator {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #e9ecef;
-    border: 3px solid #ffffff;
-    transition: all 0.3s ease;
-    margin-right: 16px;
-    flex-shrink: 0;
+    display: none;
 }
 
 .nav-content {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding-left: 24px;
 }
 
 .nav-number {
@@ -379,10 +368,20 @@ body {
     font-weight: 600;
     color: #999;
     min-width: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .nav-item.active .nav-number {
-    color: #67e0ff;
+    color: white;
+    background: #67e0ff;
+    box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
 }
 
 .nav-label {
