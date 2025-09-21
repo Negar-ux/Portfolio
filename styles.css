@@ -20,6 +20,17 @@ body {
     padding: 0 2rem;
 }
 
+/* Responsive layout to prevent sticky nav overlap */
+@media (min-width: 1025px) {
+    body {
+        padding-left: 260px; /* Space for sticky nav (220px width + 40px margin) */
+    }
+
+    .page-navigation {
+        left: 2rem;
+    }
+}
+
 /* Typography */
 h1, h2, h3 {
     font-family: 'Merriweather Sans', sans-serif;
@@ -756,26 +767,15 @@ footer {
     color: #67e0ff;
 }
 
-.nav-item.active .nav-indicator {
-    background: #67e0ff;
-    box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
-}
-
 .nav-indicator {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #e9ecef;
-    border: 3px solid #ffffff;
-    transition: all 0.3s ease;
-    margin-right: 16px;
-    flex-shrink: 0;
+    display: none;
 }
 
 .nav-content {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding-left: 24px;
 }
 
 .nav-number {
@@ -783,10 +783,20 @@ footer {
     font-weight: 600;
     color: #999;
     min-width: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .nav-item.active .nav-number {
-    color: #67e0ff;
+    color: #000000;
+    background: #67e0ff;
+    box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
 }
 
 .nav-label {

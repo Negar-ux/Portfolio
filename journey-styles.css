@@ -379,7 +379,7 @@ body {
 }
 
 .nav-item.active .nav-number {
-    color: white;
+    color: #000000;
     background: #67e0ff;
     box-shadow: 0 0 0 4px rgba(103, 224, 255, 0.2);
 }
@@ -1194,6 +1194,17 @@ body {
     border: 2px solid white;
     box-shadow: 8px 8px 0px #67e0ff;
     transform: translateY(-1px);
+}
+
+/* Responsive layout to prevent sticky nav overlap */
+@media (min-width: 1025px) {
+    body {
+        padding-left: 260px; /* Space for sticky nav (220px width + 40px margin) */
+    }
+
+    .page-navigation {
+        left: 2rem;
+    }
 }
 
 /* Responsive Design */
