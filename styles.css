@@ -930,20 +930,20 @@ footer {
 
     nav ul {
         position: fixed;
-        top: 80px;
+        top: 70px;
         right: -100%;
         width: 100%;
         height: auto;
-        max-height: calc(100vh - 80px);
-        background-color: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
+        max-height: calc(100vh - 70px);
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        padding: 0.5rem 0;
-        transition: right 0.3s ease;
+        align-items: stretch;
+        padding: 0.75rem 1rem;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 24px rgba(0,0,0,0.12);
     }
 
     nav ul.active {
@@ -951,58 +951,51 @@ footer {
     }
 
     nav ul li {
-        margin: 0.25rem 0;
-        width: 90%;
-        text-align: center;
+        margin: 0.125rem 0;
+        width: 100%;
     }
 
     nav ul li a {
         font-size: 16px;
-        padding: 0.5rem 0.75rem;
-        display: block;
+        font-weight: 500;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
         width: 100%;
-        border-radius: 6px;
-        transition: background-color 0.2s ease;
+        border-radius: 12px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: left;
+        color: #1a1a1a;
     }
 
     nav ul li a:hover {
-        background-color: rgba(103, 224, 255, 0.1);
-        color: #67e0ff;
+        background-color: rgba(0, 0, 0, 0.05);
+        transform: scale(0.98);
     }
 
     nav ul li a.active {
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.08);
         color: #000000;
-        border: 1.5px solid #000000;
-        box-shadow: none;
-        transform: none;
+        font-weight: 600;
     }
 
     /* Mobile Contact Navigation */
     nav ul li a.contact-nav {
-        background-color: #fff845;
-        color: #000000;
-        border: 1.5px solid #000000;
-        border-radius: 4px;
-        margin: 0.25rem 0;
-        box-shadow: 4px 4px 0px #67e0ff;
-        transform: translateY(-1px);
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        border-radius: 12px;
     }
 
     nav ul li a.contact-nav:hover {
-        background-color: #ffffff;
-        color: #000000;
-        border: 1.5px solid #000000;
-        box-shadow: 4px 4px 0px #fff845;
-        transform: translateY(-1px);
+        background-color: #333333;
+        transform: scale(0.98);
     }
 
     nav ul li a.contact-nav.active {
-        background-color: #fff845;
-        color: #000000;
-        border: 1.5px solid #000000;
-        box-shadow: 4px 4px 0px #67e0ff;
-        transform: translateY(-1px);
+        background-color: #000000;
+        color: #ffffff;
     }
     
     .hero p {
