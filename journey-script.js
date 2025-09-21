@@ -232,18 +232,34 @@ function initPageNavigation() {
 
     // Track scroll position and highlight current section
     function updateActiveSection() {
-        const scrollPos = window.scrollY + 100; // Offset for header
+        const scrollPos = window.scrollY + window.innerHeight / 2; // Use middle of viewport
 
         let currentSection = '';
 
+        // Find the section that's most visible in the viewport
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
+            const sectionBottom = sectionTop + sectionHeight;
 
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            // Check if the middle of the viewport is within this section
+            if (scrollPos >= sectionTop && scrollPos <= sectionBottom) {
                 currentSection = section.getAttribute('id');
             }
         });
+
+        // If no section found with middle check, find the closest one
+        if (!currentSection) {
+            let minDistance = Infinity;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const distance = Math.abs(scrollPos - sectionTop);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    currentSection = section.getAttribute('id');
+                }
+            });
+        }
 
         // Update active navigation item
         navItems.forEach(item => {
