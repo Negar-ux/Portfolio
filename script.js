@@ -104,11 +104,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Check if this link matches the current section
             const href = link.getAttribute('href');
-            if (href === `#${current}` || href === `index.html#${current}`) {
-                link.classList.add('active');
+
+            // Special case for home section - only activate home links, clear all dropdown items
+            if (current === 'home') {
+                if (href === '#home' || href === 'index.html' || href === '#') {
+                    link.classList.add('active');
+                }
+                // Explicitly ensure dropdown toggle and menu items don't get active class on home
+                if (link.classList.contains('dropdown-toggle') ||
+                    href === '#product-design' || href === '#research' ||
+                    href === 'index.html#product-design' || href === 'index.html#research') {
+                    link.classList.remove('active');
+                }
             }
-            // Special case for home section
-            else if (current === 'home' && (href === '#home' || href === 'index.html' || href === '#')) {
+            // For other sections, don't add active class to dropdown toggle buttons
+            else if ((href === `#${current}` || href === `index.html#${current}`) && !link.classList.contains('dropdown-toggle')) {
                 link.classList.add('active');
             }
             // Special case for contact section (Get in touch button)

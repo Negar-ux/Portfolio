@@ -113,18 +113,32 @@ nav a {
     font-size: 14px;
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.275s ease;
     position: relative;
     background-color: transparent;
     border: 2px solid transparent;
 }
 
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #67e0ff;
+    transform: translateX(-50%);
+    transition: width 0.275s ease;
+    opacity: 0;
+}
+
 nav a:hover {
-    color: #000000;
-    background-color: #ffffff;
-    border: 1.5px solid #000000;
-    box-shadow: 4px 4px 0px #67e0ff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    width: 90%;
+    opacity: 1;
 }
 
 nav a.active {
@@ -134,6 +148,15 @@ nav a.active {
     font-weight: 500;
     box-shadow: none;
     transform: none;
+}
+
+nav a.active:hover {
+    transform: none;
+}
+
+nav a.active:hover::before {
+    width: 0;
+    opacity: 0;
 }
 
 /* Contact Navigation Styling */
@@ -147,6 +170,86 @@ nav a.contact-nav {
     box-shadow: 4px 4px 0px #67e0ff;
     transform: translateY(-1px);
 }
+
+nav a.contact-nav::before {
+    display: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    padding: 0;
+    margin: 8px 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    min-width: 200px;
+    gap: 0 !important;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+.dropdown-menu a::before {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    color: #67e0ff;
+    transform: none;
+}
+
 
 nav a.contact-nav:hover {
     background-color: #ffffff;
@@ -208,6 +311,7 @@ nav a[target="_blank"]:hover {
     transform: translateY(-1px);
 }
 
+
 /* Main content */
 main {
     margin-top: 80px;
@@ -216,30 +320,84 @@ main {
 /* Hero section */
 .hero {
     background-color: #ffffff;
-    padding: 4rem 2rem;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
+    text-align: left;
     width: 100%;
-    max-width: 1000px;
 }
 
-.hero p {
-    font-size: 20px;
+/* Hero Typography */
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+    color: #000000;
     margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 500;
+    color: #67e0ff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.hero-location {
+    font-size: 1.1rem;
+    color: #666666;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+}
+
+.hero-description {
+    font-size: 1.2rem;
     color: #565656;
     font-family: 'Merriweather', serif;
     line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+
+/* Hero Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-container {
+        max-width: 100%;
+    }
 }
 
 .cta-button {
@@ -301,7 +459,7 @@ main {
 }
 
 .section-divider {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     display: flex;
     justify-content: center;
     background: #ffffff;
