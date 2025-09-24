@@ -38,7 +38,11 @@
       "Bash(nslookup:*)",
       "Bash(del:*)",
       "Bash(rm:*)",
-      "Bash(ipconfig:*)"
+      "Bash(ipconfig:*)",
+      "WebSearch",
+      "WebFetch(domain:sharpen.design)",
+      "WebFetch(domain:blog.uxfol.io)",
+      "WebFetch(domain:www.dailyui.co)"
     ],
     "deny": [],
     "ask": []
