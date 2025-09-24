@@ -1264,9 +1264,8 @@ body {
         transition: background-color 0.2s ease;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active {
-        background-color: rgba(103, 224, 255, 0.1);
+    nav ul li a:hover {
+        background-color: transparent;
         color: #67e0ff;
     }
 

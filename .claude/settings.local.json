@@ -42,7 +42,11 @@
       "WebSearch",
       "WebFetch(domain:sharpen.design)",
       "WebFetch(domain:blog.uxfol.io)",
-      "WebFetch(domain:www.dailyui.co)"
+      "WebFetch(domain:www.dailyui.co)",
+      "Bash(git fetch:*)",
+      "WebFetch(domain:www.taniasoraya.com)",
+      "WebFetch(domain:stephaniewalter.design)",
+      "Bash(start my-journey.html)"
     ],
     "deny": [],
     "ask": []
