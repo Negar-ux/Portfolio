@@ -407,8 +407,8 @@ function initNavigationToggle() {
     if (!toggleBtn) {
         toggleBtn = document.createElement('button');
         toggleBtn.className = 'nav-toggle';
-        toggleBtn.innerHTML = '▼';
-        toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
+        toggleBtn.innerHTML = '◀';
+        toggleBtn.setAttribute('aria-label', 'Hide navigation menu');
         navTitle.appendChild(toggleBtn);
     }
 
@@ -426,8 +426,9 @@ function initNavigationToggle() {
         pageNav.classList.toggle('collapsed');
         const collapsed = pageNav.classList.contains('collapsed');
 
-        // Update button icon
-        toggleBtn.innerHTML = collapsed ? '▶' : '▼';
+        // Update button icon and label
+        toggleBtn.innerHTML = collapsed ? '▶' : '◀';
+        toggleBtn.setAttribute('aria-label', collapsed ? 'Show navigation menu' : 'Hide navigation menu');
 
         // Save state to localStorage
         localStorage.setItem('pageNavCollapsed', collapsed);
@@ -447,6 +448,7 @@ function initNavigationToggle() {
 
     // Set initial aria attributes and button icon
     toggleBtn.setAttribute('aria-expanded', (!isCollapsed).toString());
-    toggleBtn.innerHTML = isCollapsed ? '▶' : '▼';
+    toggleBtn.innerHTML = isCollapsed ? '▶' : '◀';
+    toggleBtn.setAttribute('aria-label', isCollapsed ? 'Show navigation menu' : 'Hide navigation menu');
 }
 
