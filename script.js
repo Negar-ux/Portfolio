@@ -16,15 +16,47 @@ document.addEventListener('DOMContentLoaded', function() {
         profileImg.src = profileImg.src;
     }
     // Mobile hamburger menu functionality
-    const mobileHamburger = document.getElementById('mobile-hamburger');
+    const hamburger = document.getElementById('hamburger');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
 
-    if (mobileHamburger && mobileMenuOverlay) {
-        // Open mobile menu
-        mobileHamburger.addEventListener('click', function() {
-            mobileHamburger.classList.toggle('active');
+    // Function to update active menu items
+    function updateMobileMenuActive() {
+        const menuItems = document.querySelectorAll('.mobile-menu-overlay .menu-item');
+        const currentPage = window.location.pathname;
+        const currentHash = window.location.hash;
+
+        menuItems.forEach(item => {
+            item.classList.remove('active');
+
+            const href = item.getAttribute('href');
+
+            // Check for exact page matches
+            if (href === 'about-me.html' && currentPage.includes('about-me.html')) {
+                item.classList.add('active');
+            } else if (href === 'design-challenges.html' && currentPage.includes('design-challenges.html')) {
+                item.classList.add('active');
+            } else if (href.startsWith('#')) {
+                // Handle anchor links on the main page
+                if (currentPage.includes('index.html') || currentPage === '/' || currentPage === '') {
+                    if (href === currentHash || (href === '#home' && (!currentHash || currentHash === '#home'))) {
+                        item.classList.add('active');
+                    }
+                }
+            }
+        });
+    }
+
+    if (hamburger && mobileMenuOverlay) {
+        // Update active states when menu opens
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
             mobileMenuOverlay.classList.toggle('active');
+
+            if (mobileMenuOverlay.classList.contains('active')) {
+                updateMobileMenuActive();
+            }
+
             // Prevent body scroll when menu is open
             document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : 'auto';
         });
@@ -32,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu
         if (mobileMenuClose) {
             mobileMenuClose.addEventListener('click', function() {
-                mobileHamburger.classList.remove('active');
+                hamburger.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
@@ -42,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const menuItems = document.querySelectorAll('.mobile-menu-overlay .menu-item');
         menuItems.forEach(item => {
             item.addEventListener('click', function() {
-                mobileHamburger.classList.remove('active');
+                hamburger.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
@@ -51,12 +83,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking outside
         mobileMenuOverlay.addEventListener('click', function(event) {
             if (event.target === mobileMenuOverlay) {
-                mobileHamburger.classList.remove('active');
+                hamburger.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         });
     }
+
+    // Update mobile menu active state on scroll (for anchor links)
+    window.addEventListener('scroll', function() {
+        if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+            updateMobileMenuActive();
+        }
+    });
+
+    // Update mobile menu active state on hash change
+    window.addEventListener('hashchange', function() {
+        if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+            updateMobileMenuActive();
+        }
+    });
 
     // Smooth scrolling for anchor links
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
@@ -247,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize page navigation tracking
     initPageNavigation();
+
 });
 
 // Page Navigation Progress Tracking
@@ -334,3 +381,4 @@ function initPageNavigation() {
     // Initial check
     updateActiveSection();
 }
+
