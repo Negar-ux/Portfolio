@@ -264,6 +264,12 @@ nav a.contact-nav::before {
     transform: none;
 }
 
+.dropdown-menu a.active {
+    border: none !important;
+    background: none !important;
+    font-weight: 400;
+}
+
 
 nav a.contact-nav:hover {
     background-color: #ffffff;
