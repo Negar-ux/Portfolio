@@ -389,10 +389,18 @@ function initPageNavigation() {
 function initNavigationToggle() {
     // Get or create the toggle button
     const pageNav = document.querySelector('.page-navigation');
-    if (!pageNav) return;
+    if (!pageNav) {
+        console.log('Page navigation not found');
+        return;
+    }
 
     const navTitle = pageNav.querySelector('.nav-title');
-    if (!navTitle) return;
+    if (!navTitle) {
+        console.log('Nav title not found');
+        return;
+    }
+
+    console.log('Initializing navigation toggle');
 
     // Create toggle button if it doesn't exist
     let toggleBtn = navTitle.querySelector('.nav-toggle');
