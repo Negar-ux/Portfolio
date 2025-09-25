@@ -55,6 +55,13 @@ body {
     }
 }
 
+/* Hide page navigation on tablets and mobile to prevent overlay issues */
+@media (max-width: 1024px) {
+    .page-navigation {
+        display: none;
+    }
+}
+
 /* Typography */
 h1, h2, h3 {
     font-family: 'Merriweather Sans', sans-serif;
