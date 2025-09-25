@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Journey - Negar Deilami</title>
+    <title>About Me - Negar Deilami</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,7 @@
     <link rel="preload" href="assets/images/profile-hero.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="journey-styles.css">
+    <script src="script.js" defer></script>
     <script src="journey-script.js" defer></script>
 </head>
 <body>
@@ -22,6 +23,7 @@
                 <span></span>
             </div>
             <ul id="nav-menu">
+                <li class="mobile-close-item" style="display: none;"><button class="mobile-close-btn" id="mobile-close">✕</button></li>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">My Work <span class="dropdown-arrow">▼</span></a>
@@ -30,7 +32,9 @@
                         <li><a href="index.html#research">Design Thinking Research</a></li>
                     </ul>
                 </li>
-                <li><a href="my-journey.html" class="active">About Me</a></li>
+                <li class="mobile-work-item" style="display: none;"><a href="index.html#product-design">Product Design</a></li>
+                <li class="mobile-work-item" style="display: none;"><a href="index.html#research">Design Thinking Research</a></li>
+                <li><a href="about-me.html" class="active">About Me</a></li>
                 <li><a href="design-challenges.html">Volunteering</a></li>
                 <li><a href="index.html#contact" class="contact-nav">Get in touch</a></li>
             </ul>

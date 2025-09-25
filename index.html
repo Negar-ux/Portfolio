@@ -39,6 +39,7 @@
                 <span></span>
             </div>
             <ul id="nav-menu">
+                <li class="mobile-close-item" style="display: none;"><button class="mobile-close-btn" id="mobile-close">✕</button></li>
                 <li><a href="#home" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">My Work <span class="dropdown-arrow">▼</span></a>
@@ -47,7 +48,7 @@
                         <li><a href="#research">Design Thinking Research</a></li>
                     </ul>
                 </li>
-                <li><a href="my-journey.html">About Me</a></li>
+                <li><a href="about-me.html">About Me</a></li>
                 <li><a href="design-challenges.html">Volunteering</a></li>
                 <li><a href="#contact" class="contact-nav">Get in touch</a></li>
             </ul>
@@ -65,7 +66,7 @@
                         <h2>Product Designer</h2>
                         <p class="hero-location">Based in Toronto</p>
                         <p class="hero-description">Three years of experience creating inclusive designs in healthcare & fitness industries. I combine academic research with hands-on design practice to build products that make a positive impact.</p>
-                        <a href="my-journey.html" class="cta-button">About Me</a>
+                        <a href="about-me.html" class="cta-button">About Me</a>
                     </div>
                 </div>
             </div>
@@ -244,5 +245,23 @@
     <footer>
         <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
     </footer>
+
+    <!-- Mobile Hamburger Button -->
+    <div class="mobile-hamburger" id="mobile-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+        <a href="#home" class="menu-item">Home</a>
+        <a href="#product-design" class="menu-item">Product Design</a>
+        <a href="#research" class="menu-item">Design Thinking Research</a>
+        <a href="about-me.html" class="menu-item">About Me</a>
+        <a href="design-challenges.html" class="menu-item">Volunteering</a>
+        <a href="#contact" class="menu-item contact">Get in touch</a>
+    </div>
 </body>
 </html>

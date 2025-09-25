@@ -1,33 +1,4 @@
-/* Journey Page Specific Styles */
-
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #000000;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
+/* Journey Page Specific Styles - Navigation handled by main styles.css */
 
 /* Smooth scrolling and performance optimizations */
 html {
@@ -1222,52 +1193,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Mobile Navigation */
-    .hamburger {
-        display: flex;
-    }
-
-    nav ul {
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        width: 100%;
-        height: auto;
-        max-height: calc(100vh - 80px);
-        background-color: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1rem 0;
-        transition: right 0.3s ease;
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    nav ul.active {
-        right: 0;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-        width: 90%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        padding: 0.75rem 1rem;
-        display: block;
-        width: 100%;
-        border-radius: 8px;
-        transition: background-color 0.2s ease;
-    }
-
-    nav ul li a:hover {
-        background-color: transparent;
-        color: #67e0ff;
-    }
+    /* Mobile Navigation - use main styles.css for consistency */
 
     .journey-hero {
         padding: 80px 0 40px;
