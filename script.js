@@ -411,21 +411,34 @@ function initNavigationToggle() {
     }
 
     // Toggle functionality
-    toggleBtn.addEventListener('click', function(e) {
+    function toggleNavigation(e) {
         e.preventDefault();
         e.stopPropagation();
 
         pageNav.classList.toggle('collapsed');
         const collapsed = pageNav.classList.contains('collapsed');
 
+        // Update button icon
+        toggleBtn.innerHTML = collapsed ? '▶' : '▼';
+
         // Save state to localStorage
         localStorage.setItem('pageNavCollapsed', collapsed);
 
         // Update aria attributes for accessibility
         toggleBtn.setAttribute('aria-expanded', (!collapsed).toString());
+    }
+
+    toggleBtn.addEventListener('click', toggleNavigation);
+
+    // Also allow clicking on the collapsed navigation tab to expand
+    pageNav.addEventListener('click', function(e) {
+        if (pageNav.classList.contains('collapsed') && e.target === pageNav) {
+            toggleNavigation(e);
+        }
     });
 
-    // Set initial aria attributes
+    // Set initial aria attributes and button icon
     toggleBtn.setAttribute('aria-expanded', (!isCollapsed).toString());
+    toggleBtn.innerHTML = isCollapsed ? '▶' : '▼';
 }
 
