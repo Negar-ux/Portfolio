@@ -294,6 +294,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize page navigation tracking
     initPageNavigation();
 
+    // Initialize navigation toggle functionality
+    initNavigationToggle();
+
 });
 
 // Page Navigation Progress Tracking
@@ -380,5 +383,49 @@ function initPageNavigation() {
 
     // Initial check
     updateActiveSection();
+}
+
+// Navigation toggle functionality
+function initNavigationToggle() {
+    // Get or create the toggle button
+    const pageNav = document.querySelector('.page-navigation');
+    if (!pageNav) return;
+
+    const navTitle = pageNav.querySelector('.nav-title');
+    if (!navTitle) return;
+
+    // Create toggle button if it doesn't exist
+    let toggleBtn = navTitle.querySelector('.nav-toggle');
+    if (!toggleBtn) {
+        toggleBtn = document.createElement('button');
+        toggleBtn.className = 'nav-toggle';
+        toggleBtn.innerHTML = '▼';
+        toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
+        navTitle.appendChild(toggleBtn);
+    }
+
+    // Load saved state from localStorage
+    const isCollapsed = localStorage.getItem('pageNavCollapsed') === 'true';
+    if (isCollapsed) {
+        pageNav.classList.add('collapsed');
+    }
+
+    // Toggle functionality
+    toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        pageNav.classList.toggle('collapsed');
+        const collapsed = pageNav.classList.contains('collapsed');
+
+        // Save state to localStorage
+        localStorage.setItem('pageNavCollapsed', collapsed);
+
+        // Update aria attributes for accessibility
+        toggleBtn.setAttribute('aria-expanded', (!collapsed).toString());
+    });
+
+    // Set initial aria attributes
+    toggleBtn.setAttribute('aria-expanded', (!isCollapsed).toString());
 }
 
