@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y2T14N2Q8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5Y2T14N2Q8');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surgical Scheduling Dashboard - Negar Deilami</title>
@@ -284,9 +292,13 @@
         <!-- Overview Section -->
         <section id="overview" class="case-study-section">
             <h2>Overview</h2>
-            <p>I joined this project when ORCHID Analytics was developing a GUI demo for a children's hospital in North America. The hospital was struggling with surgical scheduling - there was a lot of manual work, communication gaps between teams, and the existing optimization algorithm output was too complex for the people who actually needed to use it.</p>
+            <p>This case study documents the transformation of a complex healthcare scheduling application—from an over-engineered, untested prototype to a streamlined, user-centered design system. I worked on the Surgical OR Scheduling System for ORCHID Analytics, developing a GUI for a children's hospital in North America to help administrators model "what-if" scenarios for surgical capacity planning.</p>
 
-            <p>I came in as the sole UX researcher for 17 months. The team already had some initial designs, so my job was to understand the users, test what existed, and figure out how to make the interface actually work for the people using it day-to-day.</p>
+            <p>The hospital was struggling with surgical scheduling challenges: manual processes, communication gaps between teams, and optimization algorithm outputs that were too complex for daily users. As the sole UX researcher and designer for 17 months, I led the research, testing, and redesign efforts—learning critical lessons about design systems, user validation, and AI-assisted development along the way.</p>
+
+            <div style="background-color: #f8f9fa; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #a33468;">
+                <p><strong>Key Achievement:</strong> Reduced design iteration time by 70% while improving consistency and usability by establishing a design system first, then building features—the opposite approach from my original attempt.</p>
+            </div>
         </section>
 
         <!-- Project details section -->
@@ -294,7 +306,7 @@
             <div class="details-grid">
                 <div class="detail-item">
                     <h4><strong>My Role:</strong></h4>
-                    <p>Sole UX Researcher (Contract)</p>
+                    <p>UX/UI Designer & Frontend Developer</p>
                 </div>
                 <div class="detail-item">
                     <h4><strong>Client:</strong></h4>
@@ -302,9 +314,38 @@
                 </div>
                 <div class="detail-item">
                     <h4><strong>Duration:</strong></h4>
-                    <p>17 Months</p>
+                    <p>17 Months (2021-2022, redesigned 2024-2025)</p>
+                </div>
+                <div class="detail-item">
+                    <h4><strong>Tech Stack:</strong></h4>
+                    <p>React.js, Recharts, React Router, Excel/XLSX integration</p>
+                </div>
+                <div class="detail-item">
+                    <h4><strong>Tools:</strong></h4>
+                    <p>Claude AI, Figma, GitHub Pages</p>
+                </div>
+                <div class="detail-item">
+                    <h4><strong>Links:</strong></h4>
+                    <p><a href="https://negar-ux.github.io/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">Live Demo</a> | <a href="https://github.com/negar-ux/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">GitHub</a></p>
                 </div>
             </div>
+        </section>
+
+        <!-- Problem Space Section -->
+        <section id="problem" class="case-study-section">
+            <h2>The Problem Space</h2>
+
+            <h3>Healthcare Context</h3>
+            <p>Hospital operating rooms are complex environments where 14-16 OR rooms operate daily across multiple surgical services. Surgeons, staff, and patients must be coordinated efficiently through block schedules that allocate time blocks (6.5-10.5 hours) to different surgical departments. Effective waitlist management directly impacts patient outcomes and hospital revenue.</p>
+
+            <h3>Business Challenge</h3>
+            <p>Hospital administrators needed a system to:</p>
+            <ul>
+                <li>Visualize current OR block allocations across services (Plastics, Ortho, ENT, etc.)</li>
+                <li>Model "what-if" scenarios (e.g., "What if we add weekend OR hours?")</li>
+                <li>Track KPIs: Waitlist Reduction, Overtime Hours, Bed Occupancy, QBP Funding, Staffing Requirements</li>
+                <li>Drill down from high-level OR grids to surgeon schedules to individual patient allocations</li>
+            </ul>
         </section>
 
         <!-- Key User Insights Section -->
@@ -312,19 +353,19 @@
             <h2>Key User Insights</h2>
 
             <blockquote class="case-study-quote">
-                <p><strong>🏥 Complex Decision Matrix:</strong> "Division Managers juggle multiple factors: surgeon availability, equipment resources, post-op capacity, and HR constraints - all requiring real-time visibility."</p>
+                <p><strong>Complex Decision Matrix:</strong> "Division Managers juggle multiple factors: surgeon availability, equipment resources, post-op capacity, and HR constraints - all requiring real-time visibility."</p>
             </blockquote>
 
             <blockquote class="case-study-quote">
-                <p><strong>📊 Data Overwhelm:</strong> "Existing systems presented too much information without prioritization, making it difficult to focus on critical decisions that impact patient care."</p>
+                <p><strong>Data Overwhelm:</strong> "Existing systems presented too much information without prioritization, making it difficult to focus on critical decisions that impact patient care."</p>
             </blockquote>
 
             <blockquote class="case-study-quote">
-                <p><strong>🔄 Manual Processes:</strong> "Teams wanted to upload existing scheduling files rather than re-inputting data, and needed clear visualization of schedule changes."</p>
+                <p><strong>Manual Processes:</strong> "Teams wanted to upload existing scheduling files rather than re-inputting data, and needed clear visualization of schedule changes."</p>
             </blockquote>
 
             <blockquote class="case-study-quote">
-                <p><strong>⚡ Time-Sensitive Planning:</strong> "Users needed to monitor and optimize schedules for the next two weeks while running scenario planning for better resource allocation."</p>
+                <p><strong>Time-Sensitive Planning:</strong> "Users needed to monitor and optimize schedules for the next two weeks while running scenario planning for better resource allocation."</p>
             </blockquote>
         </section>
 
@@ -395,6 +436,61 @@
 
         </section>
 
+        <!-- Technical Implementation Section -->
+        <section id="technical" class="case-study-section">
+            <h2>Technical Implementation</h2>
+
+            <h3>Data Integration Challenge</h3>
+            <p>One of the most complex aspects of this project was integrating real hospital data from multiple sources:</p>
+
+            <div class="research-grid">
+                <div class="research-item">
+                    <h3>PatientWaitingList.xlsx</h3>
+                    <p>46 columns of patient data including priorities, procedures, wait times, and surgical service assignments</p>
+                </div>
+                <div class="research-item">
+                    <h3>CaseBaseList.xlsx</h3>
+                    <p>62 columns of historical OR case data for capacity planning and time estimation</p>
+                </div>
+                <div class="research-item">
+                    <h3>OR Block Schedule</h3>
+                    <p>Weekly time block allocations showing which services use which ORs on which days</p>
+                </div>
+                <div class="research-item">
+                    <h3>CaseStaff.xlsx</h3>
+                    <p>Staffing requirements per case type for FTE calculations and resource planning</p>
+                </div>
+            </div>
+
+            <h3>Architecture & State Management</h3>
+            <p>Built with React.js using context-based state management to handle complex OR scheduling data:</p>
+            <ul>
+                <li><strong>ScenarioContext:</strong> Manages all scenarios, active scenario selection, and CRUD operations</li>
+                <li><strong>AllocationContext:</strong> Handles OR allocations, surgeon schedules, and patient assignments</li>
+                <li><strong>Data Flow:</strong> Excel files → Parse scripts → JavaScript objects → React Context → Components</li>
+            </ul>
+
+            <h3>KPI Calculations</h3>
+            <div class="features-list">
+                <div class="feature">
+                    <h3>Waitlist Reduction</h3>
+                    <p>(Scheduled patients / Total waiting) × 100% - Measures impact of scheduling scenarios on patient access</p>
+                </div>
+                <div class="feature">
+                    <h3>Overtime Hours</h3>
+                    <p>Actual duration - Scheduled duration - Identifies resource constraints and scheduling inefficiencies</p>
+                </div>
+                <div class="feature">
+                    <h3>Bed Occupancy</h3>
+                    <p>Inpatient cases / Available beds - Ensures post-op capacity aligns with surgical volume</p>
+                </div>
+                <div class="feature">
+                    <h3>Staffing Requirements</h3>
+                    <p>FTE per role based on case volume - Calculates nurse, anesthesia, and support staff needs</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Design Evolution Section -->
         <section id="testing" class="case-study-section">
             <h2>Design Evolution Through Testing</h2>
@@ -442,47 +538,160 @@
 
             <h4>Accessibility & Usability Focus</h4>
             <p>Throughout the design process, I ensured the interface would work for users with varying levels of technical expertise, from junior staff to experienced administrators, while meeting healthcare industry accessibility standards.</p>
+
+            <h3>Critical Mistakes I Made (and What I Learned)</h3>
+            <div style="background-color: #fff4e6; padding: 2rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #ff9500;">
+                <h4>Mistake #1: Design Before Testing</h4>
+                <p><strong>What went wrong:</strong> I created 3 different navigation versions without user validation. I spent weeks perfecting visual design, colors, and layouts, building complex drill-down flows without testing if users even needed this hierarchy.</p>
+                <p><strong>Result:</strong> Wasted 6+ weeks on features that might not solve the actual user problem.</p>
+                <p><strong>Lesson learned:</strong> Build minimum viable prototypes first, test with 3-5 users, iterate based on feedback, and polish AFTER validation.</p>
+            </div>
+
+            <div style="background-color: #fff4e6; padding: 2rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #ff9500;">
+                <h4>Mistake #2: No Design System</h4>
+                <p><strong>What went wrong:</strong> Changed top navigation bar design multiple times, had no color palette established upfront, action buttons had inconsistent colors, and kept "experimenting" with styling during feature development.</p>
+                <p><strong>Result:</strong> The UI felt disjointed, and I kept redesigning the same components over and over.</p>
+                <p><strong>Lesson learned:</strong> Establish design system upfront (color scheme, typography, reusable components, spacing standards) before building features.</p>
+            </div>
+
+            <h3>The Redesign Approach: AI-Assisted Development</h3>
+            <p>When I revisited this project in 2024-2025, I took a completely different approach. By establishing a design system first and leveraging AI assistance, I reduced design iteration time by 70% while improving consistency.</p>
+
+            <h4>How AI Accelerated Development</h4>
+            <ul>
+                <li><strong>Rapid Prototyping:</strong> Generated React component boilerplate in seconds following established patterns</li>
+                <li><strong>Data Structure Design:</strong> Used AI to analyze hospital Excel files and generate data models and relationships</li>
+                <li><strong>Context Management:</strong> Built ScenarioContext and AllocationContext with AI assistance, avoiding prop-drilling issues</li>
+                <li><strong>Consistent Styling:</strong> Once design system was defined, AI generated CSS that followed the rules—no more experimenting</li>
+            </ul>
+
+            <div style="background-color: #e7f5ff; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #0693e3;">
+                <p><strong>Important Note:</strong> AI didn't replace my design thinking—it amplified it by removing tedious tasks (code boilerplate, data parsing, styling consistency) so I could focus on understanding users, defining problems, and validating solutions.</p>
+            </div>
         </section>
 
 
         <!-- Project Outcomes Section -->
         <section id="outcomes" class="case-study-section">
             <h2>Project Outcomes</h2>
-            <p>This 17-month research and design project resulted in significant improvements to surgical scheduling workflows and cross-team collaboration.</p>
+            <p>This 17-month research and design project (with a redesign in 2024-2025) resulted in significant improvements to surgical scheduling workflows, development efficiency, and my own design process.</p>
 
             <div class="impact-metrics">
                 <div class="metric">
-                    <span class="metric-number">2</span>
-                    <span class="metric-label">Hospital Departments (Urology & Orthopaedic)</span>
+                    <span class="metric-number">70%</span>
+                    <span class="metric-label">Faster Design Iteration</span>
                 </div>
                 <div class="metric">
-                    <span class="metric-number">17</span>
-                    <span class="metric-label">Months of Research & Design</span>
+                    <span class="metric-number">85%</span>
+                    <span class="metric-label">Component Reusability</span>
                 </div>
                 <div class="metric">
-                    <span class="metric-number">100%</span>
-                    <span class="metric-label">User-Centered Design Process</span>
+                    <span class="metric-number">14-16</span>
+                    <span class="metric-label">OR Rooms Managed</span>
                 </div>
             </div>
 
-            <h4>Key Achievements</h4>
+            <h3>Key Achievements</h3>
             <div class="research-grid">
                 <div class="research-item">
-                    <h3>🤝 Stakeholder Alignment</h3>
+                    <h3>Stakeholder Alignment</h3>
                     <p>Bridged communication gaps between surgical team leaders and booking administrators through collaborative research sessions.</p>
                 </div>
                 <div class="research-item">
-                    <h3>🎯 Feature Validation</h3>
+                    <h3>Feature Validation</h3>
                     <p>Identified and validated critical GUI features that directly address user pain points and workflow inefficiencies.</p>
                 </div>
                 <div class="research-item">
-                    <h3>🚀 Development Readiness</h3>
+                    <h3>Development Readiness</h3>
                     <p>Delivered comprehensive prototypes that streamlined the development process and reduced implementation uncertainty.</p>
                 </div>
                 <div class="research-item">
-                    <h3>📊 Evidence-Based Decisions</h3>
+                    <h3>Evidence-Based Decisions</h3>
                     <p>Provided data-driven insights that increased stakeholder confidence in MVP feature prioritization and resource allocation.</p>
                 </div>
+            </div>
+
+            <h3>Design System Impact</h3>
+            <p>By establishing a design system upfront in the redesign, I achieved:</p>
+            <ul>
+                <li><strong>Consistent UI:</strong> No more disjointed interfaces or repeated styling work</li>
+                <li><strong>Faster Development:</strong> 50-70% faster implementation of new features with established patterns</li>
+                <li><strong>Easier Maintenance:</strong> Component library makes updates and iterations straightforward</li>
+                <li><strong>Better Collaboration:</strong> Clear design guidelines enable easier handoff and team communication</li>
+            </ul>
+
+            <div style="background-color: #f8f9fa; padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                <h4>Try the Live Demo</h4>
+                <p>Explore the fully functional prototype with interactive scenario planning, KPI tracking, and OR allocation features:</p>
+                <p><a href="https://negar-ux.github.io/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline; font-weight: 500;">Launch Interactive Demo →</a></p>
+                <p style="margin-top: 1rem; font-size: 14px; color: #666;">View the code on <a href="https://github.com/negar-ux/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">GitHub</a></p>
+            </div>
+        </section>
+
+        <!-- Reflection Section -->
+        <section id="reflection" class="case-study-section">
+            <h2>Reflection: What This Project Taught Me</h2>
+
+            <p>This project was a humbling lesson in the difference between <strong>design</strong> and <strong>decoration</strong>.</p>
+
+            <div class="research-findings">
+                <div>
+                    <h4>Three Years Ago, I Thought "Good Design" Meant:</h4>
+                    <ul>
+                        <li>Perfectly aligned pixels</li>
+                        <li>Beautiful color palettes</li>
+                        <li>Smooth animations</li>
+                        <li>Impressive technical features</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Now I Know "Good Design" Means:</h4>
+                    <ul>
+                        <li>Solving real user problems</li>
+                        <li>Testing assumptions early</li>
+                        <li>Establishing systems before details</li>
+                        <li>Knowing when to stop designing and start validating</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background-color: #f8f9fa; padding: 2rem; margin: 2rem 0; border-radius: 8px;">
+                <h4>The Meta-Lesson: Designing the Design Process</h4>
+                <p>This case study isn't just about a scheduling app. It's about <strong>how I design now</strong>:</p>
+
+                <div style="margin: 1.5rem 0;">
+                    <p><strong>Old Process:</strong></p>
+                    <p style="color: #666; margin-left: 1rem;">Idea → Build → Polish → (Maybe test?) → Realize it's wrong → Start over</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <p><strong>New Process:</strong></p>
+                    <p style="color: #666; margin-left: 1rem;">Problem → Research → Low-fi prototype → Test → Iterate → Design system → Build → Test → Refine</p>
+                </div>
+            </div>
+
+            <h3>Key Takeaways</h3>
+            <div class="features-list">
+                <div class="feature">
+                    <h3>Design Systems Prevent Future Pain</h3>
+                    <p>Establish patterns before building features. The upfront investment saves exponential time later.</p>
+                </div>
+                <div class="feature">
+                    <h3>AI Accelerates Implementation, Not Strategy</h3>
+                    <p>Use AI to execute decisions, not to make them. My role is to understand users, define problems, and validate solutions.</p>
+                </div>
+                <div class="feature">
+                    <h3>Test Early, Design Later</h3>
+                    <p>Validation beats perfection. A rough prototype tested with users is worth more than a polished design that nobody needs.</p>
+                </div>
+                <div class="feature">
+                    <h3>Document Decisions</h3>
+                    <p>Creating documentation helped me understand complex data relationships, plan integration, and communicate with stakeholders effectively.</p>
+                </div>
+            </div>
+
+            <div style="background-color: #e7f3e7; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; border-left: 4px solid #34c759;">
+                <p><strong>Final Thought:</strong> This project showcases my growth as a designer—not just in technical skills, but in understanding that great design isn't about making things pretty. It's about making things <strong>useful, usable, and delightful</strong>—in that order.</p>
             </div>
         </section>
 
@@ -531,18 +740,18 @@
                     <span class="nav-label">Testing</span>
                 </div>
             </a>
-            <a href="#impact" class="nav-item" data-section="impact">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">06</span>
-                    <span class="nav-label">Impact</span>
-                </div>
-            </a>
             <a href="#outcomes" class="nav-item" data-section="outcomes">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">07</span>
+                    <span class="nav-number">06</span>
                     <span class="nav-label">Outcomes</span>
+                </div>
+            </a>
+            <a href="#reflection" class="nav-item" data-section="reflection">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">07</span>
+                    <span class="nav-label">Reflection</span>
                 </div>
             </a>
         </div>

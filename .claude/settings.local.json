@@ -47,7 +47,9 @@
       "WebFetch(domain:www.taniasoraya.com)",
       "WebFetch(domain:stephaniewalter.design)",
       "Bash(start my-journey.html)",
-      "Bash(start about-me.html)"
+      "Bash(start about-me.html)",
+      "WebFetch(domain:ipinfo.io)",
+      "Bash(start surgical-dashboard.html)"
     ],
     "deny": [],
     "ask": []
