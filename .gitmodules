@@ -1,0 +1,3 @@
+[submodule "projects/Surgical-GUI"]
+	path = projects/Surgical-GUI
+	url = git@github.com:Negar-ux/Surgical-GUI.git
