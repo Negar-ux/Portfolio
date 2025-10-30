@@ -237,18 +237,8 @@ nav a.contact-nav::before {
 
 /* Dark Mode Toggle Button */
 .theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0.4rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    display: none; /* Hidden for now - will work on dark mode later */
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
+    display: none !important; /* Hidden for now - will work on dark mode later */
+    visibility: hidden !important;
 }
 
 .theme-toggle:hover {
