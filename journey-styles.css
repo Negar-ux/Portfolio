@@ -1379,3 +1379,116 @@ body {
         font-size: 2rem;
     }
 }
+
+/* ========================================
+   DARK MODE OVERRIDES FOR JOURNEY PAGE
+   ======================================== */
+
+[data-theme="dark"] {
+    /* Journey Hero Section */
+    .journey-hero {
+        background-color: var(--bg-primary);
+    }
+
+    .journey-hero h1 {
+        color: var(--text-primary);
+    }
+
+    .journey-hero p {
+        color: var(--text-secondary);
+    }
+
+    .journey-hero .accent-line {
+        background-color: var(--accent-cyan);
+    }
+
+    .journey-hero .hero-image::before {
+        background:
+            linear-gradient(45deg, var(--accent-yellow) 50%, var(--bg-primary) 50%),
+            linear-gradient(45deg, transparent 49.8%, rgba(103, 224, 255, 0.3) 49.8%, rgba(103, 224, 255, 0.3) 50.2%, transparent 50.2%);
+    }
+
+    .journey-hero .hero-image img {
+        border-color: var(--bg-primary);
+    }
+
+    /* Page Navigation */
+    .page-nav-item {
+        color: var(--text-secondary);
+        border-color: var(--border-color);
+    }
+
+    .page-nav-item.active {
+        color: var(--accent-cyan);
+    }
+
+    .page-nav-item:hover {
+        color: var(--text-primary);
+    }
+
+    /* Education Timeline */
+    .education-item h3,
+    .journey-item h3 {
+        color: var(--text-primary);
+    }
+
+    .education-item p,
+    .education-item .education-meta,
+    .journey-item p,
+    .timeline-content p {
+        color: var(--text-secondary);
+    }
+
+    .education-meta {
+        color: var(--text-muted);
+    }
+
+    /* Skills Section */
+    .skills-grid,
+    .tool-category {
+        border-color: var(--border-color);
+    }
+
+    .skill-name,
+    .tool-category h3 {
+        color: var(--text-primary);
+    }
+
+    .tool-item {
+        color: var(--text-secondary);
+    }
+
+    /* Timeline */
+    .timeline-line {
+        background: var(--border-color);
+    }
+
+    .timeline-dot {
+        background-color: var(--accent-cyan);
+        border-color: var(--bg-primary);
+    }
+
+    .timeline-card {
+        background-color: var(--card-bg);
+        border-color: var(--border-color);
+    }
+
+    .timeline-card h3 {
+        color: var(--text-primary);
+    }
+
+    .timeline-card p,
+    .timeline-year {
+        color: var(--text-secondary);
+    }
+
+    /* Highlight Sections */
+    .highlight-item {
+        background-color: var(--bg-secondary);
+        color: var(--text-secondary);
+    }
+
+    .highlight-number {
+        color: var(--accent-cyan);
+    }
+}

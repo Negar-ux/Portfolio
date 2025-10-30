@@ -715,3 +715,109 @@
         font-size: 20px;
     }
 }
+
+/* ========================================
+   DARK MODE OVERRIDES FOR CASE STUDIES
+   ======================================== */
+
+[data-theme="dark"] {
+    /* Case Study Hero */
+    .case-study-hero,
+    .case-study-hero-simple {
+        background-color: var(--bg-primary);
+    }
+
+    .case-study-hero h1,
+    .case-study-hero-simple h1 {
+        color: var(--text-primary);
+    }
+
+    .case-study-hero p,
+    .case-study-hero .subtitle {
+        color: var(--text-secondary);
+    }
+
+    /* Project Details */
+    .project-details,
+    .details-grid {
+        background-color: var(--bg-secondary);
+    }
+
+    .detail-item h4,
+    .detail-item p {
+        color: var(--text-primary);
+    }
+
+    .detail-item a {
+        color: var(--accent-blue);
+    }
+
+    /* Case Study Sections */
+    .case-study-section {
+        background-color: var(--bg-primary);
+    }
+
+    .case-study-section h2,
+    .case-study-section h3,
+    .case-study-section h4 {
+        color: var(--text-primary);
+    }
+
+    .case-study-section p,
+    .case-study-section li {
+        color: var(--text-secondary);
+    }
+
+    /* Case Study Quote */
+    .case-study-quote {
+        background-color: var(--bg-secondary);
+        border-left-color: var(--accent-pink);
+    }
+
+    .case-study-quote p {
+        color: var(--text-secondary);
+    }
+
+    /* Navigation Buttons */
+    .case-study-nav {
+        background-color: var(--bg-secondary);
+        border-top-color: var(--border-color);
+    }
+
+    .nav-button {
+        background-color: var(--card-bg);
+        color: var(--text-primary);
+        border-color: var(--border-color);
+    }
+
+    .nav-button:hover {
+        background-color: var(--accent-cyan);
+        color: #000000;
+        border-color: var(--accent-cyan);
+    }
+
+    /* Research Grids and Cards */
+    .research-grid .research-item,
+    .features-list .feature {
+        background-color: var(--bg-secondary);
+        color: var(--text-secondary);
+    }
+
+    .research-item h3,
+    .feature h3 {
+        color: var(--text-primary);
+    }
+
+    /* Impact Metrics */
+    .metric {
+        background-color: var(--bg-secondary);
+    }
+
+    .metric-number {
+        color: var(--accent-pink);
+    }
+
+    .metric-label {
+        color: var(--text-secondary);
+    }
+}

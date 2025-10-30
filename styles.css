@@ -1855,7 +1855,30 @@ footer {
     }
 
     .cta-button:hover {
-        box-shadow: 6px 6px 0px var(--accent-cyan);
+        background-color: var(--accent-yellow);
+        box-shadow: 8px 8px 0px var(--accent-cyan);
+    }
+
+    /* Contact Navigation Button */
+    nav a.contact-nav {
+        background-color: var(--accent-yellow);
+        color: #000000;
+        border-color: var(--text-primary);
+        box-shadow: 4px 4px 0px var(--accent-cyan);
+    }
+
+    nav a.contact-nav:hover {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        border-color: var(--text-primary);
+        box-shadow: 4px 4px 0px var(--accent-yellow);
+    }
+
+    nav a.contact-nav.active {
+        background-color: var(--accent-yellow);
+        color: #000000;
+        border-color: var(--text-primary);
+        box-shadow: 4px 4px 0px var(--accent-cyan);
     }
 
     /* Links */
