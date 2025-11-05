@@ -191,6 +191,222 @@
         body.password-locked {
             overflow: hidden;
         }
+
+        /* ========================================
+           MOBILE RESPONSIVENESS FOR SURGICAL DASHBOARD
+           ======================================== */
+
+        /* Mobile: Password Modal Optimization */
+        @media (max-width: 768px) {
+            .password-modal {
+                padding: 1.5rem !important;
+                max-width: 95% !important;
+            }
+
+            .password-modal h2 {
+                font-size: 22px !important;
+            }
+
+            .password-modal p {
+                font-size: 14px !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .password-buttons {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            .password-btn {
+                padding: 12px 20px !important;
+                width: 100% !important;
+            }
+
+            #togglePassword {
+                min-width: 44px !important;
+                min-height: 44px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+        }
+
+        /* Mobile: Grid Layout Responsiveness */
+        @media (max-width: 768px) {
+            /* Convert all multi-column grids to single column */
+            div[style*="grid-template-columns: repeat(3, 1fr)"],
+            div[style*="grid-template-columns: repeat(2, 1fr)"],
+            div[style*="grid-template-columns: 1fr 1fr"],
+            div[style*="grid-template-columns: 1fr 1fr 1fr"],
+            div[style*="grid-template-columns: 2fr 3fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+
+        /* Mobile: Padding and Margin Optimization */
+        @media (max-width: 768px) {
+            /* Reduce section padding */
+            .case-study-section {
+                padding: 0 1rem !important;
+            }
+
+            /* Reduce content padding */
+            div[style*="padding: 2rem"] {
+                padding: 1rem !important;
+            }
+
+            div[style*="padding: 1.5rem"] {
+                padding: 0.75rem !important;
+            }
+
+            /* Reduce margins */
+            div[style*="margin: 2rem"] {
+                margin: 1rem 0 !important;
+            }
+
+            div[style*="margin-top: 2.5rem"] {
+                margin-top: 1.5rem !important;
+            }
+
+            div[style*="margin-bottom: 2.5rem"] {
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Reduce gap spacing in grids */
+            div[style*="gap: 2rem"] {
+                gap: 1rem !important;
+            }
+
+            div[style*="gap: 2.5rem"] {
+                gap: 1rem !important;
+            }
+        }
+
+        /* Mobile: Typography Adjustments */
+        @media (max-width: 768px) {
+            .case-study-hero-simple h1 {
+                font-size: 28px !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .case-study-hero-simple .subtitle {
+                font-size: 16px !important;
+            }
+
+            .case-study-section h2 {
+                font-size: 24px !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .case-study-section h3 {
+                font-size: 20px !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .case-study-section h4 {
+                font-size: 18px !important;
+            }
+
+            .case-study-section p {
+                font-size: 15px !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .case-study-section ul li,
+            .case-study-section ol li {
+                font-size: 15px !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
+
+        /* Mobile: Image Optimization */
+        @media (max-width: 768px) {
+            .case-study-image img,
+            figure img {
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+                border-radius: 8px !important;
+            }
+
+            /* Reduce max-widths on mobile for better proportions */
+            img[style*="max-width: 1200px"],
+            img[style*="max-width: 1400px"],
+            img[style*="max-width: 700px"] {
+                max-width: 100% !important;
+            }
+        }
+
+        /* Mobile: Detail Grid Responsiveness */
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                text-align: left !important;
+            }
+
+            .detail-item h4 {
+                font-size: 16px !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .detail-item p {
+                font-size: 14px !important;
+            }
+        }
+
+        /* Mobile: List Styling */
+        @media (max-width: 768px) {
+            .case-study-section ul {
+                padding-left: 1.25rem !important;
+                margin: 1rem 0 !important;
+            }
+
+            .case-study-section ol {
+                padding-left: 1.25rem !important;
+                margin: 1rem 0 !important;
+            }
+
+            .checkmark-list {
+                padding-left: 0 !important;
+            }
+
+            .checkmark-list li {
+                padding-left: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+        }
+
+        /* Extra Small Screens (480px and below) */
+        @media (max-width: 480px) {
+            .case-study-hero-simple h1 {
+                font-size: 24px !important;
+            }
+
+            .case-study-section h2 {
+                font-size: 20px !important;
+            }
+
+            .case-study-section h3 {
+                font-size: 18px !important;
+            }
+
+            .password-modal {
+                padding: 1.25rem !important;
+            }
+
+            .password-modal h2 {
+                font-size: 20px !important;
+            }
+
+            div[style*="padding: 1rem"] {
+                padding: 0.75rem !important;
+            }
+
+            div[style*="margin: 1rem"] {
+                margin: 0.75rem 0 !important;
+            }
+        }
     </style>
 </head>
 <body>
