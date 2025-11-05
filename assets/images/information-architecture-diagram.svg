@@ -1,0 +1,140 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Hierarchical Architecture - From Strategic Overview to Operational Details
+  </text>
+
+  <!-- Strategic Level -->
+  <g>
+    <rect x="300" y="90" width="600" height="120" fill="#FF6B6B" rx="10" opacity="0.9"/>
+    <text x="600" y="125" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      STRATEGIC LEVEL - Directors
+    </text>
+    <text x="600" y="150" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      Dashboard • Scenario Comparison • KPI Summary
+    </text>
+    <text x="600" y="175" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white" font-style="italic">
+      High-level metrics • Policy decisions • What-if modeling
+    </text>
+    <text x="600" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      🎯 OR Utilization • Waitlist Clearance • Cost Projections
+    </text>
+  </g>
+
+  <!-- Arrow down -->
+  <defs>
+    <marker id="arrowdown" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L3,5 z" fill="#666" />
+    </marker>
+  </defs>
+  <line x1="600" y1="210" x2="600" y2="260" stroke="#666" stroke-width="3" marker-end="url(#arrowdown)"/>
+  <text x="650" y="240" font-family="Arial, sans-serif" font-size="12" fill="#666">Drill down →</text>
+
+  <!-- Tactical Level -->
+  <g>
+    <rect x="200" y="270" width="800" height="140" fill="#FFB74D" rx="10" opacity="0.9"/>
+    <text x="600" y="305" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      TACTICAL LEVEL - Division Managers
+    </text>
+    <text x="600" y="330" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      Division View • Surgeon Schedules • Block Allocation
+    </text>
+    <text x="600" y="355" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white" font-style="italic">
+      Weekly patterns • Resource allocation • Team coordination
+    </text>
+    <text x="600" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      📊 OR Schedule Grid • Service Distribution • Surgeon Assignments
+    </text>
+    <text x="600" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      🔍 View by: OR | Service | Surgeon | Week
+    </text>
+  </g>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="410" x2="600" y2="460" stroke="#666" stroke-width="3" marker-end="url(#arrowdown)"/>
+  <text x="650" y="440" font-family="Arial, sans-serif" font-size="12" fill="#666">Drill down →</text>
+
+  <!-- Operational Level -->
+  <g>
+    <rect x="100" y="470" width="1000" height="160" fill="#4ECDC4" rx="10" opacity="0.9"/>
+    <text x="600" y="505" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      OPERATIONAL LEVEL - Booking Clerks
+    </text>
+    <text x="600" y="530" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      Patient Allocation • Daily Schedule • Waitlist Management
+    </text>
+    <text x="600" y="555" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="white" font-style="italic">
+      Patient-level details • Real-time scheduling • Conflict detection
+    </text>
+    <text x="600" y="580" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      👤 Patient Details: Name, MRN, Priority, Wait Time, Procedure, Post-Op
+    </text>
+    <text x="600" y="600" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      ⏰ Time Blocks: 8AM-8PM • Bed Capacity • Equipment Requirements
+    </text>
+    <text x="600" y="620" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      ⚠️ Automated: Conflict Detection • Constraint Validation • Alerts
+    </text>
+  </g>
+
+  <!-- Side annotations -->
+  <g>
+    <!-- Information Density -->
+    <text x="80" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666" text-anchor="end">
+      Less Detail
+    </text>
+    <text x="80" y="170" font-family="Arial, sans-serif" font-size="12" fill="#999" text-anchor="end">
+      (Summary)
+    </text>
+
+    <line x1="85" y1="160" x2="85" y2="540" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+    <polygon points="85,150 80,160 90,160" fill="#999"/>
+    <polygon points="85,550 80,540 90,540" fill="#999"/>
+
+    <text x="80" y="560" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666" text-anchor="end">
+      More Detail
+    </text>
+    <text x="80" y="580" font-family="Arial, sans-serif" font-size="12" fill="#999" text-anchor="end">
+      (Granular)
+    </text>
+
+    <!-- Decision Frequency -->
+    <text x="1120" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Annual/
+    </text>
+    <text x="1120" y="170" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Monthly
+    </text>
+
+    <text x="1120" y="350" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Quarterly/
+    </text>
+    <text x="1120" y="370" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Weekly
+    </text>
+
+    <text x="1120" y="560" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Daily/
+    </text>
+    <text x="1120" y="580" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#666">
+      Hourly
+    </text>
+  </g>
+
+  <!-- Key Principle Box -->
+  <g>
+    <rect x="200" y="680" width="800" height="90" fill="#E8F5E9" rx="8" stroke="#2E7D32" stroke-width="2"/>
+    <text x="600" y="710" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2E7D32">
+      ✓ KEY PRINCIPLE: Progressive Disclosure
+    </text>
+    <text x="600" y="735" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#1a1a1a">
+      Users enter at their organizational level → See appropriate detail for their decisions
+    </text>
+    <text x="600" y="755" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#1a1a1a">
+      → Drill down when needed without cognitive overload
+    </text>
+  </g>
+</svg>

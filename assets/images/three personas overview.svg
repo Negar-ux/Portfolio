@@ -1,0 +1,156 @@
+<svg width="2000" height="714" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="2000" height="714" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="1000" y="57" font-family="Arial, sans-serif" font-size="46" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Three Organizational Levels with Distinct Needs
+  </text>
+
+  <!-- Strategic Level -->
+  <g>
+    <rect x="71" y="114" width="571" height="543" fill="#0f172a" rx="14" opacity="0.1"/>
+    <rect x="71" y="114" width="571" height="86" fill="#0f172a" rx="14"/>
+    <text x="357" y="164" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="white">
+      STRATEGIC
+    </text>
+
+    <!-- Avatar circle -->
+    <circle cx="357" cy="264" r="43" fill="#0f172a" opacity="0.3"/>
+    <text x="357" y="279" font-family="Arial, sans-serif" font-size="43" text-anchor="middle" fill="#0f172a">👔</text>
+
+    <!-- Persona details -->
+    <text x="357" y="336" font-family="Arial, sans-serif" font-size="29" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Dr. Miranda Bailey
+    </text>
+    <text x="357" y="364" font-family="Arial, sans-serif" font-size="23" text-anchor="middle" fill="#666">
+      Director of Surgery (~5 users)
+    </text>
+
+    <!-- Details -->
+    <text x="100" y="414" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Frequency:
+    </text>
+    <text x="100" y="443" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Annual planning, monthly reviews
+    </text>
+
+    <text x="100" y="486" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Need:
+    </text>
+    <text x="100" y="514" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Test "what-if" scenarios before
+    </text>
+    <text x="100" y="540" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      implementing policy changes
+    </text>
+
+    <text x="100" y="583" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Pain:
+    </text>
+    <text x="100" y="611" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Can't model outcomes or justify
+    </text>
+    <text x="100" y="637" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      decisions with data
+    </text>
+  </g>
+
+  <!-- Tactical Level -->
+  <g>
+    <rect x="714" y="114" width="571" height="543" fill="#0284c7" rx="14" opacity="0.1"/>
+    <rect x="714" y="114" width="571" height="86" fill="#0284c7" rx="14"/>
+    <text x="1000" y="164" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="white">
+      TACTICAL
+    </text>
+
+    <!-- Avatar circle -->
+    <circle cx="1000" cy="264" r="43" fill="#0284c7" opacity="0.3"/>
+    <text x="1000" y="279" font-family="Arial, sans-serif" font-size="43" text-anchor="middle" fill="#0284c7">👩‍⚕️</text>
+
+    <!-- Persona details -->
+    <text x="1000" y="336" font-family="Arial, sans-serif" font-size="29" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Dr. Callie Torres
+    </text>
+    <text x="1000" y="364" font-family="Arial, sans-serif" font-size="23" text-anchor="middle" fill="#666">
+      Division Manager (~10 users)
+    </text>
+
+    <!-- Details -->
+    <text x="743" y="414" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Frequency:
+    </text>
+    <text x="743" y="443" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Quarterly allocation, weekly reviews
+    </text>
+
+    <text x="743" y="486" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Need:
+    </text>
+    <text x="743" y="514" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Unified view of 16+ surgeon
+    </text>
+    <text x="743" y="540" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      schedules across multiple ORs
+    </text>
+
+    <text x="743" y="583" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Pain:
+    </text>
+    <text x="743" y="611" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Toggle between Outlook, Excel,
+    </text>
+    <text x="743" y="637" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Epic to see complete picture
+    </text>
+  </g>
+
+  <!-- Operational Level -->
+  <g>
+    <rect x="1357" y="114" width="571" height="543" fill="#475569" rx="14" opacity="0.1"/>
+    <rect x="1357" y="114" width="571" height="86" fill="#475569" rx="14"/>
+    <text x="1643" y="164" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="white">
+      OPERATIONAL
+    </text>
+
+    <!-- Avatar circle -->
+    <circle cx="1643" cy="264" r="43" fill="#475569" opacity="0.3"/>
+    <text x="1643" y="279" font-family="Arial, sans-serif" font-size="43" text-anchor="middle" fill="#475569">📋</text>
+
+    <!-- Persona details -->
+    <text x="1643" y="336" font-family="Arial, sans-serif" font-size="29" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Tyler Chen
+    </text>
+    <text x="1643" y="364" font-family="Arial, sans-serif" font-size="23" text-anchor="middle" fill="#666">
+      OR Booking Clerk (~50 users)
+    </text>
+
+    <!-- Details -->
+    <text x="1386" y="414" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Frequency:
+    </text>
+    <text x="1386" y="443" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Daily scheduling
+    </text>
+
+    <text x="1386" y="486" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Need:
+    </text>
+    <text x="1386" y="514" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      Avoid conflicts, schedule patients
+    </text>
+    <text x="1386" y="540" font-family="Arial, sans-serif" font-size="21" fill="#666">
+      efficiently, track bed availability
+    </text>
+
+    <text x="1386" y="583" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#1a1a1a">
+      Pain:
+    </text>
+    <text x="1386" y="611" font-family="Arial, sans-serif" font-size="21" fill="#d97706" font-weight="bold">
+      2-3 hours daily on manual
+    </text>
+    <text x="1386" y="637" font-family="Arial, sans-serif" font-size="21" fill="#d97706" font-weight="bold">
+      conflict detection
+    </text>
+  </g>
+</svg>
