@@ -238,9 +238,15 @@
             div[style*="grid-template-columns: repeat(2, 1fr)"],
             div[style*="grid-template-columns: 1fr 1fr"],
             div[style*="grid-template-columns: 1fr 1fr 1fr"],
-            div[style*="grid-template-columns: 2fr 3fr"] {
+            div[style*="grid-template-columns: 2fr 3fr"],
+            div[style*="grid-template-columns: 3fr"] {
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
+            }
+
+            /* Specific overrides for known grid sections */
+            div[style*="grid-template-columns: repeat(3, 1fr)"] div {
+                width: 100% !important;
             }
         }
 
@@ -374,6 +380,42 @@
             .checkmark-list li {
                 padding-left: 1.5rem !important;
                 margin-bottom: 0.75rem !important;
+            }
+        }
+
+        /* Mobile: Card Box Styling for Key Design Decisions, Design Priorities, Key Contributions */
+        @media (max-width: 768px) {
+            /* Ensure cards don't overflow */
+            div[style*="background-color: #d1fae5"],
+            div[style*="background-color: #f8f9fa"],
+            div[style*="background-color: #e0f2fe"],
+            div[style*="padding: 1.5rem"] {
+                overflow: hidden !important;
+                word-wrap: break-word !important;
+            }
+
+            /* Ensure h4 text doesn't overflow */
+            div[style*="padding: 1.5rem"] h4 {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+
+            /* Ensure ul/ol in cards don't overflow */
+            div[style*="padding: 1.5rem"] ul,
+            div[style*="padding: 1.5rem"] ol {
+                margin: 0 !important;
+                padding-left: 1.25rem !important;
+            }
+
+            div[style*="padding: 1.5rem"] li {
+                font-size: 13px !important;
+                line-height: 1.5 !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            /* Reduce padding inside cards on mobile */
+            div[style*="padding: 1.5rem"] {
+                padding: 1rem !important;
             }
         }
 
