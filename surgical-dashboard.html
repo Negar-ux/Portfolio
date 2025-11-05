@@ -47,9 +47,174 @@
             position: absolute;
             left: 0;
         }
+
+        /* Password Protection Styles */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .password-modal {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-modal h2 {
+            color: #0f172a;
+            margin-bottom: 1rem;
+            font-size: 24px;
+        }
+
+        .password-modal p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 14px;
+        }
+
+        .password-input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .password-input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .password-input-group input:focus {
+            outline: none;
+            border-color: #0284c7;
+        }
+
+        .password-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .password-btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .password-submit {
+            background-color: #0284c7;
+            color: white;
+        }
+
+        .password-submit:hover {
+            background-color: #0570b8;
+            transform: translateY(-2px);
+        }
+
+        .password-cancel {
+            background-color: #e0e0e0;
+            color: #666;
+        }
+
+        .password-cancel:hover {
+            background-color: #d0d0d0;
+        }
+
+        .password-error {
+            color: #d97706;
+            font-size: 13px;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        body.password-locked {
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
+    <!-- Password Protection Modal -->
+    <div id="passwordOverlay" class="password-overlay">
+        <div class="password-modal">
+            <h2>Access Case Study</h2>
+            <p>This case study is password protected. Please enter the password to continue.</p>
+            <div class="password-input-group">
+                <input type="password" id="passwordInput" placeholder="Enter password" />
+                <div id="passwordError" class="password-error">Incorrect password. Please try again.</div>
+            </div>
+            <div class="password-buttons">
+                <button class="password-btn password-submit" onclick="checkPassword()">Submit</button>
+                <button class="password-btn password-cancel" onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password protection script
+        const CORRECT_PASSWORD = "surgical2025";
+        const SESSION_KEY = "surgicalDashboardAccess";
+
+        function checkPassword() {
+            const inputPassword = document.getElementById("passwordInput").value;
+            const errorMessage = document.getElementById("passwordError");
+
+            if (inputPassword === CORRECT_PASSWORD) {
+                // Store in session storage so password isn't needed after page refresh
+                sessionStorage.setItem(SESSION_KEY, "true");
+                document.getElementById("passwordOverlay").style.display = "none";
+                document.body.classList.remove("password-locked");
+            } else {
+                errorMessage.style.display = "block";
+                document.getElementById("passwordInput").value = "";
+                document.getElementById("passwordInput").focus();
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Allow Enter key to submit password
+        document.addEventListener("DOMContentLoaded", function() {
+            const passwordInput = document.getElementById("passwordInput");
+
+            // Check if user already entered password in this session
+            if (sessionStorage.getItem(SESSION_KEY) === "true") {
+                document.getElementById("passwordOverlay").style.display = "none";
+                document.body.classList.remove("password-locked");
+            } else {
+                document.body.classList.add("password-locked");
+                passwordInput.focus();
+            }
+
+            passwordInput.addEventListener("keypress", function(e) {
+                if (e.key === "Enter") {
+                    checkPassword();
+                }
+            });
+        });
+    </script>
+
     <header>
         <nav>
             <div class="hamburger" id="hamburger">
