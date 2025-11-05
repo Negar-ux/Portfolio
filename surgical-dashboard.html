@@ -48,40 +48,71 @@
             left: 0;
         }
 
-        /* Password Protection Styles */
+        /* Password Protection Styles - Matching Portfolio Design */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #000000;
+            --text-secondary: #565656;
+            --text-muted: #666;
+            --border-color: #e0e4e7;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --accent-blue: #0693e3;
+            --accent-dark-blue: #067bc2;
+            --accent-pink: #a33468;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b8b8b8;
+            --text-muted: #999;
+            --border-color: #3a3a3a;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --accent-blue: #4db3ff;
+            --accent-dark-blue: #3a9fd5;
+            --accent-pink: #d864a0;
+        }
+
         .password-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
+            backdrop-filter: blur(4px);
         }
 
         .password-modal {
-            background-color: white;
+            background-color: var(--bg-primary);
             padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 40px var(--shadow-color);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 90%;
+            border: 1px solid var(--border-color);
         }
 
         .password-modal h2 {
-            color: #0f172a;
-            margin-bottom: 1rem;
-            font-size: 24px;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 28px;
+            font-family: 'Merriweather Sans', sans-serif;
+            font-weight: 500;
         }
 
         .password-modal p {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 2rem;
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .password-input-group {
@@ -90,18 +121,25 @@
 
         .password-input-group input {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
             border-radius: 8px;
-            font-size: 16px;
-            font-family: inherit;
+            font-size: 15px;
+            font-family: 'Merriweather', serif;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
             box-sizing: border-box;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+        }
+
+        .password-input-group input::placeholder {
+            color: var(--text-muted);
         }
 
         .password-input-group input:focus {
             outline: none;
-            border-color: #0284c7;
+            border-color: var(--accent-blue);
+            background-color: var(--bg-primary);
         }
 
         .password-buttons {
@@ -111,39 +149,42 @@
         }
 
         .password-btn {
-            padding: 10px 24px;
+            padding: 12px 28px;
             border: none;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: inherit;
+            transition: all 0.3s ease;
+            font-family: 'Merriweather Sans', sans-serif;
         }
 
         .password-submit {
-            background-color: #0284c7;
+            background-color: var(--accent-blue);
             color: white;
         }
 
         .password-submit:hover {
-            background-color: #0570b8;
+            background-color: var(--accent-dark-blue);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
 
         .password-cancel {
-            background-color: #e0e0e0;
-            color: #666;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
         }
 
         .password-cancel:hover {
-            background-color: #d0d0d0;
+            background-color: var(--border-color);
+            transform: translateY(-2px);
         }
 
         .password-error {
-            color: #d97706;
-            font-size: 13px;
-            margin-top: 0.5rem;
+            color: var(--accent-pink);
+            font-size: 14px;
+            margin-top: 0.75rem;
             display: none;
         }
 
