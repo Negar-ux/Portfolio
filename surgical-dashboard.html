@@ -200,7 +200,10 @@
             <h2>View Case Study</h2>
             <p>This case study is password protected. Please enter the password to continue.</p>
             <div class="password-input-group">
-                <input type="password" id="passwordInput" placeholder="Enter password" />
+                <div style="position: relative; display: flex; align-items: center;">
+                    <input type="password" id="passwordInput" placeholder="Enter password" style="flex: 1; padding-right: 40px;" />
+                    <button type="button" id="togglePassword" style="position: absolute; right: 12px; background: none; border: none; cursor: pointer; font-size: 18px; padding: 0; color: var(--text-muted);">👁️</button>
+                </div>
                 <div id="passwordError" class="password-error">Incorrect password. Please try again.</div>
             </div>
             <div class="password-buttons">
@@ -239,9 +242,24 @@
             window.history.back();
         }
 
+        // Toggle password visibility
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("passwordInput");
+            const toggleButton = document.getElementById("togglePassword");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.textContent = "👁️‍🗨️";
+            } else {
+                passwordInput.type = "password";
+                toggleButton.textContent = "👁️";
+            }
+        }
+
         // Initialize password protection when page loads
         function initPasswordProtection() {
             const passwordInput = document.getElementById("passwordInput");
+            const toggleButton = document.getElementById("togglePassword");
 
             // Check if user already entered password in this session
             if (sessionStorage.getItem(SESSION_KEY) === "true") {
@@ -257,6 +275,12 @@
                 if (e.key === "Enter") {
                     checkPassword();
                 }
+            });
+
+            // Add eye toggle functionality
+            toggleButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                togglePasswordVisibility();
             });
         }
 
