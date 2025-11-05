@@ -21,239 +21,31 @@
     <script src="dark-mode.js"></script>
     <script src="script.js" defer></script>
     <style>
-
-        .project-image-large {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .project-meta-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-
-        .meta-item {
-            font-size: 14px;
-        }
-
-        .meta-label {
-            color: #a33468;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            display: block;
-        }
-
-        .meta-value {
-            color: #565656;
-            line-height: 1.4;
-        }
-
-        /* Before/After comparison styling */
-        .comparison-section {
-            margin: 3rem 0;
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .comparison-item h4 {
-            color: #000000;
-            font-size: 20px;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .comparison-item img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .feedback-section h5 {
-            color: #a33468;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .opportunities-section h5 {
-            color: #0693e3;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .changes-section h5 {
-            color: #067bc2;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .accessibility-note {
-            color: #067bc2;
-            font-weight: 500;
+        .placeholder-notice {
+            background-color: #fef3c7;
+            border-left: 4px solid #d97706;
+            padding: 1rem;
             margin: 1rem 0;
-        }
-
-        /* Research findings grid */
-        .research-findings {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        /* Research grid for insights and other sections */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .research-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: left;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .research-item h3 {
-            margin: 0 0 1rem 0;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .research-item p {
-            margin: 0;
+            font-size: 14px;
             color: #666;
-            line-height: 1.5;
+            font-style: italic;
         }
 
-        /* Features list styling - Clean minimal text */
-        .features-list {
-            margin: 2rem 0;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .checkmark-list {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .feature {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e0e4e7;
-        }
-
-        .feature:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .feature h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 18px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .feature p {
-            margin: 0;
-            color: #666;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-
-        /* Impact metrics styling */
-        .impact-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .metric {
-            background: #f8f9fa;
-            padding: 2rem 1rem;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #a33468;
+        .checkmark-list li {
+            padding-left: 1.5rem;
+            position: relative;
             margin-bottom: 0.5rem;
         }
 
-        .metric-label {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-        }
-
-        /* Survey visuals */
-        .survey-visual {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .survey-visual img {
-            max-width: 300px;
-            border-radius: 8px;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .project-details .details-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .research-findings {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .features-list {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .impact-metrics {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .project-meta-list {
-                gap: 1rem;
-            }
+        .checkmark-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
         }
     </style>
 </head>
@@ -288,553 +80,582 @@
     </header>
 
     <main class="case-study">
+        <!-- Hero Section -->
         <section class="case-study-hero-simple">
             <div class="container">
-                <h1>Surgical Scheduling Dashboard</h1>
-                <p class="subtitle">A dashboard for optimizing surgery schedules and enhancing the process of information processing for surgical booking</p>
+                <h1>Turning an Optimization Algorithm into a Strategic Graphical User Interface</h1>
+                <p class="subtitle">Surgical Scheduling Platform Case Study</p>
             </div>
         </section>
 
-
-        <!-- Overview Section -->
-        <section id="overview" class="case-study-section">
-            <h2>Overview</h2>
-            <p>This case study documents my work on the Surgical OR Scheduling System for ORCHID Analytics, a dashboard designed for a children's hospital in North America to help administrators model "what-if" scenarios for surgical capacity planning.</p>
-
-            <h3>My Journey with This Project</h3>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                <div style="background-color: #f8f9fa; padding: 1.5rem;">
-                    <h4 style="color: #a33468; margin-bottom: 1rem;">Phase 1: Research & Initial Design (2021-2022)</h4>
-                    <p style="font-size: 14px; color: #666; line-height: 1.6;">As the sole UX researcher and designer for 17 months, I conducted comprehensive research across 8 user groups and created initial Figma designs for the dashboard.</p>
-                </div>
-                <div style="background-color: #fff4e6; padding: 1.5rem;">
-                    <h4 style="color: #ff9500; margin-bottom: 1rem;">Phase 2: Feedback & Departure (2022)</h4>
-                    <p style="font-size: 14px; color: #666; line-height: 1.6;">Through user testing, I identified key improvements needed. However, the company ran out of funding before I could implement these changes.</p>
-                </div>
-                <div style="background-color: #e7f5ff; padding: 1.5rem;">
-                    <h4 style="color: #0693e3; margin-bottom: 1rem;">Phase 3: AI-Assisted Redesign (2024-2025)</h4>
-                    <p style="font-size: 14px; color: #666; line-height: 1.6;">I revisited this project, using AI to implement the feedback and suggestions I had documented, creating a fully functional redesign.</p>
-                </div>
-            </div>
-
-            <div style="background-color: #f8f9fa; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #a33468;">
-                <p><strong>What This Case Study Demonstrates:</strong> How comprehensive UX research drives design decisions, how feedback identifies areas for improvement, and how AI tools can accelerate implementation—transforming documented insights into a functional prototype that would have taken months with traditional development.</p>
-            </div>
-        </section>
-
-        <!-- Project details section -->
+        <!-- Project Details -->
         <section class="case-study-section project-details">
             <div class="details-grid">
                 <div class="detail-item">
                     <h4><strong>My Role:</strong></h4>
-                    <p>UX/UI Designer & Frontend Developer</p>
+                    <p>UI/UX Designer Lead</p>
                 </div>
                 <div class="detail-item">
-                    <h4><strong>Client:</strong></h4>
-                    <p>ORCHID Analytics</p>
+                    <h4><strong>Timeline:</strong></h4>
+                    <p>Feb - Sept 2022 (Research & Design)<br>2024-2025 (AI-Assisted Prototype)</p>
                 </div>
                 <div class="detail-item">
-                    <h4><strong>Duration:</strong></h4>
-                    <p>17 Months (2021-2022, redesigned 2024-2025)</p>
-                </div>
-                <div class="detail-item">
-                    <h4><strong>Tech Stack:</strong></h4>
-                    <p>React.js, Recharts, React Router, Excel/XLSX integration</p>
-                </div>
-                <div class="detail-item">
-                    <h4><strong>Tools:</strong></h4>
-                    <p>Claude AI, Figma, GitHub Pages</p>
-                </div>
-                <div class="detail-item">
-                    <h4><strong>Links:</strong></h4>
-                    <p><a href="https://negar-ux.github.io/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">Live Demo</a> | <a href="https://github.com/negar-ux/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">GitHub</a></p>
+                    <h4><strong>Context:</strong></h4>
+                    <p>Healthcare Technology<br>ORCHID Analytics</p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Space Section -->
-        <section id="problem" class="case-study-section">
-            <h2>The Problem Space</h2>
+        <!-- 1. The Challenge -->
+        <section id="challenge" class="case-study-section">
+            <h2>1. The Challenge</h2>
 
-            <h3>Healthcare Context</h3>
-            <p>Hospital operating rooms are complex environments where 14-16 OR rooms operate daily across multiple surgical services. Surgeons, staff, and patients must be coordinated efficiently through block schedules that allocate time blocks (6.5-10.5 hours) to different surgical departments. Effective waitlist management directly impacts patient outcomes and hospital revenue.</p>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">The Problem</h3>
+            <p>A major pediatric hospital had developed <strong>an optimization algorithm</strong> capable of processing surgical scheduling across 15+ variables (surgeon availability, OR capacity, equipment, patient priority, bed capacity, staff shifts).</p>
 
-            <h3>Business Challenge</h3>
-            <p>Hospital administrators needed a system to:</p>
+            <p><strong>But the algorithm was isolated.</strong> Its insights were locked away.</p>
+
             <ul>
-                <li>Visualize current OR block allocations across services (Plastics, Ortho, ENT, etc.)</li>
-                <li>Model "what-if" scenarios (e.g., "What if we add weekend OR hours?")</li>
-                <li>Track KPIs: Waitlist Reduction, Overtime Hours, Bed Occupancy, QBP Funding, Staffing Requirements</li>
-                <li>Drill down from high-level OR grids to surgeon schedules to individual patient allocations</li>
+                <li><strong>Directors</strong> made high-level decisions without predictive modeling</li>
+                <li><strong>Division Managers</strong> toggled between multiple systems to see complete schedules</li>
+                <li><strong>Booking Clerks</strong> spent 2-3 hours daily on manual conflict detection</li>
+                <li>The algorithm's potential was trapped in Excel files no one could interpret</li>
             </ul>
+
+            <img src="images/Fragmented Ecoosystem.svg" alt="Fragmented ecosystem—algorithm isolated from decision-makers" style="width: 100%; max-width: 1200px; margin: 2rem auto; display: block;">
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">The Design Challenge</h3>
+            <div style="background-color: #e0f2fe; padding: 2rem; margin: 2rem 0; border-left: 4px solid #0284c7;">
+                <p><strong>Design a system that translates the algorithm into actionable insights for three organizational levels—without overwhelming users or adding to their workload. The goal was to make it accessible to diverse users involved in planning.</strong></p>
+            </div>
         </section>
 
-        <!-- Research Process Section -->
+        <!-- 2. Research -->
         <section id="research" class="case-study-section">
-            <h2>🔍 Research Process</h2>
+            <h2>2. Research: Understanding the Multi-Level Ecosystem</h2>
 
-            <p>I spent several months embedded in the hospital's surgical scheduling ecosystem. Surgical scheduling involves multiple decision-makers with different needs and time horizons—I needed to understand not just <em>what</em> they do, but <em>why</em> they make certain decisions and <em>when</em> they need specific information.</p>
+            <p>I spent the first months conducting comprehensive stakeholder research with <strong>no existing user research</strong> to build on. I needed to understand workflows and decision-making at each organizational level.</p>
 
-            <h3 style="margin-top: 3rem;">Understanding the Ecosystem</h3>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Three Decision Levels, Three Different Needs</h3>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                <div style="background-color: #fff; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background-color: #a33468; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">1</div>
-                        <h4 style="color: #a33468; font-size: 16px; margin: 0;">Stakeholder Mapping</h4>
-                    </div>
-                    <p style="font-size: 14px; line-height: 1.6; color: #666;">I started by creating stakeholder maps to identify everyone involved in surgical scheduling, which revealed <strong>8 distinct user groups</strong> across strategic, tactical, and operational levels.</p>
-                </div>
-                <div style="background-color: #fff; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background-color: #0693e3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">2</div>
-                        <h4 style="color: #0693e3; font-size: 16px; margin: 0;">Primary Research</h4>
-                    </div>
-                    <p style="font-size: 14px; line-height: 1.6; color: #666;">Conducted <strong>surveys</strong> with Booking Clerks and <strong>in-depth interviews</strong> with Directors and Division Managers to understand workflows, decision-making processes, and pain points.</p>
-                </div>
-                <div style="background-color: #fff; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background-color: #067bc2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">3</div>
-                        <h4 style="color: #067bc2; font-size: 16px; margin: 0;">Secondary Research</h4>
-                    </div>
-                    <p style="font-size: 14px; line-height: 1.6; color: #666;">Analyzed the <strong>OPTIMISE algorithm</strong> (inputs/outputs), mapped <strong>decision-making process flows</strong>, and documented their <strong>current data sources</strong> across 5 disconnected systems.</p>
-                </div>
+            <img src="images/three personas overview.svg" alt="Three organizational levels with distinct needs" style="width: 100%; margin: 2rem auto; display: block;">
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Critical User Quote</h3>
+            <blockquote style="background-color: #f8f9fa; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #0f172a; font-style: italic;">
+                <p><strong>"example quote"</strong></p>
+                <p style="margin-top: 0.5rem; font-size: 14px; color: #666;">— Lisa Torres, Division Manager (Oct 2022)</p>
+            </blockquote>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">The Algorithm Was Complex But Inaccessible</h3>
+
+            <img src="images/algorithm-complexity-diagram.svg" alt="Algorithm complexity—inputs and outputs" style="width: 100%; max-width: 1400px; margin: 2rem auto; display: block;">
+
+            <p style="text-align: center; font-size: 18px; margin: 2rem 0; font-weight: 500;">
+                <strong>15+ Inputs</strong> → <strong>Algorithm</strong> → <strong>7+ Outputs</strong>
+            </p>
+
+            <div style="background-color: #fef3c7; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #d97706;">
+                <p><strong>Example:</strong> When a surgeon requests a 2-hour knee surgery for a Priority 2 patient, the algorithm needs to check 15+ constraints: surgeon availability, OR room capacity, equipment sterilization schedules, post-op bed availability, anesthesiologist assignments, nursing shifts...</p>
+                <p style="margin-top: 1rem;">Manually, booking clerks took 20+ minutes per case to check these constraints. The algorithm could do this in seconds—but only if decision-makers had access to its outputs through an intuitive interface.</p>
             </div>
 
+            <p><strong>The challenge:</strong> Make this complexity manageable across three user levels with vastly different needs.</p>
         </section>
 
-        <!-- Discovery Section -->
-        <section id="discovery" class="case-study-section">
-            <h2>💡 Key Discoveries</h2>
+        <!-- 3. Design Strategy -->
+        <section id="strategy" class="case-study-section">
+            <h2>3. Design Strategy</h2>
 
-            <h3>Key User Insights</h3>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Core Principle: Different Decisions Need Different Interfaces</h3>
+            <p>Rather than one-size-fits-all, I designed a <strong>hierarchical platform</strong>:</p>
 
-            <blockquote class="case-study-quote">
-                <p><strong>Complex Decision Matrix:</strong> "Division Managers juggle multiple factors: surgeon availability, equipment resources, post-op capacity, and HR constraints - all requiring real-time visibility."</p>
-            </blockquote>
+            <ol style="font-size: 16px; line-height: 2; margin: 2rem 0;">
+                <li>Users enter at their organizational level</li>
+                <li>Access appropriate detail for their decisions</li>
+                <li>Drill down when needed without cognitive overload</li>
+            </ol>
 
-            <blockquote class="case-study-quote">
-                <p><strong>Data Overwhelm:</strong> "Existing systems presented too much information without prioritization, making it difficult to focus on critical decisions that impact patient care."</p>
-            </blockquote>
-
-            <blockquote class="case-study-quote">
-                <p><strong>Manual Processes:</strong> "Teams wanted to upload existing scheduling files rather than re-inputting data, and needed clear visualization of schedule changes."</p>
-            </blockquote>
-
-            <blockquote class="case-study-quote">
-                <p><strong>Time-Sensitive Planning:</strong> "Users needed to monitor and optimize schedules for the next two weeks while running scenario planning for better resource allocation."</p>
-            </blockquote>
-
-            <h3 style="margin-top: 3rem;">Stakeholder Map</h3>
-            <p>The stakeholder map revealed the complex web of relationships and dependencies across the surgical scheduling ecosystem:</p>
-
-            <div style="background-color: #f8f9fa; padding: 3rem; margin: 2rem 0; text-align: center; border: 2px dashed #ddd;">
-                <p style="color: #595959; font-style: italic;">[Stakeholder Map Visual - Showing relationships between 8 user groups and their decision-making hierarchy]</p>
-                <p style="color: #595959; font-size: 14px; margin-top: 1rem;">Visual will show: Strategic (Directors) → Tactical (Division Managers) → Operational (Booking Clerks, Surgeons, OR Staff) + Support Teams</p>
-            </div>
-
-            <h3 style="margin-top: 3rem;">User Personas</h3>
-            <p>Based on interviews and surveys, I developed detailed personas capturing behaviors, tools, and motivations:</p>
-
-            <div style="margin: 2rem 0;">
-                <table style="width: 100%; border-collapse: collapse; border: 1px solid #e9ecef;">
-                    <thead>
-                        <tr style="background-color: #f8f9fa;">
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; font-weight: 600; width: 15%;">Persona</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; font-weight: 600; width: 25%;">Current Tools & Workflow</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; font-weight: 600; width: 30%;">Key Frustration</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; font-weight: 600; width: 30%;">Goal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;"><strong>Division Managers</strong></td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Toggle between Outlook (master schedule), Excel (block allocation), and Epic (surgeon locations)</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">"Information from so many resources that inputting would be too time-consuming" - Managing 16 surgeons across multiple systems is overwhelming</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">See complete surgeon schedule snapshot in one place with bed usage visibility</td>
-                        </tr>
-                        <tr style="background-color: #f8f9fa;">
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;"><strong>Booking Clerks</strong></td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Manual spreadsheets, phone calls, paper notes. Spend 2-3 hours daily checking for scheduling conflicts</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Time breakdown: 35% manual conflict detection, 25% phone coordination, 20% duplicate data entry, 20% rescheduling cascades</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Reduce scheduling time from 3 hours to 30 minutes with automated conflict detection</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;"><strong>Directors</strong></td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Rely on static reports from multiple departments. Limited ability to model scenarios before policy decisions</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Can't see how resource allocation decisions impact different services. Hard to justify changes to hospital executives</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Test "what-if" scenarios and forecast long-term capacity needs with data visualization</td>
-                        </tr>
-                        <tr style="background-color: #f8f9fa;">
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;"><strong>Surgeons</strong></td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Receive schedule updates via email/phone. No central system for viewing their surgical calendar</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Late schedule changes leave inadequate prep time. Unclear when OR time is available</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Real-time visibility into their schedule and OR availability</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;"><strong>OR Staff</strong></td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Rely on printed schedules and last-minute verbal updates</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Rescheduling creates cascading changes. Multiple phone calls to coordinate resources</td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">Clear day-of execution plan with minimal disruptions</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 style="margin-top: 3rem;">Key Insights</h3>
-            <p>Surgical scheduling isn't a single workflow—it's three interconnected processes:</p>
-
-            <div style="margin: 2rem 0;">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="background-color: #f8f9fa;">
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; width: 20%;">Level</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; width: 30%;">Who & Frequency</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; width: 25%;">Key Challenge</th>
-                            <th style="padding: 1rem; text-align: left; border: 1px solid #e9ecef; width: 25%;">Primary Needs</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;">
-                                <strong style="color: #a33468;">Strategic</strong>
-                                <p style="font-size: 12px; color: #595959; margin: 0.25rem 0 0 0;">Annual Planning</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <strong>~5 Directors of Surgery</strong>
-                                <p style="margin: 0.5rem 0 0 0; color: #666;">Make decisions about OR closures, weekend schedules, ward allocations (~1x/year)</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">
-                                OR utilization stuck at 65-70% vs 85% target
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <ul style="margin: 0; padding-left: 1.25rem; color: #666;">
-                                    <li>Test "what-if" scenarios</li>
-                                    <li>Long-term capacity forecasting</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr style="background-color: #f8f9fa;">
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;">
-                                <strong style="color: #0693e3;">Tactical</strong>
-                                <p style="font-size: 12px; color: #595959; margin: 0.25rem 0 0 0;">Quarterly Allocation</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <strong>~10 Division Managers</strong>
-                                <p style="margin: 0.5rem 0 0 0; color: #666;">Allocate division blocks to surgeons (2-3x/year, creating 5-week schedules)</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">
-                                "Information from so many resources that inputting would be too time-consuming"
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <ul style="margin: 0; padding-left: 1.25rem; color: #666;">
-                                    <li>Surgeon schedule snapshot</li>
-                                    <li>Bed usage visibility</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; vertical-align: top;">
-                                <strong style="color: #067bc2;">Operational</strong>
-                                <p style="font-size: 12px; color: #595959; margin: 0.25rem 0 0 0;">Daily Scheduling</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <strong>Booking Clerks + ~50 Surgeons</strong>
-                                <p style="margin: 0.5rem 0 0 0; color: #666;">Handle 52 scheduling cycles per year, allocating patients to surgeon blocks</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; color: #666; vertical-align: top;">
-                                2-3 hours daily on manual conflict detection
-                                <p style="margin: 0.5rem 0 0 0; font-size: 13px;">Time breakdown: 35% conflict detection, 25% phone calls, 20% duplicate data entry</p>
-                            </td>
-                            <td style="padding: 1rem; border: 1px solid #e9ecef; font-size: 14px; vertical-align: top;">
-                                <ul style="margin: 0; padding-left: 1.25rem; color: #666;">
-                                    <li>Automated conflict detection</li>
-                                    <li>Real-time schedule visibility</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Target Success Metrics</h3>
-            <p>Based on the research findings, we defined these target metrics to measure the system's potential impact. <em>Note: The project concluded before implementation, so these remain as projected goals rather than measured outcomes.</em></p>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Key Design Decisions</h3>
 
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-                <div style="text-align: center; padding: 2rem; background-color: #fff; border: 2px dashed #e9ecef;">
-                    <div style="font-size: 48px; font-weight: 300; color: #a33468; margin-bottom: 0.5rem;">84%</div>
-                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Time Reduction Goal</p>
-                    <p style="font-size: 14px; color: #666;">Target: 3 hours → 30 min/day</p>
+                <div style="background-color: #d1fae5; padding: 1.5rem; border-left: 4px solid #059669;">
+                    <h4 style="color: #059669; margin-bottom: 1rem;">File Upload System</h4>
+                    <ul class="checkmark-list" style="font-size: 14px; line-height: 1.8;">
+                        <li>Include the option of uploading existing Excel files (no manual re-entry)</li>
+                        <li>Addresses fear of "too time-consuming"</li>
+                    </ul>
                 </div>
-                <div style="text-align: center; padding: 2rem; background-color: #fff; border: 2px dashed #e9ecef;">
-                    <div style="font-size: 48px; font-weight: 300; color: #0693e3; margin-bottom: 0.5rem;">85%</div>
-                    <p style="font-weight: 600; margin-bottom: 0.5rem;">OR Utilization Target</p>
-                    <p style="font-size: 14px; color: #666;">Target: Up from 65-70% baseline</p>
+
+                <div style="background-color: #d1fae5; padding: 1.5rem; border-left: 4px solid #059669;">
+                    <h4 style="color: #059669; margin-bottom: 1rem;">Scenario-Based Planning</h4>
+                    <ul class="checkmark-list" style="font-size: 14px; line-height: 1.8;">
+                        <li>Create named scenarios ("Open OR on Saturdays")</li>
+                        <li>Compare predicted outcomes before committing</li>
+                    </ul>
                 </div>
-                <div style="text-align: center; padding: 2rem; background-color: #fff; border: 2px dashed #e9ecef;">
-                    <div style="font-size: 48px; font-weight: 300; color: #067bc2; margin-bottom: 0.5rem;">5→1</div>
-                    <p style="font-weight: 600; margin-bottom: 0.5rem;">System Consolidation Goal</p>
-                    <p style="font-size: 14px; color: #666;">Target: Unified interface</p>
+
+                <div style="background-color: #d1fae5; padding: 1.5rem; border-left: 4px solid #059669;">
+                    <h4 style="color: #059669; margin-bottom: 1rem;">Progressive Disclosure</h4>
+                    <ul class="checkmark-list" style="font-size: 14px; line-height: 1.8;">
+                        <li>Summary KPIs at every level</li>
+                        <li>Drill down for details when needed</li>
+                    </ul>
                 </div>
             </div>
-
         </section>
 
-        <!-- Initial Design Concepts Section -->
+        <!-- 4. Initial Design Concepts -->
         <section id="initial-design" class="case-study-section">
-            <h2>🎨 Initial Design Concepts (Early 2022)</h2>
-            <p>Based on the research findings, I created initial design concepts that established the visual direction and core functionality for the surgical scheduling dashboard. These concepts focused on the Division Managers workflow—the user group with the most direct scheduling authority.</p>
+            <h2>4. Initial Design Concepts (2022)</h2>
 
-            <h3 style="margin-top: 3rem;">Design Approach</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #a33468;">
-                    <h4 style="color: #a33468; margin-bottom: 0.75rem;">📊 Visual Hierarchy</h4>
-                    <p style="font-size: 14px; color: #666;">Prioritized KPIs in sidebar with clear metrics for decision-making</p>
-                </div>
-                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">🎯 Color-Coding System</h4>
-                    <p style="font-size: 14px; color: #666;">Distinguished surgical services (Dent, ENT, Ortho, etc.) for quick pattern recognition</p>
-                </div>
-                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #067bc2;">
-                    <h4 style="color: #067bc2; margin-bottom: 0.75rem;">⚡ Scenario Planning</h4>
-                    <p style="font-size: 14px; color: #666;">Enabled "what-if" analysis for testing different OR allocation strategies</p>
-                </div>
-            </div>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Design Approach</h3>
+            <p>Based on the research findings, I created initial design concepts that established the visual direction and core functionality for the surgical scheduling dashboard.</p>
 
-            <h3 style="margin-top: 3rem;">Key Concept: Dashboard & OR Schedule View</h3>
-            <p>I focused on creating a clean, scannable interface with color-coded surgical services and clear KPI hierarchy. Here's the main dashboard concept that established the visual direction:</p>
+            <h4 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #0f172a;">Key Concept: Dashboard & OR Schedule View</h4>
 
-            <!-- Main Dashboard Concept -->
             <div style="margin: 3rem 0;">
-                <img src="images/GUI - V1/dashboard.jpeg" alt="Main Dashboard Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="images/GUI - V1/dashboard.jpeg" alt="Initial Dashboard Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 <p style="font-size: 13px; color: #666; margin-top: 1rem; font-style: italic;">Initial concept showing KPI dashboard and scenario comparison view with color-coded surgical services</p>
             </div>
 
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem;">Design Priorities</h4>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #0f172a;">
+                    <p style="font-size: 24px; margin-bottom: 0.5rem;">📊</p>
+                    <h4 style="color: #0f172a; margin-bottom: 0.75rem;">Visual Hierarchy</h4>
+                    <p style="font-size: 14px; color: #666;">Prioritized KPIs in sidebar with clear metrics for decision-making</p>
+                </div>
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #0284c7;">
+                    <p style="font-size: 24px; margin-bottom: 0.5rem;">🎯</p>
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">Color-Coding System</h4>
+                    <p style="font-size: 14px; color: #666;">Distinguished surgical services (Dent, ENT, Ortho, etc.) for quick pattern recognition</p>
+                </div>
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #475569;">
+                    <p style="font-size: 24px; margin-bottom: 0.5rem;">⚡</p>
+                    <h4 style="color: #475569; margin-bottom: 0.75rem;">Scenario Planning</h4>
+                    <p style="font-size: 14px; color: #666;">Enabled "what-if" analysis for testing different OR allocation strategies</p>
+                </div>
+            </div>
         </section>
 
-        <!-- User Testing Feedback Section -->
+        <!-- 5. User Testing & Feedback -->
         <section id="feedback" class="case-study-section">
-            <h2>💡 User Testing & Feedback</h2>
-            <p>After creating the initial concepts, I conducted extensive user testing sessions with Division Managers, Booking Clerks, and Directors. The feedback was invaluable and revealed specific improvements needed to truly address the user needs we had documented in research.</p>
+            <h2>5. User Testing & Critical Feedback</h2>
 
-            <h3 style="margin-top: 2rem;">Critical Improvements Identified</h3>
+            <p>After creating the initial concepts, I conducted extensive user testing sessions with Division Managers, Booking Clerks, and Directors. The feedback revealed specific improvements needed:</p>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Critical Improvements Identified</h3>
 
             <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0;">
-                <div style="background-color: #e7f5ff; padding: 1.5rem; border-left: 4px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">1. File Upload System</h4>
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 4px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">1. File Upload System</h4>
                     <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>User Quote:</strong> "Information from so many resources that inputting would be too time-consuming"</p>
                     <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Excel file import capability to eliminate manual data entry burden</p>
                 </div>
 
-                <div style="background-color: #e7f5ff; padding: 1.5rem; border-left: 4px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">2. Schedule Snapshot View</h4>
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 4px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">2. Schedule Snapshot View</h4>
                     <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>User Quote:</strong> "16 surgeons hard to visualize" - need complete overview at a glance</p>
                     <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Condensed snapshot view with hover details showing surgeon assignments and bed usage</p>
                 </div>
 
-                <div style="background-color: #e7f5ff; padding: 1.5rem; border-left: 4px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">3. Customizable Dashboards</h4>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>Finding:</strong> Different roles (Directors, Division Managers, Booking Clerks) need different metrics</p>
-                    <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Role-based KPI customization so each user sees relevant metrics for their decisions</p>
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 4px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">3. Enhanced Scenario Testing</h4>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>Finding:</strong> Directors need to model policy changes before implementation</p>
+                    <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Side-by-side scenario comparison with predicted KPI outcomes</p>
                 </div>
 
-                <div style="background-color: #e7f5ff; padding: 1.5rem; border-left: 4px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">4. Automated Conflict Detection</h4>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>Pain Point:</strong> Booking clerks spending 2-3 hours daily manually checking for scheduling conflicts</p>
-                    <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Real-time conflict detection with visual alerts to prevent double-bookings</p>
-                </div>
-
-                <div style="background-color: #e7f5ff; padding: 1.5rem; border-left: 4px solid #0693e3;">
-                    <h4 style="color: #0693e3; margin-bottom: 0.75rem;">5. Better Visual Polish</h4>
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 4px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">4. Better Visual Polish</h4>
                     <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;"><strong>Feedback:</strong> Color palette needed refinement, charts needed better labels and context</p>
                     <p style="font-size: 14px; color: #666;"><strong>Needed:</strong> Design system with documented color tokens, improved data visualization quality</p>
                 </div>
             </div>
-
-            <div style="background-color: #e7f3e7; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #34c759;">
-                <p><strong>✅ Great Feedback, Clear Direction:</strong> The user testing gave me exactly what I needed to create production-ready designs that would truly solve their problems. I was ready to iterate on the concepts and create detailed specifications for development.</p>
-            </div>
         </section>
 
-        <!-- Pilot Implementation Reality Section -->
-        <section id="pilot-reality" class="case-study-section">
-            <h2>⚠️ The Pilot: When Feedback Comes Too Late</h2>
+        <!-- 6. The Pilot -->
+        <section id="pilot" class="case-study-section">
+            <h2>6. The Solution: From Concept to Pilot</h2>
 
-            <div style="background-color: #fff4e6; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #ff9500;">
-                <p><strong>The Problem:</strong> While I was conducting user testing and gathering this valuable feedback, the development team had already begun implementation based on my initial concepts. Due to tight timelines and resource constraints, development moved quickly—too quickly for the design iteration cycle.</p>
+            <p>Due to healthcare technology constraints (budget, timeline, technical dependencies), we launched a <strong>pilot focusing on core functionality</strong>. Here's what shipped and why it mattered.</p>
 
-                <p style="margin-top: 1rem;">By the time I compiled the feedback and was ready to redesign, the pilot was already substantially built. The company's financial pressures meant we couldn't pause development to incorporate the improvements. Additionally, I wasn't involved in the design handoff process or implementation reviews, so I couldn't guide the translation from concept to code.</p>
+            <div style="background-color: #e0f2fe; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #0284c7; font-size: 14px;">
+                <p style="margin: 0;"><strong>Note:</strong> Due to healthcare data privacy requirements and system access restrictions following project completion, production screenshots shown below are simplified representations. The AI-refined designs in Section 8 demonstrate the full visual design evolution and refinement process.</p>
             </div>
 
-            <p><strong>The result:</strong> A pilot that was built from my initial concepts—without the critical improvements identified through user testing. The feedback that would have made the system truly user-centered sat documented but unimplemented.</p>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Strategic Level: Scenario Modeling</h3>
+            <p><strong>What Directors Need:</strong> Test policy changes (e.g., "Open ORs on Saturdays") and see predicted impact before implementation.</p>
 
-            <h3 style="margin-top: 3rem;">The Pilot: What Got Built</h3>
-            <p style="margin-bottom: 2rem;">The development team built a pilot based on my concepts. Here's the key difference—the pilot reflected the visual direction but <strong>none of the user feedback improvements were implemented</strong>:</p>
+            <h4 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #0f172a;">KPI Comparison Dashboard</h4>
+            <img src="images/pilot-scenario-comparison.png" alt="Scenario comparison showing predicted outcomes" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
 
-            <!-- Single Key Comparison -->
-            <div style="margin: 3rem 0;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                    <div>
-                        <p style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">MY CONCEPT</p>
-                        <img src="images/GUI - V1/Overview.jpeg" alt="Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    </div>
-                    <div>
-                        <p style="font-size: 13px; font-weight: 600; color: #ff9500; margin-bottom: 0.5rem; text-align: center;">PILOT IMPLEMENTATION</p>
-                        <img src="images/GUI - V1/Overview - pilot .png" alt="Pilot" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    </div>
-                </div>
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Side-by-side scenario comparison</li>
+                <li>Color-coded performance indicators (red/yellow/green)</li>
+                <li>Key metrics: OR Utilization, OR Throughput, Unused Hours, Overtime, Waitlist Clearance</li>
+                <li>Target threshold visualization</li>
+            </ul>
 
-                <div style="background-color: #fff4e6; padding: 1.5rem; border-left: 4px solid #ff9500;">
-                    <p style="font-size: 14px; color: #666; line-height: 1.8;"><strong>The Gap:</strong> The pilot had different color saturation, tighter spacing, and lacked the critical features users requested: no file upload system, no schedule snapshots, no customizable KPIs, no automated conflict detection.</p>
-                </div>
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p><strong>Directors could now model policy changes in minutes rather than implementing and waiting months for results.</strong></p>
             </div>
 
-            <h3 style="margin-top: 3rem;">Key Lessons</h3>
-            <div style="background-color: #e7f5ff; padding: 2rem; margin: 2rem 0; border-left: 4px solid #0693e3;">
-                <ul style="font-size: 14px; color: #666; line-height: 2; margin: 0; padding-left: 1.5rem;">
-                    <li><strong>Front-load user testing</strong> - Conduct testing BEFORE development starts, not during</li>
-                    <li><strong>Stay involved in handoff</strong> - Designer involvement during implementation preserves intent</li>
-                    <li><strong>Document early</strong> - Create design systems and specs upfront, not as an afterthought</li>
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Scenario Creation & Upload</h4>
+            <img src="images/pilot-scenario-creation.png" alt="Scenario creation with file upload system" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
+
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Named scenario creation (self-documenting)</li>
+                <li>Excel file upload (leverages existing data)</li>
+                <li>Background algorithm processing</li>
+                <li>Multiple scenario support</li>
+            </ul>
+
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p><strong>Why It Worked:</strong> Users could test scenarios using existing files without manual data entry—directly addressing the "too time-consuming" fear.</p>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Tactical Level: Division & Surgeon Allocation</h3>
+            <p><strong>What Managers Need:</strong> Allocate OR blocks to surgeons quarterly, manage complex schedules (e.g., 16 surgeons in Orthopedics), see complete picture without system-switching.</p>
+
+            <h4 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #0f172a;">Master Block Allocation View</h4>
+            <img src="images/pilot-block-allocation-master.png" alt="Comprehensive block allocation—OR-based and Service-based views" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
+
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Dual visualization: OR schedule vs. Service distribution</li>
+                <li>5-week planning view</li>
+                <li>All surgical services visible (Cardiac, ENT, General, Gastro, Gyn, Ortho, Plastics, Urogyn)</li>
+                <li>Urgent vs. Scheduled differentiation</li>
+                <li>Day-by-day granularity (M/T/W/T/F/S/S)</li>
+            </ul>
+
+            <div style="background-color: #e0f2fe; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #0284c7;">
+                <p><strong>Strategic Insights Enabled:</strong></p>
+                <ul style="margin-top: 0.5rem; font-size: 14px;">
+                    <li>Service distribution patterns</li>
+                    <li>Under-utilized vs. over-allocated services</li>
+                    <li>Weekend coverage gaps</li>
+                    <li>Balance across surgical services</li>
                 </ul>
             </div>
 
-            <div style="background-color: #fff4e6; padding: 1.5rem; margin: 3rem 0; border-left: 4px solid #ff9500;">
-                <p><strong>⏸️ Project End:</strong> Shortly after the pilot launched, the company ran out of funding and ceased operations in 2022. The documented user feedback sat unimplemented—a missed opportunity to create the user-centered solution the research had pointed toward.</p>
-            </div>
-        </section>
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Surgeon Schedule Management</h4>
+            <img src="images/pilot-surgeon-allocation.png" alt="Weekly surgeon allocation with filtering" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
 
-        <!-- AI-Assisted Redesign Section -->
-        <section id="redesign" class="case-study-section">
-            <h2>🤖 AI-Assisted Redesign: Implementing the Feedback (2024-2025)</h2>
-            <p>Three years later, I had the opportunity to revisit this project. I still had all the documented user feedback from 2022—the improvements that never made it into the pilot. With AI tools to accelerate development, I could finally implement what users had asked for all along.</p>
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Weekly schedule across multiple ORs</li>
+                <li>Filter by division/service</li>
+                <li>Individual surgeon blocks with timing</li>
+                <li>KPI sidebar for context (Waitlist Reduction, Overtime, Utilization)</li>
+            </ul>
 
-            <div style="background-color: #e7f3e7; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #34c759;">
-                <p><strong>Finally Implementing the User Feedback:</strong> Using the documented insights from user testing, I built a fully functional redesign that addresses every improvement users requested:</p>
-                <ul style="margin: 0.5rem 0 0 1.5rem; font-size: 14px; line-height: 1.8;">
-                    <li>✅ <strong>File upload system</strong> - "Information from so many resources that inputting would be too time-consuming"</li>
-                    <li>✅ <strong>Schedule snapshot views</strong> - "16 surgeons hard to visualize"</li>
-                    <li>✅ <strong>Customizable KPI dashboards</strong> - Different roles need different metrics</li>
-                    <li>✅ <strong>Automated conflict detection</strong> - Save 2-3 hours daily for booking clerks</li>
-                    <li>✅ <strong>Complete design system</strong> - Documented colors, spacing, components</li>
-                    <li>✅ <strong>Polished visualizations</strong> - Better hierarchy and data clarity</li>
-                </ul>
-                <p style="margin-top: 1rem;"><strong>This is what the pilot should have been.</strong></p>
-            </div>
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Operational Level: Daily Scheduling</h3>
+            <p><strong>What Clerks Need:</strong> Schedule patients efficiently, avoid conflicts, manage urgent cases, track bed availability—without 2-3 hours of manual work.</p>
 
-            <h3 style="margin-top: 3rem;">The Redesign</h3>
-            <p>Using AI to accelerate React development, I built a fully functional prototype implementing all the documented feedback:</p>
+            <h4 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #0f172a;">Patient Allocation & Waitlist</h4>
+            <img src="images/pilot-patient-allocation-waitlist.png" alt="Waitlist integrated with scheduling calendar" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
-                <!-- Dashboard Video -->
-                <div>
-                    <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <source src="videos/dashboard - AI.mp4" type="video/mp4">
-                    </video>
-                    <p style="font-size: 13px; color: #666; margin-top: 1rem;">Customizable KPI dashboards with role-specific metrics</p>
-                </div>
-
-                <!-- OR Schedule Video -->
-                <div>
-                    <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <source src="videos/overview - AI.mp4" type="video/mp4">
-                    </video>
-                    <p style="font-size: 13px; color: #666; margin-top: 1rem;">Schedule snapshot view - see all surgeons at a glance</p>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 3rem;">The Result</h3>
-            <p style="margin-bottom: 3rem;">All documented user feedback was successfully implemented. The redesign demonstrates how AI can accelerate development—transforming insights into a functional prototype in weeks rather than months.</p>
-
-            <h3 style="margin-top: 3rem;">Design Evolution: Concept → Pilot → AI Redesign</h3>
-            <p style="margin-bottom: 2rem;">Here's how each view evolved through the three phases:</p>
-
-            <div style="margin: 3rem 0;">
-                <!-- Dashboard Row -->
-                <div style="margin-bottom: 3rem;">
-                    <h4 style="color: #a33468; margin-bottom: 1rem;">KPI Dashboard</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">CONCEPT</p>
-                            <img src="images/GUI - V1/dashboard.jpeg" alt="Dashboard Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #ff9500; margin-bottom: 0.5rem; text-align: center;">PILOT</p>
-                            <img src="images/GUI - V1/dashboard - pilot.png" alt="Dashboard Pilot" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #34c759; margin-bottom: 0.5rem; text-align: center;">AI REDESIGN</p>
-                            <img src="images/GUI - V1/dashboard - AI.png" alt="Dashboard AI" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- OR Schedule Row -->
-                <div style="margin-bottom: 3rem;">
-                    <h4 style="color: #a33468; margin-bottom: 1rem;">OR Schedule Overview</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">CONCEPT</p>
-                            <img src="images/GUI - V1/Overview.jpeg" alt="Overview Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #ff9500; margin-bottom: 0.5rem; text-align: center;">PILOT</p>
-                            <img src="images/GUI - V1/Overview - pilot .png" alt="Overview Pilot" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #34c759; margin-bottom: 0.5rem; text-align: center;">AI REDESIGN</p>
-                            <img src="images/GUI - V1/overview - AI.png" alt="Overview AI" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Surgeon Allocation Row -->
-                <div style="margin-bottom: 3rem;">
-                    <h4 style="color: #a33468; margin-bottom: 1rem;">Surgeon Schedule</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">CONCEPT</p>
-                            <img src="images/GUI - V1/Surgeon Allocation.jpeg" alt="Surgeon Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #ff9500; margin-bottom: 0.5rem; text-align: center;">PILOT</p>
-                            <img src="images/GUI - V1/Surgeon Allocation - pilot.png" alt="Surgeon Pilot" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #34c759; margin-bottom: 0.5rem; text-align: center;">AI REDESIGN</p>
-                            <img src="images/GUI - V1/Surgeon Allocation - AI.png" alt="Surgeon AI" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Patient Allocation Row -->
-                <div style="margin-bottom: 3rem;">
-                    <h4 style="color: #a33468; margin-bottom: 1rem;">Block Allocation</h4>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">CONCEPT</p>
-                            <img src="images/GUI - V1/Patient Allocation.jpeg" alt="Patient Concept" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #ff9500; margin-bottom: 0.5rem; text-align: center;">PILOT</p>
-                            <img src="images/GUI - V1/Pateint Allocation - pilot .png" alt="Patient Pilot" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                        <div>
-                            <p style="font-size: 12px; font-weight: 600; color: #34c759; margin-bottom: 0.5rem; text-align: center;">AI REDESIGN</p>
-                            <img src="images/GUI - V1/Patient allocation - AI.png" alt="Patient AI" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Persistent waitlist sidebar (patient details always visible)</li>
+                <li>Priority and wait time sorting</li>
+                <li>Calendar view with procedure color coding</li>
+                <li>Bed capacity visualization at bottom</li>
+                <li>Filter by surgeon</li>
+            </ul>
 
             <div style="background-color: #f8f9fa; padding: 1.5rem; margin: 2rem 0;">
-                <h4>Try the Live Demo</h4>
-                <p>Explore the fully functional redesigned prototype with all improvements:</p>
-                <p><a href="https://negar-ux.github.io/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline; font-weight: 500;">Launch Interactive Demo →</a></p>
-                <p style="margin-top: 1rem; font-size: 14px; color: #666;">View the code on <a href="https://github.com/negar-ux/Surgical-GUI" target="_blank" style="color: #a33468; text-decoration: underline;">GitHub</a></p>
+                <p style="font-size: 14px; margin-bottom: 1rem;"><strong>Key Features:</strong></p>
+                <ul style="font-size: 14px; line-height: 1.8;">
+                    <li>Waitlist shows: Patient info, priority (PCAT), days waiting, surgeon, procedure type</li>
+                    <li>Calendar shows: Allocated procedures, timing, service color coding</li>
+                    <li>Bed capacity prevents over-allocation</li>
+                </ul>
+            </div>
+
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Detailed Booking Schedule</h4>
+            <img src="images/pilot-patient-allocation-calendar.png" alt="Detailed weekly schedule with patient information" style="width: 100%; max-width: 700px; margin: 2rem auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; opacity: 0.75;">
+
+            <p style="margin-top: 2rem;"><strong>What Shipped:</strong></p>
+            <ul class="checkmark-list" style="margin: 1rem 0;">
+                <li>Complete patient details in sidebar (Name, MRN, DoB, Decision to Treat date, PCAT priority score, Surgeon, Procedure length, Post-op destination, FAST indicators, Out of Window warnings)</li>
+                <li>Time-block calendar view (8am-5pm)</li>
+                <li>Multiple procedures per OR per day</li>
+                <li>Inpatient unit admission tracking</li>
+                <li>Week navigation with "Today" quick-access</li>
+            </ul>
+
+        </section>
+
+        <!-- 7. Pilot Outcomes -->
+        <section id="outcomes" class="case-study-section">
+            <h2>7. Pilot Outcomes & Learnings</h2>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">What Shipped Successfully</h3>
+            <ul class="checkmark-list" style="font-size: 16px; line-height: 2; margin: 2rem 0;">
+                <li>Directors could model scenarios and see predicted outcomes</li>
+                <li>Managers gained unified views eliminating system-switching</li>
+                <li>Clerks could leverage algorithm optimization for conflict checking</li>
+                <li>Core KPI tracking worked across all three levels</li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">User Feedback</h3>
+            <blockquote style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669; font-style: italic;">
+                <p>"This is exactly what I needed—I can finally see the complete picture without jumping between systems"</p>
+                <p style="margin-top: 0.5rem; font-size: 14px; color: #666;">— Division Manager (Pilot feedback)</p>
+            </blockquote>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">What I Learned</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-left: 3px solid #0f172a;">
+                    <h4 style="color: #0f172a; margin-bottom: 0.75rem;">1. Translating Algorithms into Human Interfaces</h4>
+                    <p style="font-size: 14px; color: #666;">Don't expose algorithmic logic directly. Show outcomes in business language, not technical terms. Provide override capabilities with explanations.</p>
+                </div>
+
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-left: 3px solid #0f172a;">
+                    <h4 style="color: #0f172a; margin-bottom: 0.75rem;">2. Designing for Three Audiences</h4>
+                    <p style="font-size: 14px; color: #666;">Hierarchical architecture with consistent navigation works better than separate dashboards. Users can drill from strategic → tactical → operational fluidly.</p>
+                </div>
+
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-left: 3px solid #0f172a;">
+                    <h4 style="color: #0f172a; margin-bottom: 0.75rem;">3. Respecting Existing Workflows</h4>
+                    <p style="font-size: 14px; color: #666;">The file upload system was critical. Users already had data in Excel. Forcing manual re-entry would have killed adoption. Meet users where they are.</p>
+                </div>
+
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-left: 3px solid #0f172a;">
+                    <h4 style="color: #0f172a; margin-bottom: 0.75rem;">4. Real-World Constraints</h4>
+                    <p style="font-size: 14px; color: #666;">Perfect is the enemy of shipped. Core functionality proving value > polished interface with less function. Iterative improvement beats never launching.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">What I'd Do Differently</h3>
+            <ul style="font-size: 16px; line-height: 2; margin: 2rem 0;">
+                <li>Build in more buffer for technical constraints in healthcare IT</li>
+                <li>Create more lightweight mockups for faster iteration</li>
+                <li>Document user feedback more systematically during pilot</li>
+            </ul>
+        </section>
+
+        <!-- 8. AI-Assisted Refinement -->
+        <section id="ai-refinement" class="case-study-section">
+            <h2>8. AI-Assisted Design Velocity: 2025 Refinement</h2>
+
+            <div style="background-color: #fef3c7; padding: 2rem; margin: 2rem 0; border-left: 4px solid #d97706;">
+                <h3 style="margin-top: 0; color: #d97706;">From Concept to Visual Refinement</h3>
+                <p>Three years after the pilot launched, I used <strong>AI design tools to validate and refine the visual design in one week</strong>—a process that would have taken 1-2 months traditionally.</p>
+
+                <p style="margin-top: 1rem;">This demonstrates two key capabilities:</p>
+                <ul style="margin-top: 0.5rem; line-height: 1.8;">
+                    <li><strong>Modern design velocity:</strong> Rapid iteration using AI tools to explore 30+ variations per screen</li>
+                    <li><strong>Design thinking:</strong> Knowing which refinements solve user problems (better hierarchy, clearer patterns, improved contrast)</li>
+                </ul>
+
+                <p style="margin-top: 1rem; font-style: italic; color: #666;">The comparisons below show how the original pilot concept evolved into polished, production-ready interfaces.</p>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Validated Improvements: Before/After</h3>
+
+            <h4 style="margin-top: 2rem; margin-bottom: 1.5rem; color: #0f172a;">Strategic: Scenario Comparison</h4>
+            <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">PILOT CONCEPT (2022)</p>
+                    <img src="images/pilot-scenario-comparison.png" alt="Pilot Dashboard 2022" style="width: 100%; border: 2px solid #e0e0e0; border-radius: 8px; opacity: 0.7;">
+                </div>
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 0.5rem; text-align: center;">✨ AI-REFINED (2025)</p>
+                    <img src="images/ai-scenario-comparison.png" alt="AI-Refined Dashboard 2025" style="width: 100%; border: 3px solid #059669; border-radius: 8px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);">
+                </div>
+            </div>
+
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p style="font-size: 14px; margin-bottom: 1rem;"><strong>Improvements:</strong></p>
+                <ul style="font-size: 14px; line-height: 1.8;">
+                    <li>Enhanced data visualization</li>
+                    <li>Better visual hierarchy</li>
+                    <li>Improved color contrast</li>
+                    <li>More contemporary patterns</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 14px;"><strong>Impact:</strong> Faster executive decision-making</p>
+            </div>
+
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Tactical: Surgeon Allocation</h4>
+            <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">PILOT CONCEPT</p>
+                    <img src="images/pilot-surgeon-allocation.png" alt="Pilot Surgeon Allocation" style="width: 100%; border: 2px solid #e0e0e0; border-radius: 8px; opacity: 0.7;">
+                </div>
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 0.5rem; text-align: center;">✨ AI-REFINED</p>
+                    <img src="images/ai-surgeon-allocation.png" alt="AI-Refined Surgeon Allocation" style="width: 100%; border: 3px solid #059669; border-radius: 8px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);">
+                </div>
+            </div>
+
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p style="font-size: 14px; margin-bottom: 1rem;"><strong>Improvements:</strong></p>
+                <ul style="font-size: 14px; line-height: 1.8;">
+                    <li>Clearer surgeon attribution</li>
+                    <li>Better timeline visualization</li>
+                    <li>Refined color palette</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 14px;"><strong>Impact:</strong> Instant pattern recognition for complex schedules</p>
+            </div>
+
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Operational: Patient Allocation</h4>
+            <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">PILOT CONCEPT</p>
+                    <img src="images/pilot-patient-allocation-waitlist.png" alt="Pilot Patient Allocation" style="width: 100%; border: 2px solid #e0e0e0; border-radius: 8px; opacity: 0.7;">
+                </div>
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 0.5rem; text-align: center;">✨ AI-REFINED</p>
+                    <img src="images/ai-patient-allocation.png" alt="AI-Refined Patient Allocation" style="width: 100%; border: 3px solid #059669; border-radius: 8px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);">
+                </div>
+            </div>
+
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p style="font-size: 14px; margin-bottom: 1rem;"><strong>Improvements:</strong></p>
+                <ul style="font-size: 14px; line-height: 1.8;">
+                    <li>Enhanced waitlist hierarchy</li>
+                    <li>Better patient cards</li>
+                    <li>Clearer priority indicators</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 14px;"><strong>Impact:</strong> Faster information processing for daily scheduling</p>
+            </div>
+
+            <h4 style="margin-top: 2.5rem; margin-bottom: 1.5rem; color: #0f172a;">Strategic: Overview Dashboard</h4>
+            <div style="display: grid; grid-template-columns: 2fr 3fr; gap: 2rem; margin: 2rem 0;">
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #666; margin-bottom: 0.5rem; text-align: center;">PILOT CONCEPT</p>
+                    <img src="images/pilot-block-allocation-master.png" alt="Pilot Overview Dashboard" style="width: 100%; border: 2px solid #e0e0e0; border-radius: 8px; opacity: 0.7;">
+                </div>
+                <div>
+                    <p style="font-size: 13px; font-weight: 600; color: #059669; margin-bottom: 0.5rem; text-align: center;">✨ AI-REFINED</p>
+                    <img src="images/ai-overview.png" alt="AI-Refined Overview Dashboard" style="width: 100%; border: 3px solid #059669; border-radius: 8px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);">
+                </div>
+            </div>
+
+            <div style="background-color: #d1fae5; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #059669;">
+                <p style="font-size: 14px; margin-bottom: 1rem;"><strong>Improvements:</strong></p>
+                <ul style="font-size: 14px; line-height: 1.8;">
+                    <li>Cleaner visual hierarchy</li>
+                    <li>Enhanced heatmap patterns</li>
+                    <li>Better spacing</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 14px;"><strong>Impact:</strong> Improved pattern recognition for resource allocation</p>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">The Refinement Process</h3>
+
+            <div style="background-color: #e0f2fe; padding: 2rem; margin: 2rem 0; border-radius: 8px;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0;">
+                    <div>
+                        <p style="font-size: 14px; font-weight: 600; color: #0284c7; margin-bottom: 0.75rem;">1. Analyze Pilot Feedback</p>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">Review user feedback from pilot: visual hierarchy issues, color contrast problems, cluttered layouts</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 14px; font-weight: 600; color: #0284c7; margin-bottom: 0.75rem;">2. Generate Variations</p>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">Use AI tools to explore 30+ design variations per screen—testing different layouts, color schemes, and data visualizations</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 14px; font-weight: 600; color: #0284c7; margin-bottom: 0.75rem;">3. Curate & Validate</p>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">Evaluate outputs against user needs and design principles, selecting refinements that improve clarity and usability</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">What AI Tools Enable</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 3px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">Exploration Breadth</h4>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">Traditional: 2-3 variations (time constraints)</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">AI-assisted: 30+ variations explored</p>
+                    <p style="font-size: 14px; font-weight: 600; color: #0284c7;">Result: 10x more design exploration in same time</p>
+                </div>
+
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 3px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">Iteration Speed</h4>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">Traditional: ~1 week for 4 refined screens</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">AI-assisted: 3 days for same output</p>
+                    <p style="font-size: 14px; font-weight: 600; color: #0284c7;">Result: 2-3x faster delivery</p>
+                </div>
+
+                <div style="background-color: #e0f2fe; padding: 1.5rem; border-left: 3px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 0.75rem;">Focus Shift</h4>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">Less time pixel-pushing</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 0.5rem;">More time evaluating which direction solves the problem</p>
+                    <p style="font-size: 14px; font-weight: 600; color: #0284c7;">More time on strategic decisions</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Skills This Demonstrates</h3>
+            <ul class="checkmark-list" style="font-size: 16px; line-height: 2; margin: 2rem 0;">
+                <li><strong>Prompt engineering</strong> - Translating requirements into effective prompts</li>
+                <li><strong>Quality curation</strong> - Evaluating AI outputs against user needs</li>
+                <li><strong>Rapid prototyping</strong> - Testable artifacts in days</li>
+                <li><strong>Strategic thinking</strong> - Knowing what to improve and why</li>
+                <li><strong>Modern tooling</strong> - Staying current with emerging capabilities</li>
+            </ul>
+
+            <div style="background-color: #e0f2fe; padding: 2rem; margin: 3rem 0; border-left: 4px solid #0284c7;">
+                <h4 style="color: #0284c7; margin-bottom: 1rem;">Why This Matters</h4>
+                <p style="margin-bottom: 1rem;">The original project shows my <strong>design thinking, research, and problem-solving</strong>.</p>
+                <p>The AI-assisted refinement shows I can <strong>work at the speed of modern product development</strong>.</p>
+                <p style="margin-top: 1rem; font-weight: 600;">Both skills matter in 2025.</p>
             </div>
         </section>
 
+        <!-- 9. Conclusion -->
+        <section id="conclusion" class="case-study-section">
+            <h2>9. Conclusion</h2>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">From Algorithm to Action</h3>
+            <p>This project transformed an isolated optimization algorithm into a comprehensive decision-making platform serving three organizational levels. By conducting deep user research, designing for real constraints, and prioritizing functionality that proved value quickly, we successfully launched a pilot that demonstrated the concept's potential.</p>
+
+            <p style="margin-top: 2rem;"><strong>Three years later, using AI tools, I validated refinements in 3 days that would have taken ~1 week traditionally—demonstrating modern design velocity that accelerates product development.</strong></p>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Key Contributions</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #0f172a;">
+                    <h4 style="color: #0f172a; margin-bottom: 1rem;">Research & Strategy</h4>
+                    <ul style="font-size: 14px; line-height: 1.8;">
+                        <li>7 user personas across 3 organizational levels</li>
+                        <li>Translated 15+ algorithmic variables into usable interfaces</li>
+                        <li>Identified three-level hierarchical architecture</li>
+                    </ul>
+                </div>
+
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #0284c7;">
+                    <h4 style="color: #0284c7; margin-bottom: 1rem;">Design & Implementation</h4>
+                    <ul style="font-size: 14px; line-height: 1.8;">
+                        <li>Scenario modeling system for million-dollar decisions</li>
+                        <li>Unified views eliminating system-switching</li>
+                        <li>Visual system scalable across complexity levels</li>
+                        <li>Pilot implementation under real-world constraints</li>
+                    </ul>
+                </div>
+
+                <div style="background-color: #f8f9fa; padding: 1.5rem; border-top: 3px solid #059669;">
+                    <h4 style="color: #059669; margin-bottom: 1rem;">Modern Capabilities</h4>
+                    <ul style="font-size: 14px; line-height: 1.8;">
+                        <li>AI-assisted refinement (2-3x faster iteration)</li>
+                        <li>10x more design exploration</li>
+                        <li>Validated improvements in 3 days</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background-color: #f8f9fa; padding: 1.5rem; margin: 3rem 0; text-align: center;">
+                <p style="font-size: 12px; color: #666; font-style: italic;">Company name and personnel names have been changed to protect confidential information.</p>
+            </div>
+        </section>
+
+        <!-- Navigation -->
         <section class="case-study-nav">
             <a href="hospital-discharge.html" class="nav-button">← Previous Project</a>
             <a href="index.html" class="nav-button">Back to Portfolio</a>
@@ -845,162 +666,74 @@
     <div class="page-navigation">
         <div class="nav-title">Case Study Sections</div>
         <div class="nav-items">
-            <a href="#overview" class="nav-item" data-section="overview">
+            <a href="#challenge" class="nav-item" data-section="challenge">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
                     <span class="nav-number">1</span>
-                    <span class="nav-label">Overview</span>
-                </div>
-            </a>
-            <a href="#problem" class="nav-item" data-section="problem">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">2</span>
-                    <span class="nav-label">Problem Space</span>
+                    <span class="nav-label">Challenge</span>
                 </div>
             </a>
             <a href="#research" class="nav-item" data-section="research">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">3</span>
+                    <span class="nav-number">2</span>
                     <span class="nav-label">Research</span>
                 </div>
             </a>
-            <a href="#discovery" class="nav-item" data-section="discovery">
+            <a href="#strategy" class="nav-item" data-section="strategy">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">4</span>
-                    <span class="nav-label">Discovery</span>
+                    <span class="nav-number">3</span>
+                    <span class="nav-label">Strategy</span>
                 </div>
             </a>
             <a href="#initial-design" class="nav-item" data-section="initial-design">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">5</span>
+                    <span class="nav-number">4</span>
                     <span class="nav-label">Initial Design</span>
                 </div>
             </a>
             <a href="#feedback" class="nav-item" data-section="feedback">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">6</span>
+                    <span class="nav-number">5</span>
                     <span class="nav-label">User Feedback</span>
                 </div>
             </a>
-            <a href="#pilot-reality" class="nav-item" data-section="pilot-reality">
+            <a href="#pilot" class="nav-item" data-section="pilot">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">6</span>
+                    <span class="nav-label">Pilot Solution</span>
+                </div>
+            </a>
+            <a href="#outcomes" class="nav-item" data-section="outcomes">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
                     <span class="nav-number">7</span>
-                    <span class="nav-label">Pilot</span>
+                    <span class="nav-label">Outcomes</span>
                 </div>
             </a>
-            <a href="#redesign" class="nav-item" data-section="redesign">
+            <a href="#ai-refinement" class="nav-item" data-section="ai-refinement">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
                     <span class="nav-number">8</span>
-                    <span class="nav-label">AI Redesign</span>
+                    <span class="nav-label">AI Refinement</span>
+                </div>
+            </a>
+            <a href="#conclusion" class="nav-item" data-section="conclusion">
+                <div class="nav-indicator"></div>
+                <div class="nav-content">
+                    <span class="nav-number">9</span>
+                    <span class="nav-label">Conclusion</span>
                 </div>
             </a>
         </div>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
-
     <footer>
         <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll to top functionality
-            const scrollToTopButton = document.getElementById('scrollToTop');
-
-            if (scrollToTopButton) {
-                // Show/hide button based on scroll position
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        scrollToTopButton.classList.add('visible');
-                    } else {
-                        scrollToTopButton.classList.remove('visible');
-                    }
-                });
-
-                // Scroll to top when button is clicked
-                scrollToTopButton.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-
-        // Initialize page navigation tracking
-        initPageNavigation();
-    });
-
-    // Page Navigation Progress Tracking
-    function initPageNavigation() {
-        const navItems = document.querySelectorAll('.nav-item');
-        const sections = document.querySelectorAll('section[id]');
-
-        if (!navItems.length || !sections.length) return;
-
-        // Smooth scrolling for navigation links
-        navItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Track scroll position and highlight current section
-        function updateActiveSection() {
-            const scrollPos = window.scrollY + 100; // Offset for header
-
-            let currentSection = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-
-                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            // Update active navigation item
-            navItems.forEach(item => {
-                const itemSection = item.getAttribute('data-section');
-                if (itemSection === currentSection) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        }
-
-        // Listen for scroll events with throttling
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout);
-            }
-            scrollTimeout = setTimeout(updateActiveSection, 10);
-        });
-
-        // Initial check
-        updateActiveSection();
-    }
-    </script>
 </body>
 </html>
