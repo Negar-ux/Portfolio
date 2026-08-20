@@ -107,7 +107,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 400;
     color: var(--text-primary);
 }
@@ -121,13 +121,13 @@ h2 {
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 300;
     color: var(--text-primary);
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--text-primary);
 }
@@ -641,7 +641,7 @@ main {
 .project-card h3 {
     margin-bottom: 1rem;
     color: #000000;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.3;
     font-weight: 400;
 }
@@ -779,7 +779,7 @@ main {
 }
 
 .research-project h3 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 400;
     text-transform: none;
     line-height: 1.3;
@@ -819,7 +819,7 @@ main {
 }
 
 .publications h4 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     margin-bottom: 1rem;
     color: #000000;
@@ -907,7 +907,7 @@ footer {
 }
 
 .contact-text h2 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 400;
     color: #ffffff;
     margin-bottom: 1.5rem;

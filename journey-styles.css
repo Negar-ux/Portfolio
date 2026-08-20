@@ -43,7 +43,7 @@ body {
 }
 
 .journey-hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 400;
     color: #000000;
     margin-bottom: 24px;
@@ -407,7 +407,7 @@ body {
 }
 
 .skill-category h3 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 500;
     margin-bottom: 1rem;
     color: #000000;
@@ -474,7 +474,7 @@ body {
 }
 
 .timeline-section-title {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 300;
     margin-bottom: 2rem;
     color: #000000;
@@ -577,7 +577,7 @@ body {
 }
 
 .timeline-content h4 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     margin-bottom: 1rem;
     color: #000000;
@@ -696,7 +696,7 @@ body {
 }
 
 .pub-content h4 {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 12px;
     color: #1a1a1a;
     line-height: 1.4;
@@ -801,7 +801,7 @@ body {
 }
 
 .resume-info h3 {
-    font-size: 1.3rem;
+    font-size: 26px;
     margin-bottom: 0.5rem;
     color: #000000;
     font-weight: 600;
