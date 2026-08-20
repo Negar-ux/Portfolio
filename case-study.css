@@ -970,3 +970,130 @@
     .chain-proof { padding: 0.8rem 1.15rem; }
     .chain-said p { font-size: 17px; }
 }
+
+
+/* ============================================================
+   Figures. Two kinds, kept visually distinct: published market
+   context (cyan) and this project's own record (pink), so a
+   reader always knows which is which.
+   ============================================================ */
+
+.stat-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.75rem;
+    margin: 1.5rem 0 1rem;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+}
+
+.stat-legend span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-legend i {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    display: block;
+}
+
+.stat-legend .k-market i { background-color: var(--accent-cyan, #67e0ff); }
+.stat-legend .k-project i { background-color: var(--accent-pink, #a33468); }
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.stat-card {
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-radius: 8px;
+    padding: 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 3px solid var(--accent-cyan, #67e0ff);
+}
+
+.stat-card.project { border-top-color: var(--accent-pink, #a33468); }
+
+.stat-card .stat-value {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--accent-cyan, #67e0ff);
+}
+
+.stat-card.project .stat-value { color: var(--accent-pink, #a33468); }
+
+.stat-card .stat-label {
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.stat-card .stat-src {
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--border-color, #e0e4e7);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+}
+
+/* prevalence bars */
+.prev-bars { margin: 1rem 0 0.5rem; }
+
+.prev-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 52px;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 15px;
+}
+
+.prev-row .prev-name { color: var(--text-secondary, #565656); }
+
+.prev-track {
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-radius: 3px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.prev-fill {
+    height: 100%;
+    background-color: var(--border-color, #e0e4e7);
+    border-radius: 3px;
+}
+
+.prev-row .prev-pct {
+    text-align: right;
+    font-size: 14px;
+    color: var(--text-muted, #666);
+}
+
+.prev-row.built-for .prev-name { color: var(--accent-pink, #a33468); font-weight: 500; }
+.prev-row.built-for .prev-fill { background-color: var(--accent-pink, #a33468); }
+.prev-row.built-for .prev-pct { color: var(--accent-pink, #a33468); font-weight: 500; }
+
+.figure-note {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+    margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .prev-row { grid-template-columns: 108px 1fr 46px; font-size: 14px; }
+}
