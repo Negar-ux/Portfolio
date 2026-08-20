@@ -264,7 +264,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Page Navigation Progress Tracking
 function initPageNavigation() {
     const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('section[id]');
+
+    // Track only the sections the rail actually links to, so a trailing
+    // section can never claim a highlight no rail item can show.
+    const sections = [...navItems]
+        .map(item => document.getElementById(item.getAttribute('href').substring(1)))
+        .filter(Boolean);
 
     if (!navItems.length || !sections.length) return;
 
@@ -302,15 +307,20 @@ function initPageNavigation() {
             }
         });
 
-        // Special handling for the last section (contact) when near bottom of page
-        if (!currentSection || window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 100) {
+        // At the very bottom the final section can be too short to ever hold
+        // the viewport midpoint, so pin it there. This must not also fire when
+        // simply no section matched -- above the first section that would jump
+        // the highlight to the end of the page.
+        const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 100;
+        if (atBottom) {
             const lastSection = sections[sections.length - 1];
             if (lastSection) {
                 currentSection = lastSection.getAttribute('id');
             }
         }
 
-        // If no section found with middle check, find the closest one
+        // Above the first section, or in a gap between two, fall back to the
+        // nearest section rather than the last one.
         if (!currentSection) {
             let minDistance = Infinity;
             sections.forEach(section => {
