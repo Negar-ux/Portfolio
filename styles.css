@@ -1276,29 +1276,29 @@ footer {
         z-index: 10000;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         gap: 1.5rem;
         overflow-y: auto;
     }
 
     nav ul#nav-menu.active > li {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     nav ul#nav-menu.active a {
         font-size: 20px;
     }
 
-    /* The toggle is a flex row, so text-align cannot centre it */
+    /* The toggle is a flex row, so text-align cannot align it */
     nav ul#nav-menu.active .dropdown-toggle {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     /* Dropdown sits inline in the panel and expands on tap */
     nav ul#nav-menu.active .dropdown-menu {
         /* base rule uses !important, so this must too */
-        align-items: center !important;
+        align-items: flex-start !important;
         position: static;
         opacity: 0;
         visibility: hidden;
@@ -1320,7 +1320,7 @@ footer {
     nav ul#nav-menu.active .dropdown-menu a {
         color: var(--text-primary);
         font-size: 17px;
-        text-align: center;
+        text-align: left;
     }
 
     /* Show hamburger in nav on mobile */
