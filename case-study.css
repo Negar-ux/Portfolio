@@ -1100,10 +1100,59 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
-    margin: 1.75rem 0 0;
+    margin: 0;
 }
 
 .store-badges a { display: block; }
+
+.store-badges img {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
+/* The "get it" moment. Loose badges on a white page are easy to skim
+   past, so they sit in a band with a label and an accent edge. */
+.ship-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+    margin: 2rem 0 0;
+    padding: 1.5rem 1.75rem;
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-left: 4px solid var(--accent-pink, #a33468);
+}
+
+.ship-bar-text { min-width: 0; }
+
+.ship-bar .ship-kicker {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent-pink, #a33468);
+    margin-bottom: 0.3rem;
+}
+
+.ship-bar-text p {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .ship-bar {
+        padding: 1.25rem 1.25rem;
+        gap: 1.15rem;
+    }
+    .ship-bar-text p { font-size: 17px; }
+    .store-badges { gap: 0.65rem; }
+
+    /* shrink so both badges stay on one row rather than stacking */
+    .store-badges img { height: 42px; }
+}
 
 /* Shipped screens, shown as a row of App Store shots */
 .app-shots {
