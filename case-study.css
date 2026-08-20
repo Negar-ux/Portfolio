@@ -988,6 +988,10 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--text-muted, #666);
+    /* reserve two lines so a kicker that wraps does not push its figure
+       out of line with the cards beside it */
+    line-height: 1.35;
+    min-height: 2.7em;
 }
 
 .stat-card .stat-value {
