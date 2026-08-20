@@ -829,39 +829,6 @@
    rules below can target them reliably.
    ============================================================ */
 
-.voice-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin: 0 0 2rem;
-}
-
-.voice-card {
-    background-color: var(--bg-secondary, #f8f9fa);
-    border-left: 4px solid var(--accent-cyan, #67e0ff);
-    padding: 1.35rem 1.4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-}
-
-.voice-card p {
-    margin: 0;
-    font-size: 17px;
-    font-style: italic;
-    line-height: 1.5;
-}
-
-.voice-card .voice-group {
-    margin-top: auto;
-    padding-top: 0.85rem;
-    border-top: 1px dashed var(--border-color, #e0e4e7);
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted, #666);
-    font-style: normal;
-}
 
 .insight-chain {
     display: flex;
@@ -958,10 +925,6 @@
 }
 
 @media (max-width: 768px) {
-    .voice-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
     .chain-head { padding: 0.8rem 1.15rem; }
     .chain-body { padding: 1.15rem; }
     .chain-proof { padding: 0.8rem 1.15rem; }
