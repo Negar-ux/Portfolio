@@ -1022,11 +1022,24 @@
 
 .stat-card.project { border-top-color: var(--accent-pink, #a33468); }
 
+.stat-card .stat-kicker {
+    font-size: 13px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+}
+
 .stat-card .stat-value {
     font-size: 34px;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.1;
     color: var(--accent-cyan, #67e0ff);
+}
+
+.stat-card .stat-unit {
+    font-size: 19px;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 .stat-card.project .stat-value { color: var(--accent-pink, #a33468); }
@@ -1183,4 +1196,41 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.85rem;
     }
+}
+
+/* A short verdict pulled from an outside source */
+.verdict {
+    margin: 0 0 2rem;
+    padding: 1.5rem 1.75rem;
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-left: 4px solid var(--accent-cyan, #67e0ff);
+}
+
+.verdict blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+.verdict blockquote p {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.45;
+    font-style: italic;
+}
+
+.verdict figcaption {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border-color, #e0e4e7);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+}
+
+@media (max-width: 768px) {
+    .verdict { padding: 1.25rem; }
+    .verdict blockquote p { font-size: 18px; }
 }
