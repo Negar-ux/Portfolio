@@ -372,7 +372,7 @@ nav a.contact-nav.active {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: #000000;
+    background-color: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -1262,9 +1262,72 @@ footer {
         display: none;
     }
 
+    /* Full-screen panel shown when the hamburger is tapped */
+    nav ul#nav-menu.active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 2rem;
+        background: var(--bg-primary);
+        z-index: 10000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        overflow-y: auto;
+    }
+
+    nav ul#nav-menu.active > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul#nav-menu.active a {
+        font-size: 20px;
+    }
+
+    /* The toggle is a flex row, so text-align cannot centre it */
+    nav ul#nav-menu.active .dropdown-toggle {
+        justify-content: center;
+    }
+
+    /* Dropdown sits inline in the panel and expands on tap */
+    nav ul#nav-menu.active .dropdown-menu {
+        /* base rule uses !important, so this must too */
+        align-items: center !important;
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+        border: none;
+        background: transparent;
+        min-width: 0;
+    }
+
+    nav ul#nav-menu.active .dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin-top: 0.75rem;
+    }
+
+    nav ul#nav-menu.active .dropdown-menu a {
+        color: var(--text-primary);
+        font-size: 17px;
+        text-align: center;
+    }
+
     /* Show hamburger in nav on mobile */
     .hamburger {
         display: flex;
+        position: relative;
+        z-index: 10001;
     }
 
     /* Full-page mobile menu overlay */
