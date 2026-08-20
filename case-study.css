@@ -833,7 +833,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
-    margin: 1.5rem 0 2rem;
+    margin: 0 0 2rem;
 }
 
 .voice-card {
@@ -867,7 +867,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 1.75rem 0 0;
+    margin: 0 0 1.75rem;
 }
 
 .chain-link {
@@ -1008,7 +1008,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 1rem;
-    margin: 1rem 0 2rem;
+    margin: 0 0 2rem;
 }
 
 .stat-card {
@@ -1119,7 +1119,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem 2rem;
-    margin: 2rem 0 0;
+    margin: 0 0 2rem;
     padding: 1.5rem 1.75rem;
     background-color: var(--bg-secondary, #f8f9fa);
     border-left: 4px solid var(--accent-pink, #a33468);
@@ -1159,7 +1159,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    margin: 2rem 0 0;
+    margin: 0 0 2rem;
 }
 
 .app-shots figure { margin: 0; }
