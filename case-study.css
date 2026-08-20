@@ -934,6 +934,28 @@
 .chain-built {
     border-left: 4px solid var(--accent-pink, #a33468);
     padding-left: 1.15rem;
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.chain-built .chain-shot {
+    margin: 0;
+}
+
+.chain-built .chain-shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color, #e0e4e7);
+}
+
+.chain-built .chain-shot figcaption {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--text-muted, #666);
+    margin-top: 0.5rem;
 }
 
 .chain-built h4 {
@@ -966,6 +988,13 @@
     .chain-body { padding: 1.15rem; }
     .chain-proof { padding: 0.8rem 1.15rem; }
     .chain-said p { font-size: 17px; }
+
+    .chain-built {
+        grid-template-columns: 1fr;
+        gap: 1.15rem;
+    }
+
+    .chain-built .chain-shot { max-width: 240px; }
 }
 
 
