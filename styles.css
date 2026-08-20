@@ -1276,29 +1276,29 @@ footer {
         z-index: 10000;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         gap: 1.5rem;
         overflow-y: auto;
     }
 
     nav ul#nav-menu.active > li {
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
 
     nav ul#nav-menu.active a {
         font-size: 20px;
     }
 
-    /* The toggle is a flex row, so text-align cannot align it */
+    /* The toggle is a flex row, so text-align cannot centre it */
     nav ul#nav-menu.active .dropdown-toggle {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     /* Dropdown sits inline in the panel and expands on tap */
     nav ul#nav-menu.active .dropdown-menu {
         /* base rule uses !important, so this must too */
-        align-items: flex-start !important;
+        align-items: center !important;
         position: static;
         opacity: 0;
         visibility: hidden;
@@ -1320,7 +1320,7 @@ footer {
     nav ul#nav-menu.active .dropdown-menu a {
         color: var(--text-primary);
         font-size: 17px;
-        text-align: left;
+        text-align: center;
     }
 
     /* Show hamburger in nav on mobile */
@@ -1431,12 +1431,12 @@ footer {
     
     .hero-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 2rem;
     }
 
     .hero-text {
-        text-align: center;
+        text-align: left;
     }
 
     .hero-text h1 {
@@ -1462,6 +1462,24 @@ footer {
 
     .project-card {
         flex-direction: column;
+        text-align: left;
+    }
+
+    /* Left-align reading text on mobile: centred paragraphs start each
+       line at a different point, which is harder to track. These are
+       centred globally, so override them only at this width. */
+    .section-header,
+    .featured-work h2,
+    .contact-section,
+    .contact-text {
+        text-align: left;
+    }
+
+    /* Buttons and the decorative project number keep centred labels */
+    .cta-button,
+    .project-link,
+    .contact-btn,
+    .project-number {
         text-align: center;
     }
 
