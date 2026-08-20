@@ -821,3 +821,152 @@
         color: var(--text-secondary);
     }
 }
+
+
+/* ============================================================
+   Insight chain — what a user said, and what shipped because
+   of it. Real classes rather than inline styles so the mobile
+   rules below can target them reliably.
+   ============================================================ */
+
+.voice-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.voice-card {
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-left: 4px solid var(--accent-cyan, #67e0ff);
+    border-radius: 8px;
+    padding: 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.voice-card p {
+    margin: 0;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.voice-card .voice-group {
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--border-color, #e0e4e7);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+    font-style: normal;
+}
+
+.insight-chain {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.75rem 0 0;
+}
+
+.chain-link {
+    border: 1px solid var(--border-color, #e0e4e7);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--card-bg, #ffffff);
+}
+
+.chain-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.9rem 1.5rem;
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-bottom: 1px solid var(--border-color, #e0e4e7);
+}
+
+.chain-head .chain-num {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-cyan, #67e0ff);
+    letter-spacing: 0.04em;
+}
+
+.chain-head .chain-who {
+    font-size: 13px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-muted, #666);
+}
+
+.chain-body { padding: 1.5rem; }
+
+.chain-said {
+    border-left: 4px solid var(--accent-cyan, #67e0ff);
+    padding-left: 1.15rem;
+    margin: 0 0 1.25rem;
+}
+
+.chain-said p {
+    margin: 0;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.chain-became {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.15rem;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-pink, #a33468);
+}
+
+.chain-became::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color, #e0e4e7);
+}
+
+.chain-built {
+    border-left: 4px solid var(--accent-pink, #a33468);
+    padding-left: 1.15rem;
+}
+
+.chain-built h4 {
+    margin: 0 0 0.4rem;
+    font-size: 20px;
+}
+
+.chain-built p { margin: 0; }
+
+.chain-proof {
+    padding: 0.85rem 1.5rem;
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-top: 1px solid var(--border-color, #e0e4e7);
+    font-size: 14px;
+    color: var(--text-muted, #666);
+}
+
+.chain-proof .chain-tick {
+    color: var(--accent-pink, #a33468);
+    font-weight: 700;
+    margin-right: 0.45rem;
+}
+
+@media (max-width: 768px) {
+    .voice-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .chain-head { padding: 0.8rem 1.15rem; }
+    .chain-body { padding: 1.15rem; }
+    .chain-proof { padding: 0.8rem 1.15rem; }
+    .chain-said p { font-size: 17px; }
+}
