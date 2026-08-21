@@ -150,6 +150,50 @@
             .ia-map__grid { grid-template-columns: 1fr; }
         }
 
+
+        /* Metric definitions */
+        .metric-list {
+            margin: 1.5rem 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-list > div {
+            padding: 1.25rem;
+            border: 1px solid var(--border-color, #e0e4e7);
+            border-radius: 10px;
+            background: var(--bg-secondary, #f8f9fa);
+        }
+
+        .metric-list dt {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-primary, #000);
+        }
+
+        .metric-list__bench {
+            display: inline-block;
+            margin-left: 0.4rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            background: var(--cs-accent, #1b212e);
+            color: #fff;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            vertical-align: 2px;
+            white-space: nowrap;
+        }
+
+        .metric-list dd {
+            margin: 0;
+            font-size: 15px !important;
+            line-height: 1.55;
+            color: var(--text-secondary, #565656);
+        }
+
         /* Who we designed for - three groups */
         .target-groups {
             list-style: none;
@@ -809,44 +853,54 @@
 
         <section id="measurement" class="case-study-section">
             <h2>6. Defining success</h2>
-            <p>Shipping did not settle whether the product worked. Before it could be improved on evidence rather than opinion, someone had to decide what &ldquo;working&rdquo; meant, agree that definition with the business, and build something that turned scattered feedback into numbers. That was the part I found hardest, and the part I learned the most from.</p>
+            <p>The app shipped without an agreed definition of working. Before it could be improved on evidence rather than opinion, the measures had to be chosen, agreed with the business, and made collectable.</p>
 
-            <h3>6.1. Agreeing the measures before writing the questions</h3>
-            <p>My first attempt stalled. There were more things worth asking about than any one survey could carry, and I could not decide between them on design grounds alone. So I went to the leadership team and asked a different question: which business metrics would actually move a decision here. Research that answers those gets acted on; research that satisfies a designer&rsquo;s curiosity does not.</p>
-            <p>That conversation narrowed it to four things worth the members&rsquo; time &mdash; how often the app was used, the accessibility features themselves, the content, and the split screen, the feature the company leads with. It also settled a question the business needed answering independently: how much of the membership is actually disabled.</p>
+            <h3>6.1. The metrics, and why each one</h3>
+            <p>Four measure the experience, two answer questions the business had asked. Each is paired with a published average, so a first reading means something on its own rather than only in comparison with a later one.</p>
 
-            <h3>6.2. Picking an instrument, and a bar to clear</h3>
-            <p>I wanted four things from a study: task success, time on task, error count, and satisfaction. Choosing how to capture them meant reading up on the standard instruments rather than inventing a scale &mdash; the Single Ease Question after each task, the System Usability Scale for perceived usability overall, SUPR-Q for a broader read across usability, trust, appearance and loyalty, and the SUM technique for folding completion, time, errors and ease into one figure per task.</p>
-            <p>The reason to use published instruments is that they come with published averages, so a result means something the first time you measure it rather than only in comparison with yourself later:</p>
-
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <span class="stat-value">5.1</span>
-                    <span class="stat-label">average Single Ease Question score, out of 7</span>
+            <dl class="metric-list">
+                <div>
+                    <dt>Task completion rate <span class="metric-list__bench">benchmark 78%</span></dt>
+                    <dd>Whether people can finish what they came to do. The one measure that cannot be argued with: a member either bought a membership and started a class, or did not.</dd>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value">78%</span>
-                    <span class="stat-label">average task completion rate</span>
+                <div>
+                    <dt>Time on task</dt>
+                    <dd>Efficiency. It matters more than usual here, because assistive technology adds steps &mdash; a screen reader user moving through a screen control by control will always be slower, and the number is only useful read against that.</dd>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value">68</span>
-                    <span class="stat-label">average System Usability Scale score</span>
+                <div>
+                    <dt>Error count</dt>
+                    <dd>Where the interface actively misleads, as opposed to where it is merely disliked. Errors point at a specific control; satisfaction scores do not.</dd>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value">50%</span>
-                    <span class="stat-label">average SUPR-Q percentile</span>
+                <div>
+                    <dt>Single Ease Question <span class="metric-list__bench">benchmark 5.1 of 7</span></dt>
+                    <dd>One question after each task, so difficulty is attributed to the task that caused it rather than to the session as a whole.</dd>
                 </div>
-            </div>
+                <div>
+                    <dt>System Usability Scale <span class="metric-list__bench">benchmark 68</span></dt>
+                    <dd>Perceived usability of the product overall, and the most widely published score available &mdash; which makes it the easiest number to defend in a room that has never run a usability test.</dd>
+                </div>
+                <div>
+                    <dt>Frequency of use, and disability status of members</dt>
+                    <dd>The two the leadership team needed. Frequency is the engagement metric the business already tracked; the share of members who are disabled answers whether the product is reaching the people it was built for &mdash; which no usability score can tell you.</dd>
+                </div>
+            </dl>
 
-            <p>The study I designed around them: twenty participants split into members and non-members, five tasks covering sign-up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. Forty-five minutes each, remote, with the participant sharing their screen.</p>
-            <p>The protocol changed by group, because running the same session for everyone would have tested the wrong things. With Deaf and hard of hearing participants the focus was captions, audio settings and the ASL classes. With blind and low vision participants it was how the app behaves under the assistive technology they already use. Instructors ran the same tasks as members, since they use the product too.</p>
+            <p>SUPR-Q and the SUM technique were considered and set aside: SUPR-Q reads across usability, trust, appearance and loyalty, and SUM folds completion, time, errors and ease into a single figure per task. Both are stronger with a larger sample than this product could supply at the time.</p>
 
-            <h3>6.3. Making feedback countable</h3>
-            <p>Feedback arrived as sentences, and sentences do not aggregate. I built a sheet to collect it and gave every issue a severity &mdash; <strong>critical</strong>, <strong>moderate</strong>, <strong>minor</strong>, or <strong>suggestion</strong> &mdash; and a type, so the same problem reported five ways could be counted once and ranked against everything else. That is what turns a list of complaints into a queue a small team can work through in order.</p>
+            <h3>6.2. The research behind them</h3>
+            <p>Alongside interviewing the leadership team to set the measures and designing the survey itself:</p>
+            <ul>
+                <li><strong>Desk research on measurement instruments.</strong> Reading up on SEQ, SUS, SUPR-Q and SUM, their published averages and where each is appropriate, rather than inventing a scale. Also on measuring emotion specifically &mdash; CSUQ, Product Reaction Cards, UEQ and AttrakDiff &mdash; and the distinction between measuring how a design feels and measuring what someone feels using it.</li>
+                <li><strong>A usability study designed for twenty participants</strong>, split into members and non-members, over five tasks: signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. Forty-five minutes each, remote, with the participant sharing their screen, and a Single Ease Question after every task.</li>
+                <li><strong>A protocol that changed by group.</strong> With Deaf and hard of hearing participants, captions, audio settings and the ASL classes. With blind and low vision participants, how the app behaves under the assistive technology they already use. Instructors ran the same tasks as members. Running one identical session for everyone would have tested the wrong things.</li>
+                <li><strong>Expert review of the survey.</strong> Three revisions before it was sent, reviewed by two colleagues and an external senior researcher.</li>
+                <li><strong>A feedback collection system.</strong> Every issue given a severity &mdash; critical, moderate, minor, or suggestion &mdash; and a type, so the same problem reported five ways counts once and can be ranked against everything else.</li>
+                <li><strong>An external accessibility review</strong> of the live app, and quality assurance testing against assistive technology.</li>
+            </ul>
 
-            <h3>6.4. What it surfaced</h3>
-            <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. Their edits were substantive rather than cosmetic: broaden the disability categories to cover sensory, mental health, cognitive and intellectual, medical, neurological and mobility disability rather than the narrower set I had; say <em>mobility disability</em> instead of naming a wheelchair or assistive device, because the device is not the person; reorder the questions to follow the order a member actually meets the app, starting with signing up and finding a class; and label the sections so people know what they are being asked before they start.</p>
-            <p>An external accessibility review of the live app came back with ten issues. Several were mine to answer: no dark mode, which the reviewer flagged for low vision and light sensitivity; text cut off across the app; carousels with no cue that they were carousels, and invisible to low-vision tooling; video controls without enough contrast; a back gesture that failed inside the captions and audio menus, stranding screen reader users; and sliders whose touch targets were too small and too low-contrast to use comfortably.</p>
+            <h3>6.3. What it surfaced</h3>
+            <p>The survey review was substantive rather than cosmetic: broaden the disability categories to cover sensory, mental health, cognitive and intellectual, medical, neurological and mobility disability; say <em>mobility disability</em> rather than naming a wheelchair or assistive device, because the device is not the person; reorder the questions to follow the order a member actually meets the app; and label the sections so people know what they are being asked before they start.</p>
+            <p>The accessibility review returned ten issues. No dark mode, flagged for low vision and light sensitivity. Text cut off across the app. Carousels with no cue that they were carousels, and invisible to low-vision tooling. Video controls without enough contrast. A back gesture that failed inside the captions and audio menus, stranding screen reader users. Sliders whose touch targets were too small and too low-contrast to use comfortably.</p>
 
             <figure class="verdict">
                 <blockquote>
@@ -855,8 +909,8 @@
                 <figcaption>External accessibility review of the live app</figcaption>
             </figure>
 
-            <p>That is the split screen &mdash; the feature the company leads with on both store listings, and the one this case study opens with. My own survey returned the same verdict independently. Finding it is the point of building the measurement in the first place: without it, the feature would have kept being described as the product&rsquo;s strength while confusing the people it was built for. The next step I set was A/B testing alternative designs for it rather than defending the one that existed.</p>
-            <p>Two of these had already been answered by the time the review arrived. The slider criticism is the same problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not reading the version tags aloud &mdash; the Standing and ASL labels that the whole approach depends on being announced.</p>
+            <p>That is the split screen &mdash; the feature the company leads with on both store listings, and the one this case study opens on. The survey returned the same verdict independently. Finding it is what the measurement was for: without it, the feature would have gone on being described as the product&rsquo;s strength while confusing the people it was built for. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
+            <p>Two findings were already answered. The slider criticism is the problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
         </section>
 
         <section id="outcome" class="case-study-section">
