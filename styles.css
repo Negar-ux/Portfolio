@@ -2081,3 +2081,19 @@ footer {
         background-color: var(--accent-pink);
     }
 }
+
+
+/* Respect the operating-system reduced-motion preference.
+   Motion is a barrier for people with vestibular disorders and can trigger
+   migraine or nausea; WCAG 2.3.3 Animation from Interactions asks that motion
+   not essential to the content be removable. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

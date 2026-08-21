@@ -151,7 +151,8 @@
     align-items: center;
 }
 
-.case-study-image img {
+.case-study-image img,
+.case-study-image video {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -1197,3 +1198,4 @@
     .verdict { padding: 1.25rem; }
     .verdict blockquote p { font-size: 18px !important; }
 }
+
