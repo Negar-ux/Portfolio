@@ -262,6 +262,18 @@
             margin: 2rem 0;
         }
 
+        /* These panels have their own background, so their padding is part of
+           the panel's shape rather than spacing between sections. The shared
+           rule .case-study-section > *:last-child strips padding-bottom to
+           stop a trailing gap, which leaves the last panel's content flush
+           against its own bottom edge. Restore it. */
+        .case-study-section > .prototype-sections:last-child,
+        .case-study-section > .dashboard-iterations:last-child,
+        .case-study-section > .class-detail-iterations:last-child,
+        .case-study-section > .split-screen-iterations:last-child {
+            padding-bottom: 2rem !important;
+        }
+
         /* Remove shadows from screenshots inside gray sections */
         .prototype-sections .case-study-image img,
         .dashboard-iterations .case-study-image img,
