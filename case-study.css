@@ -495,7 +495,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     font-size: 36px;
     margin-bottom: 2rem;
     color: #000000;
-    border-bottom: 2px solid var(--cs-accent, #67e0ff);
+    border-bottom: 2px solid #67e0ff;
     padding-bottom: 1rem;
 }
 
@@ -823,7 +823,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     /* Case Study Quote */
     .case-study-quote {
         background-color: var(--bg-secondary);
-        border-left-color: var(--accent-pink);
+        border-left-color: var(--cs-accent, #a33468);
     }
 
     .case-study-quote p {
@@ -866,7 +866,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     }
 
     .metric-number {
-        color: var(--accent-pink);
+        color: var(--cs-accent, #a33468);
     }
 
     .metric-label {
@@ -906,7 +906,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
 .chain-head .chain-num {
     font-size: 15px !important;
     font-weight: 700;
-    color: var(--accent-pink, #a33468);
+    color: var(--cs-accent, #a33468);
     letter-spacing: 0.04em;
 }
 
@@ -940,7 +940,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     font-size: 13px !important;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-pink, #a33468);
+    color: var(--cs-accent, #a33468);
 }
 
 .chain-became::after {
@@ -951,7 +951,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
 }
 
 .chain-built {
-    border-left: 4px solid var(--accent-pink, #a33468);
+    border-left: 4px solid var(--cs-accent, #a33468);
     padding-left: 1.15rem;
 }
 
@@ -971,7 +971,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
 }
 
 .chain-proof .chain-tick {
-    color: var(--accent-pink, #a33468);
+    color: var(--cs-accent, #a33468);
     font-weight: 700;
     margin-right: 0.45rem;
 }
@@ -1017,7 +1017,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
 }
 
 .stat-legend .k-market i { background-color: var(--accent-cyan, #67e0ff); }
-.stat-legend .k-project i { background-color: var(--accent-pink, #a33468); }
+.stat-legend .k-project i { background-color: var(--cs-accent, #a33468); }
 
 .stat-grid {
     display: grid;
@@ -1032,7 +1032,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    border-top: 3px solid var(--accent-pink, #a33468);
+    border-top: 3px solid var(--cs-accent, #a33468);
 }
 
 .stat-card .stat-kicker {
@@ -1050,7 +1050,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     font-size: 34px !important;
     font-weight: 400;
     line-height: 1.1;
-    color: var(--accent-pink, #a33468);
+    color: var(--cs-accent, #a33468);
 }
 
 .stat-card .stat-unit {
@@ -1105,9 +1105,9 @@ body.cs-workshops   { --cs-accent: #a33468; }
     color: var(--text-muted, #666);
 }
 
-.prev-row.built-for .prev-name { color: var(--accent-pink, #a33468); font-weight: 500; }
-.prev-row.built-for .prev-fill { background-color: var(--accent-pink, #a33468); }
-.prev-row.built-for .prev-pct { color: var(--accent-pink, #a33468); font-weight: 500; }
+.prev-row.built-for .prev-name { color: var(--cs-accent, #a33468); font-weight: 500; }
+.prev-row.built-for .prev-fill { background-color: var(--cs-accent, #a33468); }
+.prev-row.built-for .prev-pct { color: var(--cs-accent, #a33468); font-weight: 500; }
 
 .figure-note {
     font-size: 13px !important;
@@ -1150,7 +1150,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     margin: 0 0 2rem;
     padding: 1.5rem 1.75rem;
     background-color: var(--bg-secondary, #f8f9fa);
-    border-left: 4px solid var(--accent-pink, #a33468);
+    border-left: 4px solid var(--cs-accent, #a33468);
 }
 
 .ship-bar-text { min-width: 0; }
@@ -1160,7 +1160,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     font-size: 13px !important;
     letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: var(--accent-pink, #a33468);
+    color: var(--cs-accent, #a33468);
     margin-bottom: 0.3rem;
 }
 
@@ -1218,7 +1218,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
     margin: 0 0 2rem;
     padding: 1.5rem 1.75rem;
     background-color: var(--bg-secondary, #f8f9fa);
-    border-left: 4px solid var(--accent-cyan, #67e0ff);
+    border-left: 4px solid var(--cs-accent, #67e0ff);
 }
 
 .verdict blockquote {
@@ -1271,10 +1271,16 @@ body.cs-workshops   { --cs-accent: #a33468; }
     padding: 0.75rem 1rem;
     font-weight: 700;
     font-size: 14px;
-    /* The page's own accent. Every value is chosen to clear 4.5:1 here,
-       which the site's #067bc2 did not (4.31:1). */
-    color: var(--cs-accent, #0d0d0d);
+    /* Deliberately NOT the per-study accent: the image descriptions are one
+       consistent affordance across every case study, so they keep one colour.
+       #06699f rather than the site's #067bc2, which measures 4.31:1 here and
+       fails AA at this size; this is 5.65:1. */
+    color: #06699f;
     list-style-position: inside;
+}
+
+[data-theme="dark"] .figure-desc > summary {
+    color: #6cb8e6;
 }
 
 .figure-desc > summary:hover {
@@ -1282,7 +1288,7 @@ body.cs-workshops   { --cs-accent: #a33468; }
 }
 
 .figure-desc > summary:focus-visible {
-    outline: 3px solid var(--cs-accent, #0d0d0d);
+    outline: 3px solid #06699f;
     outline-offset: 2px;
 }
 
