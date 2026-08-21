@@ -546,61 +546,10 @@
         <section id="conceptualization" class="case-study-section">
             <h2>3. Conceptualization</h2>
             <h3>3.1. Fast prototyping and user interviews</h3>
-            <p>I started with the information architecture and low-fidelity concepts for the primary use cases, and tested those mockups with users before committing to anything visual. The structure below is what came out of it. What changed between those first concepts and the shipped screens is shown in section 4.</p>
+            <p>I started with low-fidelity concepts for the primary use cases and tested those mockups with users before committing to anything visual. The features that came out of that work are below, and the architecture they settled into follows them. What changed between the first concepts and the shipped screens is shown in section 4.</p>
 
 
-            <figure class="ia-map">
-                <div class="ia-map__grid">
-                    <div class="ia-map__col">
-                        <h4>Entry</h4>
-                        <ul>
-                            <li>Sign up <span>non-member</span></li>
-                            <li>Log in <span>member</span></li>
-                            <li>Membership options</li>
-                            <li>Subscription &amp; payment</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Dashboard</h4>
-                        <ul>
-                            <li>Classes <span>cards carry version, level and length</span></li>
-                            <li>Instructors <span>added after testing</span></li>
-                            <li>Filters</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Class detail</h4>
-                        <ul>
-                            <li class="is-access">Class versions <span>standing &middot; seated, no lower body &middot; seated, some lower body</span></li>
-                            <li class="is-access">Language <span>American Sign Language</span></li>
-                            <li>Intensity level <span>1, 2, 3</span></li>
-                            <li>Class breakdown <span>warm-up, workout, cool-down</span></li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Video player</h4>
-                        <ul>
-                            <li class="is-access">Split screen <span>two versions at once</span></li>
-                            <li class="is-access">Audio settings <span>instructor and music, stepped</span></li>
-                            <li class="is-access">Caption settings <span>size and colour</span></li>
-                            <li class="is-access">Audio description</li>
-                            <li>Playback speed</li>
-                            <li>Output device</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Account</h4>
-                        <ul>
-                            <li>Profile</li>
-                            <li>Membership &amp; payment</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="ia-map__key"><span class="ia-map__swatch" aria-hidden="true"></span> Marked items are where an access decision lives in the structure rather than in a settings menu. The web administration panel is a separate tool, covered in section 5.</p>
-                <figcaption>Information architecture of the MVP. Adapted class versions and language sit inside the class itself, so choosing one is part of picking a class rather than a preference set beforehand.</figcaption>
-            </figure>
-
-            <h3>3.2. From what people said to what shipped</h3>
+            <h3>3.2. Key features and impact</h3>
             <p>Each concept traces back to something a person said in research, and forward to something you can verify in the live app.</p>
 
             <div class="insight-chain">
@@ -660,6 +609,60 @@
                 </article>
 
             </div>
+
+            <h3>3.3. Information architecture</h3>
+            <p>The structure the concepts settled into. Adapted class versions and language sit inside the class itself, so choosing one is part of picking a class rather than a preference set beforehand.</p>
+
+            <figure class="ia-map">
+                <div class="ia-map__grid">
+                    <div class="ia-map__col">
+                        <h4>Entry</h4>
+                        <ul>
+                            <li>Sign up <span>non-member</span></li>
+                            <li>Log in <span>member</span></li>
+                            <li>Membership options</li>
+                            <li>Subscription &amp; payment</li>
+                        </ul>
+                    </div>
+                    <div class="ia-map__col">
+                        <h4>Dashboard</h4>
+                        <ul>
+                            <li>Classes <span>cards carry version, level and length</span></li>
+                            <li>Instructors <span>added after testing</span></li>
+                            <li>Filters</li>
+                        </ul>
+                    </div>
+                    <div class="ia-map__col">
+                        <h4>Class detail</h4>
+                        <ul>
+                            <li class="is-access">Class versions <span>standing &middot; seated, no lower body &middot; seated, some lower body</span></li>
+                            <li class="is-access">Language <span>American Sign Language</span></li>
+                            <li>Intensity level <span>1, 2, 3</span></li>
+                            <li>Class breakdown <span>warm-up, workout, cool-down</span></li>
+                        </ul>
+                    </div>
+                    <div class="ia-map__col">
+                        <h4>Video player</h4>
+                        <ul>
+                            <li class="is-access">Split screen <span>two versions at once</span></li>
+                            <li class="is-access">Audio settings <span>instructor and music, stepped</span></li>
+                            <li class="is-access">Caption settings <span>size and colour</span></li>
+                            <li class="is-access">Audio description</li>
+                            <li>Playback speed</li>
+                            <li>Output device</li>
+                        </ul>
+                    </div>
+                    <div class="ia-map__col">
+                        <h4>Account</h4>
+                        <ul>
+                            <li>Profile</li>
+                            <li>Membership &amp; payment</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ia-map__key"><span class="ia-map__swatch" aria-hidden="true"></span> Marked items are where an access decision lives in the structure rather than in a settings menu. The web administration panel is a separate tool, covered in section 5.</p>
+                <figcaption>Information architecture of the MVP.</figcaption>
+            </figure>
 
         </section>
 
