@@ -1199,3 +1199,59 @@
     .verdict blockquote p { font-size: 18px !important; }
 }
 
+
+/* Long text descriptions for complex diagrams.
+   The diagrams are exported artwork whose text is flattened into vector
+   paths, so it cannot be read by assistive technology. These disclosures
+   carry the same content as real text, available to everyone. */
+.figure-desc {
+    max-width: 760px;
+    margin: 0.75rem auto 0;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.6;
+    border: 1px solid var(--border-color, #e0e4e7);
+    border-radius: 8px;
+    background: var(--bg-secondary, #f8f9fa);
+}
+
+.figure-desc > summary {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    font-size: 14px;
+    /* #06699f rather than the site's #067bc2: at 14px bold this is normal-size
+       text, so it needs 4.5:1. The lighter blue measures 4.31:1 on this
+       background; this one measures 5.65:1. */
+    color: #06699f;
+    list-style-position: inside;
+}
+
+[data-theme="dark"] .figure-desc > summary {
+    color: #6cb8e6;
+}
+
+.figure-desc > summary:hover {
+    text-decoration: underline;
+}
+
+.figure-desc > summary:focus-visible {
+    outline: 3px solid #06699f;
+    outline-offset: 2px;
+}
+
+.figure-desc[open] > summary {
+    border-bottom: 1px solid var(--border-color, #e0e4e7);
+    margin-bottom: 0.5rem;
+}
+
+.figure-desc p,
+.figure-desc ul,
+.figure-desc ol {
+    margin: 0.6rem 1.25rem;
+    color: var(--text-secondary, #565656);
+}
+
+.figure-desc li {
+    margin-bottom: 0.35rem;
+}
