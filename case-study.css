@@ -145,6 +145,34 @@
     font-size: 14px;
 }
 
+
+/* ---- Per-case-study accent ------------------------------------------------
+   Each case study carries one distinguishing colour, matching the accent bar
+   on its card on the home page. Light-theme values are dark enough to pass
+   4.5:1 as text and 3:1 as a border on both the page and panel backgrounds;
+   the dark-theme values are the same hue lifted clear of the dark surface.
+
+     Sekond Skin   #1b212e  15.28:1   dark  #798bb0  4.53:1
+     Surgical      #63397d   8.26:1   dark  #a679c2  4.54:1
+     Hospital      #c2410c   4.91:1   dark  #f15718  4.52:1
+     Workshops     #a33468   6.13:1   dark  #cf6a99  4.56:1
+
+   The originals on two of these were decorative-only: the surgical lavender
+   measured 3.00:1 and the hospital coral 2.37:1, so neither could carry text
+   or a meaningful border. The coral could not be darkened without turning
+   red, so it was shifted to a true orange instead. */
+body { --cs-accent: #0d0d0d; }
+
+body.cs-sekond-skin { --cs-accent: #1b212e; }
+body.cs-surgical    { --cs-accent: #63397d; }
+body.cs-hospital    { --cs-accent: #c2410c; }
+body.cs-workshops   { --cs-accent: #a33468; }
+
+[data-theme="dark"] body.cs-sekond-skin { --cs-accent: #798bb0; }
+[data-theme="dark"] body.cs-surgical    { --cs-accent: #a679c2; }
+[data-theme="dark"] body.cs-hospital    { --cs-accent: #f15718; }
+[data-theme="dark"] body.cs-workshops   { --cs-accent: #cf6a99; }
+
 /* Case study images */
 .case-study-image {
     /* Base: tight. Figures nested inside grids and side-by-side layouts get
@@ -467,7 +495,7 @@
     font-size: 36px;
     margin-bottom: 2rem;
     color: #000000;
-    border-bottom: 2px solid #67e0ff;
+    border-bottom: 2px solid var(--cs-accent, #67e0ff);
     padding-bottom: 1rem;
 }
 
@@ -1243,15 +1271,10 @@
     padding: 0.75rem 1rem;
     font-weight: 700;
     font-size: 14px;
-    /* #06699f rather than the site's #067bc2: at 14px bold this is normal-size
-       text, so it needs 4.5:1. The lighter blue measures 4.31:1 on this
-       background; this one measures 5.65:1. */
-    color: #06699f;
+    /* The page's own accent. Every value is chosen to clear 4.5:1 here,
+       which the site's #067bc2 did not (4.31:1). */
+    color: var(--cs-accent, #0d0d0d);
     list-style-position: inside;
-}
-
-[data-theme="dark"] .figure-desc > summary {
-    color: #6cb8e6;
 }
 
 .figure-desc > summary:hover {
@@ -1259,7 +1282,7 @@
 }
 
 .figure-desc > summary:focus-visible {
-    outline: 3px solid #06699f;
+    outline: 3px solid var(--cs-accent, #0d0d0d);
     outline-offset: 2px;
 }
 

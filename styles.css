@@ -615,11 +615,11 @@ main {
 }
 
 .fitness-app .project-accent {
-    background-color: #0d0d0d;
+    background-color: #1b212e;
 }
 
 .hospital-tool .project-accent {
-    background-color: #ff7d6b;
+    background-color: #c2410c;
 }
 
 .workshops .project-accent {
@@ -627,7 +627,7 @@ main {
 }
 
 .surgical-dashboard .project-accent {
-    background-color: #a883bd;
+    background-color: #63397d;
 }
 
 .workshop-project .project-accent {

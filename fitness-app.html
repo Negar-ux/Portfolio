@@ -114,12 +114,10 @@
         .ia-map__col h4 {
             margin: 0 0 0.7rem !important;
             padding-bottom: 0.55rem;
-            border-bottom: 2px solid #0a6cff;
+            border-bottom: 2px solid var(--cs-accent);
             font-size: 15px !important;
             color: var(--text-primary, #000);
         }
-
-        [data-theme="dark"] .ia-map__col h4 { border-bottom-color: #6cb8e6; }
 
         .ia-map__col ul { margin: 0; padding: 0; list-style: none; }
 
@@ -134,8 +132,7 @@
 
         .ia-map__col li:last-child { margin-bottom: 0; }
 
-        .ia-map__col li.is-access { border-left-color: #0a6cff; }
-        [data-theme="dark"] .ia-map__col li.is-access { border-left-color: #6cb8e6; }
+        .ia-map__col li.is-access { border-left-color: var(--cs-accent); }
 
         .ia-map .ia-map__col li span {
             display: block;
@@ -158,10 +155,8 @@
             height: 12px;
             margin-right: 0.35rem;
             vertical-align: -1px;
-            background: #0a6cff;
+            background: var(--cs-accent);
         }
-
-        [data-theme="dark"] .ia-map__swatch { background: #6cb8e6; }
 
         .ia-map > figcaption {
             margin-top: 1rem;
@@ -201,10 +196,8 @@
         .target-groups__icon svg {
             display: block;
             fill: currentColor;
-            color: #0a6cff;
+            color: var(--cs-accent);
         }
-
-        [data-theme="dark"] .target-groups__icon svg { color: #6cb8e6; }
 
         .target-groups h4 {
             margin: 0.85rem 0 0.6rem;
@@ -320,7 +313,7 @@
         }
     </style>
 </head>
-<body>
+<body class="cs-sekond-skin">
     <header>
         <nav>
             <div class="hamburger" id="hamburger">
