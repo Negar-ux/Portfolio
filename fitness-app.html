@@ -200,6 +200,33 @@
             color: var(--cs-accent);
         }
 
+        .target-groups__stat {
+            margin: 0 0 0.55rem !important;
+            padding-bottom: 0.55rem;
+            border-bottom: 1px solid var(--border-color, #e0e4e7);
+        }
+
+        .target-groups__stat strong {
+            font-size: 28px !important;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--cs-accent, #0d0d0d);
+        }
+
+        .target-groups__stat span {
+            display: block;
+            margin-top: 0.2rem;
+            font-size: 13px !important;
+            line-height: 1.4;
+            color: var(--text-secondary, #565656);
+        }
+
+        .target-groups__source {
+            margin: 0.9rem 0 0 !important;
+            font-size: 13px !important;
+            color: var(--text-secondary, #565656);
+        }
+
         .target-groups h4 {
             margin: 0.85rem 0 0.6rem;
             font-size: 18px !important;
@@ -213,19 +240,7 @@
             color: var(--text-secondary, #565656);
         }
 
-        .target-groups .target-groups__answer {
-            margin-bottom: 0;
-            padding-top: 0.7rem;
-            border-top: 1px solid var(--border-color, #e0e4e7);
-        }
 
-        /* a global rule renders <strong> at 20px / weight 400; keep the label
-           inline with the sentence it introduces */
-        .target-groups__answer strong {
-            font-size: 15px !important;
-            font-weight: 700;
-            color: var(--text-primary, #000);
-        }
 
         @media (max-width: 820px) {
             .target-groups { grid-template-columns: 1fr; gap: 1rem; }
@@ -492,8 +507,8 @@
 
             <p>The barrier is access, not ability &mdash; and the health consequence is measurable. That reframed the project for me: an inaccessible fitness app is not a missed feature, it is a health outcome.</p>
 
-            <h3>2.2. Who we designed for</h3>
-            <p>Three groups were set as the minimum bar the app had to meet:</p>
+            <h3>2.2. Why these three groups</h3>
+            <p>Three groups were set as the minimum bar the app had to meet. Between them they account for roughly a quarter of the disabled adult population, and each is blocked by a different part of a video fitness class &mdash; what you hear, what you see, and what your body can do.</p>
 
             <!-- Group icons: Material Symbols (sign_language, record_voice_over,
      airline_seat_recline_normal), Google, Apache License 2.0.
@@ -504,33 +519,34 @@
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="M305-203 72-248q-17-3-26-16.5T40-294q3-17 16.5-26t30.5-6l240 45-22 78Zm38-136L73-413q-16-5-24-19t-3-30q5-17 18.5-25t29.5-3l270 74-21 77ZM110-71q-17-2-28-14.5T73-115q2-17 14.5-27.5T117-151l345 31q29 3 53-13.5t32-44.5l51-185q2-6 1.5-13t-3.5-13l-55-130-5 131-346-180q-15-8-20-24t3-30q8-15 24-20t30 3l234 122 3-70q1-18 9-32t21-23q13-10 28.5-13.5T555-654l17 7 98 227q8 19 9 39t-4 40l-51 185q-16 56-63.5 89T455-40L110-71Zm174-680q13-11 29-9t27 15l80 97q-5 8-8 17t-5 18l-108-56-21-25q-11-13-9.5-29.5T284-751Zm112-125q14-10 30-7t26 17l104 151q-22-5-44 0t-42 16l-84-122q-10-14-7-30t17-25Zm200-40q16-7 31-.5t22 21.5l101 244 46-52q11-12 26-18t32-5q17 2 31 9.5t24 21.5l11 16-72 237q-6 20-18 36.5T801-378l-66 44q5-23 4-47t-9-47l26-16q6-4 9.5-9.5T771-466l41-134-88 97-149-361q-6-15 0-30.5t21-21.5ZM443-288Zm281-215Z"/></svg>
                     </span>
                     <h4>Deaf and hard of hearing</h4>
+                    <p class="target-groups__stat"><strong>6.2%</strong> <span>of US adults report a hearing disability</span></p>
                     <p class="target-groups__barrier">Instruction is carried by the instructor&rsquo;s voice, mixed with music the member cannot separate from it &mdash; and captions, where they exist at all, are usually burned into the video.</p>
-                    <p class="target-groups__answer"><strong>Answered by</strong> an American Sign Language version of every class, captions the member sets, and independent volume for speech and music.</p>
                 </li>
                 <li>
                     <span class="target-groups__icon" aria-hidden="true">
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="m798-322-62-62q44-41 69-97t25-119q0-63-25-118t-69-96l62-64q56 53 89 125t33 153q0 81-33 153t-89 125ZM670-450l-64-64q18-17 29-38.5t11-47.5q0-26-11-47.5T606-686l64-64q32 29 50 67.5t18 82.5q0 44-18 82.5T670-450Zm-310 10q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-120v-112q0-33 17-62t47-44q51-26 115-44t141-18q77 0 141 18t115 44q30 15 47 44t17 62v112H40Zm80-80h480v-32q0-11-5.5-20T580-266q-36-18-92.5-36T360-320q-71 0-127.5 18T140-266q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q440-567 440-600t-23.5-56.5Q393-680 360-680t-56.5 23.5Q280-633 280-600t23.5 56.5Q327-520 360-520t56.5-23.5ZM360-600Zm0 400Z"/></svg>
                     </span>
                     <h4>Blind and low vision</h4>
+                    <p class="target-groups__stat"><strong>5.5%</strong> <span>report a vision disability</span></p>
                     <p class="target-groups__barrier">The workout is demonstrated visually, and the controls around it assume a member who can see them and hit them precisely.</p>
-                    <p class="target-groups__answer"><strong>Answered by</strong> labelled controls throughout, audio descriptions, stepped buttons rather than drag targets, and captions as real text a braille display can read.</p>
                 </li>
                 <li>
                     <span class="target-groups__icon" aria-hidden="true">
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="M600-160H320q-33 0-56.5-23.5T240-240v-440h80v440h280v80ZM460-720q-33 0-56.5-23.5T380-800q0-33 23.5-56.5T460-880q33 0 56.5 23.5T540-800q0 33-23.5 56.5T460-720ZM640-80v-200H440q-33 0-56.5-23.5T360-360v-220q0-42 29-71t71-29q42 0 71 29t29 71v180h80q33 0 56.5 23.5T720-320v240h-80Z"/></svg>
                     </span>
                     <h4>Low mobility</h4>
+                    <p class="target-groups__stat"><strong>12.2%</strong> <span>report a mobility disability &mdash; the most common physical type</span></p>
                     <p class="target-groups__barrier">Movements assume a standing body, so any modification has to be invented by the member part-way through a class.</p>
-                    <p class="target-groups__answer"><strong>Answered by</strong> standing, seated, and seated-without-lower-body versions of every class, each named on the card before the class is opened.</p>
                 </li>
             </ul>
+            <p class="target-groups__source">Prevalence by disability type, CDC Behavioral Risk Factor Surveillance System, 2022 &mdash; the same survey as the figures above.</p>
 
         </section>
 
         <section id="conceptualization" class="case-study-section">
             <h2>3. Conceptualization</h2>
             <h3>3.1. Fast prototyping and user interviews</h3>
-            <p>In the beginning of the process, I started creating the information architecture and low-fidelity concepts for the primary use cases. I also conducted usability tests with the lo-fi mockups. Once we had confidence in the designs, I began digitalizing them.</p>
+            <p>I started with the information architecture and low-fidelity concepts for the primary use cases, and tested those mockups with users before committing to anything visual. The structure below is what came out of it. What changed between those first concepts and the shipped screens is shown in section 4.</p>
 
 
             <figure class="ia-map">
