@@ -228,6 +228,8 @@
 
         .flow__step--end::after { display: none; }
 
+        .flow--parallel .flow__step::after { display: none; }
+
         .flow__kicker {
             margin: 0 0 0.35rem !important;
             font-size: 11.5px !important;
@@ -1043,29 +1045,28 @@
             <h2>5. Post-Launch Feedback</h2>
             <p>After launch we needed a way to tell whether the app was working. I worked on deciding the metrics: a baseline we could measure now, and keep measuring, so later versions could be compared against something rather than judged on impression.</p>
 
-            <h3>5.1. Two ways in</h3>
-            <p>Feedback arrived through two routes, on purpose. A survey went to members, so the questions were the same for everyone and the answers could be counted. Alongside it I kept a running document where anything reported by anyone &mdash; members, the internal team, outside reviewers &mdash; was logged in one place instead of living in whoever&rsquo;s inbox it landed in.</p>
+            <h3>5.1. Feedback collection</h3>
+            <p>Feedback came in more than one way. The survey went to members, so the questions were the same for everyone and the answers could be counted. Follow-up interviews went further with the people who agreed to talk. And a lot of it arrived informally, in emails from members and in conversations they had directly with the founder.</p>
 
-            <figure class="flow">
+            <figure class="flow flow--parallel">
                 <div class="flow__row">
                     <div class="flow__step">
-                        <p class="flow__kicker">Route one</p>
                         <h4>Survey</h4>
-                        <p>Sent to members. Same questions for everyone, so the answers aggregate.</p>
+                        <p>Sent to members. The same questions for everyone, so the answers could be counted.</p>
                     </div>
                     <div class="flow__step">
-                        <p class="flow__kicker">Route two</p>
-                        <h4>Feedback document</h4>
-                        <p>Everything else &mdash; internal notes, member emails, expert reviews &mdash; in one place.</p>
+                        <h4>Interviews</h4>
+                        <p>Follow-up sessions with the members who said they were willing to talk.</p>
                     </div>
                     <div class="flow__step flow__step--end">
-                        <p class="flow__kicker">Then</p>
-                        <h4>Severity and type</h4>
-                        <p>Every issue tagged <strong>critical</strong>, <strong>moderate</strong>, <strong>minor</strong> or <strong>suggestion</strong>, so a problem reported by five people is counted once.</p>
+                        <h4>Emails and conversations</h4>
+                        <p>Members writing in directly, and what they told the founder themselves.</p>
                     </div>
                 </div>
-                <figcaption>Without the second route, anything that arrived outside the survey window would have been lost.</figcaption>
+                <figcaption>The informal route mattered for timing. Anything that arrived outside the survey window would otherwise have been lost.</figcaption>
             </figure>
+
+            <p>I kept all of it in one document rather than letting it sit in whoever&rsquo;s inbox it landed in. From there I worked through the issues by how serious they were and how often they came up.</p>
 
             <h3>5.2. The survey focused on three things</h3>
             <p>There was more worth asking about than members would answer, so the survey was built around the three that mattered most to the product: the content itself, the accessibility features, and the split screen &mdash; the feature the company leads with.</p>
