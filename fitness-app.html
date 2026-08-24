@@ -194,6 +194,135 @@
             font-size: 12.5px !important;
         }
 
+        /* Flow: a small left-to-right sequence of steps */
+        .flow {
+            margin: 1.5rem 0 2rem;
+        }
+
+        .flow__row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .flow__step {
+            position: relative;
+            padding: 1.15rem 1.25rem;
+            border: 1px solid var(--border-color, #e0e4e7);
+            border-radius: 10px;
+            background: var(--bg-secondary, #f8f9fa);
+        }
+
+        .flow__step::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -0.55rem;
+            width: 0;
+            height: 0;
+            margin-top: -5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 6px solid var(--cs-accent, #1b212e);
+        }
+
+        .flow__step--end::after { display: none; }
+
+        .flow__kicker {
+            margin: 0 0 0.35rem !important;
+            font-size: 11.5px !important;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cs-accent, #1b212e);
+        }
+
+        .flow__step h4 {
+            margin: 0 0 0.4rem !important;
+            font-size: 16px !important;
+            color: var(--text-primary, #000);
+        }
+
+        .flow__step p {
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 1.5;
+            color: var(--text-secondary, #565656);
+        }
+
+        /* a global rule renders <strong> at 20px / weight 400 */
+        .flow__step strong,
+        .measure-list strong,
+        .focus-cards__card strong {
+            font-size: inherit !important;
+            font-weight: 700;
+            color: var(--text-primary, #000);
+        }
+
+        .flow > figcaption {
+            margin-top: 0.8rem;
+            font-size: 14px;
+            line-height: 1.55;
+            font-style: italic;
+            color: var(--text-secondary, #565656);
+        }
+
+        /* Focus cards: the three things the survey asked about */
+        .focus-cards { margin: 1.5rem 0 2rem; }
+
+        .focus-cards__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .focus-cards__card {
+            padding: 1.15rem 1.25rem;
+            border-top: 3px solid var(--cs-accent, #1b212e);
+            border-radius: 0 0 10px 10px;
+            background: var(--bg-secondary, #f8f9fa);
+        }
+
+        .focus-cards__card h4 {
+            margin: 0 0 0.4rem !important;
+            font-size: 16px !important;
+            color: var(--text-primary, #000);
+        }
+
+        .focus-cards__card p {
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 1.5;
+            color: var(--text-secondary, #565656);
+        }
+
+        .measure-list { margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
+
+        .measure-list li {
+            position: relative;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            font-size: 15px !important;
+            line-height: 1.55;
+            color: var(--text-secondary, #565656);
+        }
+
+        .measure-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--cs-accent, #1b212e);
+        }
+
+        @media (max-width: 820px) {
+            .flow__row, .focus-cards__grid { grid-template-columns: 1fr; }
+            .flow__step::after { display: none; }
+        }
+
         /* Disability types. One series, so no legend - the caption names it.
            Every bar is directly labelled, and the figure is a real table so the
            values are readable without the chart. */
@@ -265,49 +394,6 @@
         .type-chart__src {
             margin: 0.7rem 0 0 !important;
             font-size: 13px !important;
-            color: var(--text-secondary, #565656);
-        }
-
-        /* Metric definitions */
-        .metric-list {
-            margin: 1.5rem 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .metric-list > div {
-            padding: 1.25rem;
-            border: 1px solid var(--border-color, #e0e4e7);
-            border-radius: 10px;
-            background: var(--bg-secondary, #f8f9fa);
-        }
-
-        .metric-list dt {
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--text-primary, #000);
-        }
-
-        .metric-list__bench {
-            display: inline-block;
-            margin-left: 0.4rem;
-            padding: 0.15rem 0.5rem;
-            border-radius: 999px;
-            background: var(--cs-accent, #1b212e);
-            color: #fff;
-            font-size: 11.5px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            vertical-align: 2px;
-            white-space: nowrap;
-        }
-
-        .metric-list dd {
-            margin: 0;
-            font-size: 15px !important;
-            line-height: 1.55;
             color: var(--text-secondary, #565656);
         }
 
@@ -922,57 +1008,87 @@
             <h2>5. Post-Launch Feedback</h2>
             <p>After launch we needed a way to tell whether the app was working. I worked on deciding the metrics: a baseline we could measure now, and keep measuring, so later versions could be compared against something rather than judged on impression.</p>
 
-            <h3>5.1. The metrics, and why each one</h3>
-            <p>Six measures. Four describe what happens when someone uses the app; two answer questions the business had. Where a published average exists it is shown beside the measure, so a first reading can be judged against something.</p>
+            <h3>5.1. Two ways in</h3>
+            <p>Feedback arrived through two routes, on purpose. A survey went to members, so the questions were the same for everyone and the answers could be counted. Alongside it I kept a running document where anything reported by anyone &mdash; members, the internal team, outside reviewers &mdash; was logged in one place instead of living in whoever&rsquo;s inbox it landed in.</p>
 
-            <dl class="metric-list">
-                <div>
-                    <dt>Task completion rate <span class="metric-list__bench">benchmark 78%</span></dt>
-                    <dd>Whether people can finish what they came to do, recorded as yes, no, or partially &mdash; the middle case matters, because a member who completes a task by working around the interface has not really completed it.</dd>
+            <figure class="flow">
+                <div class="flow__row">
+                    <div class="flow__step">
+                        <p class="flow__kicker">Route one</p>
+                        <h4>Survey</h4>
+                        <p>Sent to members. Same questions for everyone, so the answers aggregate.</p>
+                    </div>
+                    <div class="flow__step">
+                        <p class="flow__kicker">Route two</p>
+                        <h4>Feedback document</h4>
+                        <p>Everything else &mdash; internal notes, member emails, expert reviews &mdash; in one place.</p>
+                    </div>
+                    <div class="flow__step flow__step--end">
+                        <p class="flow__kicker">Then</p>
+                        <h4>Severity and type</h4>
+                        <p>Every issue tagged <strong>critical</strong>, <strong>moderate</strong>, <strong>minor</strong> or <strong>suggestion</strong>, so the same problem reported five ways counts once.</p>
+                    </div>
                 </div>
-                <div>
-                    <dt>Time on task</dt>
-                    <dd>Efficiency. It matters more than usual here, because assistive technology adds steps &mdash; a screen reader user moving through a screen control by control will always be slower, and the number is only useful read against that.</dd>
-                </div>
-                <div>
-                    <dt>Emotional response</dt>
-                    <dd>Read separately from satisfaction, because they are not the same thing. A task can be easy and still feel patronising, and for this product that distinction is the whole point.</dd>
-                </div>
-                <div>
-                    <dt>Error count</dt>
-                    <dd>Where the interface actively misleads, as opposed to where it is merely disliked. Errors point at a specific control; satisfaction scores do not.</dd>
-                </div>
-                <div>
-                    <dt>Single Ease Question <span class="metric-list__bench">benchmark 5.1 of 7</span></dt>
-                    <dd>One question after each task, so difficulty is attributed to the task that caused it rather than to the session as a whole.</dd>
-                </div>
-                <div>
-                    <dt>System Usability Scale <span class="metric-list__bench">benchmark 68</span></dt>
-                    <dd>Perceived usability of the product overall, and the most widely published score available &mdash; which makes it the easiest number to defend in a room that has never run a usability test.</dd>
-                </div>
-                <div>
-                    <dt>Frequency of use, and disability status of members</dt>
-                    <dd>The two the leadership team needed. Frequency is the engagement metric the business already tracked; the share of members who are disabled answers whether the product is reaching the people it was built for &mdash; which no usability score can tell you.</dd>
-                </div>
-            </dl>
+                <figcaption>Two routes in, one queue out. Without the second route, anything that arrived outside the survey window would simply have been lost.</figcaption>
+            </figure>
 
-            
+            <h3>5.2. The survey focused on three things</h3>
+            <p>There was more worth asking about than members would answer, so the survey was built around the three that mattered most to the product: the content itself, the accessibility features, and the split screen &mdash; the feature the company leads with.</p>
 
-            <h3>5.2. The research behind them</h3>
-            <p>Feedback was collected two ways: a survey sent to members, and a running document where anything reported by anyone &mdash; members, the internal team, external reviewers &mdash; could be logged in one place rather than living in whoever&rsquo;s inbox it arrived in.</p>
-            <p>The survey was built in three sections against the three things worth asking about: content, accessibility, and the split screen. Three questions to open &mdash; frequency of use, disability status, assistive technology &mdash; then nine rating questions each with an optional box for the reasoning behind the score, and a closing question asking whether the respondent would join a follow-up interview.</p>
-            <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and the extra points give a mid-range answer somewhere to sit other than the middle. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself.</p>
-            <p>Alongside the leadership interview and the survey:</p>
-            <ul>
-                <li><strong>Desk research on how experience gets measured.</strong> Reading the standard scales and their published averages rather than inventing one, and separately on how emotional response is captured, which is not the same thing as satisfaction.</li>
-                <li><strong>A usability study designed for twenty participants</strong>, split into members and non-members, over five tasks: signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. Forty-five minutes each, remote, with the participant sharing their screen, and a Single Ease Question after every task.</li>
-                <li><strong>A protocol that changed by group.</strong> With Deaf and hard of hearing participants, captions, audio settings and the ASL classes. With blind and low vision participants, how the app behaves under the assistive technology they already use. Instructors ran the same tasks as members. Running one identical session for everyone would have tested the wrong things.</li>
-                <li><strong>Expert review of the survey.</strong> Three revisions before it was sent, reviewed by two colleagues and an external senior researcher.</li>
-                <li><strong>A feedback collection system.</strong> Every issue given a severity &mdash; critical, moderate, minor, or suggestion &mdash; and a type, so the same problem reported five ways counts once and can be ranked against everything else.</li>
-                <li><strong>An external accessibility review</strong> of the live app, and quality assurance testing against assistive technology.</li>
+            <figure class="focus-cards">
+                <div class="focus-cards__grid">
+                    <div class="focus-cards__card">
+                        <h4>Content</h4>
+                        <p>Whether the classes themselves were understandable and worth returning to.</p>
+                    </div>
+                    <div class="focus-cards__card">
+                        <h4>Accessibility features</h4>
+                        <p>Captions, audio settings, playback, and whether they were found and used at all.</p>
+                    </div>
+                    <div class="focus-cards__card">
+                        <h4>Split screen</h4>
+                        <p>The feature the product is sold on, and the one least proven with real members.</p>
+                    </div>
+                </div>
+            </figure>
+
+            <p>Three sections, in the order a member could actually answer them:</p>
+
+            <figure class="flow">
+                <div class="flow__row">
+                    <div class="flow__step">
+                        <p class="flow__kicker">Section 1 &middot; 3 questions</p>
+                        <h4>Who is answering</h4>
+                        <p>Frequency of use, disability status, and which assistive technology they use.</p>
+                    </div>
+                    <div class="flow__step">
+                        <p class="flow__kicker">Section 2 &middot; 9 questions</p>
+                        <h4>How hard was it</h4>
+                        <p>Rating questions across the three focus areas, each with an optional box for the reasoning behind the score.</p>
+                    </div>
+                    <div class="flow__step flow__step--end">
+                        <p class="flow__kicker">Section 3</p>
+                        <h4>Willing to talk?</h4>
+                        <p>One question asking whether they would join a follow-up interview.</p>
+                    </div>
+                </div>
+                <figcaption>Asking who is answering first means every rating that follows can be read against the assistive technology the person actually uses.</figcaption>
+            </figure>
+
+            <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and gives a middling answer somewhere to sit other than dead centre. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself. It went through three revisions before it was sent.</p>
+
+            <h3>5.3. What the sessions were built to measure</h3>
+            <p>Alongside the survey I wrote the guide for moderated sessions: five tasks covering signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. After each task, one question on how easy or difficult it was, then what was most confusing, and whether anything was missing that would have made it easier.</p>
+            <p>The protocol changed by participant. With Deaf and hard of hearing members the focus was captions, audio settings and the ASL classes; with blind and low vision members, how the app behaves under the assistive technology they already use; instructors ran the same tasks as members, because they use the product too. Five things were recorded each time:</p>
+            <ul class="measure-list">
+                <li><strong>Task completion</strong> &mdash; yes, no, or partially, because working around an interface is not the same as completing the task</li>
+                <li><strong>Time on task</strong></li>
+                <li><strong>Errors</strong></li>
+                <li><strong>Ease</strong>, rated by the participant straight after the task rather than at the end of the session</li>
+                <li><strong>Emotional response</strong>, kept separate from ease &mdash; a task can be easy and still feel patronising</li>
             </ul>
 
-            <h3>5.3. What it surfaced</h3>
+            <h3>5.4. What it surfaced</h3>
             <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. The critique was of the instrument rather than the interface, and most of it was about not putting the burden of a badly built question onto the person answering it:</p>
 
             <ul class="review-list">
@@ -998,7 +1114,7 @@
             <p>That is the split screen &mdash; the feature the company leads with on both store listings, and the one this case study opens on. The survey returned the same verdict independently. Finding it is what the measurement was for: without it, the feature would have gone on being described as the product&rsquo;s strength while confusing the people it was built for. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
             <p>Two findings were already answered. The slider criticism is the problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
 
-            <h3>5.4. Where this left the product</h3>
+            <h3>5.5. Where this left the product</h3>
             <p>Building the feedback system is where my work on the product ended, and what came back through it was not a feature request. Members wanted a sense of community between instructors and students.</p>
             <p>Underneath that was a supply problem design could not fix: there are very few fitness instructors with disabilities. That moved the company toward training and certifying them &mdash; and it is the most useful thing the measurement returned, because the next constraint was not in the interface at all.</p>
         </section>
