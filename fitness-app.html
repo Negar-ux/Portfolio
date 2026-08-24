@@ -160,7 +160,7 @@
             padding-left: 1rem;
             border-left: 3px solid var(--cs-accent, #1b212e);
             font-size: 20px !important;
-            line-height: 1.55;
+            line-height: 1.7;
             color: var(--text-secondary, #565656);
         }
 
@@ -308,6 +308,9 @@
         .case-study-section .finding-list,
         .case-study-section ul.review-list {
             margin-bottom: 2rem !important;
+            /* the page-level ul rule adds 2rem of indent; drop it so the
+               bullets line up with the left edge of the body text */
+            padding-left: 0 !important;
         }
 
         .case-study-section .measure-list li,
@@ -316,7 +319,7 @@
             margin-bottom: 0.7rem;
             padding-left: 1.1rem;
             font-size: 20px !important;
-            line-height: 1.55;
+            line-height: 1.7;
             color: var(--text-secondary, #565656);
         }
 
@@ -325,7 +328,7 @@
             content: "";
             position: absolute;
             left: 0;
-            top: 0.62em;
+            top: 0.7em;
             width: 5px;
             height: 5px;
             border-radius: 50%;
