@@ -1028,7 +1028,8 @@ body.cs-workshops   { --cs-accent: #a33468; }
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    border-top: 3px solid var(--cs-accent, #a33468);
+    border: 1px solid var(--border-color, #e0e4e7);
+    border-radius: 10px;
 }
 
 .stat-card .stat-kicker {

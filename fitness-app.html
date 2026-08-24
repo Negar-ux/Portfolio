@@ -159,7 +159,7 @@
             margin-bottom: 0.7rem;
             padding-left: 1rem;
             border-left: 3px solid var(--cs-accent, #1b212e);
-            font-size: 16px !important;
+            font-size: 20px !important;
             line-height: 1.55;
             color: var(--text-secondary, #565656);
         }
@@ -247,7 +247,7 @@
 
         .flow__step p {
             margin: 0 !important;
-            font-size: 14px !important;
+            font-size: 16px !important;
             line-height: 1.5;
             color: var(--text-secondary, #565656);
         }
@@ -281,8 +281,8 @@
 
         .focus-cards__card {
             padding: 1.15rem 1.25rem;
-            border-top: 3px solid var(--cs-accent, #1b212e);
-            border-radius: 0 0 10px 10px;
+            border: 1px solid var(--border-color, #e0e4e7);
+            border-radius: 10px;
             background: var(--bg-secondary, #f8f9fa);
         }
 
@@ -294,7 +294,7 @@
 
         .focus-cards__card p {
             margin: 0 !important;
-            font-size: 14px !important;
+            font-size: 16px !important;
             line-height: 1.5;
             color: var(--text-secondary, #565656);
         }
@@ -302,12 +302,20 @@
         .measure-list,
         .finding-list { margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
 
+        /* Match the paragraph rhythm: a page-level `.case-study-section ul`
+           rule was winning on specificity and closing the gap to 16px. */
+        .case-study-section .measure-list,
+        .case-study-section .finding-list,
+        .case-study-section ul.review-list {
+            margin-bottom: 2rem !important;
+        }
+
         .case-study-section .measure-list li,
         .case-study-section .finding-list li {
             position: relative;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            font-size: 15px !important;
+            margin-bottom: 0.7rem;
+            padding-left: 1.1rem;
+            font-size: 20px !important;
             line-height: 1.55;
             color: var(--text-secondary, #565656);
         }
@@ -336,7 +344,7 @@
             margin: 1.75rem 0 2.25rem;
             padding: 1.5rem;
             border: 1px solid var(--border-color, #e0e4e7);
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--bg-secondary, #f8f9fa);
         }
 
@@ -416,7 +424,7 @@
         .target-groups > li {
             padding: 1.5rem;
             border: 1px solid var(--border-color, #e0e4e7);
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--bg-secondary, #f8f9fa);
         }
 
@@ -461,9 +469,9 @@
 
         .target-groups .target-groups__barriers li {
             position: relative;
-            margin-bottom: 0.45rem;
+            margin-bottom: 0.5rem;
             padding-left: 0.95rem;
-            font-size: 14.5px !important;
+            font-size: 16px !important;
             line-height: 1.5;
             color: var(--text-secondary, #565656);
         }
