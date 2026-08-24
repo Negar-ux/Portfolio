@@ -4,3 +4,6 @@ deployment:
     - export DEPLOYPATH=/home3/negarami/public_html/
     - /bin/cp -R * $DEPLOYPATH
     - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
+    # review-tools is local-only review tooling; the copy above takes
+    # everything, so remove it again rather than serve it publicly
+    - /bin/rm -rf $DEPLOYPATH/review-tools $DEPLOYPATH/review-comments.json
