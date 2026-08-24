@@ -149,13 +149,13 @@
         }
 
         /* Review recommendations */
-        .review-list {
+        .case-study-section ul.review-list {
             margin: 1.25rem 0 1.5rem;
             padding: 0;
             list-style: none;
         }
 
-        .review-list li {
+        .case-study-section ul.review-list li {
             margin-bottom: 0.7rem;
             padding-left: 1rem;
             border-left: 3px solid var(--cs-accent, #1b212e);
@@ -164,7 +164,7 @@
             color: var(--text-secondary, #565656);
         }
 
-        .review-list strong { color: var(--text-primary, #000); }
+        .case-study-section ul.review-list strong { color: var(--text-primary, #000); }
 
         /* Five research figures read as scale (three) then cost (two),
            rather than four and an orphan. */
@@ -253,6 +253,7 @@
         /* a global rule renders <strong> at 20px / weight 400 */
         .flow__step strong,
         .measure-list strong,
+        .finding-list strong,
         .focus-cards__card strong {
             font-size: inherit !important;
             font-weight: 700;
@@ -296,9 +297,11 @@
             color: var(--text-secondary, #565656);
         }
 
-        .measure-list { margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
+        .measure-list,
+        .finding-list { margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
 
-        .measure-list li {
+        .case-study-section .measure-list li,
+        .case-study-section .finding-list li {
             position: relative;
             margin-bottom: 0.5rem;
             padding-left: 1rem;
@@ -307,7 +310,8 @@
             color: var(--text-secondary, #565656);
         }
 
-        .measure-list li::before {
+        .case-study-section .measure-list li::before,
+        .case-study-section .finding-list li::before {
             content: "";
             position: absolute;
             left: 0;
@@ -1002,6 +1006,27 @@
                     </details>
                 </figure>
             </div>
+
+
+            <h3>4.5. What an outside review found</h3>
+            <p>Once the app was live, an external accessibility reviewer went through it independently and came back with ten issues. It is the most useful kind of feedback to get, because it is the part of the work I could not check myself: I know what the designs intended, which makes me the wrong person to notice where they fail.</p>
+            <p>Two had already been answered by the iterations above. The criticism that sliders were too small and too low-contrast to control is the problem the stepped audio buttons in 4.4 were built to solve, and quality assurance had separately caught iOS not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
+            <p>The rest were live, and they cluster into three kinds:</p>
+            <ul class="finding-list">
+                <li><strong>Things that were never designed.</strong> No dark mode, which the reviewer flagged for low vision and light sensitivity; text cut off across the app.</li>
+                <li><strong>Things assistive technology could not reach.</strong> Carousels with no cue that they were carousels and invisible to low-vision tooling; a back gesture that failed inside the captions and audio menus, stranding screen reader users; playback controls that could not be dismissed once open.</li>
+                <li><strong>Things that were designed but not well enough.</strong> Video controls without sufficient contrast; a default audio mix weighted wrongly between music and instructor; an unclear explanation of what the $1 subscription actually bought.</li>
+            </ul>
+            <p>The finding that mattered most was about the feature the product is sold on:</p>
+
+            <figure class="verdict">
+                <blockquote>
+                    <p>It&rsquo;s very unclear what a second screen is for or how it works.</p>
+                </blockquote>
+                <figcaption>External accessibility review of the live app</figcaption>
+            </figure>
+
+            <p>That is the split screen, and 4.4 above is the whole story of designing it. Getting the mechanics right &mdash; two versions, one audio track, stepped controls &mdash; turned out not to be the same as making the feature legible. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
         </section>
 
         <section id="measurement" class="case-study-section">
@@ -1092,31 +1117,16 @@
             <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. The critique was of the instrument rather than the interface, and most of it was about not putting the burden of a badly built question onto the person answering it:</p>
 
             <ul class="review-list">
-                <li><strong>Widen the disability categories.</strong> Cover sensory, mental health, cognitive and intellectual, medical, neurological and mobility disability, rather than the narrower set the draft offered.</li>
-                <li><strong>Say &ldquo;mobility disability&rdquo;, not &ldquo;wheelchair or assistive device user&rdquo;.</strong> The equipment is not the person, and naming it excludes anyone whose mobility disability does not involve a device.</li>
-                <li><strong>Follow the order people meet the app.</strong> Ask about signing up and finding a class before asking about following the workout, so the survey walks the same path the member did.</li>
-                <li><strong>Move the assistive technology question to the start.</strong> It was two-thirds of the way down, after several questions whose answers depend on it.</li>
-                <li><strong>Use conditional logic instead of asking people to skip.</strong> The draft told respondents to skip questions that did not apply; the follow-ups should simply not appear.</li>
-                <li><strong>Label the sections</strong> so people know what they are about to be asked before they start.</li>
-                <li><strong>Settle the scale direction</strong> &mdash; whether 1 should mean very easy or very difficult &mdash; rather than leaving it to convention.</li>
+                <li><strong>How people are described.</strong> Widen the disability categories beyond the narrow set the draft offered, and say &ldquo;mobility disability&rdquo; rather than naming a wheelchair or assistive device &mdash; the equipment is not the person.</li>
+                <li><strong>The order of the questions.</strong> Follow the path a member actually takes through the app, move the assistive technology question to the start rather than two-thirds down, and label the sections so people know what they are about to be asked.</li>
+                <li><strong>What the form asks of the respondent.</strong> Use conditional logic instead of telling people to skip questions that do not apply, and settle the scale direction rather than leaving it to convention.</li>
             </ul>
 
-            <p>Two of these are worth separating out, because they are not survey admin. Replacing skip instructions with conditional logic, and moving the assistive technology question to the top, both reduce what the respondent has to carry &mdash; and the people most affected by a long, badly ordered form are the ones the product exists for.</p>
-            <p>The accessibility review returned ten issues. No dark mode, flagged for low vision and light sensitivity. Text cut off across the app. Carousels with no cue that they were carousels, and invisible to low-vision tooling. Video controls without enough contrast. A back gesture that failed inside the captions and audio menus, stranding screen reader users. Sliders whose touch targets were too small and too low-contrast to use comfortably.</p>
-
-            <figure class="verdict">
-                <blockquote>
-                    <p>It&rsquo;s very unclear what a second screen is for or how it works.</p>
-                </blockquote>
-                <figcaption>External accessibility review of the live app</figcaption>
-            </figure>
-
-            <p>That is the split screen &mdash; the feature the company leads with on both store listings, and the one this case study opens on. The survey returned the same verdict independently. Finding it is what the measurement was for: without it, the feature would have gone on being described as the product&rsquo;s strength while confusing the people it was built for. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
-            <p>Two findings were already answered. The slider criticism is the problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
-
+            <p>The second and third groups are not survey housekeeping. Question order and conditional logic both reduce what the respondent has to carry, and the people worst served by a long, badly ordered form are the ones the product exists for.</p>
             <h3>5.5. Where this left the product</h3>
-            <p>Building the feedback system is where my work on the product ended, and what came back through it was not a feature request. Members wanted a sense of community between instructors and students.</p>
-            <p>Underneath that was a supply problem design could not fix: there are very few fitness instructors with disabilities. That moved the company toward training and certifying them &mdash; and it is the most useful thing the measurement returned, because the next constraint was not in the interface at all.</p>
+            <p>I should be straight about the limits of this. Building the collection system is where my work on the product ended, and the responses came in after that &mdash; so I do not have the completion numbers, and I cannot tell you what the ratings settled at. What I can report is what the team took from it, which reached me second hand.</p>
+            <p>The strongest theme was not a feature request. Members wanted a sense of community between instructors and students. Underneath that sat a supply problem no interface could fix: there are very few fitness instructors with disabilities, and a product built on classes taught by people who share their members&rsquo; experience runs out of instructors before it runs out of demand. That moved the company toward training and certifying them.</p>
+            <p>It is a strange result to report on a design case study, and I think it is the honest one. The measurement was built to find out whether the product worked. What it pointed at was a constraint that was never in the interface.</p>
         </section>
 
         <section id="outcome" class="case-study-section">

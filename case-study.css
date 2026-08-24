@@ -264,9 +264,6 @@ body.cs-workshops   { --cs-accent: #a33468; }
     font-size: 16px !important;
 }
 
-.case-study-section * {
-    font-size: 16px !important;
-}
 
 /* Headings should keep their specific sizes */
 .case-study-section h1 {
@@ -311,6 +308,14 @@ body.cs-workshops   { --cs-accent: #a33468; }
     color: #0570b8;
 }
 
+
+/* Note: four `.case-study-section * { font-size: Npx !important }` rules were
+   removed from this file, one per breakpoint. A universal selector with
+   !important forces every element inside a case study - captions, tags, small
+   print, chart labels - to a single size, which flattens the type scale and
+   means any new component has to fight the stylesheet to set its own sizes.
+   The element rules in each block already set what those blocks intend. */
+
 /* Responsive font sizes */
 /* Large screens (1200px and up) */
 @media (min-width: 1200px) {
@@ -318,9 +323,6 @@ body.cs-workshops   { --cs-accent: #a33468; }
         font-size: 18px !important;
     }
 
-    .case-study-section * {
-        font-size: 18px !important;
-    }
 
     .case-study-section h1 {
         font-size: 42px !important;
@@ -365,9 +367,6 @@ body.cs-workshops   { --cs-accent: #a33468; }
         font-size: 20px !important;
     }
 
-    .case-study-section * {
-        font-size: 20px !important;
-    }
 
     .case-study-section h1 {
         font-size: 48px !important;
@@ -413,9 +412,6 @@ body.cs-workshops   { --cs-accent: #a33468; }
         padding: 0 1rem;
     }
 
-    .case-study-section * {
-        font-size: 16px !important;
-    }
 
     .case-study-section h1 {
         font-size: 28px !important;
