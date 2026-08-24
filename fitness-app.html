@@ -169,6 +169,20 @@
 
         .review-list strong { color: var(--text-primary, #000); }
 
+        /* Five research figures read as scale (three) then cost (two),
+           rather than four and an orphan. */
+        .stat-grid--scale {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 820px) {
+            .stat-grid--scale { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 520px) {
+            .stat-grid--scale { grid-template-columns: 1fr; }
+        }
+
         /* Metric definitions */
         .metric-list {
             margin: 1.5rem 0 2rem;
@@ -426,7 +440,7 @@
             <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the end-to-end design of the first release &mdash; research, ideation, testing, and low through high fidelity. I also built the foundation of the design system, and the research instruments behind the work: the survey, the interview guide, and the success metrics &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
 
             <h3>1.1. The challenge</h3>
-            <p>Most fitness apps assume one kind of body. A study of mobile health and fitness apps found that disabled people stand to benefit from them, and that none had been designed with that group in mind. So people who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent their own modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not. The cost is measurable: <strong>47% of US adults with disabilities get no aerobic exercise at all</strong>, and they are <strong>three times more likely</strong> to develop heart disease, stroke, diabetes or cancer.</p>
+            <p>Most fitness apps assume one kind of body. A study of mobile health and fitness apps found that disabled people stand to benefit from them, and that none had been designed with that group in mind. That is not a failing unique to fitness: WebAIM’s annual audit of the top million homepages still finds detectable WCAG failures on 95.9% of them, averaging 56 errors per page. And the people locked out are online &mdash; 72% of US adults with a disability own a smartphone, against 88% of those without. So people who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent their own modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not. The cost is measurable: <strong>47% of US adults with disabilities get no aerobic exercise at all</strong>, and they are <strong>three times more likely</strong> to develop heart disease, stroke, diabetes or cancer.</p>
 
             <p>The challenge was to build an app that closes that gap &mdash; where adapted classes are the product rather than a setting buried inside it, and where two people with different bodies can take the same class together.</p>
 
@@ -530,7 +544,12 @@
             <h3>2.1. Why this needed to exist</h3>
             <p>I ran secondary research into the state of fitness and wellness and where its gaps are, because before designing a screen the work had to answer three things: how many people this affects, what the lack of access costs them, and which needs were least well served.</p>
 
-            <div class="stat-grid">
+            <div class="stat-grid stat-grid--scale">
+                <div class="stat-card">
+                    <span class="stat-value">1.3B</span>
+                    <span class="stat-label">people worldwide &mdash; 16% of the population &mdash; live with a significant disability</span>
+                    <span class="stat-src">World Health Organization</span>
+                </div>
                 <div class="stat-card">
                     <span class="stat-value">70M</span>
                     <span class="stat-label">US adults report a functional disability &mdash; 28.7% of the adult population</span>
@@ -542,9 +561,9 @@
                     <span class="stat-src">Statistics Canada CSD, 2022</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-value">47%</span>
-                    <span class="stat-label">of US adults with disabilities get no aerobic physical activity at all</span>
-                    <span class="stat-src">CDC Vital Signs</span>
+                    <span class="stat-value">47.1%</span>
+                    <span class="stat-label">of US adults with a disability are physically inactive, against 26.1% of those without one</span>
+                    <span class="stat-src">CDC MMWR Vital Signs</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value">3&times;</span>
