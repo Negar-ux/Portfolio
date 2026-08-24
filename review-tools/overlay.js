@@ -12,6 +12,7 @@
   var doc = { currentRound: 1, rounds: [] };
   var picking = false;
   var hovered = null;
+  var pending = null;
 
   // ---------------------------------------------------------------- helpers
   function openRound() {
@@ -87,7 +88,16 @@
     '</header>' +
     '<div class="rv-body">' +
       '<button class="rv-pick" type="button">Comment on an element</button>' +
-      '<textarea class="rv-general" rows="2" placeholder="…or a note about the page as a whole"></textarea>' +
+      '<div class="rv-compose" hidden>' +
+        '<p class="rv-compose-target"></p>' +
+        '<textarea class="rv-compose-text" rows="3" placeholder="What should change here?"></textarea>' +
+        '<div class="rv-compose-actions">' +
+          '<button type="button" class="rv-compose-save">Save note</button>' +
+          '<button type="button" class="rv-compose-cancel">Cancel</button>' +
+        '</div>' +
+      '</div>' +
+      '<p class="rv-or">or</p>' +
+      '<textarea class="rv-general" rows="3" placeholder="A note about this page as a whole…"></textarea>' +
       '<button class="rv-add-general" type="button">Add page note</button>' +
       '<ul class="rv-list"></ul>' +
       '<button class="rv-submit" type="button">Submit review</button>' +
@@ -210,13 +220,25 @@
   function onClick(e) {
     if (!picking || panel.contains(e.target)) return;
     e.preventDefault(); e.stopPropagation();
-    var el = e.target;
+    pending = e.target;
     stopPicking();
-    var text = window.prompt('Note about:\n\n' + snippet(el) + '\n');
-    if (text && text.trim()) {
-      addNote({ section: sectionFor(el), selector: selectorFor(el),
-                snippet: snippet(el), comment: text.trim() });
-    }
+    openCompose(pending);
+  }
+
+  function openCompose(el) {
+    var box = panel.querySelector('.rv-compose');
+    panel.querySelector('.rv-compose-target').textContent =
+      (sectionFor(el) ? sectionFor(el) + ' — ' : '') + snippet(el);
+    panel.querySelector('.rv-compose-text').value = '';
+    box.hidden = false;
+    el.classList.add('rv-flash');
+    setTimeout(function () { el.classList.remove('rv-flash'); }, 1600);
+    panel.querySelector('.rv-compose-text').focus();
+  }
+
+  function closeCompose() {
+    panel.querySelector('.rv-compose').hidden = true;
+    pending = null;
   }
 
   function startPicking() {
@@ -236,6 +258,17 @@
     picking ? stopPicking() : startPicking();
   };
 
+  panel.querySelector('.rv-compose-save').onclick = function () {
+    var text = panel.querySelector('.rv-compose-text').value.trim();
+    if (!text || !pending) return;
+    var el = pending;
+    closeCompose();
+    addNote({ section: sectionFor(el), selector: selectorFor(el),
+              snippet: snippet(el), comment: text });
+  };
+
+  panel.querySelector('.rv-compose-cancel').onclick = closeCompose;
+
   panel.querySelector('.rv-add-general').onclick = function () {
     var ta = panel.querySelector('.rv-general');
     var text = ta.value.trim();
@@ -247,9 +280,22 @@
   panel.querySelector('.rv-submit').onclick = function () {
     var r = openRound();
     if (!r.comments.length) return;
-    var n = r.comments.length;
-    if (!window.confirm('Submit Review ' + doc.currentRound + ' with ' + n +
-        ' note' + (n === 1 ? '' : 's') + ' across all pages?\n\nA new round will open for further notes.')) return;
+    var btn = this;
+    if (btn.dataset.armed !== '1') {
+      btn.dataset.armed = '1';
+      btn.textContent = 'Press again to submit Review ' + doc.currentRound;
+      btn.classList.add('rv-armed');
+      setTimeout(function () {
+        if (btn.dataset.armed === '1') {
+          btn.dataset.armed = '0';
+          btn.classList.remove('rv-armed');
+          render();
+        }
+      }, 4000);
+      return;
+    }
+    btn.dataset.armed = '0';
+    btn.classList.remove('rv-armed');
     r.status = 'submitted';
     r.submitted = new Date().toISOString();
     doc.currentRound = doc.currentRound + 1;

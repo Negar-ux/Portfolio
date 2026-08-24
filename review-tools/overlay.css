@@ -1,3 +1,33 @@
+/* The overlay is injected into pages that style bare element names - the
+   portfolio's own `header { position: fixed }` was dragging this panel's
+   header to the top of the viewport. Neutralise inherited layout for
+   everything inside the panel first; the rules below then style it from a
+   known baseline. Order matters: this block must stay at the top. */
+.rv-panel,
+.rv-panel * {
+  position: static;
+  inset: auto;
+  float: none;
+  clear: none;
+  transform: none;
+  box-shadow: none;
+  text-shadow: none;
+  margin: 0;
+  max-width: none;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: left;
+  line-height: 1.5;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  color: inherit;
+}
+
 /* Local review overlay styling. Injected only in ?review=1 mode. */
 
 .rv-panel {
@@ -5,13 +35,13 @@
   top: 16px;
   right: 16px;
   z-index: 2147483000;
-  width: 320px;
+  width: 366px;
   max-height: calc(100vh - 32px);
   display: flex;
   flex-direction: column;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: #111;
   background: #fff;
   border: 1px solid #d8dde5;
@@ -24,10 +54,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 12px;
+  padding: 11px 12px;
   background: #1b212e;
   color: #fff;
-  font-size: 13px;
+  font-size: 13.5px;
+  border-bottom: 3px solid #e8590c;
 }
 
 .rv-min {
@@ -35,37 +66,53 @@
   height: 24px;
   border: 0;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.22);
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
 }
 
 .rv-body {
-  padding: 12px;
+  padding: 14px;
   overflow-y: auto;
 }
 
 .rv-panel.rv-collapsed .rv-body { display: none; }
 
-.rv-pick,
-.rv-add-general {
+.rv-pick {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #1b212e;
-  border-radius: 7px;
-  background: #1b212e;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #e8590c;
   color: #fff;
   font: inherit;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
 }
 
+.rv-pick:hover { background: #cf4d09; }
+
+.rv-or {
+  margin: 12px 0 6px;
+  color: #667085;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 .rv-add-general {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #1b212e;
+  border-radius: 7px;
   background: #fff;
   color: #1b212e;
-  margin-top: 6px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .rv-hint {
@@ -75,7 +122,8 @@
 
 .rv-general {
   width: 100%;
-  padding: 7px 9px;
+  padding: 8px 9px;
+  margin-bottom: 6px;
   border: 1px solid #d8dde5;
   border-radius: 7px;
   font: inherit;
@@ -185,3 +233,50 @@ body.rv-picking * { cursor: crosshair !important; }
 
 .rv-status.rv-ok { color: #067a3e; }
 .rv-status.rv-warn { color: #a15c00; }
+
+/* compose box, shown after clicking an element */
+.rv-compose {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #f0c6ac;
+  border-radius: 8px;
+  background: #fff6f0;
+}
+
+.rv-compose-target {
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #8a4b1d;
+}
+
+.rv-compose-text {
+  width: 100%;
+  padding: 8px 9px;
+  border: 1px solid #e0c3b0;
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+}
+
+.rv-compose-actions { display: flex; gap: 6px; margin-top: 7px; }
+
+.rv-compose-save,
+.rv-compose-cancel {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #e8590c;
+  background: #e8590c;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rv-compose-cancel { background: #fff; color: #8a4b1d; }
+
+/* buttons keep centred labels despite the panel-wide text-align reset */
+.rv-pick, .rv-add-general, .rv-submit, .rv-min { text-align: center; }
+
+.rv-submit.rv-armed { background: #b3400a; }
