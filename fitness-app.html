@@ -169,7 +169,7 @@
         /* Five research figures read as scale (three) then cost (two),
            rather than four and an orphan. */
         .stat-grid--scale {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @media (max-width: 820px) {
@@ -178,6 +178,20 @@
 
         @media (max-width: 520px) {
             .stat-grid--scale { grid-template-columns: 1fr; }
+        }
+
+        /* source links sit inside an uppercased, letter-spaced line; keep them
+           from wrapping the cards to uneven heights */
+        .stat-card .stat-src a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .stat-card .stat-src {
+            text-transform: none;
+            letter-spacing: 0.01em;
+            font-size: 12.5px !important;
         }
 
         /* Disability types. One series, so no legend - the caption names it.
@@ -307,7 +321,7 @@
             gap: 1.25rem;
         }
 
-        .target-groups li {
+        .target-groups > li {
             padding: 1.5rem;
             border: 1px solid var(--border-color, #e0e4e7);
             border-radius: 12px;
@@ -347,13 +361,13 @@
             color: var(--text-secondary, #565656);
         }
 
-        .target-groups__barriers {
+        .target-groups .target-groups__barriers {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        .target-groups__barriers li {
+        .target-groups .target-groups__barriers li {
             position: relative;
             margin-bottom: 0.45rem;
             padding-left: 0.95rem;
@@ -362,11 +376,11 @@
             color: var(--text-secondary, #565656);
         }
 
-        .target-groups__barriers li::before {
+        .target-groups .target-groups__barriers li::before {
             content: "";
             position: absolute;
             left: 0;
-            top: 0.55em;
+            top: 0.62em;
             width: 5px;
             height: 5px;
             border-radius: 50%;
@@ -538,8 +552,6 @@
             <p>Most fitness apps assume one kind of body. People who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not.</p>
             <p>The cost of that is measurable. <strong>47.1%</strong> of adults with a disability are physically inactive, and inactive adults with a disability are <strong>50% more likely</strong> to report a chronic disease than those who are active (<a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs</a>). In Canada, where the company is based, <strong>8.0 million</strong> people aged 15 and over &mdash; 27% of that population &mdash; report a disability (<a href="https://www150.statcan.gc.ca/n1/daily-quotidien/231201/dq231201b-eng.htm" target="_blank" rel="noopener">Canadian Survey on Disability, 2022</a>).</p>
 
-            
-
             <p>The challenge was to build an app that closes that gap &mdash; where adapted classes are the product rather than a setting buried inside it, and where two people with different bodies can take the same class together.</p>
 
             <h3>1.2. The outcome</h3>
@@ -611,7 +623,6 @@
                 <figcaption>Sekond Skin Society's accessibility rating on AppleVis</figcaption>
             </figure>
 
-
         </section>
 
         <!-- Project details section -->
@@ -635,7 +646,6 @@
         <section id="research" class="case-study-section">
             <h2>2. Initial Research</h2>
             <p>When I joined the team, I asked to review the research that had already been done &mdash; an initial market research exercise and a survey. It set the competitive picture against Wheel With Me Fitness, Adapt to Perform and Peloton, and found that none of the three showed people of different ethnicities, body types or abilities in their own marketing.</p>
-            
 
             <h3>2.1. Secondary research</h3>
             <p>The company&rsquo;s market research established that there was an audience. It did not establish where fitness apps were failing that audience, so I went further into it &mdash; what the state of mobile fitness and wellness actually is, which needs go unmet, and which parts of a workout break down first. That is what the design had to answer to.</p>
@@ -646,14 +656,10 @@
                     <span class="stat-label">people worldwide &mdash; 16% of the population &mdash; live with a significant disability</span>
                     <span class="stat-src"><a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank" rel="noopener">World Health Organization</a></span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value">70M</span>
-                    <span class="stat-label">US adults report a functional disability &mdash; 28.7% of the adult population</span>
-                    <span class="stat-src">CDC BRFSS, 2022</span>
-                </div>
+                
                 <div class="stat-card">
                     <span class="stat-value">8.0M</span>
-                    <span class="stat-label">Canadians aged 15 and over have a disability &mdash; 27% of that population</span>
+                    <span class="stat-label">Canadians &mdash; more than one in four aged 15 and over &mdash; live with a disability</span>
                     <span class="stat-src"><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/231201/dq231201b-eng.htm" target="_blank" rel="noopener">Statistics Canada CSD, 2022</a></span>
                 </div>
                 <div class="stat-card">
@@ -670,25 +676,26 @@
 
             <p>The barrier is access, not ability &mdash; and the health consequence is measurable.</p>
 
-
             <figure class="type-chart">
                 <table>
-                    <caption>Disability by type, US adults</caption>
+                    <caption>Disability by type, Canadians aged 15 and over</caption>
                     <tbody>
-                        <tr><th scope="row">Cognition</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 100%;"></span></span><span class="type-chart__num">13.9%</span></td></tr>
-                        <tr><th scope="row">Mobility</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 87.8%;"></span></span><span class="type-chart__num">12.2%</span></td></tr>
-                        <tr><th scope="row">Independent living</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 55.4%;"></span></span><span class="type-chart__num">7.7%</span></td></tr>
-                        <tr><th scope="row">Hearing</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 44.6%;"></span></span><span class="type-chart__num">6.2%</span></td></tr>
-                        <tr><th scope="row">Vision</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 39.6%;"></span></span><span class="type-chart__num">5.5%</span></td></tr>
-                        <tr><th scope="row">Self-care</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 25.9%;"></span></span><span class="type-chart__num">3.6%</span></td></tr>
+                        <tr><th scope="row">Pain</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 100%;"></span></span><span class="type-chart__num">17%</span></td></tr>
+                        <tr><th scope="row">Flexibility</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 64.7%;"></span></span><span class="type-chart__num">11%</span></td></tr>
+                        <tr><th scope="row">Mobility</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 64.7%;"></span></span><span class="type-chart__num">11%</span></td></tr>
+                        <tr><th scope="row">Seeing</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 41.2%;"></span></span><span class="type-chart__num">7%</span></td></tr>
+                        <tr><th scope="row">Hearing</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 35.3%;"></span></span><span class="type-chart__num">6%</span></td></tr>
+                        <tr><th scope="row">Learning</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 35.3%;"></span></span><span class="type-chart__num">6%</span></td></tr>
+                        <tr><th scope="row">Dexterity</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 29.4%;"></span></span><span class="type-chart__num">5%</span></td></tr>
+                        <tr><th scope="row">Memory</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 29.4%;"></span></span><span class="type-chart__num">5%</span></td></tr>
                     </tbody>
                 </table>
-                <figcaption>Disability is not one thing, and the types do not need the same things from a workout. Bars are scaled to the largest value; percentages are of all US adults, so a person reporting more than one type appears in more than one row.</figcaption>
-                <p class="type-chart__src"><a href="https://www.cdc.gov/mmwr/volumes/67/wr/mm6732a3.htm" target="_blank" rel="noopener">CDC Disability and Health Data System</a>, 2022. Statistics Canada reports its type breakdown against a different base &mdash; the share of people who already have a disability &mdash; so the two cannot be shown on one scale.</p>
+                <figcaption>Disability is not one thing, and the types do not ask the same things of a workout. Many people report more than one, so the rows overlap.</figcaption>
+                <p class="type-chart__src"><a href="https://www150.statcan.gc.ca/n1/pub/89-654-x/89-654-x2024001-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Survey on Disability, 2022</a>.</p>
             </figure>
 
             <h3>2.2. Why these three groups</h3>
-            <p>The team decided the product had to work for three groups before it could ship to anyone. They were not chosen for size &mdash; the chart above shows larger ones. They were chosen because each is blocked by a <em>different part</em> of a video fitness class: what you hear, what you see, and what your body can do. A class that works for all three has no remaining structural excuse, which made them a usable bar to build against rather than a wish list.</p>
+            <p>The team set three groups as the bar the app had to clear before launch. They are not the largest groups &mdash; the chart above shows that. They were picked because each one is stopped by a different part of a class: what you hear, what you see, and what your body can do. Between them they cover the main ways a workout can shut someone out.</p>
 
             <!-- Group icons: Material Symbols (sign_language, record_voice_over,
      airline_seat_recline_normal), Google, Apache License 2.0.
@@ -699,7 +706,7 @@
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="M305-203 72-248q-17-3-26-16.5T40-294q3-17 16.5-26t30.5-6l240 45-22 78Zm38-136L73-413q-16-5-24-19t-3-30q5-17 18.5-25t29.5-3l270 74-21 77ZM110-71q-17-2-28-14.5T73-115q2-17 14.5-27.5T117-151l345 31q29 3 53-13.5t32-44.5l51-185q2-6 1.5-13t-3.5-13l-55-130-5 131-346-180q-15-8-20-24t3-30q8-15 24-20t30 3l234 122 3-70q1-18 9-32t21-23q13-10 28.5-13.5T555-654l17 7 98 227q8 19 9 39t-4 40l-51 185q-16 56-63.5 89T455-40L110-71Zm174-680q13-11 29-9t27 15l80 97q-5 8-8 17t-5 18l-108-56-21-25q-11-13-9.5-29.5T284-751Zm112-125q14-10 30-7t26 17l104 151q-22-5-44 0t-42 16l-84-122q-10-14-7-30t17-25Zm200-40q16-7 31-.5t22 21.5l101 244 46-52q11-12 26-18t32-5q17 2 31 9.5t24 21.5l11 16-72 237q-6 20-18 36.5T801-378l-66 44q5-23 4-47t-9-47l26-16q6-4 9.5-9.5T771-466l41-134-88 97-149-361q-6-15 0-30.5t21-21.5ZM443-288Zm281-215Z"/></svg>
                     </span>
                     <h4>Deaf and hard of hearing</h4>
-                    <p class="target-groups__stat"><strong>6.2%</strong> <span>of US adults report a hearing disability</span></p>
+                    <p class="target-groups__stat"><strong>6%</strong> <span>of Canadians aged 15 and over have a hearing disability</span></p>
                     <ul class="target-groups__barriers"><li>Instruction is carried by the instructor&rsquo;s voice</li><li>Speech is mixed with music that cannot be separated from it</li><li>Captions, where they exist, are burned into the video</li></ul>
                 </li>
                 <li>
@@ -707,7 +714,7 @@
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="m798-322-62-62q44-41 69-97t25-119q0-63-25-118t-69-96l62-64q56 53 89 125t33 153q0 81-33 153t-89 125ZM670-450l-64-64q18-17 29-38.5t11-47.5q0-26-11-47.5T606-686l64-64q32 29 50 67.5t18 82.5q0 44-18 82.5T670-450Zm-310 10q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-120v-112q0-33 17-62t47-44q51-26 115-44t141-18q77 0 141 18t115 44q30 15 47 44t17 62v112H40Zm80-80h480v-32q0-11-5.5-20T580-266q-36-18-92.5-36T360-320q-71 0-127.5 18T140-266q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q440-567 440-600t-23.5-56.5Q393-680 360-680t-56.5 23.5Q280-633 280-600t23.5 56.5Q327-520 360-520t56.5-23.5ZM360-600Zm0 400Z"/></svg>
                     </span>
                     <h4>Blind and low vision</h4>
-                    <p class="target-groups__stat"><strong>5.5%</strong> <span>report a vision disability</span></p>
+                    <p class="target-groups__stat"><strong>7%</strong> <span>have a seeing disability</span></p>
                     <ul class="target-groups__barriers"><li>The workout is demonstrated visually, with no spoken equivalent</li><li>Controls assume you can see them and hit them precisely</li><li>Nothing describes what the instructor is doing</li></ul>
                 </li>
                 <li>
@@ -715,11 +722,11 @@
                         <svg viewBox="0 -960 960 960" width="34" height="34" fill="currentColor" focusable="false"><path d="M600-160H320q-33 0-56.5-23.5T240-240v-440h80v440h280v80ZM460-720q-33 0-56.5-23.5T380-800q0-33 23.5-56.5T460-880q33 0 56.5 23.5T540-800q0 33-23.5 56.5T460-720ZM640-80v-200H440q-33 0-56.5-23.5T360-360v-220q0-42 29-71t71-29q42 0 71 29t29 71v180h80q33 0 56.5 23.5T720-320v240h-80Z"/></svg>
                     </span>
                     <h4>Low mobility</h4>
-                    <p class="target-groups__stat"><strong>12.2%</strong> <span>report a mobility disability &mdash; the most common physical type</span></p>
+                    <p class="target-groups__stat"><strong>11%</strong> <span>have a mobility disability</span></p>
                     <ul class="target-groups__barriers"><li>Movements assume a standing body</li><li>Modifications have to be invented part-way through a class</li><li>Seated versions, where offered, are a lesser tier</li></ul>
                 </li>
             </ul>
-            <p class="target-groups__source">Prevalence by disability type, CDC Behavioral Risk Factor Surveillance System, 2022.</p>
+            <p class="target-groups__source">Prevalence by disability type, <a href="https://www150.statcan.gc.ca/n1/pub/89-654-x/89-654-x2024001-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Survey on Disability, 2022</a> &mdash; the same source as the chart above.</p>
 
         </section>
 
@@ -913,10 +920,10 @@
 
         <section id="measurement" class="case-study-section">
             <h2>5. Post-Launch Feedback</h2>
-            <p>The app shipped without an agreed definition of working. Before it could be improved on evidence rather than opinion, the measures had to be chosen, agreed with the business, and made collectable.</p>
+            <p>After launch we needed a way to tell whether the app was working. I worked on deciding the metrics: a baseline we could measure now, and keep measuring, so later versions could be compared against something rather than judged on impression.</p>
 
             <h3>5.1. The metrics, and why each one</h3>
-            <p>Four measure the experience, two answer questions the business had asked. Each is paired with a published average, so a first reading means something on its own rather than only in comparison with a later one.</p>
+            <p>Six measures. Four describe what happens when someone uses the app; two answer questions the business had. Where a published average exists it is shown beside the measure, so a first reading can be judged against something.</p>
 
             <dl class="metric-list">
                 <div>
@@ -949,7 +956,7 @@
                 </div>
             </dl>
 
-            <p>SUPR-Q and the SUM technique were considered and set aside: SUPR-Q reads across usability, trust, appearance and loyalty, and SUM folds completion, time, errors and ease into a single figure per task. Both are stronger with a larger sample than this product could supply at the time.</p>
+            
 
             <h3>5.2. The research behind them</h3>
             <p>Feedback was collected two ways: a survey sent to members, and a running document where anything reported by anyone &mdash; members, the internal team, external reviewers &mdash; could be logged in one place rather than living in whoever&rsquo;s inbox it arrived in.</p>
@@ -957,7 +964,7 @@
             <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and the extra points give a mid-range answer somewhere to sit other than the middle. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself.</p>
             <p>Alongside the leadership interview and the survey:</p>
             <ul>
-                <li><strong>Desk research on measurement instruments.</strong> Reading up on SEQ, SUS, SUPR-Q and SUM, their published averages and where each is appropriate, rather than inventing a scale. Also on measuring emotion specifically &mdash; CSUQ, Product Reaction Cards, UEQ and AttrakDiff &mdash; and the distinction between measuring how a design feels and measuring what someone feels using it.</li>
+                <li><strong>Desk research on how experience gets measured.</strong> Reading the standard scales and their published averages rather than inventing one, and separately on how emotional response is captured, which is not the same thing as satisfaction.</li>
                 <li><strong>A usability study designed for twenty participants</strong>, split into members and non-members, over five tasks: signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. Forty-five minutes each, remote, with the participant sharing their screen, and a Single Ease Question after every task.</li>
                 <li><strong>A protocol that changed by group.</strong> With Deaf and hard of hearing participants, captions, audio settings and the ASL classes. With blind and low vision participants, how the app behaves under the assistive technology they already use. Instructors ran the same tasks as members. Running one identical session for everyone would have tested the wrong things.</li>
                 <li><strong>Expert review of the survey.</strong> Three revisions before it was sent, reviewed by two colleagues and an external senior researcher.</li>
@@ -992,9 +999,8 @@
             <p>Two findings were already answered. The slider criticism is the problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
 
             <h3>5.4. Where this left the product</h3>
-            <p>Building the feedback system is effectively where my work on the product ended, and what came back through it pointed somewhere I had not expected. The strongest theme was not a feature request. Members wanted a sense of community between instructors and students &mdash; the thing a studio gives you that a video library does not.</p>
-            <p>Underneath that sat a supply problem the design could not solve. There are very few fitness instructors with disabilities, so a product built on adapted classes taught by people who share their members&rsquo; experience runs out of instructors before it runs out of demand. That finding moved the company&rsquo;s focus toward training and certifying disabled instructors, which is a different kind of work from designing screens.</p>
-            <p>It is the outcome I find most worth reporting. The measurement was built to tell us whether the product worked, and the most useful thing it returned was that the next constraint was not in the interface at all.</p>
+            <p>Building the feedback system is where my work on the product ended, and what came back through it was not a feature request. Members wanted a sense of community between instructors and students.</p>
+            <p>Underneath that was a supply problem design could not fix: there are very few fitness instructors with disabilities. That moved the company toward training and certifying them &mdash; and it is the most useful thing the measurement returned, because the next constraint was not in the interface at all.</p>
         </section>
 
         <section id="outcome" class="case-study-section">
