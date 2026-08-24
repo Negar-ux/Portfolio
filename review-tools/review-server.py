@@ -22,7 +22,6 @@ import io
 import json
 import os
 import posixpath
-import socketserver
 import sys
 import urllib.parse
 
@@ -61,6 +60,8 @@ def save_comments(items):
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+
     def __init__(self, *a, **kw):
         super().__init__(*a, directory=ROOT, **kw)
 
@@ -149,10 +150,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self._send_json({'ok': True, 'rounds': len(payload['rounds']), 'comments': total})
 
 
+class Server(http.server.ThreadingHTTPServer):
+    # threaded: a browser holding a keep-alive connection must not block
+    # every other request, which a single-threaded server would do
+    daemon_threads = True
+    allow_reuse_address = True
+
+
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(('', port), Handler) as httpd:
+    with Server(('', port), Handler) as httpd:
         print('review server on http://localhost:%d' % port)
         print('open a page with ?review=1, e.g.')
         print('   http://localhost:%d/fitness-app.html?review=1' % port)

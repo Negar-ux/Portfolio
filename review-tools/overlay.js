@@ -317,6 +317,28 @@
     if (e.key === 'Escape' && picking) stopPicking();
   });
 
+  // Review mode lives in the query string, so a normal link would drop it.
+  // Carry it across same-page navigation, and label the tab, so it is obvious
+  // which window is in review mode.
+  function keepReviewOnLinks() {
+    var links = document.querySelectorAll('a[href]');
+    Array.prototype.forEach.call(links, function (a) {
+      var href = a.getAttribute('href');
+      if (!href || /^(#|mailto:|tel:|javascript:)/i.test(href)) return;
+      var url;
+      try { url = new URL(a.href, location.href); } catch (e) { return; }
+      if (url.origin !== location.origin) return;
+      if (url.searchParams.has('review')) return;
+      url.searchParams.set('review', '1');
+      a.href = url.toString();
+    });
+  }
+
+  if (!/^\[review\]/.test(document.title)) {
+    document.title = '[review] ' + document.title;
+  }
+  keepReviewOnLinks();
+
   // ------------------------------------------------------------------- boot
   fetch('/__review-comments')
     .then(function (r) { return r.json(); })
