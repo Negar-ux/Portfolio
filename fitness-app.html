@@ -183,6 +183,119 @@
             .stat-grid--scale { grid-template-columns: 1fr; }
         }
 
+        /* Disability gap comparison.
+           Built as a real table so the data view exists by construction; the
+           bars are drawn inside the cells. Both columns are equal width, so the
+           two series share one scale. Every bar carries its own value, so
+           identity never depends on colour - which matters here because the
+           study accent (#1b212e) is near-black and low-chroma, and reads as ink
+           rather than as a series colour. */
+        .gap-chart {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color, #e0e4e7);
+            border-radius: 12px;
+            background: var(--bg-secondary, #f8f9fa);
+        }
+
+        .gap-chart table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .gap-chart caption {
+            margin-bottom: 1rem;
+            text-align: left;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-secondary, #565656);
+        }
+
+        .gap-chart th,
+        .gap-chart td {
+            padding: 0.6rem 1rem 0.9rem 0;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .gap-chart thead th {
+            font-size: 13px !important;
+            font-weight: 700;
+            color: var(--text-primary, #000);
+            border-bottom: 1px solid var(--border-color, #e0e4e7);
+        }
+
+        .gap-chart tbody th {
+            font-size: 15px !important;
+            font-weight: 400;
+            color: var(--text-secondary, #565656);
+        }
+
+        .gap-chart__key {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 0.4rem;
+            border-radius: 2px;
+        }
+
+        .gap-chart__key--subject { background: #1b212e; }
+        .gap-chart__key--base    { background: #6f7c92; }
+
+        .gap-chart__bar {
+            display: block;
+            height: 12px;
+            min-width: 3px;
+            border-radius: 4px;
+            margin-bottom: 0.4rem;
+        }
+
+        .gap-chart__bar--subject { background: #1b212e; }
+        .gap-chart__bar--base    { background: #6f7c92; }
+
+        .gap-chart__num {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary, #000);
+        }
+
+        .gap-chart > figcaption {
+            margin-top: 0.5rem;
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--text-secondary, #565656);
+        }
+
+        .gap-chart__src {
+            margin: 0.9rem 0 0 !important;
+            font-size: 13px !important;
+            line-height: 1.5;
+            color: var(--text-secondary, #565656);
+        }
+
+        [data-theme="dark"] .gap-chart__key--subject,
+        [data-theme="dark"] .gap-chart__bar--subject { background: #798bb0; }
+
+        [data-theme="dark"] .gap-chart__key--base,
+        [data-theme="dark"] .gap-chart__bar--base { background: #6a7180; }
+
+        @media (max-width: 620px) {
+            .gap-chart table, .gap-chart thead, .gap-chart tbody,
+            .gap-chart tr, .gap-chart th, .gap-chart td { display: block; }
+            .gap-chart thead { display: none; }
+            .gap-chart tbody th { padding-top: 1rem; font-weight: 700; color: var(--text-primary, #000); }
+            .gap-chart td::before {
+                content: attr(data-who);
+                display: block;
+                font-size: 12px;
+                color: var(--text-secondary, #565656);
+            }
+        }
+
         /* Metric definitions */
         .metric-list {
             margin: 1.5rem 0 2rem;
@@ -440,7 +553,46 @@
             <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the end-to-end design of the first release &mdash; research, ideation, testing, and low through high fidelity. I also built the foundation of the design system, and the research instruments behind the work: the survey, the interview guide, and the success metrics &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
 
             <h3>1.1. The challenge</h3>
-            <p>Most fitness apps assume one kind of body. A study of mobile health and fitness apps found that disabled people stand to benefit from them, and that none had been designed with that group in mind. That is not a failing unique to fitness: WebAIM’s annual audit of the top million homepages still finds detectable WCAG failures on 95.9% of them, averaging 56 errors per page. And the people locked out are online &mdash; 72% of US adults with a disability own a smartphone, against 88% of those without. So people who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent their own modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not. The cost is measurable: <strong>47% of US adults with disabilities get no aerobic exercise at all</strong>, and they are <strong>three times more likely</strong> to develop heart disease, stroke, diabetes or cancer.</p>
+            <p>Most fitness apps assume one kind of body. People who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not.</p>
+
+            <figure class="gap-chart">
+                <table>
+                    <caption>US adults, by disability status</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Measure</th>
+                            <th scope="col"><span class="gap-chart__key gap-chart__key--subject" aria-hidden="true"></span>With a disability</th>
+                            <th scope="col"><span class="gap-chart__key gap-chart__key--base" aria-hidden="true"></span>Without a disability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Physically inactive</th>
+                            <td data-who="With a disability">
+                                <span class="gap-chart__bar gap-chart__bar--subject" style="width: 47.1%;"></span>
+                                <span class="gap-chart__num">47.1%</span>
+                            </td>
+                            <td data-who="Without a disability">
+                                <span class="gap-chart__bar gap-chart__bar--base" style="width: 26.1%;"></span>
+                                <span class="gap-chart__num">26.1%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Owns a smartphone</th>
+                            <td data-who="With a disability">
+                                <span class="gap-chart__bar gap-chart__bar--subject" style="width: 72%;"></span>
+                                <span class="gap-chart__num">72%</span>
+                            </td>
+                            <td data-who="Without a disability">
+                                <span class="gap-chart__bar gap-chart__bar--base" style="width: 88%;"></span>
+                                <span class="gap-chart__num">88%</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <figcaption>Disabled adults are almost twice as likely to be physically inactive &mdash; and they are online. The barrier is not the device, it is what runs on it.</figcaption>
+                <p class="gap-chart__src">Inactivity: <a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs, Disability and Physical Activity</a> (2009&ndash;2012 data). Smartphone ownership: <a href="https://www.pewresearch.org/short-reads/2021/09/10/americans-with-disabilities-less-likely-than-those-without-to-own-some-digital-devices/" target="_blank" rel="noopener">Pew Research Center</a> (2021). Web accessibility more broadly: <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener">the WebAIM Million</a> finds WCAG failures on 95.9% of the top million homepages.</p>
+            </figure>
 
             <p>The challenge was to build an app that closes that gap &mdash; where adapted classes are the product rather than a setting buried inside it, and where two people with different bodies can take the same class together.</p>
 
