@@ -423,7 +423,7 @@
         <section id="overview" class="case-study-section">
             <h2>1. Overview</h2>
 
-            <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the MVP end to end &mdash; research, high-fidelity screens, and the component library that became the SSS design system &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
+            <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the end-to-end design of the first release &mdash; research, ideation, testing, and low through high fidelity. I also built the foundation of the design system, and the research instruments behind the work: the survey, the interview guide, and the success metrics &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
 
             <h3>1.1. The challenge</h3>
             <p>Most fitness apps assume one kind of body. A study of mobile health and fitness apps found that disabled people stand to benefit from them, and that none had been designed with that group in mind. So people who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent their own modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not. The cost is measurable: <strong>47% of US adults with disabilities get no aerobic exercise at all</strong>, and they are <strong>three times more likely</strong> to develop heart disease, stroke, diabetes or cancer.</p>
@@ -524,10 +524,11 @@
 
         <section id="research" class="case-study-section">
             <h2>2. Initial Research</h2>
-            <p>When I joined the team, I asked to review the research that had been done before me. A consulting study and an internal survey had already been run, covering the market and a competitive analysis of Wheel With Me Fitness, Adapt to Perform and Peloton &mdash; none of which, the study found, represented disabled people in their own marketing.</p>
+            <p>When I joined the team, I asked to review the research that had been done before me. A consulting study and an internal survey had already been run. The consulting study, delivered in April 2023 by a five-person team, covered the target market, geography and channels, and set the competitive picture against Wheel With Me Fitness, Adapt to Perform and Peloton. Its finding on those three was specific: all feature app mockups, infographics or instructors, and none showcase people of different ethnicities, body types and abilities.</p>
+            <p>Two numbers from it stayed with me. One in four women aged 18 to 34 said they wanted more inclusive exercise options, and 82.3% of the survey&rsquo;s own respondents said what mattered most was going at their own pace &mdash; which is an argument for adapted versions of a class rather than a separate, easier one.</p>
 
             <h3>2.1. Why this needed to exist</h3>
-            <p>Before designing a screen, the research had to answer three things: how many people this affects, what the lack of access costs them, and which needs were least well served.</p>
+            <p>I ran secondary research into the state of fitness and wellness and where its gaps are, because before designing a screen the work had to answer three things: how many people this affects, what the lack of access costs them, and which needs were least well served.</p>
 
             <div class="stat-grid">
                 <div class="stat-card">
@@ -552,7 +553,7 @@
                 </div>
             </div>
 
-            <p>The barrier is access, not ability &mdash; and the health consequence is measurable. That reframed the project for me: an inaccessible fitness app is not a missed feature, it is a health outcome.</p>
+            <p>The barrier is access, not ability &mdash; and the health consequence is measurable.</p>
 
             <h3>2.2. Why these three groups</h3>
             <p>Three groups were set as the minimum bar the app had to meet. Between them they account for roughly a quarter of the disabled adult population, and each is blocked by a different part of a video fitness class &mdash; what you hear, what you see, and what your body can do.</p>
@@ -586,7 +587,7 @@
                     <p class="target-groups__barrier">Movements assume a standing body, so any modification has to be invented by the member part-way through a class.</p>
                 </li>
             </ul>
-            <p class="target-groups__source">Prevalence by disability type, CDC Behavioral Risk Factor Surveillance System, 2022 &mdash; the same survey as the figures above.</p>
+            <p class="target-groups__source">Prevalence by disability type, CDC Behavioral Risk Factor Surveillance System, 2022.</p>
 
         </section>
 
@@ -597,7 +598,7 @@
 
 
             <h3>3.2. Key features and impact</h3>
-            <p>Each concept traces back to something a person said in research, and forward to something you can verify in the live app.</p>
+            <p>Three features, each traced from the research finding that prompted it to the shipped capability you can check in the live app today.</p>
 
             <div class="insight-chain">
 
@@ -838,6 +839,8 @@
         <section id="web-tool" class="case-study-section">
             <h2>5. Web Tool for Admins</h2>
             <p>I also led the design of the web administration panel, which took extensive discussion with the content team, developers and technology leaders to align on.</p>
+            <p>Most of that discussion was about class metadata, and it was the hardest part of the tool to get right. Every class carries a body position, a language, an instructor, an intensity, a category and a media set &mdash; and those fields are what make an adapted version findable rather than buried. If the metadata model is wrong, no amount of filtering on the member side recovers it. Getting the content team to a shared vocabulary for those fields took longer than designing the screens that display them.</p>
+            <p>The panel was also designed past the size the company was at the time. A tool built only for the classes that existed would have needed replacing the moment the library grew or a second admin joined, so it assumes more classes, more instructors and more than one person managing them.</p>
 
             <ul>
                 <li>Use Cases/Workflow</li>
@@ -879,11 +882,15 @@
             <dl class="metric-list">
                 <div>
                     <dt>Task completion rate <span class="metric-list__bench">benchmark 78%</span></dt>
-                    <dd>Whether people can finish what they came to do. The one measure that cannot be argued with: a member either bought a membership and started a class, or did not.</dd>
+                    <dd>Whether people can finish what they came to do, recorded as yes, no, or partially &mdash; the middle case matters, because a member who completes a task by working around the interface has not really completed it.</dd>
                 </div>
                 <div>
                     <dt>Time on task</dt>
                     <dd>Efficiency. It matters more than usual here, because assistive technology adds steps &mdash; a screen reader user moving through a screen control by control will always be slower, and the number is only useful read against that.</dd>
+                </div>
+                <div>
+                    <dt>Emotional response</dt>
+                    <dd>Read separately from satisfaction, because they are not the same thing. A task can be easy and still feel patronising, and for this product that distinction is the whole point.</dd>
                 </div>
                 <div>
                     <dt>Error count</dt>
@@ -906,7 +913,10 @@
             <p>SUPR-Q and the SUM technique were considered and set aside: SUPR-Q reads across usability, trust, appearance and loyalty, and SUM folds completion, time, errors and ease into a single figure per task. Both are stronger with a larger sample than this product could supply at the time.</p>
 
             <h3>6.2. The research behind them</h3>
-            <p>Alongside interviewing the leadership team to set the measures and designing the survey itself:</p>
+            <p>Feedback was collected two ways: a survey sent to members, and a running document where anything reported by anyone &mdash; members, the internal team, external reviewers &mdash; could be logged in one place rather than living in whoever&rsquo;s inbox it arrived in.</p>
+            <p>The survey was built in three sections against the three things worth asking about: content, accessibility, and the split screen. Three questions to open &mdash; frequency of use, disability status, assistive technology &mdash; then nine rating questions each with an optional box for the reasoning behind the score, and a closing question asking whether the respondent would join a follow-up interview.</p>
+            <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and the extra points give a mid-range answer somewhere to sit other than the middle. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself.</p>
+            <p>Alongside the leadership interview and the survey:</p>
             <ul>
                 <li><strong>Desk research on measurement instruments.</strong> Reading up on SEQ, SUS, SUPR-Q and SUM, their published averages and where each is appropriate, rather than inventing a scale. Also on measuring emotion specifically &mdash; CSUQ, Product Reaction Cards, UEQ and AttrakDiff &mdash; and the distinction between measuring how a design feels and measuring what someone feels using it.</li>
                 <li><strong>A usability study designed for twenty participants</strong>, split into members and non-members, over five tasks: signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. Forty-five minutes each, remote, with the participant sharing their screen, and a Single Ease Question after every task.</li>
