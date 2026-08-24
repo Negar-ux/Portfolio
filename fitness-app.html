@@ -331,7 +331,7 @@
            Every bar is directly labelled, and the figure is a real table so the
            values are readable without the chart. */
         .type-chart {
-            margin: 1.75rem 0 0;
+            margin: 1.75rem 0 2.25rem;
             padding: 1.5rem;
             border: 1px solid var(--border-color, #e0e4e7);
             border-radius: 12px;
@@ -636,16 +636,16 @@
         <section id="overview" class="case-study-section">
             <h2>1. Overview</h2>
 
-            <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the end-to-end design of the first release &mdash; research, ideation, testing, and low through high fidelity. I also built the foundation of the design system, and the research instruments behind the work: the survey, the interview guide, and the success metrics &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
+            <p><a href="https://www.sekondskinsociety.com/">Sekond Skin Society</a> is an inclusive fitness app where people with and without disabilities work out together. As lead designer I owned the end-to-end design of the first release &mdash; research, ideation, testing, and low through high fidelity. I also built the foundation of the design system, and the research behind it &mdash; the member survey, the interview guide for usability sessions, and the measures we used to tell whether it was working &mdash; and it <a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank">launched on iOS and Android in Summer 2025</a>.</p>
 
             <h3>1.1. The challenge</h3>
-            <p>Most fitness apps assume one kind of body. People who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not.</p>
+            <p>Most fitness apps are built for one kind of body, and you find out quickly if yours works differently. The instructor demonstrates a movement you cannot see. The music sits on top of the cue you needed to hear. The class assumes you are standing. So you improvise a version mid-workout, or you stop, or you work out on your own when you would rather not be on your own.</p>
             <p>The cost of that is measurable. <strong>47.1%</strong> of adults with a disability are physically inactive, and inactive adults with a disability are <strong>50% more likely</strong> to report a chronic disease than those who are active (<a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs</a>). In Canada, where the company is based, <strong>8.0 million</strong> people aged 15 and over &mdash; 27% of that population &mdash; report a disability (<a href="https://www150.statcan.gc.ca/n1/daily-quotidien/231201/dq231201b-eng.htm" target="_blank" rel="noopener">Canadian Survey on Disability, 2022</a>).</p>
 
             <p>The challenge was to build an app that closes that gap &mdash; where adapted classes are the product rather than a setting buried inside it, and where two people with different bodies can take the same class together.</p>
 
             <h3>1.2. The outcome</h3>
-            <p>A live app on both platforms, with accessibility designed in from the first concept rather than retrofitted before release.</p>
+            <p>An accessible fitness app, live on iOS and Android.</p>
 
             <div class="app-shots">
                 <figure>
@@ -681,7 +681,7 @@
                 </div>
             </div>
 
-            <p>Two pieces of outside evidence say more about how it landed than my own account of the work does.</p>
+            <p>Two outside sources have checked the app since launch.</p>
 
             <div class="stat-grid">
                 <div class="stat-card project">
@@ -704,7 +704,7 @@
                 </div>
             </div>
 
-            <p>The AppleVis entry is the one I weigh most. An App Store rating can come from anyone; a screen reader user assessing whether every control is labelled is judging the thing the product was designed to get right.</p>
+            <p>The AppleVis listing is the one that matters most to me. AppleVis is where blind and low vision users go to find out whether an app is genuinely usable before they download it, and the people reviewing there test with a screen reader. Being listed as fully accessible with VoiceOver is a direct check on what the app was built to do.</p>
 
             <figure class="verdict">
                 <blockquote>
@@ -738,7 +738,7 @@
             <p>When I joined the team, I asked to review the research that had already been done &mdash; an initial market research exercise and a survey. It set the competitive picture against Wheel With Me Fitness, Adapt to Perform and Peloton, and found that none of the three showed people of different ethnicities, body types or abilities in their own marketing.</p>
 
             <h3>2.1. Secondary research</h3>
-            <p>The company&rsquo;s market research established that there was an audience. It did not establish where fitness apps were failing that audience, so I went further into it &mdash; what the state of mobile fitness and wellness actually is, which needs go unmet, and which parts of a workout break down first. That is what the design had to answer to.</p>
+            <p>The company had already researched the market. I built on that with my own secondary research into fitness and wellness apps more broadly: what already exists, where it stops working for disabled people, and which parts of a workout give way first. That is what the design had to answer to.</p>
 
             <div class="stat-grid stat-grid--scale">
                 <div class="stat-card">
@@ -764,7 +764,7 @@
                 </div>
             </div>
 
-            <p>The barrier is access, not ability &mdash; and the health consequence is measurable.</p>
+            <p>What stops people is access, not ability, and the effect on their health shows up in the numbers.</p>
 
             <figure class="type-chart">
                 <table>
@@ -784,8 +784,8 @@
                 <p class="type-chart__src"><a href="https://www150.statcan.gc.ca/n1/pub/89-654-x/89-654-x2024001-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Survey on Disability, 2022</a>.</p>
             </figure>
 
-            <h3>2.2. Why these three groups</h3>
-            <p>The team set three groups as the bar the app had to clear before launch. They are not the largest groups &mdash; the chart above shows that. They were picked because each one is stopped by a different part of a class: what you hear, what you see, and what your body can do. Between them they cover the main ways a workout can shut someone out.</p>
+            <h3>2.2. Target groups</h3>
+            <p>We set three target groups the app had to work for before it could launch. They are not the largest groups &mdash; the chart above shows that. We chose them because each one needs something different from a class: to follow instruction you cannot hear, to follow movement you cannot see, or to do the movement with the body you have. Meeting the needs of all three meant the app would work for most people, not only for the ones it was easiest to design for.</p>
 
             <!-- Group icons: Material Symbols (sign_language, record_voice_over,
      airline_seat_recline_normal), Google, Apache License 2.0.
@@ -822,7 +822,7 @@
 
         <section id="conceptualization" class="case-study-section">
             <h2>3. Key features and impact</h2>
-            <p>Three features, each traced from the research finding that prompted it to the shipped capability you can check in the live app today.</p>
+            <p>Three features, each one traced from what members told us they needed through to what actually shipped.</p>
 
             <div class="insight-chain">
 
@@ -1009,7 +1009,7 @@
 
 
             <h3>4.5. What an outside review found</h3>
-            <p>Once the app was live, an external accessibility reviewer went through it independently and came back with ten issues. It is the most useful kind of feedback to get, because it is the part of the work I could not check myself: I know what the designs intended, which makes me the wrong person to notice where they fail.</p>
+            <p>Once the app was live, an external accessibility reviewer went through it independently and came back with ten issues. This was the most useful feedback we got, because it covered what I could not check myself. I knew what the designs were meant to do, which made me the wrong person to notice where they did not.</p>
             <p>Two had already been answered by the iterations above. The criticism that sliders were too small and too low-contrast to control is the problem the stepped audio buttons in 4.4 were built to solve, and quality assurance had separately caught iOS not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
             <p>The rest were live, and they cluster into three kinds:</p>
             <ul class="finding-list">
@@ -1026,7 +1026,7 @@
                 <figcaption>External accessibility review of the live app</figcaption>
             </figure>
 
-            <p>That is the split screen, and 4.4 above is the whole story of designing it. Getting the mechanics right &mdash; two versions, one audio track, stepped controls &mdash; turned out not to be the same as making the feature legible. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
+            <p>That is the split screen, and 4.4 above is the whole story of designing it. Getting the mechanics right &mdash; two versions, one audio track, stepped controls &mdash; turned out not to be the same as making it obvious what the feature was for. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
         </section>
 
         <section id="measurement" class="case-study-section">
@@ -1051,10 +1051,10 @@
                     <div class="flow__step flow__step--end">
                         <p class="flow__kicker">Then</p>
                         <h4>Severity and type</h4>
-                        <p>Every issue tagged <strong>critical</strong>, <strong>moderate</strong>, <strong>minor</strong> or <strong>suggestion</strong>, so the same problem reported five ways counts once.</p>
+                        <p>Every issue tagged <strong>critical</strong>, <strong>moderate</strong>, <strong>minor</strong> or <strong>suggestion</strong>, so a problem reported by five people is counted once.</p>
                     </div>
                 </div>
-                <figcaption>Two routes in, one queue out. Without the second route, anything that arrived outside the survey window would simply have been lost.</figcaption>
+                <figcaption>Without the second route, anything that arrived outside the survey window would have been lost.</figcaption>
             </figure>
 
             <h3>5.2. The survey focused on three things</h3>
@@ -1097,10 +1097,10 @@
                         <p>One question asking whether they would join a follow-up interview.</p>
                     </div>
                 </div>
-                <figcaption>Asking who is answering first means every rating that follows can be read against the assistive technology the person actually uses.</figcaption>
+                <figcaption>Asking who is answering first means the ratings can be read against the assistive technology that person actually uses.</figcaption>
             </figure>
 
-            <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and gives a middling answer somewhere to sit other than dead centre. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself. It went through three revisions before it was sent.</p>
+            <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and gives a middling answer somewhere to sit other than dead centre. Putting an optional &ldquo;why&rdquo; next to every score is what made the answers useful &mdash; a low rating on its own tells you almost nothing about what to fix.</p>
 
             <h3>5.3. What the sessions were built to measure</h3>
             <p>Alongside the survey I wrote the guide for moderated sessions: five tasks covering signing up, browsing and filtering, playing a class and adjusting audio, using the split screen, and buying a membership. After each task, one question on how easy or difficult it was, then what was most confusing, and whether anything was missing that would have made it easier.</p>
@@ -1114,19 +1114,19 @@
             </ul>
 
             <h3>5.4. What it surfaced</h3>
-            <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. The critique was of the instrument rather than the interface, and most of it was about not putting the burden of a badly built question onto the person answering it:</p>
+            <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. The critique was about the survey itself rather than the app, and nearly all of it came down to the same thing: not making the person answering carry the cost of a badly written question.</p>
 
             <ul class="review-list">
-                <li><strong>How people are described.</strong> Widen the disability categories beyond the narrow set the draft offered, and say &ldquo;mobility disability&rdquo; rather than naming a wheelchair or assistive device &mdash; the equipment is not the person.</li>
+                <li><strong>How people are described.</strong> Widen the disability categories beyond the narrow set the draft offered, and say &ldquo;mobility disability&rdquo; rather than naming a wheelchair or assistive device. A wheelchair is equipment, not an identity.</li>
                 <li><strong>The order of the questions.</strong> Follow the path a member actually takes through the app, move the assistive technology question to the start rather than two-thirds down, and label the sections so people know what they are about to be asked.</li>
                 <li><strong>What the form asks of the respondent.</strong> Use conditional logic instead of telling people to skip questions that do not apply, and settle the scale direction rather than leaving it to convention.</li>
             </ul>
 
-            <p>The second and third groups are not survey housekeeping. Question order and conditional logic both reduce what the respondent has to carry, and the people worst served by a long, badly ordered form are the ones the product exists for.</p>
+            <p>The last two are not just tidying. Question order and conditional logic reduce the effort of answering, and a long, badly ordered form is hardest on exactly the people this app is for.</p>
             <h3>5.5. Where this left the product</h3>
             <p>I should be straight about the limits of this. Building the collection system is where my work on the product ended, and the responses came in after that &mdash; so I do not have the completion numbers, and I cannot tell you what the ratings settled at. What I can report is what the team took from it, which reached me second hand.</p>
-            <p>The strongest theme was not a feature request. Members wanted a sense of community between instructors and students. Underneath that sat a supply problem no interface could fix: there are very few fitness instructors with disabilities, and a product built on classes taught by people who share their members&rsquo; experience runs out of instructors before it runs out of demand. That moved the company toward training and certifying them.</p>
-            <p>It is a strange result to report on a design case study, and I think it is the honest one. The measurement was built to find out whether the product worked. What it pointed at was a constraint that was never in the interface.</p>
+            <p>The strongest theme was not a feature request. Members wanted a sense of community between instructors and students. Underneath that sat a supply problem no interface could fix: there are very few fitness instructors with disabilities, and a product built on classes taught by people who share their members&rsquo; experience runs short of instructors long before it runs short of interest. That moved the company toward training and certifying them.</p>
+            <p>It is an odd thing to end a design case study on. We built the feedback system to find out whether the app was working, and what it told us was that the next problem to solve was not a design problem.</p>
         </section>
 
         <section id="outcome" class="case-study-section">
@@ -1158,7 +1158,7 @@
                 <figcaption>Membership breakdown &middot; December 2025. Based on feedback sessions where members chose to disclose &mdash; the app collects no personal data.</figcaption>
             </figure>
 
-            <p>That distribution is the result I weigh most. A general fitness product with accessibility features added late would be unlikely to see blind members become its largest group.</p>
+            <p>That distribution is the part I am proudest of. If accessibility had been added to a general fitness app late, blind members would not have ended up as its largest group.</p>
 
             <div class="stat-grid">
                 <div class="stat-card">
@@ -1186,7 +1186,7 @@
                 <figcaption>Accessibility review &middot; Blind Institute of Technology</figcaption>
             </figure>
 
-            <p>Both points landed on decisions rather than defaults. The stepped controls were chosen for people with limited fine motor control, and this review confirms they hold up for someone navigating by screen reader too. Captions readable on a refreshable braille display depend on captions being real text rather than burned into the video &mdash; a distinction that only surfaces when somebody tests with hardware most teams never have in the room.</p>
+            <p>Both of these come back to specific decisions. The stepped controls were chosen for people with limited fine motor control, and this review says they work for someone navigating by screen reader too. Captions only reach a braille display if they are real text rather than burned into the video, which is the sort of thing you only find out when someone tests with hardware most teams never have in the room.</p>
         </section>
 
         <section id="learning" class="case-study-section">
