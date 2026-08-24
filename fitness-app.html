@@ -86,8 +86,6 @@
             margin-bottom: 0;
         }
 
-
-
         /* Information architecture map */
         .ia-map {
             margin: 2.5rem 0;
@@ -150,7 +148,6 @@
             .ia-map__grid { grid-template-columns: 1fr; }
         }
 
-
         /* Review recommendations */
         .review-list {
             margin: 1.25rem 0 1.5rem;
@@ -183,117 +180,78 @@
             .stat-grid--scale { grid-template-columns: 1fr; }
         }
 
-        /* Disability gap comparison.
-           Built as a real table so the data view exists by construction; the
-           bars are drawn inside the cells. Both columns are equal width, so the
-           two series share one scale. Every bar carries its own value, so
-           identity never depends on colour - which matters here because the
-           study accent (#1b212e) is near-black and low-chroma, and reads as ink
-           rather than as a series colour. */
-        .gap-chart {
-            margin: 2rem 0;
+        /* Disability types. One series, so no legend - the caption names it.
+           Every bar is directly labelled, and the figure is a real table so the
+           values are readable without the chart. */
+        .type-chart {
+            margin: 1.75rem 0 0;
             padding: 1.5rem;
             border: 1px solid var(--border-color, #e0e4e7);
             border-radius: 12px;
             background: var(--bg-secondary, #f8f9fa);
         }
 
-        .gap-chart table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
+        .type-chart table { width: 100%; border-collapse: collapse; }
 
-        .gap-chart caption {
-            margin-bottom: 1rem;
+        .type-chart caption {
+            margin-bottom: 0.9rem;
             text-align: left;
             font-size: 13px;
+            font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            font-weight: 700;
             color: var(--text-secondary, #565656);
         }
 
-        .gap-chart th,
-        .gap-chart td {
-            padding: 0.6rem 1rem 0.9rem 0;
+        .type-chart th {
+            width: 42%;
+            padding: 0.35rem 1rem 0.35rem 0;
             text-align: left;
-            vertical-align: top;
-        }
-
-        .gap-chart thead th {
-            font-size: 13px !important;
-            font-weight: 700;
-            color: var(--text-primary, #000);
-            border-bottom: 1px solid var(--border-color, #e0e4e7);
-        }
-
-        .gap-chart tbody th {
             font-size: 15px !important;
             font-weight: 400;
-            color: var(--text-secondary, #565656);
+            color: var(--text-primary, #000);
+            vertical-align: middle;
         }
 
-        .gap-chart__key {
+        .type-chart td {
+            padding: 0.35rem 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .type-chart__track {
             display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin-right: 0.4rem;
-            border-radius: 2px;
+            width: calc(100% - 66px);
+            vertical-align: middle;
         }
 
-        .gap-chart__key--subject { background: #1b212e; }
-        .gap-chart__key--base    { background: #6f7c92; }
-
-        .gap-chart__bar {
+        .type-chart__bar {
             display: block;
-            height: 12px;
-            min-width: 3px;
+            height: 14px;
             border-radius: 4px;
-            margin-bottom: 0.4rem;
+            background: var(--cs-accent, #1b212e);
         }
 
-        .gap-chart__bar--subject { background: #1b212e; }
-        .gap-chart__bar--base    { background: #6f7c92; }
-
-        .gap-chart__num {
-            display: block;
-            font-size: 18px;
+        .type-chart__num {
+            display: inline-block;
+            margin-left: 0.55rem;
+            font-size: 14px;
             font-weight: 700;
             color: var(--text-primary, #000);
+            vertical-align: middle;
         }
 
-        .gap-chart > figcaption {
-            margin-top: 0.5rem;
-            font-size: 15px;
+        .type-chart > figcaption {
+            margin-top: 0.9rem;
+            font-size: 14px;
             line-height: 1.55;
             color: var(--text-secondary, #565656);
         }
 
-        .gap-chart__src {
-            margin: 0.9rem 0 0 !important;
+        .type-chart__src {
+            margin: 0.7rem 0 0 !important;
             font-size: 13px !important;
-            line-height: 1.5;
             color: var(--text-secondary, #565656);
-        }
-
-        [data-theme="dark"] .gap-chart__key--subject,
-        [data-theme="dark"] .gap-chart__bar--subject { background: #798bb0; }
-
-        [data-theme="dark"] .gap-chart__key--base,
-        [data-theme="dark"] .gap-chart__bar--base { background: #6a7180; }
-
-        @media (max-width: 620px) {
-            .gap-chart table, .gap-chart thead, .gap-chart tbody,
-            .gap-chart tr, .gap-chart th, .gap-chart td { display: block; }
-            .gap-chart thead { display: none; }
-            .gap-chart tbody th { padding-top: 1rem; font-weight: 700; color: var(--text-primary, #000); }
-            .gap-chart td::before {
-                content: attr(data-who);
-                display: block;
-                font-size: 12px;
-                color: var(--text-secondary, #565656);
-            }
         }
 
         /* Metric definitions */
@@ -389,6 +347,32 @@
             color: var(--text-secondary, #565656);
         }
 
+        .target-groups__barriers {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .target-groups__barriers li {
+            position: relative;
+            margin-bottom: 0.45rem;
+            padding-left: 0.95rem;
+            font-size: 14.5px !important;
+            line-height: 1.5;
+            color: var(--text-secondary, #565656);
+        }
+
+        .target-groups__barriers li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--cs-accent, #1b212e);
+        }
+
         .target-groups h4 {
             margin: 0.85rem 0 0.6rem;
             font-size: 18px !important;
@@ -401,8 +385,6 @@
             line-height: 1.55;
             color: var(--text-secondary, #565656);
         }
-
-
 
         @media (max-width: 820px) {
             .target-groups { grid-template-columns: 1fr; gap: 1rem; }
@@ -554,45 +536,9 @@
 
             <h3>1.1. The challenge</h3>
             <p>Most fitness apps assume one kind of body. People who are blind or low vision, Deaf or hard of hearing, or have limited mobility are left to invent modifications mid-workout, fight audio they cannot separate, or exercise alone when they would rather not.</p>
+            <p>The cost of that is measurable. <strong>47.1%</strong> of adults with a disability are physically inactive, and inactive adults with a disability are <strong>50% more likely</strong> to report a chronic disease than those who are active (<a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs</a>). In Canada, where the company is based, <strong>8.0 million</strong> people aged 15 and over &mdash; 27% of that population &mdash; report a disability (<a href="https://www150.statcan.gc.ca/n1/daily-quotidien/231201/dq231201b-eng.htm" target="_blank" rel="noopener">Canadian Survey on Disability, 2022</a>).</p>
 
-            <figure class="gap-chart">
-                <table>
-                    <caption>US adults, by disability status</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Measure</th>
-                            <th scope="col"><span class="gap-chart__key gap-chart__key--subject" aria-hidden="true"></span>With a disability</th>
-                            <th scope="col"><span class="gap-chart__key gap-chart__key--base" aria-hidden="true"></span>Without a disability</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Physically inactive</th>
-                            <td data-who="With a disability">
-                                <span class="gap-chart__bar gap-chart__bar--subject" style="width: 47.1%;"></span>
-                                <span class="gap-chart__num">47.1%</span>
-                            </td>
-                            <td data-who="Without a disability">
-                                <span class="gap-chart__bar gap-chart__bar--base" style="width: 26.1%;"></span>
-                                <span class="gap-chart__num">26.1%</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Owns a smartphone</th>
-                            <td data-who="With a disability">
-                                <span class="gap-chart__bar gap-chart__bar--subject" style="width: 72%;"></span>
-                                <span class="gap-chart__num">72%</span>
-                            </td>
-                            <td data-who="Without a disability">
-                                <span class="gap-chart__bar gap-chart__bar--base" style="width: 88%;"></span>
-                                <span class="gap-chart__num">88%</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <figcaption>Disabled adults are almost twice as likely to be physically inactive &mdash; and they are online. The barrier is not the device, it is what runs on it.</figcaption>
-                <p class="gap-chart__src">Inactivity: <a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs, Disability and Physical Activity</a> (2009&ndash;2012 data). Smartphone ownership: <a href="https://www.pewresearch.org/short-reads/2021/09/10/americans-with-disabilities-less-likely-than-those-without-to-own-some-digital-devices/" target="_blank" rel="noopener">Pew Research Center</a> (2021). Web accessibility more broadly: <a href="https://webaim.org/projects/million/" target="_blank" rel="noopener">the WebAIM Million</a> finds WCAG failures on 95.9% of the top million homepages.</p>
-            </figure>
+            
 
             <p>The challenge was to build an app that closes that gap &mdash; where adapted classes are the product rather than a setting buried inside it, and where two people with different bodies can take the same class together.</p>
 
@@ -640,7 +586,7 @@
                     <span class="stat-kicker">Verified by Apple</span>
                     <span class="stat-value">8 <span class="stat-unit">of 8</span></span>
                     <span class="stat-label">accessibility features Apple lists as supported, out of the eight it checks for: VoiceOver, Larger Text, Dark Interface, Differentiate Without Colour Alone, Sufficient Contrast, Reduced Motion, Captions and Audio Descriptions.</span>
-                    <span class="stat-src">Apple App Store listing</span>
+                    <span class="stat-src"><a href="https://apps.apple.com/ca/app/sekond-skin-society/id6738430213" target="_blank" rel="noopener">Apple App Store listing</a></span>
                 </div>
                 <div class="stat-card project">
                     <span class="stat-kicker">Shortlisted</span>
@@ -652,7 +598,7 @@
                     <span class="stat-kicker">Vetted by screen reader users</span>
                     <span class="stat-value">11 <span class="stat-unit">recommendations</span></span>
                     <span class="stat-label">on AppleVis, the directory blind and low-vision users check to find out whether an app is actually usable before they download it.</span>
-                    <span class="stat-src">AppleVis listing</span>
+                    <span class="stat-src"><a href="https://www.applevis.com/apps/ios/health-fitness/sekond-skin-society" target="_blank" rel="noopener">AppleVis listing</a></span>
                 </div>
             </div>
 
@@ -664,8 +610,6 @@
                 </blockquote>
                 <figcaption>Sekond Skin Society's accessibility rating on AppleVis</figcaption>
             </figure>
-
-
 
 
         </section>
@@ -690,17 +634,17 @@
 
         <section id="research" class="case-study-section">
             <h2>2. Initial Research</h2>
-            <p>When I joined the team, I asked to review the research that had been done before me. A consulting study and an internal survey had already been run. The consulting study, delivered in April 2023 by a five-person team, covered the target market, geography and channels, and set the competitive picture against Wheel With Me Fitness, Adapt to Perform and Peloton. Its finding on those three was specific: all feature app mockups, infographics or instructors, and none showcase people of different ethnicities, body types and abilities.</p>
-            <p>Two numbers from it stayed with me. One in four women aged 18 to 34 said they wanted more inclusive exercise options, and 82.3% of the survey&rsquo;s own respondents said what mattered most was going at their own pace &mdash; which is an argument for adapted versions of a class rather than a separate, easier one.</p>
+            <p>When I joined the team, I asked to review the research that had already been done &mdash; an initial market research exercise and a survey. It set the competitive picture against Wheel With Me Fitness, Adapt to Perform and Peloton, and found that none of the three showed people of different ethnicities, body types or abilities in their own marketing.</p>
+            
 
-            <h3>2.1. Why this needed to exist</h3>
-            <p>I ran secondary research into the state of fitness and wellness and where its gaps are, because before designing a screen the work had to answer three things: how many people this affects, what the lack of access costs them, and which needs were least well served.</p>
+            <h3>2.1. Secondary research</h3>
+            <p>The company&rsquo;s market research established that there was an audience. It did not establish where fitness apps were failing that audience, so I went further into it &mdash; what the state of mobile fitness and wellness actually is, which needs go unmet, and which parts of a workout break down first. That is what the design had to answer to.</p>
 
             <div class="stat-grid stat-grid--scale">
                 <div class="stat-card">
                     <span class="stat-value">1.3B</span>
                     <span class="stat-label">people worldwide &mdash; 16% of the population &mdash; live with a significant disability</span>
-                    <span class="stat-src">World Health Organization</span>
+                    <span class="stat-src"><a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank" rel="noopener">World Health Organization</a></span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value">70M</span>
@@ -710,24 +654,41 @@
                 <div class="stat-card">
                     <span class="stat-value">8.0M</span>
                     <span class="stat-label">Canadians aged 15 and over have a disability &mdash; 27% of that population</span>
-                    <span class="stat-src">Statistics Canada CSD, 2022</span>
+                    <span class="stat-src"><a href="https://www150.statcan.gc.ca/n1/daily-quotidien/231201/dq231201b-eng.htm" target="_blank" rel="noopener">Statistics Canada CSD, 2022</a></span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value">47.1%</span>
                     <span class="stat-label">of US adults with a disability are physically inactive, against 26.1% of those without one</span>
-                    <span class="stat-src">CDC MMWR Vital Signs</span>
+                    <span class="stat-src"><a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC MMWR Vital Signs</a></span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-value">3&times;</span>
                     <span class="stat-label">more likely to have heart disease, stroke, diabetes or cancer</span>
-                    <span class="stat-src">CDC Vital Signs</span>
+                    <span class="stat-src"><a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6318a5.htm" target="_blank" rel="noopener">CDC Vital Signs</a></span>
                 </div>
             </div>
 
             <p>The barrier is access, not ability &mdash; and the health consequence is measurable.</p>
 
+
+            <figure class="type-chart">
+                <table>
+                    <caption>Disability by type, US adults</caption>
+                    <tbody>
+                        <tr><th scope="row">Cognition</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 100%;"></span></span><span class="type-chart__num">13.9%</span></td></tr>
+                        <tr><th scope="row">Mobility</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 87.8%;"></span></span><span class="type-chart__num">12.2%</span></td></tr>
+                        <tr><th scope="row">Independent living</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 55.4%;"></span></span><span class="type-chart__num">7.7%</span></td></tr>
+                        <tr><th scope="row">Hearing</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 44.6%;"></span></span><span class="type-chart__num">6.2%</span></td></tr>
+                        <tr><th scope="row">Vision</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 39.6%;"></span></span><span class="type-chart__num">5.5%</span></td></tr>
+                        <tr><th scope="row">Self-care</th><td><span class="type-chart__track"><span class="type-chart__bar" style="width: 25.9%;"></span></span><span class="type-chart__num">3.6%</span></td></tr>
+                    </tbody>
+                </table>
+                <figcaption>Disability is not one thing, and the types do not need the same things from a workout. Bars are scaled to the largest value; percentages are of all US adults, so a person reporting more than one type appears in more than one row.</figcaption>
+                <p class="type-chart__src"><a href="https://www.cdc.gov/mmwr/volumes/67/wr/mm6732a3.htm" target="_blank" rel="noopener">CDC Disability and Health Data System</a>, 2022. Statistics Canada reports its type breakdown against a different base &mdash; the share of people who already have a disability &mdash; so the two cannot be shown on one scale.</p>
+            </figure>
+
             <h3>2.2. Why these three groups</h3>
-            <p>Three groups were set as the minimum bar the app had to meet. Between them they account for roughly a quarter of the disabled adult population, and each is blocked by a different part of a video fitness class &mdash; what you hear, what you see, and what your body can do.</p>
+            <p>The team decided the product had to work for three groups before it could ship to anyone. They were not chosen for size &mdash; the chart above shows larger ones. They were chosen because each is blocked by a <em>different part</em> of a video fitness class: what you hear, what you see, and what your body can do. A class that works for all three has no remaining structural excuse, which made them a usable bar to build against rather than a wish list.</p>
 
             <!-- Group icons: Material Symbols (sign_language, record_voice_over,
      airline_seat_recline_normal), Google, Apache License 2.0.
@@ -739,7 +700,7 @@
                     </span>
                     <h4>Deaf and hard of hearing</h4>
                     <p class="target-groups__stat"><strong>6.2%</strong> <span>of US adults report a hearing disability</span></p>
-                    <p class="target-groups__barrier">Instruction is carried by the instructor&rsquo;s voice, mixed with music the member cannot separate from it &mdash; and captions, where they exist at all, are usually burned into the video.</p>
+                    <ul class="target-groups__barriers"><li>Instruction is carried by the instructor&rsquo;s voice</li><li>Speech is mixed with music that cannot be separated from it</li><li>Captions, where they exist, are burned into the video</li></ul>
                 </li>
                 <li>
                     <span class="target-groups__icon" aria-hidden="true">
@@ -747,7 +708,7 @@
                     </span>
                     <h4>Blind and low vision</h4>
                     <p class="target-groups__stat"><strong>5.5%</strong> <span>report a vision disability</span></p>
-                    <p class="target-groups__barrier">The workout is demonstrated visually, and the controls around it assume a member who can see them and hit them precisely.</p>
+                    <ul class="target-groups__barriers"><li>The workout is demonstrated visually, with no spoken equivalent</li><li>Controls assume you can see them and hit them precisely</li><li>Nothing describes what the instructor is doing</li></ul>
                 </li>
                 <li>
                     <span class="target-groups__icon" aria-hidden="true">
@@ -755,7 +716,7 @@
                     </span>
                     <h4>Low mobility</h4>
                     <p class="target-groups__stat"><strong>12.2%</strong> <span>report a mobility disability &mdash; the most common physical type</span></p>
-                    <p class="target-groups__barrier">Movements assume a standing body, so any modification has to be invented by the member part-way through a class.</p>
+                    <ul class="target-groups__barriers"><li>Movements assume a standing body</li><li>Modifications have to be invented part-way through a class</li><li>Seated versions, where offered, are a lesser tier</li></ul>
                 </li>
             </ul>
             <p class="target-groups__source">Prevalence by disability type, CDC Behavioral Risk Factor Surveillance System, 2022.</p>
@@ -763,12 +724,7 @@
         </section>
 
         <section id="conceptualization" class="case-study-section">
-            <h2>3. Conceptualization</h2>
-            <h3>3.1. Fast prototyping and user interviews</h3>
-            <p>I started with low-fidelity concepts for the primary use cases and tested those mockups with users before committing to anything visual. The features that came out of that work are below, and the architecture they settled into follows them. What changed between the first concepts and the shipped screens is shown in section 4.</p>
-
-
-            <h3>3.2. Key features and impact</h3>
+            <h2>3. Key features and impact</h2>
             <p>Three features, each traced from the research finding that prompted it to the shipped capability you can check in the live app today.</p>
 
             <div class="insight-chain">
@@ -829,65 +785,13 @@
 
             </div>
 
-            <h3>3.3. Information architecture</h3>
-            <p>The structure the concepts settled into. Adapted class versions and language sit inside the class itself, so choosing one is part of picking a class rather than a preference set beforehand.</p>
-
-            <figure class="ia-map">
-                <div class="ia-map__grid">
-                    <div class="ia-map__col">
-                        <h4>Entry</h4>
-                        <ul>
-                            <li>Sign up <span>non-member</span></li>
-                            <li>Log in <span>member</span></li>
-                            <li>Membership options</li>
-                            <li>Subscription &amp; payment</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Dashboard</h4>
-                        <ul>
-                            <li>Classes <span>cards carry version, level and length</span></li>
-                            <li>Instructors <span>added after testing</span></li>
-                            <li>Filters</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Class detail</h4>
-                        <ul>
-                            <li>Class versions <span>standing &middot; seated, no lower body &middot; seated, some lower body</span></li>
-                            <li>Language <span>American Sign Language</span></li>
-                            <li>Intensity level <span>1, 2, 3</span></li>
-                            <li>Class breakdown <span>warm-up, workout, cool-down</span></li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Video player</h4>
-                        <ul>
-                            <li>Split screen <span>two versions at once</span></li>
-                            <li>Audio settings <span>instructor and music, stepped</span></li>
-                            <li>Caption settings <span>size and colour</span></li>
-                            <li>Audio description</li>
-                            <li>Playback speed</li>
-                            <li>Output device</li>
-                        </ul>
-                    </div>
-                    <div class="ia-map__col">
-                        <h4>Account</h4>
-                        <ul>
-                            <li>Profile</li>
-                            <li>Membership &amp; payment</li>
-                        </ul>
-                    </div>
-                </div>
-            </figure>
-
         </section>
 
         <section id="design" class="case-study-section">
             <h2>4. Design</h2>
 
             <h3>4.1. Accessibility</h3>
-            <p>Throughout the iterations, I ensured that the MVP designs met stringent accessibility guidelines, including certain color contrast criteria, font sizes, and actionable components such as buttons, tabs, and fields, through continuous feedback from accessibility experts.</p>
+            <p>Throughout the iterations, I ensured that the designs for the first release met stringent accessibility guidelines, including certain color contrast criteria, font sizes, and actionable components such as buttons, tabs, and fields, through continuous feedback from accessibility experts.</p>
 
             <h3>4.2. Iterations of the dashboard</h3>
             <p>The dashboard's purpose was to organize a list of available classes into categories. I tested it with several users to ensure that the browsing and filtering classes experience was easy to understand and follow.</p>
@@ -979,7 +883,7 @@
                     </figure>
                 </div>
             </div>
-            <p style="text-align: center; font-style: italic;">The image shows the initial iteration and MVP version showing class details on split screens, showcasing two versions.</p>
+            <p style="text-align: center; font-style: italic;">The image shows the initial iteration and the shipped version showing class details on split screens, showcasing two versions.</p>
 
             <h4>4.4.a. Change: audio settings</h4>
             <p>The design outlined below is for the audio settings that enables users to select their preferred audio track and customize the volume of both the instructor and the music. Previously, I had opted for sliders to control the audio. However, in the following iterations, in order to ensure ease of use for individuals with limited motor skills and low vision, I instead incorporated plus (+) and minus (-) tab buttons in the UI.</p>
@@ -1007,47 +911,11 @@
             </div>
         </section>
 
-        <section id="web-tool" class="case-study-section">
-            <h2>5. Web Tool for Admins</h2>
-            <p>I also led the design of the web administration panel, which took extensive discussion with the content team, developers and technology leaders to align on.</p>
-            <p>Most of that discussion was about class metadata, and it was the hardest part of the tool to get right. Every class carries a body position, a language, an instructor, an intensity, a category and a media set &mdash; and those fields are what make an adapted version findable rather than buried. If the metadata model is wrong, no amount of filtering on the member side recovers it. Getting the content team to a shared vocabulary for those fields took longer than designing the screens that display them.</p>
-            <p>The panel was also designed past the size the company was at the time. A tool built only for the classes that existed would have needed replacing the moment the library grew or a second admin joined, so it assumes more classes, more instructors and more than one person managing them.</p>
-
-            <ul>
-                <li>Use Cases/Workflow</li>
-                <li>User Testing</li>
-                <li>Wireframes</li>
-            </ul>
-
-            <p>The image represents a snapshot of the admin panel, which enables the administrator to manage class and instructor information, media files, users, and content tags.</p>
-
-            <figure class="case-study-image">
-                <img src="assets/images/fitness-admin-panel.webp" alt="The web administration panel on a laptop. A List of Classes table with a sidebar for Dashboard, Instructors, Classes, Media Files, User Management and Tags. Each class expands into its versions, with columns for class version, instructor, language, date modified, media count and a published toggle." />
-                <figcaption>List of classes and their class versions</figcaption>
-                <details class="figure-desc">
-                        <summary>Text description of the admin panel table</summary>
-                        <p>The web administration panel, shown on a laptop. A dark sidebar lists Dashboard, Instructors and
-                        Classes &mdash; expanded to Create Class, Create Class Version and Upload Media &mdash; then Media
-                        Files, User Management and Tags, with an Admin account at the foot.</p>
-                    <p>The main pane is headed <strong>List of Classes</strong>, with a search field and an Add button.
-                        The table columns are ID, Class, Category, Class Version, Instructor, Language, Modified, Media
-                        and Published.</p>
-                    <p>Each class expands to show its versions. Sunrise Yoga, a Yoga class, holds six rows pairing a body
-                        position with a language: Standing in ASL and in English, Seated with Some Lower Body in ASL and
-                        in English, and Seated with Little Lower Body in ASL and in English &mdash; all taught by Fiona,
-                        each with five media files. Power Yoga, Zumba and Cardio follow, with published toggles on or
-                        off.</p>
-                    <p>The structure is the point: a class is not one video with settings attached, it is a set of
-                        versions the content team creates and publishes individually.</p>
-                    </details>
-                </figure>
-        </section>
-
         <section id="measurement" class="case-study-section">
-            <h2>6. Defining success</h2>
+            <h2>5. Post-Launch Feedback</h2>
             <p>The app shipped without an agreed definition of working. Before it could be improved on evidence rather than opinion, the measures had to be chosen, agreed with the business, and made collectable.</p>
 
-            <h3>6.1. The metrics, and why each one</h3>
+            <h3>5.1. The metrics, and why each one</h3>
             <p>Four measure the experience, two answer questions the business had asked. Each is paired with a published average, so a first reading means something on its own rather than only in comparison with a later one.</p>
 
             <dl class="metric-list">
@@ -1083,7 +951,7 @@
 
             <p>SUPR-Q and the SUM technique were considered and set aside: SUPR-Q reads across usability, trust, appearance and loyalty, and SUM folds completion, time, errors and ease into a single figure per task. Both are stronger with a larger sample than this product could supply at the time.</p>
 
-            <h3>6.2. The research behind them</h3>
+            <h3>5.2. The research behind them</h3>
             <p>Feedback was collected two ways: a survey sent to members, and a running document where anything reported by anyone &mdash; members, the internal team, external reviewers &mdash; could be logged in one place rather than living in whoever&rsquo;s inbox it arrived in.</p>
             <p>The survey was built in three sections against the three things worth asking about: content, accessibility, and the split screen. Three questions to open &mdash; frequency of use, disability status, assistive technology &mdash; then nine rating questions each with an optional box for the reasoning behind the score, and a closing question asking whether the respondent would join a follow-up interview.</p>
             <p>The ratings run one to seven rather than one to five. A wider scale asks people to discriminate more finely, which makes the reasoning box more likely to be filled in, and the extra points give a mid-range answer somewhere to sit other than the middle. Pairing every score with an optional &ldquo;why&rdquo; is what turned the survey from a set of numbers into something that explained itself.</p>
@@ -1097,7 +965,7 @@
                 <li><strong>An external accessibility review</strong> of the live app, and quality assurance testing against assistive technology.</li>
             </ul>
 
-            <h3>6.3. What it surfaced</h3>
+            <h3>5.3. What it surfaced</h3>
             <p>The survey went through three revisions before it was sent, reviewed by two colleagues and by an external senior researcher. The critique was of the instrument rather than the interface, and most of it was about not putting the burden of a badly built question onto the person answering it:</p>
 
             <ul class="review-list">
@@ -1122,10 +990,15 @@
 
             <p>That is the split screen &mdash; the feature the company leads with on both store listings, and the one this case study opens on. The survey returned the same verdict independently. Finding it is what the measurement was for: without it, the feature would have gone on being described as the product&rsquo;s strength while confusing the people it was built for. The next step I set was A/B testing alternatives rather than defending the design that existed.</p>
             <p>Two findings were already answered. The slider criticism is the problem the stepped audio controls in section 4.4 were built to solve, and quality assurance had turned up that iOS was not announcing the version tags &mdash; the Standing and ASL labels the whole approach depends on being read aloud.</p>
+
+            <h3>5.4. Where this left the product</h3>
+            <p>Building the feedback system is effectively where my work on the product ended, and what came back through it pointed somewhere I had not expected. The strongest theme was not a feature request. Members wanted a sense of community between instructors and students &mdash; the thing a studio gives you that a video library does not.</p>
+            <p>Underneath that sat a supply problem the design could not solve. There are very few fitness instructors with disabilities, so a product built on adapted classes taught by people who share their members&rsquo; experience runs out of instructors before it runs out of demand. That finding moved the company&rsquo;s focus toward training and certifying disabled instructors, which is a different kind of work from designing screens.</p>
+            <p>It is the outcome I find most worth reporting. The measurement was built to tell us whether the product worked, and the most useful thing it returned was that the next constraint was not in the interface at all.</p>
         </section>
 
         <section id="outcome" class="case-study-section">
-            <h2>7. Outcome</h2>
+            <h2>6. Outcome</h2>
             <p>Where the product stood in <strong>December 2025</strong>, the first full reporting point after launch.</p>
 
             <div class="stat-grid">
@@ -1173,13 +1046,6 @@
             </div>
 
             <p>The app was also shortlisted as one of three finalists in the Product Design category of the Business Disability Forum&rsquo;s Disability Smart Impact Awards 2026.</p>
-        </section>
-
-        <section id="learning" class="case-study-section">
-            <h2>8. Learning Experience</h2>
-
-            <h3>8.1. How the work held up</h3>
-            <p>Of those reviews, the assessment that mattered most to me came from an accessibility professional who is blind, reviewing the app for the Blind Institute of Technology, because they tested the two decisions I was least certain about.</p>
 
             <figure class="verdict">
                 <blockquote>
@@ -1189,8 +1055,11 @@
             </figure>
 
             <p>Both points landed on decisions rather than defaults. The stepped controls were chosen for people with limited fine motor control, and this review confirms they hold up for someone navigating by screen reader too. Captions readable on a refreshable braille display depend on captions being real text rather than burned into the video &mdash; a distinction that only surfaces when somebody tests with hardware most teams never have in the room.</p>
+        </section>
 
-            <h3>8.2. What I would carry forward</h3>
+        <section id="learning" class="case-study-section">
+            <h2>7. Learning Experience</h2>
+
             <p>Through this project I gained valuable experience designing with Agile development teams. I learned to involve developers from the beginning, to share Figma files with them continuously rather than at handover, and to take their input on what could be implemented quickly and lightly.</p>
 
             <p>In one instance I had designed a page that would have been computationally taxing to run. Based on their feedback I rebuilt parts of it to be lighter, which showed me the value of asking for developer input several sprints before implementation rather than at the end.</p>
@@ -1206,7 +1075,7 @@
     <div class="page-navigation">
         <div class="nav-title">Case Study Sections</div>
         <div class="nav-items">
-            <a href="#overview" class="nav-item" data-section="overview">
+                        <a href="#overview" class="nav-item" data-section="overview">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
                     <span class="nav-number">1</span>
@@ -1224,7 +1093,7 @@
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
                     <span class="nav-number">3</span>
-                    <span class="nav-label">Conceptualization</span>
+                    <span class="nav-label">Key Features</span>
                 </div>
             </a>
             <a href="#design" class="nav-item" data-section="design">
@@ -1234,35 +1103,28 @@
                     <span class="nav-label">Design</span>
                 </div>
             </a>
-            <a href="#web-tool" class="nav-item" data-section="web-tool">
-                <div class="nav-indicator"></div>
-                <div class="nav-content">
-                    <span class="nav-number">5</span>
-                    <span class="nav-label">Web Tool</span>
-                </div>
-            </a>
             <a href="#measurement" class="nav-item" data-section="measurement">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">6</span>
-                    <span class="nav-label">Success</span>
+                    <span class="nav-number">5</span>
+                    <span class="nav-label">Feedback</span>
                 </div>
             </a>
             <a href="#outcome" class="nav-item" data-section="outcome">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">7</span>
+                    <span class="nav-number">6</span>
                     <span class="nav-label">Outcome</span>
                 </div>
             </a>
             <a href="#learning" class="nav-item" data-section="learning">
                 <div class="nav-indicator"></div>
                 <div class="nav-content">
-                    <span class="nav-number">8</span>
+                    <span class="nav-number">7</span>
                     <span class="nav-label">Learning</span>
                 </div>
             </a>
-        </div>
+</div>
     </div>
 
     <!-- Scroll to Top Button -->
