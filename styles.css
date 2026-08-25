@@ -630,6 +630,10 @@ main {
     background-color: #63397d;
 }
 
+.trauma-informed .project-accent {
+    background-color: #165364;
+}
+
 .workshop-project .project-accent {
     background-color: #0693e3;
 }
@@ -701,6 +705,11 @@ main {
     transform: none;
 }
 
+/* no arrow: there is nothing to go to yet */
+.project-link.coming-soon::after {
+    content: none;
+}
+
 .project-image {
     width: 400px;
     height: 280px;
@@ -722,6 +731,14 @@ main {
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* A card whose art is a single icon rather than a screenshot: the icon
+   sits small and centred instead of filling the frame. */
+.project-image--icon img {
+    max-height: 150px;
+    width: auto;
+    box-shadow: none;
 }
 
 /* Special handling for different image types */
