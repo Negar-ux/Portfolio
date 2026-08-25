@@ -445,9 +445,15 @@ body.cs-workshops   { --cs-accent: #a33468; }
         line-height: 1.5 !important;
     }
 
-    .target-groups li {
-        font-size: 16px !important;
-        padding: 0.75rem 0 !important;
+    /* `.target-groups li` also matched the barrier bullets nested inside
+       each card, and left the cards with no horizontal padding at all. */
+    .target-groups > li {
+        padding: 1.25rem !important;
+    }
+
+    .case-study-section .target-groups__barriers {
+        padding-left: 0 !important;
+        margin: 0.75rem 0 0 !important;
     }
 
     .case-study-section ol li {

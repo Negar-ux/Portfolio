@@ -159,8 +159,8 @@
             margin-bottom: 0.7rem;
             padding-left: 1rem;
             border-left: 3px solid var(--cs-accent, #1b212e);
-            font-size: 20px !important;
-            line-height: 1.7;
+            font-size: 16px !important;
+            line-height: 1.7 !important;
             color: var(--text-secondary, #565656);
         }
 
@@ -318,9 +318,28 @@
             position: relative;
             margin-bottom: 0.7rem;
             padding-left: 1.1rem;
-            font-size: 20px !important;
-            line-height: 1.7;
+            font-size: 16px !important;
+            line-height: 1.7 !important;
             color: var(--text-secondary, #565656);
+        }
+
+        /* Track the body text at every breakpoint. case-study.css scales
+           .case-study-section p 16 -> 18 -> 20; these lists must move with
+           it, or they end up larger than the prose on small screens. */
+        @media (min-width: 1200px) {
+            .case-study-section .measure-list li,
+            .case-study-section .finding-list li,
+            .case-study-section ul.review-list li {
+                font-size: 18px !important;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .case-study-section .measure-list li,
+            .case-study-section .finding-list li,
+            .case-study-section ul.review-list li {
+                font-size: 20px !important;
+            }
         }
 
         .case-study-section .measure-list li::before,
@@ -423,6 +442,11 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 1.25rem;
         }
+
+        /* a page-level `.case-study-section ul` rule indents this grid away
+           from the body text. Override only the padding: raising the base
+           rule's specificity would stop the 820px rule stacking the cards. */
+        .case-study-section .target-groups { padding-left: 0 !important; }
 
         .target-groups > li {
             padding: 1.5rem;
