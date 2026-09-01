@@ -594,6 +594,14 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
     font-family: 'Merriweather Sans', sans-serif;
 }
 
+.case-study-disclosure {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-size: 14px;
+    color: var(--text-secondary, #565656);
+}
+
 .case-study-nav {
     display: flex;
     justify-content: space-between;
