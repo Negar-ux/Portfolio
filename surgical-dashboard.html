@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="case-study.css">
     <script src="dark-mode.js"></script>
@@ -47,7 +47,7 @@
             --text-muted: #666;
             --border-color: #e0e4e7;
             --shadow-color: rgba(0, 0, 0, 0.1);
-            --accent-blue: #0693e3;
+            --accent-blue: #0063a6;
             --accent-dark-blue: #067bc2;
             --accent-pink: #a33468;
         }
@@ -94,7 +94,7 @@
             color: var(--text-primary);
             margin-bottom: 0.5rem;
             font-size: 28px;
-            font-family: 'Merriweather Sans', sans-serif;
+            font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
             font-weight: 500;
         }
 
@@ -115,7 +115,7 @@
             border: 2px solid var(--border-color);
             border-radius: 8px;
             font-size: 15px;
-            font-family: 'Merriweather', serif;
+            font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
             color: var(--text-primary);
             background-color: var(--bg-secondary);
             box-sizing: border-box;
@@ -146,7 +146,7 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Merriweather Sans', sans-serif;
+            font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
         }
 
         .password-submit {
@@ -439,6 +439,57 @@
                 margin: 0.75rem 0 !important;
             }
         }
+
+        /* Dark mode contrast: the pastel callout boxes and inline-coloured
+           text were written for a white page, so they get dark tints and
+           lighter text colours here. */
+        [data-theme="dark"] .password-submit {
+            color: #000000;
+        }
+
+        [data-theme="dark"] [style*="background-color: #e0f2fe"] {
+            background-color: #0c2a3d !important;
+        }
+
+        [data-theme="dark"] [style*="background-color: #d1fae5"] {
+            background-color: #0b2e22 !important;
+        }
+
+        [data-theme="dark"] [style*="background-color: #fef3c7"] {
+            background-color: #33260a !important;
+        }
+
+        [data-theme="dark"] [style*="background-color: #f8f9fa"] {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] [style*="color: #0f172a"] {
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] [style*="color: #666"] {
+            color: var(--text-muted) !important;
+        }
+
+        [data-theme="dark"] [style*="background-color: #e0f2fe"] [style*="color: #666"] {
+            color: var(--text-secondary) !important;
+        }
+
+        [data-theme="dark"] [style*="color: #475569"] {
+            color: #94a3b8 !important;
+        }
+
+        [data-theme="dark"] [style*="color: #0284c7"] {
+            color: #38bdf8 !important;
+        }
+
+        [data-theme="dark"] [style*="color: #059669"] {
+            color: #34d399 !important;
+        }
+
+        [data-theme="dark"] [style*="color: #d97706"] {
+            color: #fbbf24 !important;
+        }
     </style>
 </head>
 <body class="cs-surgical">
@@ -541,23 +592,19 @@
     </script>
 
     <header>
-        <nav>
+        <nav aria-label="Main">
+            <a class="brand" href="index.html">Negar Deilami</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle active">My Work <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html#product-design" class="active">Product Design</a></li>
-                        <li><a href="index.html#research">Design Thinking Research</a></li>
-                    </ul>
-                </li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="index.html#contact" class="contact-nav">Get in touch</a></li>
+                <li><a href="index.html#work" aria-current="true">Work</a></li>
+                <li><a href="workshops.html">Workshops &amp; Research</a></li>
+                <li><a href="about-me.html">About</a></li>
+                <li><a href="assets/resume/Negar_Deilami_Resume.pdf">Resume (PDF)</a></li>
+                <li><a href="index.html#contact" class="contact-nav">Contact</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <span class="sun-icon">☀️</span>

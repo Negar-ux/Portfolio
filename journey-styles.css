@@ -323,7 +323,7 @@ body {
 .nav-number {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #999;
+    color: #595959;
     min-width: 24px;
     width: 24px;
     height: 24px;
@@ -426,7 +426,7 @@ body {
     background: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 25px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: #565656;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -546,7 +546,7 @@ body {
 }
 
 .timeline-year {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #565656;
     font-weight: 600;
     text-align: center;
@@ -613,10 +613,10 @@ body {
 .achievement-badge {
     display: inline-block;
     background: #67e0ff;
-    color: white;
+    color: #000000;
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 600;
     margin-top: 16px;
     margin-bottom: 12px;
@@ -657,7 +657,7 @@ body {
     color: #565656;
     padding: 4px 12px;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 500;
 }
 
@@ -689,7 +689,7 @@ body {
     color: #666;
     padding: 4px 8px;
     border-radius: 8px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 12px;
     border: 1px solid #ddd;
@@ -703,7 +703,7 @@ body {
 }
 
 .pub-authors {
-    color: #888;
+    color: #666;
     font-style: italic;
     margin-bottom: 8px;
     font-size: 0.9rem;
@@ -733,7 +733,7 @@ body {
     color: #565656;
     padding: 4px 12px;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 500;
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
@@ -1094,6 +1094,10 @@ body {
     text-align: center;
 }
 
+.journey-cta p {
+    color: #d4d4d4;
+}
+
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 24px;
@@ -1297,7 +1301,7 @@ body {
     }
 
     .timeline-year {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         padding: 3px 4px;
         min-width: 50px;
         max-width: 60px;
@@ -1490,5 +1494,80 @@ body {
 
     .highlight-number {
         color: var(--accent-cyan);
+    }
+}
+
+/* Dark mode contrast fixes: sections and cards that kept their light
+   backgrounds, and grey text that was too dim on dark surfaces. */
+[data-theme="dark"] {
+    .skills-section,
+    .resume-section {
+        background: var(--bg-secondary);
+    }
+
+    .journey-timeline-section {
+        background: var(--bg-primary);
+    }
+
+    .skill-category,
+    .timeline-content,
+    .publication-card,
+    .resume-download {
+        background: var(--card-bg);
+        border-color: var(--border-color);
+    }
+
+    .timeline-content h4,
+    .pub-content h4 {
+        color: var(--text-primary);
+    }
+
+    .timeline-year {
+        background: var(--card-bg);
+        border-color: var(--border-color);
+        color: var(--text-secondary);
+    }
+
+    .timeline-location,
+    .timeline-details p,
+    .pub-venue,
+    .pub-description {
+        color: var(--text-secondary);
+    }
+
+    .timeline-location {
+        border-bottom-color: var(--border-color);
+    }
+
+    .pub-authors,
+    .pub-year {
+        color: var(--text-muted);
+    }
+
+    .resume-button {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--text-primary);
+    }
+
+    .skill-badge,
+    .skills-used span,
+    .impact-badge {
+        background: var(--bg-primary);
+        border-color: var(--border-color);
+        color: var(--text-secondary);
+    }
+
+    .skills-section .section-description,
+    .journey-timeline-section .section-description,
+    .resume-section .section-description,
+    .resume-info p {
+        color: var(--text-secondary);
+    }
+
+    .timeline-section-title,
+    .skill-category h3,
+    .resume-info h3 {
+        color: var(--text-primary);
     }
 }

@@ -20,7 +20,7 @@
     --accent-pink: #a33468;
     --accent-yellow: #fff845;
     --accent-cyan: #67e0ff;
-    --accent-blue: #0693e3;
+    --accent-blue: #0063a6;
     --accent-dark-blue: #067bc2;
 }
 
@@ -57,7 +57,7 @@ a:hover, button:hover, .hamburger:hover, .mobile-hamburger:hover {
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 200;
     line-height: 1.6;
     color: var(--text-primary);
@@ -102,7 +102,7 @@ body {
 
 /* Typography */
 h1, h2, h3 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -140,15 +140,19 @@ p {
 
 /* Header and Navigation */
 header {
-    background-color: var(--bg-header);
+    background-color: var(--bg-primary);
     padding: 1rem 0;
     box-shadow: 0 2px 4px var(--shadow-color);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
     transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: var(--bg-header);
+    backdrop-filter: blur(10px);
 }
 
 nav {
@@ -168,7 +172,7 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--text-primary);
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     font-size: 14px;
     padding: 0.4rem 0.8rem;
@@ -237,8 +241,14 @@ nav a.contact-nav::before {
 
 /* Dark Mode Toggle Button */
 .theme-toggle {
-    display: none !important; /* Hidden for now - will work on dark mode later */
-    visibility: hidden !important;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
@@ -333,7 +343,11 @@ nav a.contact-nav::before {
 }
 
 .dropdown-menu a:hover {
-    color: #67e0ff;
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-decoration-color: #67e0ff;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
     transform: none;
 }
 
@@ -442,7 +456,7 @@ main {
 /* Hero Typography */
 .hero h1 {
     font-size: 4rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 300;
     color: #000000;
     margin-bottom: 1rem;
@@ -451,9 +465,9 @@ main {
 
 .hero h2 {
     font-size: 2.5rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 500;
-    color: #67e0ff;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     line-height: 1.3;
 }
@@ -461,7 +475,7 @@ main {
 .hero-location {
     font-size: 1.1rem;
     color: #666666;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     margin-bottom: 3rem;
     line-height: 1.4;
@@ -470,7 +484,7 @@ main {
 .hero-description {
     font-size: 1.2rem;
     color: #565656;
-    font-family: 'Merriweather', serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     line-height: 1.6;
     margin-bottom: 2.5rem;
     max-width: 600px;
@@ -510,7 +524,7 @@ main {
     text-decoration: none;
     border: 1.5px solid #000000;
     border-radius: 4px;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     font-size: 18px;
     transition: all 0.3s ease;
@@ -607,10 +621,10 @@ main {
 }
 
 .project-number {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #888;
+    color: var(--text-muted);
     letter-spacing: 1px;
 }
 
@@ -659,9 +673,9 @@ main {
 
 .project-type {
     font-size: 14px;
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 2rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
@@ -675,7 +689,7 @@ main {
     text-decoration: none;
     border: 1.5px solid #000000;
     border-radius: 4px;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     font-size: 18px;
     transition: all 0.3s ease;
@@ -767,7 +781,7 @@ main {
 
 .project-image figcaption {
     font-size: 12px;
-    color: #888;
+    color: var(--text-muted);
     text-align: center;
     margin-top: 0.5rem;
     font-style: italic;
@@ -863,7 +877,7 @@ main {
 }
 
 .publication a {
-    color: #0693e3;
+    color: var(--accent-blue);
     text-decoration: none;
 }
 
@@ -877,6 +891,10 @@ footer {
     color: white;
     padding: 3rem 2rem;
     text-align: center;
+}
+
+footer p {
+    color: #d4d4d4;
 }
 
 .social-links {
@@ -934,7 +952,7 @@ footer {
     font-weight: 400;
     color: #ffffff;
     margin-bottom: 1.5rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 
 .contact-text p {
@@ -960,7 +978,7 @@ footer {
     min-width: 120px;
     text-decoration: none;
     border-radius: 4px;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     font-size: 18px;
     transition: all 0.3s ease;
@@ -1085,11 +1103,11 @@ footer {
 }
 
 .nav-item:hover {
-    color: #67e0ff;
+    color: var(--text-primary);
 }
 
 .nav-item.active {
-    color: #67e0ff;
+    color: var(--text-primary);
 }
 
 .nav-indicator {
@@ -1106,7 +1124,7 @@ footer {
 .nav-number {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #999;
+    color: #595959;
     min-width: 24px;
     width: 24px;
     height: 24px;
@@ -1375,7 +1393,7 @@ footer {
     }
 
     .mobile-menu-overlay .menu-item {
-        font-family: 'Merriweather Sans', sans-serif;
+        font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
         font-size: 24px;
         font-weight: 400;
         color: #000000;
@@ -1392,7 +1410,7 @@ footer {
     }
 
     .mobile-menu-overlay .menu-item:hover {
-        color: #67e0ff;
+        color: var(--text-primary);
         transform: translateY(-2px);
     }
 
@@ -1738,9 +1756,9 @@ footer {
 .highlight-number {
     font-size: 2.5rem;
     font-weight: 400;
-    color: #67e0ff;
+    color: var(--text-primary);
     margin-bottom: 8px;
-    font-family: 'Merriweather', serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 
 .highlight-label {
@@ -1800,7 +1818,7 @@ footer {
     margin-top: 16px;
     padding: 12px 24px;
     background: #f8f9fa;
-    color: #67e0ff;
+    color: var(--text-primary);
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
@@ -1942,15 +1960,12 @@ footer {
     }
 
     /* CTA Button */
+    /* Matches .project-link: dark fill, light border, and the normal hover
+       (shadow yellow -> cyan). A yellow fill made the yellow shadow vanish. */
     .cta-button {
-        background-color: var(--accent-yellow);
-        color: #000000;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
         border-color: var(--text-primary);
-    }
-
-    .cta-button:hover {
-        background-color: var(--accent-yellow);
-        box-shadow: 8px 8px 0px var(--accent-cyan);
     }
 
     /* Contact Navigation Button */
@@ -1980,15 +1995,12 @@ footer {
         color: var(--accent-blue);
     }
 
+    /* Same hover as light mode (shadow yellow -> cyan, fill stays); the border
+       uses the text colour so the button edge is clearly visible */
     .project-link {
         background-color: var(--bg-secondary);
         color: var(--text-primary);
-        border-color: var(--border-color);
-    }
-
-    .project-link:hover {
-        background-color: var(--accent-cyan);
-        color: #000000;
+        border-color: var(--text-primary);
     }
 
     /* Section Headers */
@@ -2106,6 +2118,60 @@ footer {
 }
 
 
+/* Dark mode keeps its original look: the light-mode contrast fixes above
+   (black text instead of cyan text) are restored to the previous dark
+   values here, and the contrast fixes for dark mode follow. */
+[data-theme="dark"] {
+    .research-link,
+    .highlight-number {
+        color: #67e0ff;
+    }
+
+    /* Menu links match light mode: plain text colour, hover shows the cyan bar
+       (top level) or the cyan underline (submenu) */
+    nav a,
+    .dropdown-menu a {
+        color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-overlay .menu-item:hover {
+            color: #67e0ff;
+        }
+    }
+
+    /* Contrast fixes for dark mode (WCAG AA) */
+    .research-project h4 {
+        color: var(--text-primary);
+    }
+
+    .research-project h6,
+    .research-project em {
+        color: var(--text-secondary);
+    }
+
+    .section-divider {
+        background: var(--bg-primary);
+    }
+
+    /* Same dark button as .project-link: dark fill, light border and text */
+    .contact-primary-btn {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--text-primary);
+    }
+
+    .nav-title {
+        color: var(--text-secondary);
+    }
+
+    .nav-number {
+        color: var(--text-secondary);
+        background: var(--border-color);
+    }
+}
+
+
 /* Respect the operating-system reduced-motion preference.
    Motion is a barrier for people with vestibular disorders and can trigger
    migraine or nausea; WCAG 2.3.3 Animation from Interactions asks that motion
@@ -2118,5 +2184,116 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* Brand header on the case study pages: a black bar like Home, About and Workshops.
+   Yellow marks hover, a wavy cyan line marks the section you are in. */
+header,
+header.scrolled {
+    background-color: #111111;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+header .brand {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #ffffff;
+    padding: 8px 0;
+    border: none;
+    border-radius: 0;
+}
+
+header nav ul {
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 28px 20px 30px 18px / 20px 30px 18px 28px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+header nav a::before {
+    display: none;
+}
+
+header nav a:hover {
+    background-color: #fff845;
+    color: #111111;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transform: none;
+}
+
+header nav a[aria-current] {
+    text-decoration: underline wavy #67e0ff;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+header nav a[aria-current]:hover {
+    text-decoration-color: #111111;
+}
+
+header nav a.brand:hover {
+    background: none;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav a.contact-nav {
+    padding: 0 18px;
+    border: none;
+    border-radius: 999px;
+    background-color: #fff845;
+    color: #111111;
+    box-shadow: 3px 3px 0 #ff1493;
+    transform: none;
+}
+
+header nav a.contact-nav:hover {
+    background-color: #fff845;
+    color: #111111;
+    box-shadow: 3px 3px 0 #ff1493;
+    transform: translate(-1px, -1px);
+}
+
+header .hamburger span {
+    background-color: #ffffff;
+}
+
+header .theme-toggle:hover {
+    background-color: #333333;
+}
+
+@media (max-width: 768px) {
+    header nav ul#nav-menu.active {
+        background: #111111;
+    }
+
+    header nav ul#nav-menu.active a {
+        color: #ffffff;
+    }
+
+    header nav ul#nav-menu.active a:hover,
+    header nav ul#nav-menu.active a.contact-nav {
+        color: #111111;
     }
 }

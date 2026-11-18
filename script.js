@@ -92,13 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollTop > 100) {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.backgroundColor = '#ffffff';
-            header.style.backdropFilter = 'none';
-        }
+        // The colours live in CSS (header.scrolled) so they follow the theme
+        header.classList.toggle('scrolled', scrollTop > 100);
 
         // Update active navigation based on current section
         updateActiveNavigation();
@@ -111,6 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Don't update navigation on mobile view
         const isMobile = window.innerWidth <= 768;
         if (isMobile) {
+            return;
+        }
+
+        // Only the home page highlights nav links by scroll position; every other
+        // page marks its own link as active in the HTML and must keep it.
+        if (!document.getElementById('home')) {
             return;
         }
 
@@ -144,6 +145,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     href === '#product-design' || href === '#research' ||
                     href === 'index.html#product-design' || href === 'index.html#research') {
                     link.classList.remove('active');
+                }
+            }
+            // The sections inside the My Work dropdown highlight the My Work button,
+            // since the dropdown item itself is hidden unless hovered
+            else if (link.classList.contains('dropdown-toggle')) {
+                if (current === 'product-design' || current === 'research') {
+                    link.classList.add('active');
                 }
             }
             // For other sections, don't add active class to dropdown toggle buttons

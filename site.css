@@ -1,0 +1,1008 @@
+/* Redesigned pages: Home, About and Workshops & Research.
+   Fonts: Atkinson Hyperlegible (body), Bricolage Grotesque (headings),
+   Caveat (short handwritten notes only). */
+
+:root {
+    --ink: #111111;
+    --paper: #faf5ea;
+    --yellow: #fff845;
+    --cyan: #67e0ff;
+    --pink: #ff1493;
+    --pink-text: #c4146f;
+    --muted: #4a463f;
+    --rule: #e3dccb;
+    --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    --font-head: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-hand: 'Caveat', 'Segoe Print', cursive;
+
+    /* Slightly uneven corners so boxes look drawn, not generated. */
+    --wobble-a: 28px 20px 30px 18px / 20px 30px 18px 28px;
+    --wobble-b: 20px 30px 18px 28px / 30px 18px 28px 20px;
+    --pop: 6px 6px 0 var(--ink);
+
+    /* Content cards, case studies and publications stay straight and tidy. */
+    --radius: 20px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* The pink cursor from the original site. */
+body {
+    margin: 0;
+    background: var(--paper);
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><defs><filter id="shadow"><feDropShadow dx="2" dy="2" stdDeviation="1" flood-color="%23fff845" flood-opacity="0.8"/></filter></defs><path d="M2 2l0 18 5-5 3 8 3-1-3-8 6 0z" fill="%23ff1493" stroke="%23000000" stroke-width="2" filter="url(%23shadow)"/></svg>') 2 2, auto;
+}
+
+a,
+button,
+[role="button"] {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><defs><filter id="shadow-hand"><feDropShadow dx="2" dy="2" stdDeviation="1" flood-color="%23fff845" flood-opacity="0.8"/></filter></defs><path d="M8 4c0-1.1 0.9-2 2-2s2 0.9 2 2v12h1V7c0-1.1 0.9-2 2-2s2 0.9 2 2v9h1V8c0-1.1 0.9-2 2-2s2 0.9 2 2v8h1V10c0-1.1 0.9-2 2-2s2 0.9 2 2v12c0 3.3-2.7 6-6 6H12c-2.2 0-4.2-1.1-5.4-2.9L4.2 20c-0.4-0.6-0.3-1.4 0.3-1.8l1.5-1c0.6-0.4 1.4-0.3 1.8 0.3L8 19V4z" fill="%23ff1493" stroke="%23000000" stroke-width="2" filter="url(%23shadow-hand)"/></svg>') 14 18, pointer;
+}
+
+.page {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.dark {
+    background: var(--ink);
+    color: #ffffff;
+}
+
+/* Plain links in running text. Classed links (buttons, nav) style themselves. */
+a:not([class]) {
+    color: var(--ink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.dark a:not([class]) {
+    color: var(--yellow);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible {
+    outline-color: var(--yellow);
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* Header and navigation */
+.site-header .wrap {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 22px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: var(--wobble-a);
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    background: var(--yellow);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.nav-link[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--cyan);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+.nav-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 var(--pink);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: var(--wobble-b);
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+}
+
+.btn--lg {
+    min-height: 52px;
+    padding: 0 26px;
+}
+
+.btn--yellow {
+    background: var(--yellow);
+    color: var(--ink);
+    box-shadow: 4px 4px 0 var(--pink);
+}
+
+.btn--outline-light {
+    border-color: #ffffff;
+    background: transparent;
+    color: #ffffff;
+}
+
+.btn--outline-ink {
+    background: #ffffff;
+    color: var(--ink);
+    box-shadow: 4px 4px 0 var(--cyan);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .btn,
+    .card,
+    .project {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px) rotate(-1deg);
+}
+
+/* Hero */
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px 96px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    align-items: center;
+}
+
+.hero--short {
+    padding: 72px 32px 72px;
+    gap: 48px;
+}
+
+.hero__text {
+    flex: 999 1 560px;
+    min-width: 0;
+}
+
+.eyebrow {
+    margin: 0 0 16px;
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+.hero h1 {
+    font-family: var(--font-head);
+    font-size: 3.4rem;
+    line-height: 1.15;
+    margin: 0 0 28px;
+    font-weight: 800;
+}
+
+.hero--short h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+}
+
+/* Highlighted words get a hand-drawn wavy underline. */
+.hl {
+    color: var(--yellow);
+    padding-bottom: 0.14em;
+    background: url('assets/doodles/squiggle-yellow.svg') repeat-x left bottom / 40px 10px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.hero__lead {
+    margin: 0 0 32px;
+    font-size: 1.2rem;
+    color: #f4f3f8;
+    max-width: 640px;
+}
+
+.hero__tagline {
+    margin: 0;
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Portrait, with a sticker-style note and doodles around it. */
+.portrait-wrap {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.portrait-wrap::before,
+.portrait-wrap::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.portrait-wrap::before {
+    top: -22px;
+    right: -18px;
+    width: 52px;
+    height: 52px;
+    background-image: url('assets/doodles/sparkle.svg');
+    transform: rotate(12deg);
+    z-index: 2;
+}
+
+.portrait-wrap::after {
+    bottom: -18px;
+    left: -26px;
+    width: 44px;
+    height: 58px;
+    background-image: url('assets/doodles/pink-cursor.svg');
+    transform: rotate(-8deg);
+    z-index: 2;
+}
+
+.note {
+    position: absolute;
+    top: -46px;
+    left: 6px;
+    font-family: var(--font-hand);
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--yellow);
+    transform: rotate(-5deg);
+    white-space: nowrap;
+}
+
+.note::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 40%;
+    width: 44px;
+    height: 40px;
+    margin-left: 4px;
+    background: url('assets/doodles/arrow.svg') no-repeat center / contain;
+}
+
+.portrait {
+    width: 300px;
+    height: 370px;
+    border-radius: 160px 140px 28px 20px / 150px 160px 22px 30px;
+    background: var(--cyan);
+    border: 3px solid #ffffff;
+    box-shadow: 9px 9px 0 var(--pink);
+    transform: rotate(1.5deg);
+    overflow: hidden;
+}
+
+.portrait--small {
+    width: 240px;
+    height: 300px;
+    border-radius: 130px 110px 24px 18px / 120px 130px 20px 26px;
+}
+
+.portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Main content */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 88px;
+}
+
+.main--text {
+    padding-top: 64px;
+}
+
+.main h2 {
+    font-family: var(--font-head);
+    margin: 0;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.section-title .dot {
+    color: var(--pink-text);
+}
+
+/* A short drawn squiggle under each section heading. */
+.section-title::after,
+.prose h2::after {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 10px;
+    margin-top: 6px;
+    background: url('assets/doodles/squiggle-cyan.svg') repeat-x left center / 40px 10px;
+}
+
+.section-intro {
+    margin: 14px 0 32px;
+    max-width: 760px;
+}
+
+/* Cards: wobbly outline, offset shadow, a little tilt like paper pinned to a board. */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: -40px;
+}
+
+.card,
+.project {
+    background: #ffffff;
+    border: 2.5px solid var(--ink);
+    box-shadow: var(--pop);
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex: 1 1 300px;
+    border-radius: var(--radius);
+    padding: 30px;
+    gap: 10px;
+}
+
+.card h2 {
+    font-size: 1.45rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.card__link {
+    margin-top: auto;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* Project cards */
+.work {
+    margin-top: 88px;
+}
+
+.work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.project {
+    flex: 1 1 300px;
+    border-radius: var(--radius);
+    padding: 24px;
+    gap: 12px;
+}
+
+.card:hover,
+.project:hover {
+    transform: translate(-2px, -3px);
+    box-shadow: 9px 9px 0 var(--ink);
+}
+
+.project--wide {
+    flex: 2 1 560px;
+}
+
+.project__cover {
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    background: var(--cyan);
+    overflow: hidden;
+}
+
+/* Covers show the whole picture: the box takes the image's own shape. */
+.project__cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project__cover--contain {
+    height: 320px;
+    background: #fdefc9;
+}
+
+.project__cover--contain img {
+    height: 100%;
+    object-fit: contain;
+    padding: 24px;
+}
+
+/* The fitness cover is a tall picture, so it sits beside the text instead of above it. */
+.project--wide.project--tall {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
+
+.project--wide.project--tall .project__cover {
+    flex: 0 0 50%;
+}
+
+.project__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.project__meta {
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.project h3 {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.project--wide.project--tall h3 {
+    font-size: 1.6rem;
+}
+
+.project p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.pill {
+    align-self: flex-start;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ink);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project__partner {
+    padding-top: 12px;
+    border-top: 2px dashed var(--rule);
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.project__partner strong {
+    color: var(--ink);
+}
+
+/* Contact panel */
+.contact {
+    position: relative;
+    margin-top: 88px;
+    border: 3px solid var(--ink);
+    border-radius: var(--wobble-a);
+    box-shadow: 8px 8px 0 var(--pink);
+    padding: 56px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 36px;
+    width: 52px;
+    height: 52px;
+    background: url('assets/doodles/sparkle.svg') no-repeat center / contain;
+    transform: rotate(-10deg);
+    pointer-events: none;
+}
+
+.contact--compact {
+    padding: 48px;
+}
+
+.contact__text {
+    flex: 1 1 460px;
+}
+
+.contact h2 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.contact--compact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.contact p {
+    margin: 0;
+    max-width: 640px;
+    color: #e4e3ea;
+}
+
+.contact__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Text pages (About, Workshops) */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.prose {
+    flex: 999 1 560px;
+    min-width: 0;
+    max-width: 760px;
+}
+
+.prose h2 {
+    font-size: 1.8rem;
+    margin: 0 0 18px;
+}
+
+.prose p {
+    margin: 0 0 40px;
+}
+
+.prose p a {
+    font-weight: 700;
+}
+
+.quote {
+    margin: 0;
+    background: var(--cyan);
+    border: 2.5px solid var(--ink);
+    border-radius: var(--wobble-b);
+    box-shadow: 6px 6px 0 var(--pink);
+    padding: 32px;
+    transform: rotate(-0.6deg);
+}
+
+.quote blockquote {
+    margin: 0 0 12px;
+    font-family: var(--font-head);
+    font-size: 1.45rem;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.quote figcaption {
+    font-family: var(--font-hand);
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.aside {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.aside-card {
+    background: #ffffff;
+    border: 2.5px solid var(--ink);
+    border-radius: var(--wobble-a);
+    box-shadow: var(--pop);
+    padding: 28px;
+    transform: rotate(0.7deg);
+}
+
+.aside-card h2 {
+    font-size: 1.3rem;
+    margin: 0 0 14px;
+}
+
+.aside-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 16px;
+}
+
+.aside-card strong {
+    display: block;
+}
+
+.photo {
+    margin: 0 0 40px;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2.5px solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--pop);
+}
+
+.photo figcaption {
+    margin-top: 14px;
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.citations {
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.citations li {
+    background: #ffffff;
+    border: 2.5px solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: 5px 5px 0 var(--ink);
+    padding: 24px 28px;
+    font-size: 1rem;
+}
+
+.citations .year {
+    display: block;
+    font-family: var(--font-hand);
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 1.6rem;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 2px dashed var(--rule);
+}
+
+.site-footer .wrap {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .wrap,
+    .main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero,
+    .hero--short {
+        padding: 72px 20px 64px;
+        gap: 36px;
+    }
+
+    .hero h1,
+    .hero--short h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero__tagline {
+        font-size: 1.4rem;
+    }
+
+    .portrait-wrap {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .portrait {
+        width: 100%;
+    }
+
+    .portrait-wrap::after {
+        left: -8px;
+    }
+
+    .section-title,
+    .contact h2 {
+        font-size: 1.9rem;
+    }
+
+    .contact,
+    .contact--compact {
+        padding: 36px 24px;
+    }
+
+    .project__cover--contain {
+        height: 220px;
+    }
+}
+
+/* Hamburger button: hidden on wide screens, shown once the menu collapses. */
+.site-header {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+.menu-toggle__bars,
+.menu-toggle__bars::before,
+.menu-toggle__bars::after {
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.menu-toggle__bars {
+    position: relative;
+}
+
+.menu-toggle__bars::before,
+.menu-toggle__bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.menu-toggle__bars::before {
+    top: -7px;
+}
+
+.menu-toggle__bars::after {
+    top: 7px;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars {
+    background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Tablets and below: the full menu no longer fits beside the name, so it collapses. */
+@media (max-width: 900px) {
+    .js .menu-toggle {
+        display: inline-flex;
+    }
+
+    .js .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px 20px 24px;
+        background: var(--ink);
+        border-top: 1px solid #3a3a3a;
+        border-bottom: 4px solid var(--pink);
+    }
+
+    .js .nav-list.is-open {
+        display: flex;
+    }
+
+    .js .nav-link,
+    .js .nav-pill {
+        min-height: 48px;
+        font-size: 1.1rem;
+    }
+
+    .js .nav-pill {
+        justify-content: center;
+        margin-top: 8px;
+    }
+}
+
+/* Tablets: the photo drops under the text here, so leave room for the note above it. */
+@media (min-width: 769px) and (max-width: 1000px) {
+    .hero,
+    .hero--short {
+        row-gap: 96px;
+    }
+}
+
+/* Phones: straight corners, no tilt, calmer doodles. */
+@media (max-width: 768px) {
+    :root {
+        --wobble-a: 16px;
+        --wobble-b: 16px;
+    }
+
+    .pill,
+    .quote,
+    .aside-card,
+    .portrait {
+        transform: none;
+    }
+
+    .portrait {
+        border-radius: 150px 150px 24px 24px;
+    }
+
+    .portrait--small {
+        border-radius: 120px 120px 24px 24px;
+    }
+
+    .project__cover {
+        border-radius: 12px;
+    }
+
+    /* The note and sparkles sit in the gaps on desktop; on a phone they land on the text. */
+    .note,
+    .portrait-wrap::before,
+    .contact::before {
+        display: none;
+    }
+
+    .hero,
+    .hero--short {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 820px) {
+    .project--wide.project--tall {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .project--wide.project--tall .project__cover {
+        flex: none;
+        width: 100%;
+        max-width: 380px;
+        align-self: center;
+    }
+}

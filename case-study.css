@@ -75,7 +75,7 @@
     font-weight: 400;
     color: #000000;
     margin-bottom: 1rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 
 .case-study-hero-simple .subtitle {
@@ -169,7 +169,7 @@ body.cs-hospital    { --cs-accent: #c2410c; }
 body.cs-workshops   { --cs-accent: #a33468; }
 body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purples were too close to cs-surgical */
 
-[data-theme="dark"] body.cs-sekond-skin { --cs-accent: #798bb0; }
+[data-theme="dark"] body.cs-sekond-skin { --cs-accent: #8c9dc2; }
 [data-theme="dark"] body.cs-surgical    { --cs-accent: #a679c2; }
 [data-theme="dark"] body.cs-hospital    { --cs-accent: #f15718; }
 [data-theme="dark"] body.cs-workshops   { --cs-accent: #cf6a99; }
@@ -222,7 +222,7 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
 /* Consistent text coloring */
 .case-study-section h2 {
     color: #000000;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-size: 28px;
     margin-bottom: 1.5rem;
     margin-top: 1rem !important;
@@ -231,7 +231,7 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
 
 .case-study-section h3 {
     color: #000000;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-size: 22px;
     margin-bottom: 1rem;
     margin-top: 2rem;
@@ -301,7 +301,7 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
 }
 
 .case-study-section a {
-    color: #0693e3;
+    color: var(--accent-blue);
     text-decoration: underline;
 }
 
@@ -584,14 +584,14 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
     font-size: 48px;
     font-weight: 500;
     color: #67e0ff;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     margin-bottom: 0.5rem;
 }
 
 .metric-label {
     font-size: 18px;
     color: #565656;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 
 .case-study-nav {
@@ -611,7 +611,7 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
     padding: 16px 32px;
     text-decoration: none !important;
     border-radius: 9999px;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
     font-weight: 400;
     font-size: 18px;
     transition: all 0.3s ease;
@@ -1521,4 +1521,30 @@ body.cs-trauma-informed { --cs-accent: #165364; }  /* brand Dark Teal; the purpl
 
     .flow__row, .focus-cards__grid { grid-template-columns: 1fr; }
     .flow__step::after { display: none; }
+}
+
+/* Dark mode contrast fixes: grey text on dark surfaces, and the fitness-app
+   panels that kept a light grey background. */
+[data-theme="dark"] {
+    .subtitle,
+    .case-study-hero-simple .subtitle {
+        color: var(--text-secondary);
+    }
+
+    .case-study-image figcaption {
+        color: var(--text-muted);
+    }
+
+    .prototype-sections,
+    .dashboard-iterations,
+    .class-detail-iterations,
+    .split-screen-iterations {
+        background-color: var(--bg-secondary) !important;
+    }
+}
+
+/* Headings use Bricolage Grotesque like the rest of the site; body text is Atkinson Hyperlegible. */
+:is(.case-study-hero-simple, .case-study-section, main) :is(h1, h2, h3, h4) {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
 }

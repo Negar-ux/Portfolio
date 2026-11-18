@@ -11,252 +11,143 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negar Deilami - Product Designer</title>
+    <title>Negar Deilami — Product Designer</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet">
     <link rel="preload" href="assets/images/profile-hero.webp" as="image" type="image/webp">
-    <link rel="preload" href="assets/images/profile-hero.jpg" as="image">
-    <link rel="preload" href="assets/images/fitness-app.webp" as="image">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Critical CSS for immediate image containers */
-        .profile-image img, .project-image img {
-            opacity: 1 !important;
-            transition: none !important;
-        }
-        /* Ensure images have dimensions to prevent layout shift */
-        .profile-image {
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
-    <script src="dark-mode.js"></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="site.css">
+    <script src="site.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li class="mobile-close-item" style="display: none;"><button class="mobile-close-btn" id="mobile-close">✕</button></li>
-                <li><a href="#home" class="active">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">My Work <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#product-design">Product Design</a></li>
-                        <li><a href="#research">Design Thinking Research</a></li>
+<div class="page">
+
+    <div class="dark">
+        <header class="site-header">
+            <div class="wrap">
+                <a class="brand" href="index.html">Negar Deilami</a>
+                <nav aria-label="Main">
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu"><span class="menu-toggle__bars" aria-hidden="true"></span></button>
+                    <ul class="nav-list" id="nav-list">
+                        <li><a class="nav-link" href="#work">Work</a></li>
+                        <li><a class="nav-link" href="workshops.html">Workshops &amp; Research</a></li>
+                        <li><a class="nav-link" href="about-me.html">About</a></li>
+                        <li><a class="nav-link" href="assets/resume/Negar_Deilami_Resume.pdf">Resume (PDF)</a></li>
+                        <li><a class="nav-pill" href="#contact">Contact</a></li>
                     </ul>
-                </li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="#contact" class="contact-nav">Get in touch</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                </nav>
+            </div>
+        </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="accent-line"></div>
-                        <h1>Hi, I'm Negar</h1>
-                        <h2>Product Designer</h2>
-                        <p class="hero-location">Based in Toronto</p>
-                        <p class="hero-description">Five years of experience creating inclusive designs in healthcare & fitness industries. I combine academic research with hands-on design practice to build products that make a positive impact.</p>
-                        <a href="about-me.html" class="cta-button">About Me</a>
-                    </div>
+        <section class="hero" aria-labelledby="home-title">
+            <div class="hero__text">
+                <p class="eyebrow">Product Designer · Accessibility &amp; Inclusive Design · Toronto</p>
+                <h1 id="home-title">Hi, I’m Negar. I design <span class="hl">with people, not just for them.</span></h1>
+                <p class="hero__lead">I’m a Product Designer who combines <strong>technical problem-solving</strong> with <strong>empathetic user research</strong>. I’ve worked with early-stage startups and nonprofits. <a href="about-me.html">More about me</a></p>
+                <div class="hero__actions">
+                    <a class="btn btn--yellow" href="#work">See my work</a>
+                    <a class="btn btn--outline-light" href="#contact">Get in touch</a>
+                </div>
+            </div>
+            <div class="portrait-wrap">
+                <span class="note" aria-hidden="true">hi, I’m Negar!</span>
+                <div class="portrait">
+                <picture>
+                    <source srcset="assets/images/profile-hero.webp" type="image/webp">
+                    <img src="assets/images/profile-hero.jpg" alt="Negar Deilami" width="300" height="370" decoding="async">
+                </picture>
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Section Divider -->
-        <div class="section-divider">
-            <div class="separator"></div>
-        </div>
+    <main class="main" id="main">
 
-        <!-- Product Design Section -->
-        <section id="product-design" class="featured-work">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Product Design</h2>
-                    <p class="section-description">Digital product design work including mobile applications, prototyping, and user experience design with a focus on accessibility and inclusive design principles.</p>
-                </div>
-                <div class="projects-grid">
-                    <!-- Project 1: Fitness App -->
-                    <article class="project-card fitness-app">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">01</span>
-                            </div>
-                            <h3>Fitness App for People with Different Abilities</h3>
-                            <p class="project-description">How might we bring a space for people with and without disability to exercise together?</p>
-                            <p class="project-type">Mobile App • Health &amp; Wellness • MVP Design</p>
-                            <a href="fitness-app.html" class="project-link">View Case Study</a>
-                        </div>
-                    <div class="project-image">
-                        <img src="assets/images/fitness-app.webp" alt="Fitness App Project" loading="eager" decoding="sync" />
-                    </div>
-                </article>
-
-                    <!-- Project 2: Trauma-Informed Website Design -->
-                    <article class="project-card trauma-informed">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">02</span>
-                            </div>
-                            <h3>Accessible and Trauma-Informed Website Design</h3>
-                            <p class="project-description">For a nonprofit serving disabled women who have survived domestic violence.</p>
-                            <p class="project-type">Website &bull; Social Impact &bull; Content Architecture</p>
-                            <span class="project-link coming-soon">Case study coming soon</span>
-                        </div>
-                    <div class="project-image project-image--icon">
-                        <img src="assets/images/dv-awareness-ribbon.svg" alt="A purple awareness ribbon, the symbol for domestic violence awareness." loading="lazy" decoding="async" />
-                    </div>
-                </article>
-
-                    <!-- Project 3: Surgical Dashboard -->
-                    <article class="project-card surgical-dashboard">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">03</span>
-                            </div>
-                            <h3>Surgical Scheduling Dashboard</h3>
-                            <p class="project-description">Translating a complex optimization algorithm into an intuitive interface for three organizational levels in healthcare.</p>
-                            <p class="project-type">Web App • Health Tech • Data Visualization</p>
-                            <a href="surgical-dashboard.html" class="project-link">View Case Study</a>
-                        </div>
-                    <div class="project-image">
-                        <img src="assets/images/surgical-dashboard-cover1.png" alt="Surgical Dashboard KPI Overview" loading="eager" decoding="sync" />
-                    </div>
-                </article>
-
-                    <!-- Project 4: Hospital Tool -->
-                    <article class="project-card hospital-tool">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">04</span>
-                            </div>
-                            <h3>Hospital Discharge Journey Tool</h3>
-                            <p class="project-description">Bridging the communication gap between patients, family members and healthcare providers.</p>
-                            <p class="project-type">Tablet App • Health Tech • Concept Design</p>
-                            <a href="hospital-discharge.html" class="project-link">View Case Study</a>
-                        </div>
-                    <div class="project-image">
-                        <img src="assets/images/hospital-discharge.webp" alt="Hospital Discharge Tool" loading="eager" decoding="sync" />
-                    </div>
-                </article>
-
-                </div>
+        <section class="card-row" aria-label="More about me">
+            <div class="card">
+                <h2>Workshops I’ve led</h2>
+                <p>At McMaster, I co-designed and co-facilitated three inclusive design thinking workshops for engineering students.</p>
+                <a class="card__link" href="workshops.html">See my workshops →</a>
+            </div>
+            <div class="card">
+                <h2>Research I’ve published</h2>
+                <p>Three conference papers (CEEA 2023, 2024 and 2025) on equity-driven design in engineering education.</p>
+                <a class="card__link" href="workshops.html#publications">Read my publications →</a>
             </div>
         </section>
 
-        <!-- Section Divider -->
-        <div class="section-divider">
-            <div class="separator"></div>
-        </div>
+        <section class="work" id="work" aria-labelledby="work-title">
+            <h2 class="section-title" id="work-title">Selected work<span class="dot" aria-hidden="true">.</span></h2>
+            <p class="section-intro">Each case study walks through my process, from research to the final design, so you can see how I think, not just what I made.</p>
+            <div class="work-grid">
 
-        <!-- Design Thinking Research Section -->
-        <section id="research" class="featured-work">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Design Thinking Research</h2>
-                    <p class="section-description">Academic research and educational initiatives applying design thinking methodologies to engineering education, workshop facilitation, and inclusive learning environments.</p>
-                </div>
-                <div class="projects-grid">
-                    <!-- Project 1: Workshop Design -->
-                    <article class="project-card workshop-project">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">01</span>
-                            </div>
-                            <h3>Inclusive Innovation Design Challenge Workshops</h3>
-                            <p class="project-description">Co-designed and co-facilitated three inclusive design thinking workshops for engineering students, applying equity-driven approaches to foster inclusive learning environments.</p>
-                            <p class="project-type">Workshops • Engineering Education • Facilitation</p>
-                            <a href="design-workshops.html" class="project-link">View Workshop Case Study</a>
-                        </div>
-                        <div class="project-image">
-                            <img src="assets/images/workshop-photo.jpg" alt="Workshop Facilitation" loading="lazy" />
-                        </div>
-                    </article>
-
-                    <!-- Project 2: Academic Research -->
-                    <article class="project-card research-project">
-                        <div class="project-content">
-                            <div class="project-meta">
-                                <div class="project-accent"></div>
-                                <span class="project-number">02</span>
-                            </div>
-                            <h3>Inclusive Learning Through Equity-Driven Approaches to Design</h3>
-                            <p class="project-description">Exploring ways in which Design Thinking can provide students with a more inclusive environment in the Faculty of Engineering by supporting them in learning equity-driven approaches to design.</p>
-                            <p class="project-type">Academic Research • Engineering Education • Design Thinking</p>
-                            <div class="publications">
-                                <h4>Publications</h4>
-                                <div class="publication">
-                                    <h6>Deilami, N., Ngo, T.-A., Fleisig, R., Park, S., & Hemmerich, A. (2023). <em>Inclusive Learning Through Equity-Driven Approaches to Design in Engineering Education</em>. Proceedings of the Canadian Engineering Education Association (CEEA). <a href="https://journals.scholarsportal.info/details?uri=/23715243/v2023inone/nfp_ilteatdiee.xml" target="_blank">Link</a></h6>
-                                </div>
-                                <div class="publication">
-                                    <h6>Hemmerich, A , Deilami, N., Ngo, T.-A., Park, S., & Fleisig, R. (2024). <em>Fostering Inclusive Learning in Engineering Through Equity-Based Design Education</em>. Paper presented at the Canadian Engineering Education Association (CEEA). <a href="https://drive.google.com/file/d/1ZeCKDgafJkZHg4tKPBou5ln_mkBdEsI3/view?pli=1" target="_blank">Link</a></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-image">
-                            <img src="assets/images/research-presentation.png" alt="Research Presentation" loading="lazy" />
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Divider -->
-        <div class="section-divider">
-            <div class="separator"></div>
-        </div>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-text">
-                        <h2>Let's connect and create</h2>
-                        <p>I'm always excited to collaborate on meaningful projects that make a positive impact. Whether you're looking for a full-time product designer, project-based collaboration, or someone passionate about inclusive design, let's connect!</p>
-                        <div class="contact-buttons">
-                            <a href="mailto:negardeilami@gmail.com" class="contact-btn contact-primary-btn">
-                                Get In Touch
-                            </a>
-                            <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank" class="contact-btn linkedin-btn">
-                                LinkedIn
-                            </a>
-                        </div>
+                <article class="project project--wide project--tall">
+                    <div class="project__cover">
+                        <img src="assets/images/fitness-app.webp" alt="Fitness App Project" loading="eager" decoding="async">
                     </div>
-                </div>
+                    <div class="project__body">
+                        <span class="project__meta">Mobile app · Health &amp; wellness · Research to MVP</span>
+                        <h3><a href="fitness-app.html">Fitness app for people with different abilities</a></h3>
+                        <p>How might we bring people with and without disability together to exercise?</p>
+                    </div>
+                </article>
+
+                <article class="project project--tall">
+                    <div class="project__cover project__cover--contain">
+                        <img src="assets/images/dv-awareness-ribbon.svg" alt="A purple awareness ribbon, the symbol for domestic violence awareness." loading="lazy" decoding="async">
+                    </div>
+                    <span class="project__meta">Website · Social impact</span>
+                    <h3>Accessible, trauma-informed website</h3>
+                    <p>For a nonprofit serving disabled women who have survived domestic violence.</p>
+                    <span class="pill">Case study coming soon</span>
+                </article>
+
+                <article class="project">
+                    <div class="project__cover">
+                        <img src="assets/images/surgical-dashboard-cover1.png" alt="Surgical Dashboard KPI Overview" loading="lazy" decoding="async">
+                    </div>
+                    <span class="project__meta">Web app · Health tech</span>
+                    <h3><a href="surgical-dashboard.html">Surgical scheduling dashboard</a></h3>
+                    <p>A complex algorithm made clear for three levels of a hospital.</p>
+                </article>
+
+                <article class="project project--wide">
+                    <div class="project__cover">
+                        <img src="assets/images/hospital-discharge.webp" alt="Hospital Discharge Tool" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project__badges">
+                        <span class="badge"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path></svg>Master’s project</span>
+                        <span>MEng Design, McMaster University</span>
+                    </div>
+                    <span class="project__meta">Tablet app · Health tech · Concept design</span>
+                    <h3><a href="hospital-discharge.html">Hospital discharge journey tool</a></h3>
+                    <p>Bridging the communication gap between patients, families and care teams.</p>
+                    <p class="project__partner">In partnership with <strong>St. Joseph’s Healthcare Hamilton</strong> · UX Researcher · 8 months</p>
+                </article>
+
             </div>
         </section>
+
+        <section class="contact dark" id="contact" aria-labelledby="contact-title">
+            <div class="contact__text">
+                <h2 id="contact-title">Let’s get in touch!</h2>
+                <p>Hiring a product designer or UX researcher who builds accessibility in from the start? Or have a project in mind? I’d love to hear from you.</p>
+            </div>
+            <div class="contact__actions">
+                <a class="btn btn--lg btn--yellow" href="mailto:negardeilami@gmail.com">Email me</a>
+                <a class="btn btn--lg btn--outline-light" href="https://www.linkedin.com/in/negar-deilami/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© 2026 Negar Deilami · Based in Toronto</span>
+        </div>
     </footer>
+
+</div>
 </body>
 </html>

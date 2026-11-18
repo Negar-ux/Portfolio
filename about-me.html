@@ -11,364 +11,92 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Negar Deilami</title>
+    <title>About — Negar Deilami</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="preload" href="assets/images/profile-hero.jpg" as="image">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="journey-styles.css">
-    <script src="dark-mode.js"></script>
-    <script src="script.js" defer></script>
-    <script src="journey-script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Caveat:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <script src="site.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li class="mobile-close-item" style="display: none;"><button class="mobile-close-btn" id="mobile-close">✕</button></li>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">My Work <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html#product-design">Product Design</a></li>
-                        <li><a href="index.html#research">Design Thinking Research</a></li>
+<div class="page">
+
+    <div class="dark">
+        <header class="site-header">
+            <div class="wrap">
+                <a class="brand" href="index.html">Negar Deilami</a>
+                <nav aria-label="Main">
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu"><span class="menu-toggle__bars" aria-hidden="true"></span></button>
+                    <ul class="nav-list" id="nav-list">
+                        <li><a class="nav-link" href="index.html#work">Work</a></li>
+                        <li><a class="nav-link" href="workshops.html">Workshops &amp; Research</a></li>
+                        <li><a class="nav-link" href="about-me.html" aria-current="page">About</a></li>
+                        <li><a class="nav-link" href="assets/resume/Negar_Deilami_Resume.pdf">Resume (PDF)</a></li>
+                        <li><a class="nav-pill" href="#contact">Contact</a></li>
                     </ul>
-                </li>
-                <li class="mobile-work-item" style="display: none;"><a href="index.html#product-design">Product Design</a></li>
-                <li class="mobile-work-item" style="display: none;"><a href="index.html#research">Design Thinking Research</a></li>
-                <li><a href="about-me.html" class="active">About Me</a></li>
-                <li><a href="index.html#contact" class="contact-nav">Get in touch</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                </nav>
+            </div>
+        </header>
 
-    <main>
-        <!-- Journey Hero Section -->
-        <section class="journey-hero">
-            <div class="container">
-                <div class="journey-hero-content">
-                    <div class="hero-text">
-                        <div class="accent-line"></div>
-                        <h1>My Journey</h1>
-                        <p>From Industrial Engineering to Product Design to Design Thinking Research - my career has been shaped by a passion for inclusive design and making technology accessible to everyone.</p>
-                    </div>
-                    <div class="hero-image">
-                        <picture>
-                            <source srcset="assets/images/profile-hero.webp" type="image/webp">
-                            <img src="assets/images/profile-hero.jpg" alt="Negar Deilami" loading="eager" decoding="sync" />
-                        </picture>
-                    </div>
-                </div>
-
-                <!-- Page Navigation Preview -->
-                <div class="page-navigation">
-                    <div class="nav-title">What's on this page:</div>
-                    <div class="nav-items">
-                        <a href="#skills" class="nav-item" data-section="skills">
-                            <div class="nav-indicator"></div>
-                            <div class="nav-content">
-                                <span class="nav-number">1</span>
-                                <span class="nav-label">Skills & Expertise</span>
-                            </div>
-                        </a>
-                        <a href="#timeline" class="nav-item" data-section="timeline">
-                            <div class="nav-indicator"></div>
-                            <div class="nav-content">
-                                <span class="nav-number">2</span>
-                                <span class="nav-label">Timeline</span>
-                            </div>
-                        </a>
-                        <a href="#resume" class="nav-item" data-section="resume">
-                            <div class="nav-indicator"></div>
-                            <div class="nav-content">
-                                <span class="nav-number">3</span>
-                                <span class="nav-label">Resume</span>
-                            </div>
-                        </a>
-                        <a href="#contact" class="nav-item" data-section="contact">
-                            <div class="nav-indicator"></div>
-                            <div class="nav-content">
-                                <span class="nav-number">4</span>
-                                <span class="nav-label">Get in touch</span>
-                            </div>
-                        </a>
-                    </div>
+        <section class="hero hero--short" aria-labelledby="about-title">
+            <div class="hero__text">
+                <h1 id="about-title">About me</h1>
+                <p class="hero__tagline">I design <span class="hl">with people, not just for them.</span></p>
+            </div>
+            <div class="portrait-wrap">
+                <span class="note" aria-hidden="true">hi again!</span>
+                <div class="portrait portrait--small">
+                <picture>
+                    <source srcset="assets/images/profile-hero.webp" type="image/webp">
+                    <img src="assets/images/profile-hero.jpg" alt="Negar Deilami" width="240" height="300" decoding="async">
+                </picture>
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Skills Overview -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Core Skills & Expertise</h2>
-                    <p class="section-description">Through my diverse experience in engineering, design, and research, I've developed a comprehensive skill set that bridges technical analysis, creative problem-solving, and user-centered design.</p>
-                </div>
-                <div class="skill-categories">
-                    <div class="skill-category" data-category="research">
-                        <div class="skill-icon">🔍</div>
-                        <h3>Research & Analysis</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">User Interviews</span>
-                            <span class="skill-badge">Usability Testing</span>
-                            <span class="skill-badge">Journey Mapping</span>
-                            <span class="skill-badge">Qualitative Coding</span>
-                        </div>
-                    </div>
-                    <div class="skill-category" data-category="design">
-                        <div class="skill-icon">🎨</div>
-                        <h3>Design & Prototyping</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">Figma</span>
-                            <span class="skill-badge">Adobe XD</span>
-                            <span class="skill-badge">Wireframing</span>
-                            <span class="skill-badge">Interactive Prototyping</span>
-                            <span class="skill-badge">Balsamiq</span>
-                        </div>
-                    </div>
-                    <div class="skill-category" data-category="technical">
-                        <div class="skill-icon">⚙️</div>
-                        <h3>Technical Skills</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">HTML/CSS</span>
-                            <span class="skill-badge">RStudio</span>
-                            <span class="skill-badge">Excel</span>
-                            <span class="skill-badge">Claude</span>
-                            <span class="skill-badge">SolidWorks</span>
-                            <span class="skill-badge">Flutter</span>
-                        </div>
-                    </div>
-                </div>
+    <main class="main main--text" id="main">
+        <div class="columns">
+
+            <div class="prose">
+                <h2>Why accessibility, for me</h2>
+                <p>I’m a Product Designer who brings together <strong>technical problem-solving</strong> and <strong>empathetic user research</strong>. My own experience with hearing loss shows me every day how small design decisions can open a door for someone, or quietly close it. It’s also why I value what users bring to the design process.</p>
+
+                <h2>What I’ve worked on</h2>
+                <p>My work is mission-driven, from early-stage startups to the nonprofit sector. I took an <strong>inclusive fitness app from concept to launch</strong>, and designed a website that brings together <strong>web accessibility and trauma-informed design</strong>. <a href="index.html#work">See my work</a></p>
+
+                <h2>Research and teaching</h2>
+                <p>At McMaster University, I co-authored <a href="workshops.html#publications">three conference papers</a> on equity-driven design in engineering education, and co-facilitated <a href="workshops.html">inclusive design workshops</a> for engineering students. That work still shapes how I bring people into my design process today.</p>
+
+                <figure class="quote">
+                    <blockquote>Meaningful accessibility goes beyond the minimum standard. It takes empathetic listening, challenging biases and assumptions, and designing with people rather than just for them.</blockquote>
+                    <figcaption>My guiding philosophy</figcaption>
+                </figure>
             </div>
-        </section>
 
-        <!-- Section Divider -->
-        <div class="section-divider">
-            <div class="separator"></div>
+            <aside class="aside" aria-label="Quick details">
+                <div class="aside-card">
+                    <h2>Education</h2>
+                    <ul>
+                        <li><strong>Master of Engineering Design</strong>McMaster University</li>
+                        <li><strong>BEng, Industrial Engineering</strong>Toronto Metropolitan University</li>
+                    </ul>
+                </div>
+                <a class="btn btn--lg btn--outline-ink" href="assets/resume/Negar_Deilami_Resume.pdf">Download my resume (PDF)</a>
+            </aside>
+
         </div>
 
-        <!-- Interactive Timeline -->
-        <section id="timeline" class="journey-timeline-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Professional Timeline</h2>
-                    <p class="section-description">A chronological overview of my educational background and professional experience, highlighting key achievements and growth in design and research.</p>
-                </div>
-
-                <!-- Education Timeline -->
-                <div class="timeline-section">
-                    <h3 class="timeline-section-title">🎓 Education</h3>
-                    <div class="timeline-track">
-                        <div class="timeline-item education" data-year="2019">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">2019</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Bachelor of Industrial Engineering</h4>
-                                <p class="timeline-location">📍 Toronto Metropolitan University</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item education" data-year="2021">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">2021</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Master of Engineering Design</h4>
-                                <p class="timeline-location">📍 McMaster University</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Timeline -->
-                <div class="timeline-section">
-                    <h3 class="timeline-section-title">💼 Professional Experience</h3>
-                    <div class="timeline-track">
-                        <div class="timeline-item experience" data-year="2023-2026">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">Nov 2023-<br>Feb 2026</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Product Designer</h4>
-                                <p class="timeline-location">🏃‍♀️ Sekond Skin Society, Toronto</p>
-                                <div class="timeline-details">
-                                    <div class="achievement-badge mvp-badge">🚀 MVP Launch Success</div>
-                                    <p>Led end-to-end design process for inclusive fitness mobile app. Successfully launched MVP with limited startup resources while ensuring accessibility compliance for diverse users. Conducted comprehensive user research and designed testing protocols to validate design decisions. Collaborated closely with stakeholders on strategic goals and refined UI elements for assistive technology compatibility.</p>
-                                    <div class="skills-used">
-                                        <span>End-to-end Design</span>
-                                        <span>Accessibility Design</span>
-                                        <span>MVP Development</span>
-                                        <span>Startup Environment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item experience" data-year="2022-2025">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">Oct 2022-<br>Aug 2025</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Design Research Assistant</h4>
-                                <p class="timeline-location">🏫 McMaster University</p>
-                                <div class="timeline-details">
-                                    <p>Applied qualitative coding and research methods to evaluate students' perspectives on design thinking in engineering. Co-facilitated design thinking workshops on EDI principles.</p>
-                                    <div class="skills-used">
-                                        <span>Research Methods</span>
-                                        <span>Workshop Facilitation</span>
-                                        <span>Academic Research</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item experience" data-year="2021-22">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">Jul 2021-<br>Dec 2022</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>UX Consultant</h4>
-                                <p class="timeline-location">📊 Orchid Analytics, Toronto</p>
-                                <div class="timeline-details">
-                                    <p>Documented feedback from weekly meetings with surgical staff to understand workflows. Designed and iterated mid-fidelity prototypes for surgical scheduling dashboard.</p>
-                                    <div class="skills-used">
-                                        <span>Prototyping</span>
-                                        <span>User Workflow Analysis</span>
-                                        <span>Dashboard Design</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item experience" data-year="2021">
-                            <div class="timeline-marker">
-                                <div class="timeline-accent"></div>
-                                <span class="timeline-year">Jan 2021-<br>Aug 2021</span>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Design Researcher Intern</h4>
-                                <p class="timeline-location">🏥 St. Joseph Healthcare, Hamilton</p>
-                                <div class="timeline-details">
-                                    <div class="achievement-counter" data-count="25">25+ User Interviews Conducted</div>
-                                    <p>Conducted extensive user research with caregivers and care teams to understand hospital discharge journey. Presented design recommendations to key stakeholders.</p>
-                                    <div class="skills-used">
-                                        <span>User Research</span>
-                                        <span>Usability Testing</span>
-                                        <span>Stakeholder Presentations</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publications & Impact -->
-                <div class="timeline-section">
-                    <h3 class="timeline-section-title">📚 Publications & Impact</h3>
-                    <div class="publications-grid">
-                        <div class="publication-card">
-                            <div class="pub-year">2023</div>
-                            <div class="pub-content">
-                                <h4>"Inclusive Learning Through Equity-Driven Approaches to Design in Engineering Education"</h4>
-                                <p class="pub-authors">Deilami, N., Ngo, T.-A., Fleisig, R., Park, S., & Hemmerich, A.</p>
-                                <p class="pub-venue">CEEA Conference (2023)</p>
-                                <p class="pub-description">Co-authored research on transforming engineering education through inclusive design principles and equity-driven methodologies.</p>
-                                <div class="pub-impact">
-                                    <span class="impact-badge">Engineering Education</span>
-                                    <span class="impact-badge">Inclusive Design</span>
-                                    <span class="impact-badge">EDI</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="publication-card">
-                            <div class="pub-year">2024</div>
-                            <div class="pub-content">
-                                <h4>"Fostering Inclusive Learning in Engineering through Equity-Based Design Education"</h4>
-                                <p class="pub-authors">Hemmerich, A., Deilami, N., Ngo, T.-A., Park, S., & Fleisig, R.</p>
-                                <p class="pub-venue">CEEA Conference (2024)</p>
-                                <p class="pub-description">Advanced research on implementing equity-based design methodologies in educational settings to create more inclusive learning environments.</p>
-                                <div class="pub-impact">
-                                    <span class="impact-badge">Design Education</span>
-                                    <span class="impact-badge">Equity</span>
-                                    <span class="impact-badge">Methodology</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section class="contact contact--compact dark" id="contact" aria-labelledby="about-contact">
+            <div class="contact__text">
+                <h2 id="about-contact">Let’s get in touch!</h2>
+                <p>Hiring, or have a project in mind? I’d love to hear from you.</p>
             </div>
-        </section>
-
-        <!-- Section Divider -->
-        <div class="section-divider">
-            <div class="separator"></div>
-        </div>
-
-        <!-- Resume & LinkedIn Section -->
-        <section id="resume" class="resume-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Resume & LinkedIn</h2>
-                    <p class="section-description">Download my complete resume or connect with me on LinkedIn for detailed information about my experience, skills, and achievements.</p>
-                </div>
-                <div class="resume-download">
-                    <div class="resume-preview">
-                        <div class="resume-info">
-                            <h3>Professional Resume</h3>
-                            <p>Complete overview of my experience in product design, UX research, and inclusive design</p>
-                        </div>
-                    </div>
-                    <div class="resume-buttons">
-                        <a href="assets/resume/Negar_Deilami_Resume.pdf" target="_blank" class="resume-button"><span class="download-text">Download </span>Resume</a>
-                        <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank" class="resume-button linkedin-button">View LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-text">
-                        <h2>Let's connect and create</h2>
-                        <p>I'm always excited to collaborate on meaningful projects that make a positive impact. Whether you're looking for a full-time product designer, project-based collaboration, or someone passionate about inclusive design, let's connect!</p>
-                        <div class="contact-buttons">
-                            <a href="mailto:negardeilami@gmail.com" class="contact-btn contact-primary-btn">
-                                Get In Touch
-                            </a>
-                            <a href="https://www.linkedin.com/in/negar-deilami/" target="_blank" class="contact-btn linkedin-btn">
-                                LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a class="btn btn--lg btn--yellow" href="mailto:negardeilami@gmail.com">Email me</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Negar Deilami. All rights reserved.</p>
-    </footer>
+</div>
 </body>
 </html>

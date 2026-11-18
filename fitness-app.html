@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@200;300;400&family=Merriweather+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
     <link rel="preload" href="assets/images/fitness-app-overview.webp" as="image">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="case-study.css">
@@ -489,23 +489,19 @@
 </head>
 <body class="cs-sekond-skin">
     <header>
-        <nav>
+        <nav aria-label="Main">
+            <a class="brand" href="index.html">Negar Deilami</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle active">My Work <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="index.html#product-design" class="active">Product Design</a></li>
-                        <li><a href="index.html#research">Design Thinking Research</a></li>
-                    </ul>
-                </li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="index.html#contact" class="contact-nav">Get in touch</a></li>
+                <li><a href="index.html#work" aria-current="true">Work</a></li>
+                <li><a href="workshops.html">Workshops &amp; Research</a></li>
+                <li><a href="about-me.html">About</a></li>
+                <li><a href="assets/resume/Negar_Deilami_Resume.pdf">Resume (PDF)</a></li>
+                <li><a href="index.html#contact" class="contact-nav">Contact</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <span class="sun-icon">☀️</span>
